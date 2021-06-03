@@ -1,9 +1,7 @@
-layout: page
-
-title: Publications
-
+---
+title: "Publications"
 permalink: https://asmasonomics.github.io/Publications
-
+---
 
 ### 2021
 **Mason AS** (2021), [Falling fowl of the chicken reference genome: pitfalls of studying polymorphic endogenous retroviruses](https://doi.org/10.1186/s12977-021-00555-3), *Retrovirology*, **18**:10.

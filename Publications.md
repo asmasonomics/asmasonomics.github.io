@@ -1,5 +1,5 @@
 layout: page
-title: Publications
+title: "Publications"
 permalink: https://asmasonomics.github.io/Publications
 
 ### 2021

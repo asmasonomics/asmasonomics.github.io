@@ -1,3 +1,4 @@
+layout: page
 title: Publications
 permalink: https://asmasonomics.github.io/Publications
 

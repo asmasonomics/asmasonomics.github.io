@@ -1,4 +1,4 @@
-layout: page
+layout: "pages"
 title: "Publications"
 permalink: https://asmasonomics.github.io/Publications
 

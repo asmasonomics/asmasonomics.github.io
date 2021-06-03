@@ -1,5 +1,5 @@
 ---
-title: "Publications"
+title: Publications
 permalink: https://asmasonomics.github.io/Publications
 ---
 

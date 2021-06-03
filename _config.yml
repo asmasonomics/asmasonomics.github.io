@@ -1,2 +1,16 @@
 theme: jekyll-theme-midnight
-title: Home
+title: Mason Lab
+author: Andrew Mason
+
+# navigation bar
+navbar-links:
+  Resources:
+    - Publications: "https://asmasonomics.github.io/Publications"
+    
+# social media links
+social-network-links:
+  twitter: asmasonomics
+  github: asmasonomics
+  youtube: asmasonomics
+  ORCID: 0000-0002-8222-3974
+  

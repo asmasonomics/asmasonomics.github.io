@@ -1,5 +1,7 @@
 - name: Home
   link: /
+- name: Group
+  link: /Group.html
 - name: Publications
   link: /Publications.html
 - name: Blog

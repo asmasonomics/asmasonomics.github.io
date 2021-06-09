@@ -269,6 +269,8 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll (= 3.9.0)
+  jekyll-seo-tag
+  jekyll-sitemap
   jekyll-theme-slate
   wdm
   webrick

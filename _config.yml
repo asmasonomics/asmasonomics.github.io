@@ -1,1 +1,8 @@
 theme: jekyll-theme-slate
+
+repository: asmasonomics/asmasonomics.github.io
+github: [metadata]
+
+plugins:
+    - jekyll-seo-tag
+    - jekyll-sitemap

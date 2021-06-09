@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Publications
+title: Mason Lab | Publications
 ---
 
 ### 2021

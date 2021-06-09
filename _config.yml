@@ -1,8 +1,15 @@
-theme: jekyll-theme-slate
+
+
+
+url: "https://asmasonomics.github.io"
+twitter_username: asmasonomics
+github_username: asmasonomics
 
 repository: asmasonomics/asmasonomics.github.io
 github: [metadata]
 
+# Build settings
+theme: jekyll-theme-slate
 plugins:
     - jekyll-seo-tag
     - jekyll-sitemap

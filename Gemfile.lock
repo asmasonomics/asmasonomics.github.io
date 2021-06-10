@@ -255,6 +255,8 @@ GEM
       ethon (>= 0.9.0)
     tzinfo (1.2.9)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2021.1)
+      tzinfo (>= 1.0.0)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7)
@@ -268,10 +270,10 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll-seo-tag
-  jekyll-sitemap
-  jekyll-theme-slate
-  wdm
+  minima (~> 2.5)
+  tzinfo (~> 1.2)
+  tzinfo-data
+  wdm (~> 0.1.1)
   webrick
 
 BUNDLED WITH

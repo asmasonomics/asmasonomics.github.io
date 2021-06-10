@@ -1,0 +1,8 @@
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
+lab_gantt.cdr
+lab_gantt.jpg
+Twitter-Logo.jpg

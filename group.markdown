@@ -11,7 +11,6 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 
 <span style="font-size:1.3em;">**Current lab members**</span><br/>
 
-
 <span style="font-size:1.1em;">Katie Skinner</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/Katie_Skinner_) *Bioinformatician*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/KatieSkinner.jpg"

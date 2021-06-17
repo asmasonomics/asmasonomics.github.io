@@ -7,11 +7,10 @@
 		/* Set additional styling options for the columns*/
 		.column {
 		float: left;
-		padding:0 10px;
 		}
 		
 		.left {
-		width: 20%
+		width: 22%
 		}
 		
 		.right {
@@ -28,13 +27,13 @@
 	<body>
 		<div class="row">
 			<div class="column left">
-				<p>
-					<img src="{{ include.file }}" alt="portrait">
+				<p align="left">
+					{{ include.content1 }}
 				</p>
 			</div>
 			<div class="column right">
-				<p align="justify">
-					{{ include.content }}
+				<p align="left">
+					{{ include.content2 }}
 				</p>
 			</div>
 		</div>

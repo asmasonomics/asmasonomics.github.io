@@ -3,7 +3,7 @@ layout: page
 title: Group
 permalink: /group/
 ---
-The Mason Lab started in November 2019 when Andrew started a 3-year Independent Research Fellowship in Cancer Informatics funded by [York Against Cancer](https://www.yorkagainstcancer.org.uk/) to commemorate the charity's 30th anniversary. This position will mature into a Lectureship in Cancer Informatics in 2022 as part of The University of York's [Department of Biology](https://www.york.ac.uk/biology/) and [York Biomedical Research Institute](https://www.york.ac.uk/biomedical-research-institute/).
+The Mason Lab started in November 2019 when Andrew started a 3-year Independent Research Fellowship in Cancer Informatics funded by [York Against Cancer](https://www.yorkagainstcancer.org.uk/) to commemorate the charity's 30<sup>th</sup> anniversary. This position will mature into a Lectureship in Cancer Informatics in 2022 as part of The University of York's [Department of Biology](https://www.york.ac.uk/biology/) and [York Biomedical Research Institute](https://www.york.ac.uk/biomedical-research-institute/).
 
 <span style="font-size:1.3em;">**Lab members over time**</span>
 ![Mason Lab over time](/assets/images/lab_gantt.jpg){:class="img-responsive"}

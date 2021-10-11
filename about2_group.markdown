@@ -17,6 +17,24 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Vlad completed an MEng in Electronic and Computer Engineering at the University of York before working as a graduate software developer.<br/>In February 2020 he returned to York on a GCRF-funded RA position (predominantly within the Mason lab) which included transcriptomic clustering from low <i>n</i>, high feature datasets and development of an RNAseq visualisation tool. He began a 3-year inter-disciplinary PhD at York in October 2020, and is working on methods to incorporate multiple sequencing data types to improve clinical utility of sequencing-derived bladder cancer subtypes."
 %}
 
+<span style="font-size:1.1em;">Richard Gawne</span> *Bioinformatician*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/RichardGawne.jpg"
+	content = "Richard gained a 1st class BSc Molecular Cell Biology degree at the University of York, followed by a distinction in the Bioinformatics MSc at the University of Birmingham. His MSc research project involved analysing RNA-seq data to investigate the genetic basis of a corneal disorder known as keratoconus. Richard returned to York to join the Mason Lab in October 2021 and will provide bioinformatics support to the group and the wider Jack Birch Unit."
+%}
+
+<span style="font-size:1.1em;">Charlotte Tunnicliffe</span> *MBiol project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/CharlotteTunnicliffe.jpeg"
+	content = "Charlotte is a final year integrated masters student at The University of York. She is particularly interested in the genetic links to disease and how big data analysis can be used to study this, and is hoping to pursue a career in this area. Charlotte started her project in the Mason Lab in September 2021, working on the bladder cancer cohort of the 100K."
+%}
+
+<span style="font-size:1.1em;">Eleanor Woodward</span> *MBiol project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/EleanorWoodward.jpg"
+	content = "Eleanor began her Integrated Masters project in the Mason Lab in September 2021, working on the bladder cancer cohort of the 100,000 genomes project. During the course of her studies, Eleanor has become particularly interested in bioinformatics and genomics and hopes to pursue a career in the field post graduation."
+%}
+
 <br/>
 <span style="font-size:1.3em;">**Past lab members**</span><br/>
 

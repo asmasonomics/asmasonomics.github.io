@@ -5,7 +5,7 @@ permalink: /join/
 ---
 
 <span style="font-size:1.3em;">**Open positions**</span><br/><br/>
-*PhD position (3-year fully-funded)* - Apply 25th April (1st October 2022 start) - [more info and apply here](https://www.findaphd.com/phds/project/fully-funded-department-of-biology-studentship-tissue-specific-roles-of-human-endogenous-retroviruses-in-urothelial-carcinoma/?p142486)<br/>
+**PhD position (3-year fully-funded)** - Apply 25th April (1st October 2022 start) - [more info and apply here](https://www.findaphd.com/phds/project/fully-funded-department-of-biology-studentship-tissue-specific-roles-of-human-endogenous-retroviruses-in-urothelial-carcinoma/?p142486)<br/>
 [<img src="/assets/images/HERV_2022_PhD_project_twitter_banner.png">](https://www.findaphd.com/phds/project/fully-funded-department-of-biology-studentship-tissue-specific-roles-of-human-endogenous-retroviruses-in-urothelial-carcinoma/?p142486)
 <br/>
 <p align="justify">

@@ -4,6 +4,9 @@ title: Publications
 permalink: /publications/
 ---
 
+### 2022
+Baker SC, **Mason AS**, Slip RG, Skinner KT, Macdonald A, Masood O, Harris RS, Fenton TR, Periyasamy M, Ali S & Southgate J (2022), [Induction of APOBEC3-mediated genomic damage in urothelium implicates BK polyomavirus (BKPyV) as a hit-and-run driver for bladder cancer](https://doi.org/10.1038/s41388-022-02235-8), *Oncogene*, 10.1038/s41388-022-02235-8.
+
 ### 2021
 **Mason AS** (2021), [Falling fowl of the chicken reference genome: pitfalls of studying polymorphic endogenous retroviruses](https://doi.org/10.1186/s12977-021-00555-3), *Retrovirology*, 18:10.
 

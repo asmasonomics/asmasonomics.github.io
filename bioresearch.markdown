@@ -8,7 +8,9 @@ permalink: /bioresearch/
 <p align="justify">
 Urothelial carcinoma are a relatively understudied group of diseases, despite approximately 10,000 diagnoses in the UK every year. Of these, ~95% are bladder cancers, but cancers of the upper urinary tract (renal pelvis and ureter) are grouped in together, despite the urothelium having a different embryological origin. <br/></p>
 
-<div class="row">
+<html>
+	<body>
+		<div class="row">
 			<div class="column left">
 				<p>
 					<img src="/assets/images/abelled_urinary_tract_wb.jpg">
@@ -20,6 +22,9 @@ Urothelial carcinoma are a relatively understudied group of diseases, despite ap
 				</p>
 			</div>
 		</div>
+	</body>
+</html>
+
 ![Labelled urinary tract](/assets/images/labelled_urinary_tract_wb.jpg){:class="img-responsive"}
 <br/>
 

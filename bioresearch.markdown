@@ -8,6 +8,18 @@ permalink: /bioresearch/
 <p align="justify">
 Urothelial carcinoma are a relatively understudied group of diseases, despite approximately 10,000 diagnoses in the UK every year. Of these, ~95% are bladder cancers, but cancers of the upper urinary tract (renal pelvis and ureter) are grouped in together, despite the urothelium having a different embryological origin. <br/></p>
 
+<div class="row">
+			<div class="column left">
+				<p>
+					![Labelled urinary tract](/assets/images/labelled_urinary_tract_wb.jpg){:class="img-responsive"}
+				</p>
+			</div>
+			<div class="column right">
+				<p align="justify">
+					Urothelial carcinoma are a relatively understudied group of diseases, despite approximately 10,000 diagnoses in the UK every year. Of these, ~95% are bladder cancers, but cancers of the upper urinary tract (renal pelvis and ureter) are grouped in together, despite the urothelium having a different embryological origin. <br/>Our work investigates the clinical application of sequencing technologies to urothelial carcinoma diagnosis and treatment, both from the bladder and upper tract. Our perspective is built on a bioinformatic understanding of the healthy human urothelium from our work across the <a href="https://www.york.ac.uk/biology/jack-birch-unit/">Jack Birch Unit</a>, headed by Professor Jennifer Southgate. We utilise short and long read RNA sequencing technologies, as well as whole genome sequencing to interrogate mutational signatures, and more recently have employed single-cell transcriptomics to understand urothelial cellular identity in normal tissues. <br/><span style="font-size:1.5em;"> </span> We utilise publicly available datasets to ask specific biological questions to better inform clinical subtyping and derive more personalised therapeutic approaches. Our lab is also one of the bioinformatic leads analysing bladder cancers in the Genomics England 100,000 Genomes Project.
+				</p>
+			</div>
+		</div>
 ![Labelled urinary tract](/assets/images/labelled_urinary_tract_wb.jpg){:class="img-responsive"}
 <br/>
 

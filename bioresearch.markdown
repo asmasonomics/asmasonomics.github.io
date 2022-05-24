@@ -11,7 +11,7 @@ Urothelial carcinoma are a relatively understudied group of diseases, despite ap
 <div class="row">
 			<div class="column left">
 				<p>
-					![Labelled urinary tract](/assets/images/labelled_urinary_tract_wb.jpg){:class="img-responsive"}
+					<img src="/assets/images/abelled_urinary_tract_wb.jpg">
 				</p>
 			</div>
 			<div class="column right">

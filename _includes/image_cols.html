@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<style>
+		{
+			box-sizing: border-box;
+		}
+		/* Set additional styling options for the columns*/
+		.column {
+		float: left;
+		padding:0 10px;
+		}
+		
+		.left {
+		width: 60%
+		}
+		
+		.right {
+		width: 40%
+		}
+
+		.row:after {
+		content: "";
+		display: table;
+		clear: both;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="row">
+			<div class="column left">
+				<p>
+					<img src="{{ include.file }}" alt="portrait">
+				</p>
+			</div>
+			<div class="column right">
+				<p align="justify">
+					{{ include.content }}
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

@@ -11,9 +11,9 @@ Our work investigates the clinical application of sequencing technologies to uro
 <br/></p>
 
 <br/><br/>
-{% include profile_page_cols.html 
+{% include image_cols.html 
 	file = "/assets/images/labelled_urinary_tract_wb_smaller.jpg"
-	content = "Our work investigates the clinical application of sequencing technologies to urothelial carcinoma diagnosis and treatment, both from the bladder and upper tract. Our perspective is built on a bioinformatic understanding of the healthy human urothelium from our work across the Jack Birch Unit, headed by Professor Jennifer Southgate. We utilise short and long read RNA sequencing technologies, as well as whole genome sequencing to interrogate mutational signatures, and more recently have employed single-cell transcriptomics to understand urothelial cellular identity in normal tissues. <br/>We utilise publicly available datasets to ask specific biological questions to better inform clinical subtyping and derive more personalised therapeutic approaches. Our lab is also one of the bioinformatic leads analysing bladder cancers in the Genomics England 100,000 Genomes Project."
+	content = "Our work investigates the clinical application of sequencing technologies to urothelial carcinoma diagnosis and treatment, both from the bladder and upper tract. Our perspective is built on a bioinformatic understanding of the healthy human urothelium from our work across the Jack Birch Unit, headed by Professor Jennifer Southgate. We utilise short and long read RNA sequencing technologies, as well as whole genome sequencing to interrogate mutational signatures, and more recently have employed single-cell transcriptomics to understand urothelial cellular identity in normal tissues."
 %}
 <br/><br/>
 

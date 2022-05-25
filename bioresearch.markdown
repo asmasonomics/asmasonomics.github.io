@@ -6,16 +6,17 @@ permalink: /bioresearch/
 
 <span style="font-size:1.5em;">**Urothelial carcinoma**</span><br/>
 <p align="justify">
-Urothelial carcinoma are a relatively understudied group of diseases, despite approximately 10,000 diagnoses in the UK every year. Of these, ~95% are bladder cancers, but cancers of the upper urinary tract (renal pelvis and ureter) are grouped in together, despite the urothelium having a different embryological origin. <br/><span style="font-size:1.5em;"> </span>
-Our work investigates the clinical application of sequencing technologies to urothelial carcinoma diagnosis and treatment, both from the bladder and upper tract. Our perspective is built on a bioinformatic understanding of the healthy human urothelium from our work across the <a href="https://www.york.ac.uk/biology/jack-birch-unit/">Jack Birch Unit</a>, headed by Professor Jennifer Southgate. We utilise short and long read RNA sequencing technologies, as well as whole genome sequencing to interrogate mutational signatures, and more recently have employed single-cell transcriptomics to understand urothelial cellular identity in normal tissues. <br/><span style="font-size:1.5em;"> </span> We utilise publicly available datasets to ask specific biological questions to better inform clinical subtyping and derive more personalised therapeutic approaches. Our lab is also one of the bioinformatic leads analysing bladder cancers in the Genomics England 100,000 Genomes Project.
-<br/></p>
+Urothelial carcinoma are a relatively understudied group of diseases, despite approximately 10,000 diagnoses in the UK every year. Of these, ~95% are bladder cancers, but cancers of the upper urinary tract (renal pelvis and ureter) are grouped in together, despite the urothelium having a different embryological origin. <br/></p>
 
-<br/><br/>
 {% include image_cols.html 
 	file = "/assets/images/labelled_urinary_tract_wb_smaller.jpg"
-	content = "Our work investigates the clinical application of sequencing technologies to urothelial carcinoma diagnosis and treatment, both from the bladder and upper tract. Our perspective is built on a bioinformatic understanding of the healthy human urothelium from our work across the Jack Birch Unit, headed by Professor Jennifer Southgate. We utilise short and long read RNA sequencing technologies, as well as whole genome sequencing to interrogate mutational signatures, and more recently have employed single-cell transcriptomics to understand urothelial cellular identity in normal tissues."
+	content = "Our work investigates the clinical application of sequencing technologies to urothelial carcinoma diagnosis and treatment, both from the bladder and upper tract. Our perspective is built on a bioinformatic understanding of the healthy human urothelium from our work across the <a href="https://www.york.ac.uk/biology/jack-birch-unit/">Jack Birch Unit</a>, headed by Professor Jennifer Southgate. We utilise short and long read RNA sequencing technologies, as well as whole genome sequencing to interrogate mutational signatures, and more recently have employed single-cell transcriptomics to understand urothelial cellular identity in normal tissues."
 %}
-<br/><br/>
+
+<p align="justify">
+We utilise publicly available datasets to ask specific biological questions to better inform clinical subtyping and derive more personalised therapeutic approaches. Our lab is also one of the bioinformatic leads analysing bladder cancers in the Genomics England 100,000 Genomes Project.
+<br/></p>
+
 
 
 <span style="font-size:1.5em;">**ERVs in avian and human cancer**</span><br/>

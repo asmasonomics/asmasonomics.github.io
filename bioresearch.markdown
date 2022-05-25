@@ -10,7 +10,7 @@ Urothelial carcinoma are a relatively understudied group of diseases, despite ap
 
 {% include image_cols.html 
 	file = "/assets/images/labelled_urinary_tract_wb_smaller.jpg"
-	content = "Our work investigates the clinical application of sequencing technologies to urothelial carcinoma diagnosis and treatment, both from the bladder and upper tract. Our perspective is built on a bioinformatic understanding of the healthy human urothelium from our work across the <a href="https://www.york.ac.uk/biology/jack-birch-unit/">Jack Birch Unit</a>, headed by Professor Jennifer Southgate. We utilise short and long read RNA sequencing technologies, as well as whole genome sequencing to interrogate mutational signatures, and more recently have employed single-cell transcriptomics to understand urothelial cellular identity in normal tissues."
+	content = "Our work investigates the clinical application of sequencing technologies to urothelial carcinoma diagnosis and treatment, both from the bladder and upper tract. Our perspective is built on a bioinformatic understanding of the healthy human urothelium from our work across the [Jack Birch Unit](https://www.york.ac.uk/biology/jack-birch-unit/), headed by Professor Jennifer Southgate. We utilise short and long read RNA sequencing technologies, as well as whole genome sequencing to interrogate mutational signatures, and more recently have employed single-cell transcriptomics to understand urothelial cellular identity in normal tissues."
 %}
 
 <p align="justify">

@@ -23,17 +23,24 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Richard gained a 1st class BSc Molecular Cell Biology degree at the University of York, followed by a distinction in the Bioinformatics MSc at the University of Birmingham. His MSc research project involved analysing RNA-seq data to investigate the genetic basis of a corneal disorder known as keratoconus. Richard returned to York to join the Mason Lab in October 2021 and will provide bioinformatics support to the group and the wider Jack Birch Unit."
 %}
 
-<span style="font-size:1.1em;">Charlotte Tunnicliffe</span> *MBiol project student*<br/>
+<span style="font-size:1.1em;">Grace Dobbs</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/grace_dobbs) *Postdoctoral research associate*<br/>
 {% include profile_page_cols.html 
-	file = "/assets/images/CharlotteTunnicliffe.jpeg"
-	content = "Charlotte is a final year integrated masters student at The University of York. She is particularly interested in the genetic links to disease and how big data analysis can be used to study this, and is hoping to pursue a career in this area. Charlotte started her project in the Mason Lab in September 2021, working on the bladder cancer cohort of the 100K."
+	file = "/assets/images/person.png"
+	content = "text coming soon"
 %}
 
-<span style="font-size:1.1em;">Eleanor Woodward</span> *MBiol project student*<br/>
+<span style="font-size:1.1em;">Emilia Cross</span> *FRAME undergraduate project student*<br/>
 {% include profile_page_cols.html 
-	file = "/assets/images/EleanorWoodward.jpg"
-	content = "Eleanor began her Integrated Masters project in the Mason Lab in September 2021, working on the bladder cancer cohort of the 100,000 genomes project. During the course of her studies, Eleanor has become particularly interested in bioinformatics and genomics and hopes to pursue a career in the field post graduation."
+	file = "/assets/images/EmiliaCross.jpg"
+	content = "Emilia successfully applied for a FRAME summer studentship to work in the lab in Summer 2022 on a project to study APOBEC tissue specificity in bladder cancer, using the 100kGP cohort. As a University of York integrated masters student (entering her final year), Emilia has developed a keen interest in cancer bioinformatics and hopes to pursue a research career in this area."
 %}
+
+<span style="font-size:1.1em;">Fernando Vazquez Lopez</span> *Undergraduate project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/FernandoVazquezLopez.jpg"
+	content = "Fernando is going into the final year of an integrated masters at the University of York. During the course of his studies, he has developed an interest in molecular evolution, sequence analysis and the applications of bioinformatics in cancer research. He joined the lab for summer 2022 to study avian oncogenic endogenous retroviruses using whole genome and long read sequencing data. He hopes this direct research experience will help him pursue a career in this area."
+%}
+
 
 <br/>
 <span style="font-size:1.3em;">**Past lab members**</span><br/>
@@ -48,4 +55,16 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 {% include profile_page_cols.html 
 	file = "/assets/images/SarahBecker.jpg"
 	content = "Sarah joined the Mason Lab in August 2021 for a 7-week internship between the first and second years of her BSc Biology degree at the University of York. Sarah's project used RNAseq data generated from human urothelium cultured in hypoxic conditions, and will form part of an upcoming publication."
+%}
+
+<span style="font-size:1.1em;">Charlotte Tunnicliffe</span> *MBiol project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/CharlotteTunnicliffe.jpeg"
+	content = "Charlotte completed her University of York final year integrated masters project in 2021/22, gaining a 1st. Charlotte characterised the mutational signatures of the 100kGP bladder cancer cohort. She then explored the dominance of APOBEC mutagenesis and its extended mutational footprint."
+%}
+
+<span style="font-size:1.1em;">Eleanor Woodward</span> *MBiol project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/EleanorWoodward.jpg"
+	content = "Eleanor completed her University of York final year integrated masters project in 2021/22, gaining a 1st, and went on to pursue a PhD in cancer informatics at The University of Newcastle. Eleanor characterised non-coding mutation hotspots in the 100kGP bladder cancer cohort, their relation to coding hotspots, and the likelihood of APOBEC mutagenesis."
 %}

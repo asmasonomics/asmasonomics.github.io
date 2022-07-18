@@ -37,7 +37,7 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 
 <span style="font-size:1.1em;">Fernando Vazquez Lopez</span> *Undergraduate project student*<br/>
 {% include profile_page_cols.html 
-	file = "/assets/images/FernandoVazquezLopez.jpg"
+	file = "/assets/images/FernandoVazquezLopez.jpeg"
 	content = "Fernando is going into the final year of an integrated masters at the University of York. During the course of his studies, he has developed an interest in molecular evolution, sequence analysis and the applications of bioinformatics in cancer research. He joined the lab for summer 2022 to study avian oncogenic endogenous retroviruses using whole genome and long read sequencing data. He hopes this direct research experience will help him pursue a career in this area."
 %}
 

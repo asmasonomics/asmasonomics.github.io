@@ -11,6 +11,12 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 
 <span style="font-size:1.3em;">**Current lab members**</span><br/>
 
+<span style="font-size:1.1em;">Grace Dobbs</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/grace_dobbs) *Postdoctoral research associate*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/GraceDobbs.jpg"
+	content = "Grace gained a 1st class honours degree in Biomedical Sciences at Newcastle University, and then moved to The University of York to complete her PhD with Professor Dawn Coverley. Grace’s PhD focused on the role of the Cip1-interacting zinc finger protein 1 (CIZ1) during the transitionto quiescence. Her work revealed that CIZ1-dependent maintenance of the histone post-translational modification, H4K20me1, is required for chromatin condensation during entry to quiescence, which has implications for genome stability and cancer initiation.<br/>Grace joined the Mason lab as a postdoctoral researcher in July 2022 after successfully applying for a BBSRC White Rose DCDF fellowship to develop her skills in bioinformatics. Grace will build on her PhD research by analysing mutational signatures induced in CIZ1-null colony cultures which emerged due to unstable quiescence, further applying this work to explore CIZ1 biology in a pan-cancer analysis."
+%}
+
 <span style="font-size:1.1em;">Vlad Ungureanu</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/vladUngu) *PhD Student (Co-supervisee)*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/VladUngureanu.jpeg"
@@ -23,11 +29,6 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Richard gained a 1st class BSc Molecular Cell Biology degree at the University of York, followed by a distinction in the Bioinformatics MSc at the University of Birmingham. His MSc research project involved analysing RNA-seq data to investigate the genetic basis of a corneal disorder known as keratoconus. Richard returned to York to join the Mason Lab in October 2021 and will provide bioinformatics support to the group and the wider Jack Birch Unit."
 %}
 
-<span style="font-size:1.1em;">Grace Dobbs</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/grace_dobbs) *Postdoctoral research associate*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/person.png"
-	content = "text coming soon"
-%}
 
 <span style="font-size:1.1em;">Emilia Cross</span> *FRAME undergraduate project student*<br/>
 {% include profile_page_cols.html 

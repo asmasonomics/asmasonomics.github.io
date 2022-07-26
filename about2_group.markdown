@@ -30,7 +30,7 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 %}
 
 
-<span style="font-size:1.1em;">Emilia Cross</span> *FRAME undergraduate project student*<br/>
+<span style="font-size:1.1em;">Emilia Cross</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/emiliacrossxx) *FRAME undergraduate project student*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/EmiliaCross.jpg"
 	content = "Emilia successfully applied for a FRAME summer studentship to work in the lab in Summer 2022 on a project to study APOBEC tissue specificity in bladder cancer, using the 100kGP cohort. As a University of York integrated masters student (entering her final year), Emilia has developed a keen interest in cancer bioinformatics and hopes to pursue a research career in this area."

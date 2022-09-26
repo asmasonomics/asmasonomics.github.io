@@ -30,19 +30,6 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 %}
 
 
-<span style="font-size:1.1em;">Emilia Cross</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/emiliacrossxx) *FRAME undergraduate project student*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/EmiliaCross.jpg"
-	content = "Emilia successfully applied for a FRAME summer studentship to work in the lab in Summer 2022 on a project to study APOBEC tissue specificity in bladder cancer, using the 100kGP cohort. As a University of York integrated masters student (entering her final year), Emilia has developed a keen interest in cancer bioinformatics and hopes to pursue a research career in this area."
-%}
-
-<span style="font-size:1.1em;">Fernando Vazquez Lopez</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/fernando_vaz_) *Undergraduate project student*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/FernandoVazquezLopez.jpeg"
-	content = "Fernando is going into the final year of an integrated masters at the University of York. During the course of his studies, he has developed an interest in molecular evolution, sequence analysis and the applications of bioinformatics in cancer research. He joined the lab for summer 2022 to study avian oncogenic endogenous retroviruses using whole genome and long read sequencing data. He hopes this direct research experience will help him pursue a career in this area."
-%}
-
-
 <br/>
 <span style="font-size:1.3em;">**Past lab members**</span><br/>
 
@@ -69,3 +56,17 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	file = "/assets/images/EleanorWoodward.jpg"
 	content = "Eleanor completed her University of York final year integrated masters project in 2021/22, gaining a 1st, and went on to pursue a PhD in cancer informatics at The University of Newcastle. Eleanor characterised non-coding mutation hotspots in the 100kGP bladder cancer cohort, their relation to coding hotspots, and the likelihood of APOBEC mutagenesis."
 %}
+
+<span style="font-size:1.1em;">Emilia Cross</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/emiliacrossxx) *FRAME undergraduate project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/EmiliaCross.jpg"
+	content = "Emilia successfully applied for a FRAME summer studentship to work in the lab in Summer 2022 on a project to study APOBEC tissue specificity in bladder cancer, using the 100kGP cohort. Following her project, Emilia has now entered her final year as a University of York integrated masters student. Emilia has developed a keen interest in cancer bioinformatics and hopes to pursue a research career in this area."
+%}
+
+<span style="font-size:1.1em;">Fernando Vazquez Lopez</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/fernando_vaz_) *Undergraduate project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/FernandoVazquezLopez.jpeg"
+	content = "Fernando joined the lab for summer 2022 to study avian oncogenic endogenous retroviruses using whole genome sequencing data; hoping to gain direct research experience to help him pursue a career in applied bioinformatics. During his studies, Fernando has developed an interest in molecular evolution, sequence analysis and the applications of bioinformatics in cancer research, and has now entered his final year of an integrated masters at the University of York."
+%}
+
+

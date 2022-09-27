@@ -29,6 +29,12 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Richard gained a 1st class BSc Molecular Cell Biology degree at the University of York, followed by a distinction in the Bioinformatics MSc at the University of Birmingham. His MSc research project involved analysing RNA-seq data to investigate the genetic basis of a corneal disorder known as keratoconus. Richard returned to York to join the Mason Lab in October 2021 and will provide bioinformatics support to the group and the wider Jack Birch Unit."
 %}
 
+<span style="font-size:1.1em;">Mae Wells</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/Maee_elisa) *MBiol project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/MaeWells.jpg"
+	content = "Mae is completing her University of York final year integrated masters project in the lab, working on the 100kGP bladder cancer cohort. Mae enjoys bioinformatics and regenerative medicine, and is looking to continue her studies in postgraduate medicine."
+%}
+
 
 <br/>
 <span style="font-size:1.3em;">**Past lab members**</span><br/>

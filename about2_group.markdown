@@ -35,6 +35,11 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Mae is completing her University of York final year integrated masters project in the lab, working on the 100kGP bladder cancer cohort. Mae enjoys bioinformatics and regenerative medicine, and is looking to continue her studies in postgraduate medicine."
 %}
 
+<span style="font-size:1.1em;">Ben Musgrove</span> *MBiol project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/BenMusgrove.jpg"
+	content = "Ben is working towards finishing an integrated masters in Biology at the University of York, completing his final year project in the lab using the 100kGP bladder cancer cohort. Ben is interested in cancer cell and molecular biology and bioinformatics, and how these areas can be applied."
+%}
 
 <br/>
 <span style="font-size:1.3em;">**Past lab members**</span><br/>

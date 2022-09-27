@@ -4,7 +4,12 @@ title: Publications
 permalink: /publications/
 ---
 
+### Preprints
+Baker SC, **Mason AS**, Slip RG, Eriksson P, Sjödahl G, Trejdosiewicz LK & Southgate J, [The urothelial transcriptomic response to interferon gamma predicts T1 recurrence-free and basal/squamous muscle-invasive bladder cancer survival and better targeted strategies for immune checkpoint blocking](https://www.medrxiv.org/content/10.1101/2022.02.04.22270000v1), medRxiv (2022).
+
 ### 2022
+**Mason AS**, Varley CL, Foody OM, Li X, **Skinner K**, Walker D, Larson T, Wakamatsu D, Baker SC & Southgate J (*in press*), *LPCAT4* knockdown alters barrier integrity and cellular bioenergetics in human urothelium, *International Journal of Molecular Sciences*
+
 Baker SC, **Mason AS**, Slip RG, Skinner KT, Macdonald A, Masood O, Harris RS, Fenton TR, Periyasamy M, Ali S & Southgate J (2022), [Induction of APOBEC3-mediated genomic damage in urothelium implicates BK polyomavirus (BKPyV) as a hit-and-run driver for bladder cancer](https://doi.org/10.1038/s41388-022-02235-8), *Oncogene*, 10.1038/s41388-022-02235-8.
 
 ### 2021

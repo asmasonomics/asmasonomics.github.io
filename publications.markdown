@@ -7,6 +7,8 @@ permalink: /publications/
 ### Preprints
 Baker SC, **Mason AS**, Slip RG, Eriksson P, Sjödahl G, Trejdosiewicz LK & Southgate J, [The urothelial transcriptomic response to interferon gamma predicts T1 recurrence-free and basal/squamous muscle-invasive bladder cancer survival and better targeted strategies for immune checkpoint blocking](https://www.medrxiv.org/content/10.1101/2022.02.04.22270000v1), medRxiv (2022).
 
+Chandler JC, Jafree DJ, Malik S, Pomeranz G, Ball M, Kolatsi-Joannou M, Piapi A, Mason WJ, Woolf AS, Winyard PJ, **Mason AS**, Waters AM & Long DA, [Exploration of the single-cell transcriptomic landscape identifies aberrant glomerular cell crosstalk in a murine model of WT1 kidney disease](https://www.biorxiv.org/content/10.1101/2022.10.11.511555v2), bioRxiv (2022).
+
 ### 2022
 **Mason AS**, Varley CL, Foody OM, Li X, **Skinner K**, Walker D, Larson T, Wakamatsu D, Baker SC & Southgate J (2022), [*LPCAT4* knockdown alters barrier integrity and cellular bioenergetics in human urothelium](https://doi.org/10.3390/ijms231911871), *International Journal of Molecular Sciences*, 23(19):11871
 

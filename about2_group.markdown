@@ -41,6 +41,12 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Ben is working towards finishing an integrated masters in Biology at the University of York, completing his final year project in the lab using the 100kGP bladder cancer cohort. Ben is interested in cancer cell and molecular biology and bioinformatics, and how these areas can be applied."
 %}
 
+<span style="font-size:1.1em;">Anastasia Kaltsa</span> *MSc by Research Student (Co-supervisee)*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/AnastasiaKaltsa.jpeg"
+	content = "Anastasia obtained her medical degree from Aristotle University in Greece and moved to the UK for her specialty training in Obstetrics and Gynaecology. She is currently a year 4 trainee in the Yorkshire and the Humber Deanery. She developed a special interest in Urogynaecology and successfully applied for a part-time MSc by research project in the Jack Birch Unit, supervised by Prof Jenny Southgate and Dr Andrew Mason. The project focuses on benign urogynaecological conditions, providing knowledge and research experience to pursue her subspecialty training."
+%}
+
 <br/>
 <span style="font-size:1.3em;">**Past lab members**</span><br/>
 

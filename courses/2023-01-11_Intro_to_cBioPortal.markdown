@@ -9,7 +9,7 @@ permalink: /courses/Intro_cBioPortal_Jan2023
 
 <span style="font-size:1.2em;">**Learning objectives**</span><br/>
 1. Recognise the applications and utility of cBioPortal for cancer research
-2. Operate and explore the cBioPortal wesbite to identify cancer data of interest
+2. Operate and explore the cBioPortal website to identify cancer data of interest
 3. Complete two cancer biology problem-solving tasks using cBioPortal
 4. Recognise the process for accessing and analysing cBioPortal data
 <br/>

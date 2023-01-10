@@ -28,10 +28,10 @@ permalink: /courses/Intro_cBioPortal_Jan2023
 PDF of the introductory slides available to <a href="/assets/files/AndrewMason.jpg" download>download here</a>.
 
 **cBioPortal website demo**<br/>
-Representative screen capture of the live website demo available to download here.
+Live demonstration.
 
-**Problem-solving tasks**
-You probably have time to complete 2 of the 4 tasks below, so pick those most interesting to you! This web page will remain live following the course for your future reference.<br/> 
+**Problem-solving tasks**<br/>
+<p align="justify">You probably have time to complete 2 of the 5 tasks below, so pick those most interesting to you! This web page will remain live following the course if you want to complete all the taks, and for your future reference.<br/></p>
 [Task 1](#task-1) - do something with something holder<br/>
 [Task 2](#task-2) - <br/>
 [Task 3](#task-3) - <br/>
@@ -55,10 +55,10 @@ holder
 
 <br/>
 **Recap and Further Resources**<br/>
-PDF of recap slides available to download here.
+PDF of recap slides available to <a href="/assets/files/AndrewMason.jpg" download>download here</a>.
 
 **Accessing and using underlying cBioPortal data**<br/>
-PDF of cBioPortal data access slides available to download here.
+<a href="/assets/files/2023-01-11_cBioPortal_04_Accessing-cBioPortal-Data.pdf" download>PDF of cBioPortal data access slides available to download here</a>.
 <br/><br/>
 
 <span style="font-size:1.2em;">**Feedback form**</span><br/>

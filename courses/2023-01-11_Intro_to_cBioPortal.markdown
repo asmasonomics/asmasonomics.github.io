@@ -15,7 +15,7 @@ permalink: /courses/Intro_cBioPortal_Jan2023
 <br/>
 
 <span style="font-size:1.2em;">**Session outline**</span><br/>
-12.00  Introduction and Learning Objectives<br/>
+12.00&nbsp;&nbsp;Introduction and Learning Objectives<br/>
 12.10  cBioPortal website demo<br/>
 12.20  Problem-solving tasks<br/>
 12.45  Recap and Further Resources<br/>

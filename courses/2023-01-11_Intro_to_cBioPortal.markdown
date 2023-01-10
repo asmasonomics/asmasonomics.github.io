@@ -8,10 +8,10 @@ permalink: /courses/Intro_cBioPortal_Jan2023
 <p align="justify"><a href="https://www.cbioportal.org/">cBioPortal</a> is a publicly available online resource for cancer genomics, with omics and clinical data available for many cancer types. In this 1 hour session we will introduce cBioPortal - what's there, how to use it, and what you can learn from it. We will then have some led problem solving activities to get to grips with the website, and finish with tips and advice for how you can use the data, and how student projects could make use of it.<br/></p>
 
 <span style="font-size:1.2em;">**Learning objectives**</span><br/>
-1. 
-2.
-3.
-4.
+1. Recognise the applications and utility of cBioPortal for cancer research
+2. Operate and explore the cBioPortal wesbite to identify cancer data of interest
+3. Complete two cancer biology problem-solving tasks using cBioPortal
+4. Recognise the process for accessing and analysing cBioPortal data
 <br/>
 
 <span style="font-size:1.2em;">**Session outline**</span><br/>
@@ -38,19 +38,19 @@ You probably have time to complete 2 of the 4 tasks below, so pick those most in
 [Task 4](#task-4) - <br/>
 [Task 5](#task-5) - <br/>
 
-##### Task 1
+#### Task 1
 holder
 
-##### Task 2
+#### Task 2
 holder
 
-##### Task 3
+#### Task 3
 holder
 
-##### Task 4
+#### Task 4
 holder
 
-##### Task 5
+#### Task 5
 holder
 
 <br/>
@@ -63,7 +63,7 @@ PDF of cBioPortal data access slides available to download here.
 
 <span style="font-size:1.2em;">**Feedback form**</span><br/>
 <p align="justify">This was the first time running the Introduction to cBioPortal course. We are hoping to repeat the course in future, and to develop it into an Elixir online resource for broader use.
-Hopefully you have enjoyed the workshop structure and content, but there is always room to improve. We would really appreciate if you could complete <a href="https://elixiruknode.org/">this brief feedback form</a>. This link will be active until the end of the week.<br/></p>
+Hopefully you have enjoyed the workshop structure and content, but there is always room to improve. We would really appreciate if you could complete <a href="https://forms.gle/oWjnkAU6tGP2W91H7">this brief feedback form</a>. This link will be active until the end of the week.<br/></p>
 
 <br/><br/>
 <p align="justify">This course was first delivered over 1 hour at The University of York on 11th January 2023. The material was written and delivered by Dr Andrew Mason, with support from <a href="https://elixiruknode.org/">Elixir-UK</a>.<br/></p>

@@ -15,12 +15,12 @@ permalink: /courses/Intro_cBioPortal_Jan2023
 <br/>
 
 <span style="font-size:1.2em;">**Session outline**</span><br/>
-12.00&nbsp;&nbsp;Introduction and Learning Objectives<br/>
-12.10  cBioPortal website demo<br/>
-12.20  Problem-solving tasks<br/>
-12.45  Recap and Further Resources<br/>
-12.50  Accessing and using underlying cBioPortal data<br/>
-13.00  Close
+12.00&nbsp;&nbsp;&nbsp;Introduction and Learning Objectives<br/>
+12.10&nbsp;&nbsp;&nbsp;cBioPortal website demo<br/>
+12.20&nbsp;&nbsp;&nbsp;Problem-solving tasks<br/>
+12.45&nbsp;&nbsp;&nbsp;Recap and Further Resources<br/>
+12.50&nbsp;&nbsp;&nbsp;Accessing and using underlying cBioPortal data<br/>
+13.00&nbsp;&nbsp;&nbsp;Close
 <br/>
 
 <span style="font-size:1.2em;">**The Session**</span><br/>
@@ -38,19 +38,19 @@ You probably have time to complete 2 of the 4 tasks below, so pick those most in
 [Task 4](#task-4) - <br/>
 [Task 5](#task-5) - <br/>
 
-#### Task 1
+##### Task 1
 holder
 
-#### Task 2
+##### Task 2
 holder
 
-#### Task 3
+##### Task 3
 holder
 
-#### Task 4
+##### Task 4
 holder
 
-#### Task 5
+##### Task 5
 holder
 
 <br/>

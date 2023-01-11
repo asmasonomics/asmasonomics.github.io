@@ -31,9 +31,9 @@ permalink: /courses/Intro_cBioPortal_Jan2023
 Live demonstration. Representative video to follow.
 
 **Problem-solving tasks**<br/>
-<p align="justify">You probably have time to complete 2 of the 3 tasks below, so pick those most interesting to you! This web page will remain live following the course if you want to complete all the taks, and for your future reference.<br/>The point here is to explore the data, not just rush through the questions. The questions are to lead your searches, but can you think of other data to investigate?<br/></p>
+<p align="justify">You probably have time to complete 2 of the 3 tasks below, so pick those most interesting to you! This web page will remain live following the course if you want to complete all the taks, and for your future reference.<br/>The point here is to explore the data, not just rush through the questions. The questions are to lead your searches, but can you think of other data to investigate?<br/>You could take a look at TCGA's pan-cancer analysis of 32 tumour types, but focus on summary comparisons as cBioPortal can be slow >2000 samples...!<br/></p>
 [Task 1](#task-1) - Exploration of the METABRIC breast cancer dataset<br/>
-[Task 2](#task-2) - TCGA pan-cancer analysis<br/>
+[Task 2](#task-2) - <br/>
 [Task 3](#task-3) - <br/>
 
 #### Task 1
@@ -47,18 +47,15 @@ Live demonstration. Representative video to follow.
 7. Looking across BRCA studies, are there any male samples? If so, how do they compare? Can you compare them confidently?
 
 #### Task 2
-<p align="justify">TCGA included 32 different cancer types, ranging from common cancers such as breast, colorectal and prostate, to rarer malignancies such as AML (which are relatively highly represented - see below). TCGA provided the first opportunity for pan-cancer analysis at scale. Consider the following questions as a starting point, but then what other questions can you ask of the data?<br/></p>
+<p align="justify">TCGA included 32 different cancer types, ranging from common cancers such as breast, colorectal and prostate, to rarer malignancies such as AML (which are relatively highly represented - see below). TCGA provided the first opportunity for pan-cancer analysis at scale. Consider the following questions as a starting point, but then what other questions can you ask of the data? With so many samples, cBioPortal may be slow to load - the subanalyses run in new tabs (in Chrome), so it may make sense to address one question, then carry on with others while you wait.<br/></p>
 1. 
 
 #### Task 3
 holder
 
 <br/>
-**Recap and Further Resources**<br/>
-<a href="/assets/files/AndrewMason.jpg" download>PDF of task recap slides available to download here</a>.
-
-**Accessing and using underlying cBioPortal data**<br/>
-<a href="/assets/files/2023-01-11_cBioPortal_04_Accessing-cBioPortal-Data.pdf" download>PDF of cBioPortal data access slides available to download here</a>.
+**Recap and Further Resources, Accessing and using underlying cBioPortal data**<br/>
+<a href="/assets/files/2023-01-11_cBioPortal_0304_LO-Recap_Resoyrces_Downloads.pdf" download>PDF of final section slides available to download here</a>.
 <br/><br/>
 
 <span style="font-size:1.2em;">**Feedback form**</span><br/>

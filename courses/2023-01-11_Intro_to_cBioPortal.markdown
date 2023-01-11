@@ -55,7 +55,7 @@ holder
 
 <br/>
 **Recap and Further Resources, Accessing and using underlying cBioPortal data**<br/>
-<a href="/assets/files/2023-01-11_cBioPortal_0304_LO-Recap_Resoyrces_Downloads.pdf" download>PDF of final section slides available to download here</a>.
+<a href="/assets/files/2023-01-11_cBioPortal_0304_LO-Recap_Resources_Downloads.pdf" download>PDF of final section slides available to download here</a>.
 <br/><br/>
 
 <span style="font-size:1.2em;">**Feedback form**</span><br/>

@@ -25,37 +25,37 @@ permalink: /courses/Intro_cBioPortal_Jan2023
 
 <span style="font-size:1.2em;">**The Session**</span><br/>
 **Introduction and Learning Objectives**<br/>
-PDF of the introductory slides available to <a href="/assets/files/AndrewMason.jpg" download>download here</a>.
+<a href="/assets/files/2023-01-11_cBioPortal_01_Introduction-Learning-Objectives.pdf" download>PDF of the introductory slides available to download here</a>.
 
 **cBioPortal website demo**<br/>
-Live demonstration.
+Live demonstration. Representative video to follow.
 
 **Problem-solving tasks**<br/>
-<p align="justify">You probably have time to complete 2 of the 5 tasks below, so pick those most interesting to you! This web page will remain live following the course if you want to complete all the taks, and for your future reference.<br/></p>
-[Task 1](#task-1) - do something with something holder<br/>
-[Task 2](#task-2) - <br/>
+<p align="justify">You probably have time to complete 2 of the 3 tasks below, so pick those most interesting to you! This web page will remain live following the course if you want to complete all the taks, and for your future reference.<br/>The point here is to explore the data, not just rush through the questions. The questions are to lead your searches, but can you think of other data to investigate?<br/></p>
+[Task 1](#task-1) - Exploration of the METABRIC breast cancer dataset<br/>
+[Task 2](#task-2) - TCGA pan-cancer analysis<br/>
 [Task 3](#task-3) - <br/>
-[Task 4](#task-4) - <br/>
-[Task 5](#task-5) - <br/>
 
 #### Task 1
-holder
+<p align="justify">In this task you will explore the METABRIC study, one of the largest cancer cohorts. Breast cancer is one of the best served cancers in terms of genomic resources. Explore METABRIC and consider the following questions, but also take the time to look at other sets including TCGA, a cohort built on large, aggressive tumours (across all tumour types). Can you find any breast cancer cell lines which well represent patient data?<br/></p>
+1. Are there differences in survival or other clinical data between the 3-gene classifier subtypes?
+2. How does ER status survival change over time (5-year vs 10-year vs 20-year)?
+3. What gene expression or mutation differences can you see between ER+ and ER- BRCA?
+4. Which are the most commonly mutated, likely cancer-related genes? Of the top 10, which are consisteny with being tumour supressor genes (TSGs), and which as oncogenes? (Think about the mutation types). Are there hotspots in these with clinical relevance?
+5. Consider MUC16. It is not included in the 'likely cancerous' list, but is heavily mutated. What data from the lollipop mutation plots make it unlikely related to oncogenesis?
+6. How does tumour mutational burden (TMB) compare to the demo example from the TCGA bladder cancer (2017) cohort? How could this impact our study of mutations in METABRIC?
+7. Looking across BRCA studies, are there any male samples? If so, how do they compare? Can you compare them confidently?
 
 #### Task 2
-holder
+<p align="justify">TCGA included 32 different cancer types, ranging from common cancers such as breast, colorectal and prostate, to rarer malignancies such as AML (which are relatively highly represented - see below). TCGA provided the first opportunity for pan-cancer analysis at scale. Consider the following questions as a starting point, but then what other questions can you ask of the data?<br/></p>
+1. 
 
 #### Task 3
 holder
 
-#### Task 4
-holder
-
-#### Task 5
-holder
-
 <br/>
 **Recap and Further Resources**<br/>
-PDF of recap slides available to <a href="/assets/files/AndrewMason.jpg" download>download here</a>.
+<a href="/assets/files/AndrewMason.jpg" download>PDF of task recap slides available to download here</a>.
 
 **Accessing and using underlying cBioPortal data**<br/>
 <a href="/assets/files/2023-01-11_cBioPortal_04_Accessing-cBioPortal-Data.pdf" download>PDF of cBioPortal data access slides available to download here</a>.

@@ -33,8 +33,8 @@ Live demonstration. Representative video to follow.
 **Problem-solving tasks**<br/>
 <p align="justify">You probably have time to complete 2 of the 3 tasks below, so pick those most interesting to you! This web page will remain live following the course if you want to complete all the taks, and for your future reference.<br/>The point here is to explore the data, not just rush through the questions. The questions are to lead your searches, but can you think of other data to investigate?<br/>You could take a look at TCGA's pan-cancer analysis of 32 tumour types, but focus on summary comparisons as cBioPortal can be slow >2000 samples...!<br/></p>
 [Task 1](#task-1) - Exploration of the METABRIC breast cancer dataset<br/>
-[Task 2](#task-2) - <br/>
-[Task 3](#task-3) - <br/>
+[Task 2](#task-2) - Exploration of two AML datasets<br/>
+[Task 3](#task-3) - Exploration and comparison of two kidney cancers<br/>
 
 #### Task 1
 <p align="justify">In this task you will explore the METABRIC study, one of the largest cancer cohorts. Breast cancer is one of the best served cancers in terms of genomic resources. Explore METABRIC and consider the following questions, but also take the time to look at other sets including TCGA, a cohort built on large, aggressive tumours (across all tumour types). Can you find any breast cancer cell lines which well represent patient data?<br/></p>
@@ -42,16 +42,29 @@ Live demonstration. Representative video to follow.
 2. How does ER status survival change over time (5-year vs 10-year vs 20-year)?
 3. What gene expression or mutation differences can you see between ER+ and ER- BRCA?
 4. Which are the most commonly mutated, likely cancer-related genes? Of the top 10, which are consisteny with being tumour supressor genes (TSGs), and which as oncogenes? (Think about the mutation types). Are there hotspots in these with clinical relevance?
-5. Consider MUC16. It is not included in the 'likely cancerous' list, but is heavily mutated. What data from the lollipop mutation plots make it unlikely related to oncogenesis?
+5. Consider *MUC16*. It is not included in the 'likely cancerous' list, but is heavily mutated. What data from the lollipop mutation plots make it unlikely related to oncogenesis?
 6. How does tumour mutational burden (TMB) compare to the demo example from the TCGA bladder cancer (2017) cohort? How could this impact our study of mutations in METABRIC?
 7. Looking across BRCA studies, are there any male samples? If so, how do they compare? Can you compare them confidently?
 
 #### Task 2
-<p align="justify">TCGA included 32 different cancer types, ranging from common cancers such as breast, colorectal and prostate, to rarer malignancies such as AML (which are relatively highly represented - see below). TCGA provided the first opportunity for pan-cancer analysis at scale. Consider the following questions as a starting point, but then what other questions can you ask of the data? With so many samples, cBioPortal may be slow to load - the subanalyses run in new tabs (in Chrome), so it may make sense to address one question, then carry on with others while you wait.<br/></p>
-1. 
+<p align="justify">Despite being a rare cancer, Acute Myeloid Leukemia is widely studied, due to its broad age range and very poor survival. Choose the TCGA (NEJM 2013) and OHSU datasets, and select the samples with mutation information.<br/></p>
+1. Look at some of the clinical data - how do survival, other clinical features and mutation status vary between male and female, or depending on age of diagnosis?
+2. How does the mutational burden data compare to solid cancers such as bladder and colorectal? How is this reflected in the most mutated genes? 
+3. Select the cancer-likely genes (filtered) with more than 8% frequency and submit the query. Do the 2 cohorts look similar, or are there major differences?
+4. Are any of these top 11 most mutated genes co-occuring or mutually exclusive?
+5. Do the lollipop diagrams suggest these genes are tumour suppressors, or oncogenes? Are there hotspots, any with clinical actions?
+6. I would say the *NPM1* plot is a bit strange. Highly mutated, but do you think its likely these mutations are impacting cancer development? Take a look at the UniProt link (NPM_HUMAN) and scroll to the protein domains section. Does this change your opinion?
+7. Do any of these most mutated genes exhibit differences in survival, or other clinical features?
 
 #### Task 3
-holder
+<p align="justify">Often the public (and us researchers) conflate multiple cancers together from the same organ. cBioPortal includes TCGA data from both kidney renal papillary cell carcinoma, and clear cell carcinoma. In this task we will explore both, and use some of the limited group functionality comparisons - this can be a bit clunky.<br/></p>
+1. Select TCGA's Firehose Legacy Kidney Renal Paillary Cell Carcinoma. As with the previous tasks, explore the most mutated genes, sex imbalances.
+2. Given the male imbalance, the mutations in *AR* (androgen receptor) could be interesting. Filter for male. Filter for *AR* mutations and calculate whether expression of *AR* differs, how *AR* is mutated and what other genes are co-occuring or mutually exclusive.
+3. Change your query, and have a similar exploration of TCGA's Kidney clear clear cell data. Do you notice any immediate differences?
+4. Return to the cBioPortal homepage (or alter the query) and select both datasets. In the cancer types, use the compare groups functionality to compare the two cohorts. What are the first obvious differences? Are there clinical differences (beyond tissue and other coding classifiers)?
+5. Both types of kidney cancer appear more common in males. Select only female patient samples and redo the comparison. What has changed?
+6. Still with the female samples, take the 5 most mutated likely cancer genes. Do the 2 cohorts match well? Are there co-occurences or mutually exclusive genes?
+7. The lollipop plot for *SETD2* is curious, consistent with tumour suppressor mutations, but also potentially oncogenic activation of the SET domain. Modify the query to just *SETD2* and just the renal clear cell carcinoma dataset - can't compare expression data between datasets readily. Explore the plots of expression when split by copy number or mutation status. Are there many differences?
 
 <br/>
 **Recap and Further Resources, Accessing and using underlying cBioPortal data**<br/>

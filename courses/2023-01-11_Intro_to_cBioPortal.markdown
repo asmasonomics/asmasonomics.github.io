@@ -6,6 +6,7 @@ permalink: /courses/Intro_cBioPortal_Jan2023
 ![cBioPortal and Elixir logos](/assets/images/cBioPortal_Elixir.jpg){:class="img-responsive"}
 <br/>
 <p align="justify"><a href="https://www.cbioportal.org/">cBioPortal</a> is a publicly available online resource for cancer genomics, with omics and clinical data available for many cancer types. In this 1 hour session we will introduce cBioPortal - what's there, how to use it, and what you can learn from it. We will then have some led problem solving activities to get to grips with the website, and finish with tips and advice for how you can use the data, and how student projects could make use of it.<br/></p>
+Full session slide deck available to download as either a <a href="/assets/files/2023-01-11_cBioPortal_slides.pdf" download>PDF</a> or <a href="/assets/files/2023-01-11_cBioPortal_slides.pptx" download> powerpoint presentation</a> here.
 
 <span style="font-size:1.2em;">**Learning objectives**</span><br/>
 1. Recognise the applications and utility of cBioPortal for cancer research
@@ -28,7 +29,11 @@ permalink: /courses/Intro_cBioPortal_Jan2023
 <a href="/assets/files/2023-01-11_cBioPortal_01_Introduction-Learning-Objectives.pdf" download>PDF of the introductory slides available to download here</a>.
 
 **cBioPortal website demo**<br/>
-Live demonstration. Representative video to follow.
+<p align="justify">During the session this is a live demonstration of the cBioPortal functionality, covering the available datasets, then using TCGA Bladder Cancer (Cell 2017) data to investigate: the summary and clinical dashboard tabs, a gene query using *FGFR3*, and then a multi-gene query with *KDM6A* and *KMT2D*. Both gene queries are used to epxlore oncoprints, lollipop plots, plotting functionality and survival.<br/></p>
+The video below is an indicative recording.
+{% include youtube.html id="1z03uo_kpQI" %}
+</br>
+
 
 **Problem-solving tasks**<br/>
 <p align="justify">You probably have time to complete 2 of the 3 tasks below, so pick those most interesting to you! This web page will remain live following the course if you want to complete all the taks, and for your future reference.<br/>The point here is to explore the data, not just rush through the questions. The questions are to lead your searches, but can you think of other data to investigate?<br/>You could take a look at TCGA's pan-cancer analysis of 32 tumour types, but focus on summary comparisons as cBioPortal can be slow >2000 samples...!<br/></p>
@@ -58,7 +63,7 @@ Live demonstration. Representative video to follow.
 
 #### Task 3
 <p align="justify">Often the public (and us researchers) conflate multiple cancers together from the same organ. cBioPortal includes TCGA data from both kidney renal papillary cell carcinoma, and clear cell carcinoma. In this task we will explore both, and use some of the limited group functionality comparisons - this can be a bit clunky.<br/></p>
-1. Select TCGA's Firehose Legacy Kidney Renal Paillary Cell Carcinoma. As with the previous tasks, explore the most mutated genes, sex imbalances.
+1. Select TCGA's Firehose Legacy Kidney Renal Papillary Cell Carcinoma. As with the previous tasks, explore the most mutated genes, sex imbalances.
 2. Given the male imbalance, the mutations in *AR* (androgen receptor) could be interesting. Filter for male. Filter for *AR* mutations and calculate whether expression of *AR* differs, how *AR* is mutated and what other genes are co-occuring or mutually exclusive.
 3. Change your query, and have a similar exploration of TCGA's Kidney clear clear cell data. Do you notice any immediate differences?
 4. Return to the cBioPortal homepage (or alter the query) and select both datasets. In the cancer types, use the compare groups functionality to compare the two cohorts. What are the first obvious differences? Are there clinical differences (beyond tissue and other coding classifiers)?

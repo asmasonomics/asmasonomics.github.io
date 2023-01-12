@@ -29,10 +29,10 @@ Full session slide deck available to download as either a <a href="/assets/files
 <a href="/assets/files/2023-01-11_cBioPortal_01_Introduction-Learning-Objectives.pdf" download>PDF of the introductory slides available to download here</a>.
 
 **cBioPortal website demo**<br/>
-<p align="justify">During the session this is a live demonstration of the cBioPortal functionality, covering the available datasets, then using TCGA Bladder Cancer (Cell 2017) data to investigate: the summary and clinical dashboard tabs, a gene query using *FGFR3*, and then a multi-gene query with *KDM6A* and *KMT2D*. Both gene queries are used to epxlore oncoprints, lollipop plots, plotting functionality and survival.<br/></p>
-The video below is an indicative recording.
+<p align="justify">During the session this is a live demonstration of the cBioPortal functionality, covering the available datasets, then using TCGA Bladder Cancer (Cell 2017) data to investigate: the summary and clinical dashboard tabs, a single- and then multi-gene query. Both gene queries are used to epxlore oncoprints, lollipop plots, plotting functionality and survival.<br/></p>
+The video below is an indicative recording of a cBioPortal demo.
 {% include youtube.html id="1z03uo_kpQI" %}
-</br>
+<br/>
 
 
 **Problem-solving tasks**<br/>

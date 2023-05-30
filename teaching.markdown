@@ -10,6 +10,7 @@ permalink: /teaching/
 <br/>
 <span style="font-size:1.05em;">**Course material**</span><br/>
 2023-01-11  [Introduction to cBioPortal](https://asmasonomics.github.io/courses/Intro_cBioPortal_Jan2023)
+2023-05-30  [BMS Bitesize: Introduction to Statistics](https://asmasonomics.github.io/courses/BMS_Bitesize_Statistics_May2023)
 <br/>
 
 <br/><span style="font-size:1.2em;">**Private tutoring**</span><br/>

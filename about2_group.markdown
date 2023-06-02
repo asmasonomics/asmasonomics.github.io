@@ -11,6 +11,12 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 
 <span style="font-size:1.3em;">**Current lab members**</span><br/>
 
+<span style="font-size:1.1em;">Sarah Forrester</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/sarahf2505) *Postdoctoral research associate*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/person.png"
+	content = "Sarah joined the Mason Lab part-time in June 2023 whilst continuing her position in the Chong Lab."
+%}
+
 <span style="font-size:1.1em;">Vlad Ungureanu</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/vladUngu) *PhD Student (Co-supervisee)*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/VladUngureanu.jpeg"

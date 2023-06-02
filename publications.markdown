@@ -14,10 +14,6 @@ Smith J, Alfieri JM, Anthony N, Arensburger P, Athrey GN, Balacco J, Balic A, Ba
     <dd><b>Mason AS</b>, Endogenous Avian Leukosis Viruses: The Chicken-Specific Endogenous Retrovirus, p46-9.</dd>
 </dl>
 
-
-: Warren WC, Fedrigo O, Tacey A, **Mason AS**, Formenti G, Perini F, Wu Z, Murphy T, Schneider V, Stiers K, Rice ES, Coghill LM, Anthony N, Okimoto R, Carroll R, Mountcastle J, Balacco J, Haase B, Yang C, Zhang G, Smith J, Drechsler Y, Cheng H, Howe K & Jarvis E, Multiple Chicken (Gallus gallus) Genome References to Advance Genetic Variation Studies, p3-10.<br/>
-: **Mason AS**, Endogenous Avian Leukosis Viruses: The Chicken-Specific Endogenous Retrovirus, p46-9.
-
 ### 2022
 **Mason AS**, Varley CL, Foody OM, Li X, **Skinner K**, Walker D, Larson T, Wakamatsu D, Baker SC & Southgate J (2022), [*LPCAT4* knockdown alters barrier integrity and cellular bioenergetics in human urothelium](https://doi.org/10.3390/ijms231911871), *International Journal of Molecular Sciences*, 23(19):11871
 

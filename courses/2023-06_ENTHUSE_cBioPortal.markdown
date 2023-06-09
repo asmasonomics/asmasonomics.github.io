@@ -4,39 +4,30 @@ permalink: /courses/ENTHUSE_cBioPortal_Jun2023
 ---
 <span style="font-size:1.6em;">**ENTHUSE bioinformatics session: using cBioPortal to explore *TP53* mutations**</span><br/>
 
+<p align="justify">This teaching material was designed as the second part of Dr Simon Baker's ENTHUSE project <i>TP53</i> practical, providing hands-on bioinformatic analysis of real cancer sequencing data.<br/>This material can be used directly as a web broswer-based tutorial, or adapted with acknowledgement into a specific lesson plan.<br/></p>
+[The video embedded below](#session-walkthrough) is a walkthrough of the exercises by Dr Andrew Mason.
+
 ### Introduction
-<p align="justify">In your laboratory session you identified a mutation in <i>TP53</i> (R273H) using a restriction enzyme site created as a result of the mutation. Excellent work! By finding this specific mutation in the P53 protein ("the guardian of the genome"), you will be able to recommend cerivastatin, a drug which targets mutant versions of P53, reducing the tumour's ability to grow. Not bad for a simple lab-based assay.
-<br/>
-Using mutations to subtype different types of cancer improves our ability to treat cancer properly in the clinic. This is a move towards personalised medicine. But, how did researchers know this mutation existed, and how often do we find it in people with cancer? Commonly occuring mutations, known as <b>hotspots</b>, help us prioritise efforts for drug development, where one drug can help the most people.
-<br/>
-In this session you will explore <i>TP53</i> mutations in over 10,000 cancer samples using <a href="https://www.cbioportal.org/">cBioPortal</a>, a publicly available online resource for cancer genomics. Data mining is now a huge part of biomedical research, and the discipline of <b>bioinformatics</b> combines computational analysis with the interpretation of biological data. You will use the results of tumour DNA sequencing data from 32 different cancer types within <b>The Cancer Genome Atlas</b> (TCGA) study, an enormous international study to better understand the diversity of genetic changes in cancer.
-<br/>
-The material below can be used directly as a web browser-based tutorial, adapted to make specific teaching material, or [the video embedded below](#session-walkthrough) is a guided walkthrough of the material by Dr Andrew Mason.</p>
+<p align="justify">In your laboratory session you identified a mutation in <i>TP53</i> (R273H) using a restriction enzyme site created as a result of the mutation. Excellent work! By finding this specific mutation in the P53 protein ("the guardian of the genome"), you will be able to recommend cerivastatin, a drug which targets mutant versions of P53, reducing the tumour's ability to grow. Not bad for a simple lab-based assay!<br/><br/>
+Using mutations to subtype different types of cancer improves our ability to treat cancer properly in the clinic. This is a move towards personalised medicine. But, how did researchers know this mutation existed, and how often do we find it in people with cancer? Commonly occuring mutations, known as <b>hotspots</b>, help us prioritise efforts for drug development, where one drug can help the most people.<br/><br/>
+In this session you will explore <i>TP53</i> mutations in over 10,000 cancer samples using <a href="https://www.cbioportal.org/">cBioPortal</a>, a publicly available online resource for cancer genomics. Data mining is now a huge part of biomedical research, and the discipline of <b>bioinformatics</b> combines computational analysis with the interpretation of biological data. You will use the results of tumour DNA sequencing data from 32 different cancer types within <b>The Cancer Genome Atlas</b> (TCGA) study, an enormous international study to better understand the diversity of genetic changes in cancer.<br/></p>
 
 ### Learning objectives
 1. placeholder text
 2. placeholder text
 <br/>
 
-
-
-
-
+<br/><br/><br/>
 
 ### Session walkthrough
 <p align="justify">The video below is a walkthrough of the exercises outlined above for the exploration of <i>TP53</i> mutations in over 10,000 samples of The Cancer Genome Atlas.<br/></p>
 {% include youtube.html id="1z03uo_kpQI" %}
 <br/>
-[Return to top](#introduction)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Return to learning objectives](#learning-objectives)
+[Return to tutorial introduction.](#introduction)
 <br/>
 
 
-
-
-
-
-
-
+<br/><br/><br/><br/><br/><br/><br/><br/>
 
 <span style="font-size:1.2em;">**Session outline**</span><br/>
 12.00&nbsp;&nbsp;&nbsp;Introduction and Learning Objectives<br/>
@@ -50,13 +41,6 @@ The material below can be used directly as a web browser-based tutorial, adapted
 <span style="font-size:1.2em;">**The Session**</span><br/>
 **Introduction and Learning Objectives**<br/>
 <a href="/assets/files/2023-01-11_cBioPortal_01_Introduction-Learning-Objectives.pdf" download>PDF of the introductory slides available to download here</a>.
-
-**cBioPortal website demo**<br/>
-<p align="justify">During the session this is a live demonstration of the cBioPortal functionality, covering the available datasets, then using TCGA Bladder Cancer (Cell 2017) data to investigate: the summary and clinical dashboard tabs, a single- and then multi-gene query. Both gene queries are used to epxlore oncoprints, lollipop plots, plotting functionality and survival.<br/></p>
-The video below is an indicative recording of a cBioPortal demo.
-{% include youtube.html id="1z03uo_kpQI" %}
-<br/>
-
 
 **Problem-solving tasks**<br/>
 <p align="justify">You probably have time to complete 2 of the 3 tasks below, so pick those most interesting to you! This web page will remain live following the course if you want to complete all the taks, and for your future reference.<br/>The point here is to explore the data, not just rush through the questions. The questions are to lead your searches, but can you think of other data to investigate?<br/>You could take a look at TCGA's pan-cancer analysis of 32 tumour types, but focus on summary comparisons as cBioPortal can be slow >2000 samples...!<br/></p>

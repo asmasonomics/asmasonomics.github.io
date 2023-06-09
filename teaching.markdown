@@ -19,5 +19,5 @@ Please <a class="u-email" href="mailto:asmasonomics@gmail.com">contact Andrew</a
 <br/><span style="font-size:1.2em;">**School outreach**</span><br/>
 <p align="justify">As a STEM ambassador and associate of Simon Baker's ENTHUSE project with the National STEM Learning Centre and York Against Cancer, Andrew is currently helping teachers in multiple secondary skills bring applied research examples and mathematical skills into GCSE and A Level Biology.<br/></p>
 <span style="font-size:1.02em;">**Session material**</span><br/>
-2023-06  [ENTHUSE project bioinformatics session: using cBioPortal to explore *TP53* mutations](https://asmasonomics.github.io/courses/ENTHUSE_cBioPortal_Jun2023)
+2023-06  [ENTHUSE bioinformatics session: using cBioPortal to explore *TP53* mutations](https://asmasonomics.github.io/courses/ENTHUSE_cBioPortal_Jun2023)
 <br/>

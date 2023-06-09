@@ -2,28 +2,38 @@
 layout: page
 permalink: /courses/ENTHUSE_cBioPortal_Jun2023
 ---
-<span style="font-size:1.6em;">**ENTHUSE project bioinformatics session: using cBioPortal to explore *TP53* mutations**</span><br/>
+<span style="font-size:1.6em;">**ENTHUSE bioinformatics session: using cBioPortal to explore *TP53* mutations**</span><br/>
 
-<p align="justify">In your laboratory session you identified a mutation in *TP53* (R273H) using a restriction enzyme site created as a result of the mutation. Excellent work! By finding this specific mutation in the P53 protein ("the guardian of the genome"), you will be able to recommend cerivastatin, a drug which targets mutant versions of P53, reducing the tumour's ability to grow. Not bad for a simple lab-based assay.<br/>Using mutations to subtype different types of cancer improves our ability to treat cancer properly in the clinic. This is a move towards personalised medicine. But, how did researchers know this mutation existed, and how often do we find it in people with cancer? Commonly occuring mutations, known as **hotspots**, help us prioritise efforts for drug development, where one drug can help the most people.<br/></p>
+### Introduction
+<p align="justify">In your laboratory session you identified a mutation in <i>TP53</i> (R273H) using a restriction enzyme site created as a result of the mutation. Excellent work! By finding this specific mutation in the P53 protein ("the guardian of the genome"), you will be able to recommend cerivastatin, a drug which targets mutant versions of P53, reducing the tumour's ability to grow. Not bad for a simple lab-based assay.<br/>
+Using mutations to subtype different types of cancer improves our ability to treat cancer properly in the clinic. This is a move towards personalised medicine. But, how did researchers know this mutation existed, and how often do we find it in people with cancer? Commonly occuring mutations, known as <b>hotspots</b>, help us prioritise efforts for drug development, where one drug can help the most people.<br/>
+In this session you will explore <i>TP53</i> mutations in over 10,000 cancer samples using <a href="https://www.cbioportal.org/">cBioPortal</a>, a publicly available online resource for cancer genomics. Data mining is now a huge part of biomedical research, and the discipline of <b>bioinformatics</b> combines computational analysis with the interpretation of biological data. You will use the results of tumour DNA sequencing data from 32 different cancer types within <b>The Cancer Genome Atlas</b> (TCGA) study, an enormous international study to better understand the diversity of genetic changes in cancer.<br/>
+The material below can be used directly as a web browser-based tutorial, adapted to make specific teaching material, or this video embedded below is a guided walkthrough of the material by Dr Andrew Mason.</p>
 
-
-
-
-
-
-
-
-
-
-<p align="justify"><a href="https://www.cbioportal.org/">cBioPortal</a> is a publicly available online resource for cancer genomics, with omics and clinical data available for many cancer types. In this 1 hour session we will introduce cBioPortal - what's there, how to use it, and what you can learn from it. We will then have some led problem solving activities to get to grips with the website, and finish with tips and advice for how you can use the data, and how student projects could make use of it.<br/></p>
-Full session slide deck available to download as either a <a href="/assets/files/2023-01-11_cBioPortal_slides.pdf" download>PDF</a> or <a href="/assets/files/2023-01-11_cBioPortal_slides.pptx" download> powerpoint presentation</a> here.
-
-<span style="font-size:1.2em;">**Learning objectives**</span><br/>
-1. Recognise the applications and utility of cBioPortal for cancer research
-2. Operate and explore the cBioPortal website to identify cancer data of interest
-3. Complete two cancer biology problem-solving tasks using cBioPortal
-4. Recognise the process for accessing and analysing cBioPortal data
+### Learning objectives
+1. placeholder text
+2. placeholder text
 <br/>
+
+
+
+
+
+
+### Session walkthrough
+<p align="justify">The video below is a walkthrough of the exercises outlined above for the exploration of <i>TP53</i> mutations in over 10,000 samples of The Cancer Genome Atlas.<br/></p>
+{% include youtube.html id="1z03uo_kpQI" %}
+<br/>
+[Return to top](#introduction)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Return to learning objectives](#learning-objectives)
+<br/>
+
+
+
+
+
+
+
+
 
 <span style="font-size:1.2em;">**Session outline**</span><br/>
 12.00&nbsp;&nbsp;&nbsp;Introduction and Learning Objectives<br/>

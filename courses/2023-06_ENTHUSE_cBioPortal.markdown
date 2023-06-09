@@ -11,7 +11,7 @@ Using mutations to subtype different types of cancer improves our ability to tre
 <br/>
 In this session you will explore <i>TP53</i> mutations in over 10,000 cancer samples using <a href="https://www.cbioportal.org/">cBioPortal</a>, a publicly available online resource for cancer genomics. Data mining is now a huge part of biomedical research, and the discipline of <b>bioinformatics</b> combines computational analysis with the interpretation of biological data. You will use the results of tumour DNA sequencing data from 32 different cancer types within <b>The Cancer Genome Atlas</b> (TCGA) study, an enormous international study to better understand the diversity of genetic changes in cancer.
 <br/>
-The material below can be used directly as a web browser-based tutorial, adapted to make specific teaching material, or this video embedded below is a guided walkthrough of the material by Dr Andrew Mason.</p>
+The material below can be used directly as a web browser-based tutorial, adapted to make specific teaching material, or [the video embedded below](#session-walkthrough) is a guided walkthrough of the material by Dr Andrew Mason.</p>
 
 ### Learning objectives
 1. placeholder text

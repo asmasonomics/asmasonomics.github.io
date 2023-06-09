@@ -7,8 +7,7 @@ permalink: /teaching/
 
 <span style="font-size:1.2em;">**University teaching experience**</span><br/>
 {% include experience_cols.html content1 = "11/2022 - present<br/>10/2018 - 11/2019<br/>10/2014 - 12/2016" content2 = "University of York Lecturer in Cancer Informatics<br/>University of York Biology tutor (20h)<br/>University of Edinburgh Biology demonstrator, marker and tutor (301h)" %}
-<br/>
-<span style="font-size:1.05em;">**Course material**</span><br/>
+<span style="font-size:1.02em;">**Course material**</span><br/>
 2023-01-11  [Introduction to cBioPortal](https://asmasonomics.github.io/courses/Intro_cBioPortal_Jan2023)<br/>
 2023-05-30  [BMS Bitesize: Introduction to Statistics](https://asmasonomics.github.io/courses/BMS_Bitesize_Statistics_May2023)
 <br/>
@@ -19,3 +18,6 @@ Please <a class="u-email" href="mailto:asmasonomics@gmail.com">contact Andrew</a
 
 <br/><span style="font-size:1.2em;">**School outreach**</span><br/>
 <p align="justify">As a STEM ambassador and associate of Simon Baker's ENTHUSE project with the National STEM Learning Centre and York Against Cancer, Andrew is currently helping teachers in multiple secondary skills bring applied research examples and mathematical skills into GCSE and A Level Biology.<br/></p>
+<span style="font-size:1.02em;">**Session material**</span><br/>
+2023-06  [ENTHUSE project bioinformatics session: using cBioPortal to explore *TP53* mutations](https://asmasonomics.github.io/courses/ENTHUSE_cBioPortal_Jun2023)
+<br/>

@@ -27,8 +27,8 @@ Open up any web browser and head to <a href="https://www.cbioportal.org/">www.cb
 The home screen (pictured below) gives immediate access to results from sequencing data generated from thousands of cancer samples from all over the world. Scroll down the list. Each study represents potentially years of work from doctors, surgeons and nurses in hospitals to recruit patients, work with families and collect samples, and then from biomedical researchers in universities to process the samples, then generate, analyse, interpret and publish the results.<br/></p>
 ![cBioPortal homepage www.cbioportal.org](/assets/images/ENTHUSE-01_cBioPortal_home.jpg){:class="img-responsive"}
 <br/>
-**EXPLAINER** [What is cBioPortal and where does the data come from?](#cBioPortal-explained)<br/>
-**EXPLAINER** [What is sequencing?](#Sequencing-explained)<br/>
+**EXPLAINER** [What is cBioPortal and where does the data come from?](#cbioportal-explained)<br/>
+**EXPLAINER** [What is sequencing?](#sequencing-explained)<br/>
 <br/><br/>
 
 #### 2 Select the pancancer TCGA dataset
@@ -36,13 +36,16 @@ The home screen (pictured below) gives immediate access to results from sequenci
 Return to the top of the cBioPortal homepage. We're going to work with The Cancer Genome Atlas (TCGA) pancancer study. "Pan" in this context just means "across lots of different cancers".<br/>
 Click the Quick select link for <b>TCGA PanCancer Atlas Studies</b>. This has just loaded data for 32 different cancer studies and 10967 samples coming from 10528 different people! Next, click on the blue <b>Query By Gene</b> button, scroll to the bottom and type <b>TP53</b> into the Enter Genes box, then <b>Submit Query</b>.<br/>
 </p>
-**EXPLAINER** [What is The Cancer Genome Atlas?](#The-Cancer-Genome-Atlas-explained)<br/>
-**EXPLAINER** [Why are gene and protein names different?](#Gene-and-Protein-naming-explained)<br/>
+**EXPLAINER** [What is The Cancer Genome Atlas?](#the-cancer-genome-atlas-explained)<br/>
+**EXPLAINER** [Why are gene and protein names different?](#gene-and-protein-naming-explained)<br/>
 <br/><br/>
 
 #### 3 Explore the *TP53* OncoPrint plot
+<p align="justify">
+Lots of colours! Don't panic. An OncoPrint is a big summary of mutation data - is there a mutation in a particular sample, and what type of mutation is it? In an OncoPrint each column represents a single sample. You have loads of samples, so everything is very squished.<br/>
+Use the zoom slider to go to 1%, then you can see the whole cohort, and see that <i>TP53</i> is mutated in 36% of the queried samples. Some patients have multiple samples, hence the disparity in patient/sample numbers (top right).
 
-
+</p>
 
 
 
@@ -56,33 +59,33 @@ The video below is a walkthrough of the exercises outlined above for the explora
 {% include youtube.html id="1z03uo_kpQI" %}
 <br/>
 [Return to tutorial introduction.](#introduction)
-<br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 ### Explainers
 #### cBioPortal explained
 <p align="justify">
 Text holder.
 </p>
-[Return to session](#1-Open-the-cBioPortal-website)
+[Return to session](#1-open-the-cbioportal-website)
 <br/><br/><br/>
 
 #### Sequencing explained
 <p align="justify">
 Text holder.
 </p>
-[Return to session](#1-Open-the-cBioPortal-website)
+[Return to session](#1-open-the-cbioportal-website)
 <br/><br/><br/>
 
 #### The Cancer Genome Atlas explained
 <p align="justify">
 Text holder.
 </p>
-[Return to session](#2-Select-the-pancancer-TCGA-dataset)
+[Return to session](#2-select-the-pancancer-tcga-dataset)
 <br/><br/><br/>
 
 #### Gene and Protein naming explained
 <p align="justify">
 Text holder.
 </p>
-[Return to session](#2-Select-the-pancancer-TCGA-dataset)
+[Return to session](#2-select-the-pancancer-tcga-dataset)
 <br/><br/><br/>

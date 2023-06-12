@@ -19,7 +19,7 @@ In this session you will explore <i>TP53</i> mutations in over 10,000 cancer sam
 
 ### The Session
 <p align="justify">If you follow the guided steps below, you will explore <a href="https://www.cbioportal.org/">cBioPortal</a>, investigate the prevalence of <i>TP53</i> mutations across different cancers, and begin to see the complexity of cancer biology by seeing how different cancers exploit different parts of normal cell biology. Look out for 'explainer' links - these give more information and background to the concepts and data used in the session.<br/><br/>
-I would recommend using a computer or a tablet for this session, rather than a phone. cBioPortal hasn't really been designed with phones in mind, and you'll find everything a bit small and tricky to navigate.<br/></p>
+I would recommend using a computer or a tablet for this session, rather than a phone. cBioPortal hasn't really been designed with phones in mind, and you'll find everything a bit small and tricky to navigate.<br/><br/></p>
 
 #### 1) Open the cBioPortal website
 <p align="justify">
@@ -27,18 +27,18 @@ Open up any web browser and head to <a href="https://www.cbioportal.org/">www.cb
 The home screen (pictured below) gives immediate access to results from sequencing data generated from thousands of cancer samples from all over the world. Scroll down the list. Each study represents potentially years of work from doctors, surgeons and nurses in hospitals to recruit patients, work with families and collect samples, and then from biomedical researchers in universities to process the samples, then generate, analyse, interpret and publish the results.<br/></p>
 ![cBioPortal homepage www.cbioportal.org](/assets/images/ENTHUSE-01_cBioPortal_home.jpg){:class="img-responsive"}
 <br/>
-**EXPLAINER** [What is cBioPortal and where does the data come from?](#What-is-cBioPortal-and-where-does-the-data-come-from?)
-**EXPLAINER** [What is sequencing?](#what-is-sequencing?)
-<br/>
+**EXPLAINER** [What is cBioPortal and where does the data come from?](#What-is-cBioPortal-and-where-does-the-data-come-from\?)<br/>
+**EXPLAINER** [What is sequencing?](#what-is-sequencing\?)<br/>
+<br/><br/>
 
 #### 2) Select the pancancer TCGA dataset
 <p align="justify">
 Return to the top of the cBioPortal homepage. We're going to work with The Cancer Genome Atlas (TCGA) pancancer study. "Pan" in this context just means "across lots of different cancers".<br/>
 Click the Quick select link for <b>TCGA PanCancer Atlas Studies</b>. This has just loaded data for 32 different cancer studies and 10967 samples coming from 10528 different people! Next, click on the blue <b>Query By Gene</b> button, scroll to the bottom and type <b>TP53</b> into the Enter Genes box, then <b>Submit Query</b>.<br/>
 </p>
-**EXPLAINER** [What is The Cancer Genome Atlas?](#What-is-The-Cancer-Genome-Atlas?)
-**EXPLAINER** [Why are gene and protein names different?](#Why-are-gene-and-protein-names-different?)
-<br/>
+**EXPLAINER** [What is The Cancer Genome Atlas?](#What-is-The-Cancer-Genome-Atlas\?)</br>
+**EXPLAINER** [Why are gene and protein names different?](#Why-are-gene-and-protein-names-different\?)<br/>
+<br/><br/>
 
 #### 3) Explore the *TP53* OncoPrint plot
 
@@ -62,26 +62,26 @@ The video below is a walkthrough of the exercises outlined above for the explora
 <p align="justify">
 Text holder.
 </p>
-[Return to session](#1)-Open-the-cBioPortal-website)
+[Return to session](#1\)-Open-the-cBioPortal-website)
 <br/><br/><br/>
 
 ### What is sequencing?
 <p align="justify">
 Text holder.
 </p>
-[Return to session](#1)-Open-the-cBioPortal-website)
+[Return to session](#1\)-Open-the-cBioPortal-website)
 <br/><br/><br/>
 
 ### What is The Cancer Genome Atlas?
 <p align="justify">
 Text holder.
 </p>
-[Return to session](#2)-Select-the-pancancer-TCGA-dataset)
+[Return to session](#2\)-Select-the-pancancer-TCGA-dataset)
 <br/><br/><br/>
 
 ### Why are gene and protein names different?
 <p align="justify">
 Text holder.
 </p>
-[Return to session](#2)-Select-the-pancancer-TCGA-dataset)
+[Return to session](#2\)-Select-the-pancancer-TCGA-dataset)
 <br/><br/><br/>

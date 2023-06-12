@@ -82,7 +82,7 @@ Cancer Types Summary
 Cancer Type case studies:
 - Sarcoma (TP53, MDM2, CDKN2A; mut excl - consequence of hitting same pathway in different ways)
 - AML (TP53, NPM1; very different mechanisms - road map idea)
-- Head & Neck (clinical association with HPV - different disease initiations)
+- Head & Neck (clinical association with HPV - different disease initiations)<br/>
 Finish on points about data use, and that these are real people.
 
 

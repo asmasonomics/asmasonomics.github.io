@@ -42,11 +42,16 @@ Click the Quick select link for <b>TCGA PanCancer Atlas Studies</b>. This has ju
 
 #### 3 Explore the *TP53* OncoPrint plot
 <p align="justify">
-Lots of colours! Don't panic. An OncoPrint is a big summary of mutation data - is there a mutation in a particular sample, and what type of mutation is it? In an OncoPrint each column represents a single sample. You have loads of samples, so everything is very squished.<br/>
-Use the zoom slider to go to 1%, then you can see the whole cohort, and see that <i>TP53</i> is mutated in 36% of the queried samples. Some patients have multiple samples, hence the disparity in patient/sample numbers (top right).
-
+Lots of colours! Don't panic. An OncoPrint is a big summary of mutation data - is there a mutation in a particular sample, and what type of mutation is it? In an OncoPrint each column represents a single sample. You have loads of samples, so everything is very squished. You can largely ignore the three "Profiled for..." rows - these just indicate which sequencing technologies were used on those samples. You'll see a large number of glioblastoma samples were only profiled for copy number changes, not mutations or structural changes.<br/></p>
+![TP53 OncoPrint from TCGA PanCancer Atlas](/assets/images/ENTHUSE-02_TP53_OncoPrint.jpg){:class="img-responsive"}
+<br/>
+<p align="justify">
+Use the zoom slider to go to 1%, then you can see the whole cohort, and see that <i>TP53</i> is mutated in 36% of the queried samples. Some patients have multiple samples, hence the disparity in patient/sample numbers (top right).<br/>
+Use the zoom slider or the mouse (click and hold to draw a small box over the OncoPrint) to zoom right in on a small number of samples. Hovering over individual samples gives more information such as the number of samples per patient (usually 1), the tumour study (top row) and the specific mutation(s) in a patient (bottom row). Some mutations have symbols attached to show any information we might have on what that mutation does. A blue target suggests it is <b>oncogenic</b> (<i>i.e.</i> important in cancer). Flames show it is a hotspot mutation (<i>i.e.</i> mutated in lots of people). Sometimes mutations can be tolerated by cells, or we simply don't know yet if that specific mutation impacts how the protein works.<br/>
+A potentially new concept for you will be <b>copy number changes</b>. This literally means how many copies of each gene a person has in every cell in their tumour. In healthy cells we should have 2 copies of every gene (as we are diploid organisms), with some exceptions when genes are found on the X/Y chromosomes. In cancers the genome can be very unstable and this can lead to deletions of some parts of the DNA, or amplifications where you get more than 2 copies of genes. This can have a huge impact on tumour biology!<br/>
+With <i>TP53</i>, <b>nonsense</b> mutations are important (where cancers break the P53 proliferation brakes), but the same effect happens from a <b>deep deletion</b> of <i>TP53</i> (where the brakes get totally removed). This is a really important concept in cancer biology: different types of mutations can have the same impact on tumour biology. This can mean that the same drug can be given to people with different mutations, such as P53 mutations R175H, R248Q, R273C, <b>R273H</b>, R273L and R282W, as these mutations all change how P53 binds to DNA.<br/>
 </p>
-
+**EXPLAINER** [Which mutations are likely to have an impact in cancer?](#mutations-explained)<br/>
 
 
 
@@ -88,4 +93,11 @@ Text holder.
 Text holder.
 </p>
 [Return to session](#2-select-the-pancancer-tcga-dataset)
+<br/><br/><br/>
+
+#### Mutations explained
+<p align="justify">
+Text holder.
+</p>
+[Return to session](#3-explore-the-tp53-oncoprint-plot)
 <br/><br/><br/>

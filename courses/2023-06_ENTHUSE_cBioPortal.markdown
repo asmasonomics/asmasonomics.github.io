@@ -155,6 +155,7 @@ Eventhough this hotspot happens right at the end of the protein, it causes it to
 </p>
 ![AML survival stratified by NPM1 and TP53 mutation status](/assets/images/ENTHUSE-11_TP53_NPM1_AML_survival.jpg){:class="img-responsive"}
 <br/>
+<p align="justify">
 The striking differences in survival are interesting, particularly as there is no obvious cooperative or antagonistic link between P53 and NPM1 function, as there was within the P53 pathway in the Sarcoma example above. The biological reason here is that mutations in <i>TP53</i> and <i>NPM1</i> send tumours in different directions. Early differences in mutation status govern the biology of the tumour. Different people may be predisposed to certain mutations, or may have had different exposures. In his 1957 book <i>The Strategy of Genes</i> the researcher C. H. Waddington used an image that has become famous in evolutionary, developmental and cancer biology, see below. As the ball runs down the slope, there are a series of choices. In our example, a <i>TP53</i> mutation sends the ball one way, an <i>NPM1</i> goes the other. Understanding the differences in the choices, and how they cause different tumours, is key for developing more personalised medicine. 
 </p>
 ![Waddington 1957 cell fate choice](/assets/images/ENTHUSE-12_epi_landscape_Waddington_1957.png){:class="img-responsive"}
@@ -191,9 +192,8 @@ Finally, select the Genomic Alterations tab. This performs a comparison of the m
 ### Session walkthrough
 <p align="justify">
 The video below is a walkthrough of the exercises outlined above for the exploration of <i>TP53</i> mutations in over 10,000 samples of The Cancer Genome Atlas.<br/>
-CURRENTLY A PLACEHOLDER VIDEO<br/>
 </p>
-{% include youtube.html id="1z03uo_kpQI" %}
+{% include youtube.html id="zyrF5zJZSoI" %}
 <br/>
 [Return to tutorial introduction.](#introduction)
 <br/><br/><br/><br/><br/><br/><br/><br/><br/>

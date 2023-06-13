@@ -84,7 +84,7 @@ The x axis here goes to 30 years, but often cancer survival statistics are measu
 cBioPortal helpfully gives us some warnings (blue and yellow boxes). Any statistical test has assumptions and confounding variables - features which could explain differences in the data which we are not being shown here. Before scrolling past the screenshot below (where <i>some</i> answers are), write down 4 confounding variables which could influence how we interpret this graph. Think about how those variables could influence your conclusions.<br/>
 </p>
 ![TP53 survival from TCGA PanCancer Atlas](/assets/images/ENTHUSE-05_TP53_Survival.jpg){:class="img-responsive"}
-<br/>
+<br/><br/>
 You could have come up with some of the following ideas for confounding factors:
 - Different responses in different cancers
 - Different survival times in different cancers (<i>i.e.</i> treatment success)
@@ -95,7 +95,7 @@ You could have come up with some of the following ideas for confounding factors:
 - Age at diagnosis (see how the plot shape changes with "Disease-specific" survival)
 - Lifestyle factors such as weight, smoking status, economic status, employment history (think exposures)<br/>
 
-<br/><p align="justify">
+<p align="justify">
 Biology gives <b>noisy</b> data (unlike physics and chemistry) because there is natural variation between individuals, so there are always more confounding variables to consider. In statistics, if something is a big confounder, we can try and "control" for it during analysis. 
 </p>
 **EXPLAINER** [What is "big data" and is it useful?](#the-problem-with-big-data-explained)<br/>
@@ -103,7 +103,6 @@ Biology gives <b>noisy</b> data (unlike physics and chemistry) because there is 
 
 
 #### Next sections (not done)
-Overall survival differences
 Cancer Types Summary
 Cancer Type case studies:
 - Sarcoma (TP53, MDM2, CDKN2A; mut excl - consequence of hitting same pathway in different ways)

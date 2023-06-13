@@ -171,5 +171,5 @@ Text holder.
 <p align="justify">
 Text holder.
 </p>
-[Return to session](#5-TP53-mutations-and-prognosis)
+[Return to session](#5.-TP53-mutations-and-prognosis)
 <br/><br/><br/>

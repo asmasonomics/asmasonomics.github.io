@@ -76,7 +76,7 @@ There is a lot of information here. Explore the plot (and the table below) furth
 </p>
 <br/><br/>
 
-#### 5. *TP53* mutations and prognosis
+#### 5 *TP53* mutations and prognosis
 <p align="justify">
 When trying to understand the impact of mutations, we can associate the presence of a mutation with patient prognosis (<i>i.e.</i> how long they are likely to survive after diagnosis). Again, this helps us better prioritise research and development funding.<br/><br/>
 Click on the <b>Comparison/Survival</b> tab and then the small <b>Survival</b> tab which appears. This is called a Kaplan-Meier plot, and it shows the survival time of patients after diagnosis. The way to understand this plot is that patients with tumours with a <i>TP53</i> mutation (red, altered group) died more quickly than patients without a <i>TP53</i> mutation. If you're confused looking at the plot, visualise a line from 50% survival and see at how many months this line crosses the red and blue datasets. This is the median survival time for each group.<br/>
@@ -99,6 +99,47 @@ You could have come up with some of the following ideas for confounding factors:
 Biology gives <b>noisy</b> data (unlike physics and chemistry) because there is natural variation between individuals, so there are always more confounding variables to consider. In statistics, if something is a big confounder, we can try and "control" for it during analysis. 
 </p>
 **EXPLAINER** [What is "big data" and is it useful?](#the-problem-with-big-data-explained)<br/>
+<br/><br/>
+
+#### 6 *TP53* mutations across different cancers
+<p align="justify">
+As we identified above, cancer type is a likely confounder in our understanding of <i>TP53</i> mutations. <i>TP53</i> is the most commonly mutated gene in cancer generally, but do you think it's mutated in all cancer types equally?<br/><br/>
+Click on the <b>Cancer Types Summary</b> tab. As you can see the proportion of tumours with <i>TP53</i> mutations does vary a lot. In the plot, green is any kind of single nucleotide mutation, and the other colours represent bigger changes.<br/>Have a play with the y-axis value (does <b>Counts</b> change your interpretation? Is frequency or count more informative?), and changing from Cancer Study to Cancer Type to Cancer Type Detailed. What patterns can you see?<br/>
+</p>
+![TP53 cancer type split from TCGA PanCancer Atlas](/assets/images/ENTHUSE-06_TP53_CancerTypes.jpg){:class="img-responsive"}
+<br/><br/>
+<p align="justify">
+We are now going to explore mutations in <i>TP53</i> and other genes in three cancer case studies. Return to the Cancer Study level summary - <a href="https://tinyurl.com/TP53-cBioPortal-TCGA-Summary">use this link to get back</a>.
+</p>
+<br/><br/>
+
+#### 7A Sarcoma - multiple hits to the P53 pathway
+<p align="justify">
+On the Cancer Types Summary graph, hover over the Sarcoma bar on the chart and click on <b>Query this study for <i>TP53</i></b>. Now focused on this one study ,look at the OncoPrint, Mutations and Comparison/Survival tabs - what do you observe in Sarcoma compared to all cancers from TCGA?<br/>
+Interestingly, eventhough <i>TP53</i> mutations are very common in Sarcoma, and the mutations are spread across the protein as before, there is no significant difference in survival.<br/><br/>
+In biology, proteins rarely act on their own, instead forming <b>pathways</b> with other proteins and molecules to complete functions. Select the <b>Pathways</b> tab.<br/>
+The top pathway is the eponymous P53 pathway, with <i>TP53</i> at the centre promoting (arrow) senescence (ageing) and apoptosis (cell death), and inhibiting (flat arrowhead) growth and proliferation.<br/>
+</p>
+![TP53 pathway](/assets/images/ENTHUSE-07_TP53_Pathway.jpg){:class="img-responsive"}
+<br/>
+<p align="justify">
+The percentages show how frequently each gene in the pathway is mutated in Sarcoma. <i>TP53</i> mutations are common, but so are those in <i>CDKN2A</i> and <i>MDM2</i> - both of which negatively regulate P53. The question is, why mutate other genes in this pathway, particularly if they help to limit the regulatory role of P53? Is this what is actually happening? Let's find out.<br/><br/>
+At the top of the page, under Sarcoma (TCGA, PanCancer Atlas), click on the pencil symbol next to TP53. Add MDM2 and CDKN2A to the list and <b>Submit Query</b>.
+</p>
+![TP53 pathway](/assets/images/ENTHUSE-08_TP53_MDM2_CDKN2A.png){:class="img-responsive"}
+<br/>
+<p align="justify">
+Remember that <i>TP53</i> was mutated in 47% of Sarcoma cases, but the percentage of tumours with a mutation in at least 1 of <i>TP53</i>, <i>CDKN2A</i> and <i>MDM2</i> is now 74%. What does this suggest? Head to the OncoPrint tab again - what does this show?<br/>
+</p>
+![TP53 MDM2 CDKN2A mutual exclusivity](/assets/images/ENTHUSE-09_TP53_MDM2_CDKN2A_mutexcl.jpg){:class="img-responsive"}
+<br/>
+<p align="justify">
+<i>MDM2</i> is almost never mutated in tumours where <i>TP53</i> is mutated. This is called <b>mutual exclusivity</b> - simply put, if you have a mutation in one, you don't in the other. Remember in the pathway that <i>MDM2</i> was seen to inhibit <i>TP53</i>, and the mutations we get in <i>MDM2</i> are all amplifications - generating <b>more</b> MDM2 protein, and having a bigger inhibtory effect on P53 activity.<br/>
+The picture is more complicated with <i>CDKN2A</i> but there is little overlap with <i>MDM2</i> mutations, and most of the <i>TP53</i> overlap is when there is a missense, change/gain of function in P53 (dark green), rather than a truncating mutation (black).<br/>
+The importance in tumour biology here is that in 74% of Sarcoma samples, the P53 pathway is being broken. This is happening in multiple ways with the cancer using different mutations. This means that in Sarcoma, we can't just use <i>TP53</i> mutations as a marker of altered P53 biology - we should use all three genes in tandem.<br/>
+Now, go back to the Comparison/Survival tab, then the Survival tab. The altered group (a mutation in any one of the three genes) now has much worse survival than the unaltered group, reflecting the negative impact of breaking the P53 pathway, not just breaking P53 itself. <br/><br/>
+<a href="https://tinyurl.com/TP53-cBioPortal-TCGA-Summary">Return to the Cancer Study summary graph</a> for the next case study.
+</p>
 <br/><br/>
 
 
@@ -171,5 +212,5 @@ Text holder.
 <p align="justify">
 Text holder.
 </p>
-[Return to session](#5.-TP53-mutations-and-prognosis)
+[Return to session](#5-TP53-mutations-and-prognosis)
 <br/><br/><br/>

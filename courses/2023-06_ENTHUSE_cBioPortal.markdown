@@ -140,52 +140,53 @@ The importance in tumour biology here is that in 74% of Sarcoma samples, the P53
 Now, go back to the Comparison/Survival tab, then the Survival tab. The altered group (a mutation in any one of the three genes) now has much worse survival than the unaltered group, reflecting the negative impact of breaking the P53 pathway, not just breaking P53 itself. <br/><br/>
 <a href="https://tinyurl.com/TP53-cBioPortal-TCGA-Summary">Return to the Cancer Study summary graph</a> for the next case study.
 </p>
-<br/><br/>
+<br/>
 
 #### 7B Acute Myeloid Leukaemia - different cancer mechanisms
 <p align="justify">
-
+We're now going to explore the AML dataset. <i>TP53</i> is not mutated very commonly in AML - only 9% of cases. Hover over the green bar and query the study as before. Look through the usual tabs. Interesting to note there are so few mutations that the lollipop plot (Mutations tab) doesn't really suggest any hotspot mutations in AML. However, the survival of <i>TP53</i> mutated tumours is far worse.<br/><br/>
+AML is a blood cancer and actually exhibits a very low number of mutations in each patient compared to solid cancers such as lung, breast, prostate, colon or bladder. However, AML does exhibit a very striking hotspot mutation in the <i>NPM1</i> gene. Add <i>NPM1</i> to the query list using the pencil icon again, and submit.<br/>
+Straight away you can see that mutations in <i>NPM1</i> and <i>TP53</i> are mutually exclusive. Check out the Mutations tab, and see what the hotspot mutation is in <i>NPM1</i>.<br/>
+</p>
+![TP53 and NPM1 mutual exclusivity](/assets/images/ENTHUSE-10_TP53_NPM1_mutexcl.jpg){:class="img-responsive"}
+<br/>
+<p align="justify">
+Eventhough this hotspot happens right at the end of the protein, it causes it to be expelled from the cell nucleus, so it is unable to perform its normal role. Explore the usual tabs - what feature of cancer biology can you find?<br/>
+</p>
+![AML survival stratified by NPM1 and TP53 mutation status](/assets/images/ENTHUSE-11_TP53_NPM1_AML_survival.jpg){:class="img-responsive"}
+<br/>
+The striking differences in survival are interesting, particularly as there is no obvious cooperative or antagonistic link between P53 and NPM1 function, as there was within the P53 pathway in the Sarcoma example above. The biological reason here is that mutations in <i>TP53</i> and <i>NPM1</i> send tumours in different directions. Early differences in mutation status govern the biology of the tumour. Different people may be predisposed to certain mutations, or may have had different exposures. In his 1957 book <i>The Strategy of Genes</i> the researcher C. H. Waddington used an image that has become famous in evolutionary, developmental and cancer biology, see below. As the ball runs down the slope, there are a series of choices. In our example, a <i>TP53</i> mutation sends the ball one way, an <i>NPM1</i> goes the other. Understanding the differences in the choices, and how they cause different tumours, is key for developing more personalised medicine. 
+</p>
+![Waddington 1957 cell fate choice](/assets/images/ENTHUSE-12_epi_landscape_Waddington_1957.png){:class="img-responsive"}
+<p align="justify">
 <br/><br/>
 <a href="https://tinyurl.com/TP53-cBioPortal-TCGA-Summary">Return to the Cancer Study summary graph</a> for the next case study.
 </p>
-<br/><br/>
+<br/>
 
 #### 7C Head & Neck Cancers - different cancer causes
 <p align="justify">
 A quick final case study to highlight some of the clinical data you can access through cBioPortal. Make sure you use all the skills you've gained so far to explore mutation type, pathways, and other cancer features. Select the Head and Neck Squamous Cell Carcinoma (HNSC) dataset, and query for TP53 as before.<br/><br/>
-HNSC has two well-associated causes: smoking and infection by HPV (Human Papillomavirus - the same as in cervical cancer). Both causes induce large numbers of mutations in DNA, but smoke carcinogens and viruses cause very different types of mutations. These <b>mutational signatures</b> can be used to try and understand the causes of cancer. As an aside, Dr Simon Baker (who led the wet lab practical) is researching a potential viral cause of bladder cancer in his work supported by the local charity <a href="https://www.yorkagainstcancer.org.uk/">York Against Cancer</a> - see their <a href="https://www.yorkagainstcancer.org.uk/news/common-virus-may-cause-bladder-cancer-new-study-reveals/">blog on his work here</a>. Anyway. Back to HNSC.<br/><br/>
-After exploring the usual tabs, click on the Comparison/Survival tab, and then the Clinical tab. The first row should be Subtype, with the graph show that HNSC tumours with <i>TP53</i> mutations are most commonly negative for HPV.<br/>
-This could reflect a very different mechanism for HNSC, either driven by changes in <i>TP53</i> or the HPV infection. But this also creates a major confounding factor.<br/><br/>
-Click on <b>Head and Neck Squamous Cell Carcinoma (TCGA, PanCancer Atlas)</b> at the top of the page and this will open a new tab with all the information on the HNSC cohort. This shows just how much information there is available through cBioPortal - it is a truly staggering resource for the cancer research community.<br/>
+HNSC has two well-associated causes: smoking and infection by HPV (Human Papillomavirus - the same as in cervical cancer). Both induce large numbers of mutations in DNA, but smoke carcinogens and viruses cause very different types of mutations. These <b>mutational signatures</b> can be used to try and understand the causes of cancer. As an aside, Dr Simon Baker (who led the laboratory practical) is researching a potential viral cause of bladder cancer in his work supported by the local charity <a href="https://www.yorkagainstcancer.org.uk/">York Against Cancer</a> - see their <a href="https://www.yorkagainstcancer.org.uk/news/common-virus-may-cause-bladder-cancer-new-study-reveals/">blog on his work here</a>. Anyway. Back to HNSC.<br/><br/>
+After exploring the usual tabs, click on the Comparison/Survival tab, and then the Clinical tab. The first row should be Subtype, with the graph showing that HNSC tumours with <i>TP53</i> mutations are most commonly negative for HPV. This could reflect different mechanisms for HNSC, either driven by changes in <i>TP53</i> or the HPV infection. But this also creates a major confounding factor.<br/><br/>
+Click on <b>Head and Neck Squamous Cell Carcinoma (TCGA, PanCancer Atlas)</b> at the top of the page and this will open a new tab with all the information on the HNSC cohort. This shows just how much information there is available through cBioPortal - it is a truly staggering resource for the cancer research community (and the wider public!).<br/>
 Scroll down to the Subtype pie chart, hover and select the HPV+ and HPV- groups, ignoring the NA (where is no information on infection status), and click the <b>Compare</b> button. On the Survival tab, you can see that indeed, HPV positive tumours have better survival on average - so this was a confounder for the <i>TP53</i> comparison.<br/>
 Finally, select the Genomic Alterations tab. This performs a comparison of the mutations enriched in either subgroup. <i>TP53</i> is there, as are genes in the P53 pathway, enriched in HPV negative tumours. The first gene enriched for mutations in HPV positive tumours is <i>TRAF3</i>, a gene involved in immune defence against viruses, which is commonly deleted in HPV positive tumours. 
 </p>
-<br/><br/>
+<br/>
 
 ### Concluding remarks
+<p align="justify">
 
-
+</p>
+<br/>
 
 ### Feedback
+<p align="justify">
 
+</p>
 
-
-
-#### Next sections (not done)
-- AML (TP53, NPM1; mut excl; very different mechanisms - road map idea)
-- Head & Neck (differential clinical association with HPV - different disease initiations)<br/>
-Finish on points about data use, and that these are real people.
-
-
-
-
-
-
-
-
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 ### Session walkthrough
 <p align="justify">

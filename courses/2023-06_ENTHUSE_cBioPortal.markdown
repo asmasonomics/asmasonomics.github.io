@@ -2,25 +2,39 @@
 layout: page
 permalink: /courses/ENTHUSE_cBioPortal_Jun2023
 ---
-<span style="font-size:1.6em;">**ENTHUSE bioinformatics session: using cBioPortal to explore *TP53* mutations**</span><br/>
+<span style="font-size:1.6em;">**York Against Cancer Enthuse partnership bioinformatics session: using cBioPortal to explore *TP53* mutations**</span><br/>
 
-<p align="justify">This teaching material was designed as the second part of Dr Simon Baker's ENTHUSE project <i>TP53</i> practical, providing hands-on bioinformatic analysis of real cancer sequencing data. This material can be used directly as a web broswer-based tutorial, or adapted with acknowledgement into a specific lesson plan.<br/></p>
-[The video embedded below](#session-walkthrough) is a walkthrough of the exercises by Dr Andrew Mason.
+<p align="justify">
+This teaching material was designed as the second part of Dr Simon Baker's <a href="https://www.yorkagainstcancer.org.uk/">York Against Cancer</a> Enthuse partnership project <i>TP53</i> practical, providing hands-on bioinformatic analysis of real cancer sequencing data. This material can be used directly as a broswer-based tutorial, or adapted with acknowledgement into a specific lesson plan.<br/><br/>
+The material presented below is divided into a core analysis of <i>TP53</i> mutations across the 32 different cancer studies of The Cancer Genome Atlas, and then a set of three case studies which expand the biological interpretation and applications of cBioPortal in cancer bioinfomatics. We anticipate that the teacher-led  session will focus on the core analysis, with students and teachers able to access the entire set of material indefinitely.<br/>
+</p>
+[The video embedded below](#core-session-walkthrough) is a walkthrough of the core exercises by Dr Andrew Mason.
 
 ### Introduction
-<p align="justify">In your laboratory session you identified a mutation in <i>TP53</i> (R273H) using a restriction enzyme site created as a result of the mutation. Excellent work! By finding this specific mutation in the P53 protein ("the guardian of the genome"), you will be able to recommend <a href="https://pubmed.ncbi.nlm.nih.gov/33449813/">Eprenetapopt</a>, a drug which targets mutant versions of P53, reducing the tumour's ability to grow. Not bad for a simple lab-based assay!<br/><br/>
+<p align="justify">
+In your laboratory session you identified a mutation in <i>TP53</i> (R273H) using a restriction enzyme site created as a result of the mutation. Excellent work! By finding this specific mutation in the P53 protein ("the guardian of the genome"), you will be able to recommend <a href="https://pubmed.ncbi.nlm.nih.gov/33449813/">Eprenetapopt</a>, a drug which targets mutant versions of P53, reducing the tumour's ability to grow. Not bad for a simple lab-based assay!<br/><br/>
 Using mutations to subtype different types of cancer improves our ability to treat cancer properly in the clinic. This is a move towards personalised medicine. But, how did researchers know this mutation existed, and how often do we find it in people with cancer? Commonly occuring mutations, known as <b>hotspots</b>, help us prioritise efforts for drug development, where one drug can help the most people.<br/><br/>
-In this session you will explore <i>TP53</i> mutations in over 10,000 cancer samples using <a href="https://www.cbioportal.org/">cBioPortal</a>, a publicly available online resource for cancer genomics. Data mining is now a huge part of biomedical research, and the discipline of <b>bioinformatics</b> combines computational analysis with the interpretation of biological data. You will use the results of tumour DNA sequencing data from 32 different cancer types within <b>The Cancer Genome Atlas</b> (TCGA) study, an enormous international study to better understand the diversity of genetic changes in cancer.<br/><br/></p>
+In this session you will explore <i>TP53</i> mutations in over 10,000 cancer samples using <a href="https://www.cbioportal.org/">cBioPortal</a>, a publicly available online resource for cancer genomics. Data mining is now a huge part of biomedical research, and the discipline of <b>bioinformatics</b> combines computational analysis with the interpretation of biological data. You will use the results of tumour DNA sequencing data from 32 different cancer types within <b>The Cancer Genome Atlas</b> (TCGA) study, an enormous international study to better understand the diversity of genetic changes in cancer.<br/><br/>
+</p>
 
 ### Learning objectives
-1. placeholder text
-2. placeholder text
+<p align="justify">
+These six learning objectives cover both the laboratory and bioinformatic parts of the partnership project. Here we will focus on objectives 4, 5 and 6.<br/>
+</p>
+1. Understand how to move small volumes of liquid with a pipette
+2. Understand the specificity of restriction digest enzymes
+3. Experience loading and running an electrophoresis gel
+4. Feel more confident when talking about cancer biology
+5. Think about how DNA mutations contribute to cancers
+6. Consider how a specific type of DNA mutation present in a cancer might define the choice of treatment they receive
 <br/><br/>
 
 ### The Session
-<p align="justify">If you follow the guided steps below, you will explore <a href="https://www.cbioportal.org/">cBioPortal</a>, investigate the prevalence of <i>TP53</i> mutations across different cancers, and begin to see the complexity of cancer biology by seeing how different cancers exploit different parts of normal cell biology. Look out for 'explainer' links - these give more information and background to the concepts and data used in the session.<br/><br/>
+<p align="justify">
+If you follow the guided steps below, you will explore <a href="https://www.cbioportal.org/">cBioPortal</a> and investigate the prevalence of different types of <i>TP53</i> mutations across different cancers. If you enjoy it, there are then three case studies which introduce you to the complexity of cancer biology by seeing how different cancers exploit different parts of normal cell biology. Look out for 'explainer' links - these give more information and background to the concepts and data used in the session.<br/><br/>
 I would recommend using a computer or a tablet for this session, rather than a phone. cBioPortal hasn't really been designed with phones in mind, and you'll find everything a bit small and tricky to navigate.<br/>
-Take your time and explore the website and data - you could spend days on this website and still find brand new data. If you get lost, go back to the homepage and you're only a few clicks from where you need to be!<br/><br/></p>
+Take your time and explore the website and data - you could spend days on this website and still find brand new results. If you get lost, go back to the <a href="https://www.cbioportal.org/">cBioPortal homepage</a> and you're only a few clicks from where you need to be!<br/><br/>
+</p>
 
 #### 1 Open the cBioPortal website
 <p align="justify">
@@ -104,17 +118,49 @@ Biology gives <b>noisy</b> data (unlike physics and chemistry) because there is 
 #### 6 *TP53* mutations across different cancers
 <p align="justify">
 As we identified above, cancer type is a likely confounder in our understanding of <i>TP53</i> mutations. <i>TP53</i> is the most commonly mutated gene in cancer generally, but do you think it's mutated in all cancer types equally?<br/><br/>
-Click on the <b>Cancer Types Summary</b> tab. As you can see the proportion of tumours with <i>TP53</i> mutations does vary a lot. In the plot, green is any kind of single nucleotide mutation, and the other colours represent bigger changes.<br/>Have a play with the y-axis value (does <b>Counts</b> change your interpretation? Is frequency or count more informative?), and changing from Cancer Study to Cancer Type to Cancer Type Detailed. What patterns can you see?<br/>
+Click on the <b>Cancer Types Summary</b> tab. As you can see the proportion of tumours with <i>TP53</i> mutations does vary a lot. In the plot, green is any kind of single nucleotide mutation, and the other colours represent copy number changes changes such as deletions.<br/>Have a play with the y-axis value (does <b>Counts</b> change your interpretation? Is frequency or count more informative?), and changing from Cancer Study to Cancer Type to Cancer Type Detailed. What patterns can you see?<br/>
 </p>
 ![TP53 cancer type split from TCGA PanCancer Atlas](/assets/images/ENTHUSE-06_TP53_CancerTypes.jpg){:class="img-responsive"}
 <br/><br/>
 <p align="justify">
-We are now going to explore mutations in <i>TP53</i> and other genes in three cancer case studies. Return to the Cancer Study level summary - <a href="https://tinyurl.com/TP53-cBioPortal-TCGA-Summary">use this link to get back</a>.
+
 </p>
 <br/><br/>
 
-#### 7A Sarcoma - multiple hits to the P53 pathway
+### Concluding remarks
 <p align="justify">
+
+</p>
+<br/><br/>
+
+### Feedback
+<p align="justify">
+
+</p>
+
+### Acknowledgments and Funding
+<p align="justify">
+
+</p>
+
+<br/><br/><br/><br/>
+
+### Case Studies for expanding your knowledge of complex cancer biology
+<p align="justify">
+We are now going to explore mutations in <i>TP53</i> and other genes in three cancer case studies. At the end of the core session we started to introduce whether or not <i>TP53</i> mutations were common in all cancers, or whether there was variability. As we're working with biological data, there is a <b>lot</b> of variability!<br/><br/>
+Start to think about why that might be. P53 regulates cell proliferation and cell death. Tumours need to escape P53 activity. But is mutating P53 the only way for a tumour to do this? And is regulating proliferation and cell death the only way for a tumour to form? Clearly not, because not every tumour has a <i>TP53</i> mutation, and tumours have a large number of ways to evade detection and eradication in the body.<br/><br/>
+In his epic (third) review of the <i>Hallmarks of Cancer</i> published in 2022 (<a href="/assets/files/2023-06_ENTHUSE_Hallmarks_Hanahan2022.pdf" download>download the PDF here</a>), Professor Douglas Hanahan outlines the different physiological features a cancer must overcome (image below). These are all areas where cancers can effect change on the body in order to survive. Remember, a cancer is under the pressures of evolution in just the same way as an infectious virus, a herd of giraffes, or us - just on a different scale.<br/>
+</p>
+![Hanahan hallmarks 2022](/assets/images/ENTHUSE-12_2022_Hallmarks_of_Cancer.jpg){:class="img-responsive"}
+<br/><br/>
+<p align="justify">
+In the 3 case studies below we're not going to cover all of it! But we are going to touch on different cancer mechanisms, proteins working together in pathways and how that creates redundancy or co-dependence, and different routes for cancers to form.<br/>
+Take your time. Explore the data with the skills you learned in the core session. If you have questions or want to discuss what you're doing further, just ask your teacher for our contact details. We're only scratching the surface here - hopefully we've inspired you to keep asking more questions.<br/><br/>
+</p>
+
+#### A) Sarcoma - multiple hits to the P53 pathway
+<p align="justify">
+<a href="https://tinyurl.com/TP53-cBioPortal-TCGA-Summary">Return to the Cancer Study summary graph.</a><br/><br/>
 On the Cancer Types Summary graph, hover over the Sarcoma bar on the chart and click on <b>Query this study for <i>TP53</i></b>. Now focused on this one study ,look at the OncoPrint, Mutations and Comparison/Survival tabs - what do you observe in Sarcoma compared to all cancers from TCGA?<br/>
 Interestingly, eventhough <i>TP53</i> mutations are very common in Sarcoma, and the mutations are spread across the protein as before, there is no significant difference in survival.<br/><br/>
 In biology, proteins rarely act on their own, instead forming <b>pathways</b> with other proteins and molecules to complete functions. Select the <b>Pathways</b> tab.<br/>
@@ -138,12 +184,12 @@ Remember that <i>TP53</i> was mutated in 47% of Sarcoma cases, but the percentag
 The picture is more complicated with <i>CDKN2A</i> but there is little overlap with <i>MDM2</i> mutations, and most of the <i>TP53</i> overlap is when there is a missense, change/gain of function in P53 (dark green), rather than a truncating mutation (black).<br/><br/>
 The importance in tumour biology here is that in 74% of Sarcoma samples, the P53 pathway is being broken. This is happening in multiple ways with the cancer using different mutations. This means that in Sarcoma, we can't just use <i>TP53</i> mutations as a marker of altered P53 biology - we should use all three genes in tandem.<br/>
 Now, go back to the Comparison/Survival tab, then the Survival tab. The altered group (a mutation in any one of the three genes) now has much worse survival than the unaltered group, reflecting the negative impact of breaking the P53 pathway, not just breaking P53 itself. <br/><br/>
-<a href="https://tinyurl.com/TP53-cBioPortal-TCGA-Summary">Return to the Cancer Study summary graph</a> for the next case study.
+[Return to core session concluding remarks](#concluding-remarks)<br/>
 </p>
-<br/>
 
-#### 7B Acute Myeloid Leukaemia - different cancer mechanisms
+#### B) Acute Myeloid Leukaemia - different cancer mechanisms
 <p align="justify">
+<a href="https://tinyurl.com/TP53-cBioPortal-TCGA-Summary">Return to the Cancer Study summary graph.</a><br/><br/>
 We're now going to explore the AML dataset. <i>TP53</i> is not mutated very commonly in AML - only 9% of cases. Hover over the green bar and query the study as before. Look through the usual tabs. Interesting to note there are so few mutations that the lollipop plot (Mutations tab) doesn't really suggest any hotspot mutations in AML. However, the survival of <i>TP53</i> mutated tumours is far worse.<br/><br/>
 AML is a blood cancer and actually exhibits a very low number of mutations in each patient compared to solid cancers such as lung, breast, prostate, colon or bladder. However, AML does exhibit a very striking hotspot mutation in the <i>NPM1</i> gene. Add <i>NPM1</i> to the query list using the pencil icon again, and submit.<br/>
 Straight away you can see that mutations in <i>NPM1</i> and <i>TP53</i> are mutually exclusive. Check out the Mutations tab, and see what the hotspot mutation is in <i>NPM1</i>.<br/>
@@ -161,42 +207,32 @@ The striking differences in survival are interesting, particularly as there is n
 ![Waddington 1957 cell fate choice](/assets/images/ENTHUSE-12_epi_landscape_Waddington_1957.png){:class="img-responsive"}
 <p align="justify">
 <br/><br/>
-<a href="https://tinyurl.com/TP53-cBioPortal-TCGA-Summary">Return to the Cancer Study summary graph</a> for the next case study.
+[Return to core session concluding remarks](#concluding-remarks)<br/>
 </p>
-<br/>
 
-#### 7C Head & Neck Cancers - different cancer causes
+#### C) Head & Neck Cancers - different cancer causes
 <p align="justify">
 A quick final case study to highlight some of the clinical data you can access through cBioPortal. Make sure you use all the skills you've gained so far to explore mutation type, pathways, and other cancer features. Select the Head and Neck Squamous Cell Carcinoma (HNSC) dataset, and query for TP53 as before.<br/><br/>
 HNSC has two well-associated causes: smoking and infection by HPV (Human Papillomavirus - the same as in cervical cancer). Both induce large numbers of mutations in DNA, but smoke carcinogens and viruses cause very different types of mutations. These <b>mutational signatures</b> can be used to try and understand the causes of cancer. As an aside, Dr Simon Baker (who led the laboratory practical) is researching a potential viral cause of bladder cancer in his work supported by the local charity <a href="https://www.yorkagainstcancer.org.uk/">York Against Cancer</a> - see their <a href="https://www.yorkagainstcancer.org.uk/news/common-virus-may-cause-bladder-cancer-new-study-reveals/">blog on his work here</a>. Anyway. Back to HNSC.<br/><br/>
 After exploring the usual tabs, click on the Comparison/Survival tab, and then the Clinical tab. The first row should be Subtype, with the graph showing that HNSC tumours with <i>TP53</i> mutations are most commonly negative for HPV. This could reflect different mechanisms for HNSC, either driven by changes in <i>TP53</i> or the HPV infection. But this also creates a major confounding factor.<br/><br/>
 Click on <b>Head and Neck Squamous Cell Carcinoma (TCGA, PanCancer Atlas)</b> at the top of the page and this will open a new tab with all the information on the HNSC cohort. This shows just how much information there is available through cBioPortal - it is a truly staggering resource for the cancer research community (and the wider public!).<br/>
 Scroll down to the Subtype pie chart, hover and select the HPV+ and HPV- groups, ignoring the NA (where is no information on infection status), and click the <b>Compare</b> button. On the Survival tab, you can see that indeed, HPV positive tumours have better survival on average - so this was a confounder for the <i>TP53</i> comparison.<br/>
-Finally, select the Genomic Alterations tab. This performs a comparison of the mutations enriched in either subgroup. <i>TP53</i> is there, as are genes in the P53 pathway, enriched in HPV negative tumours. The first gene enriched for mutations in HPV positive tumours is <i>TRAF3</i>, a gene involved in immune defence against viruses, which is commonly deleted in HPV positive tumours. 
-</p>
-<br/>
-
-### Concluding remarks
-<p align="justify">
-
-</p>
-<br/>
-
-### Feedback
-<p align="justify">
-
+Finally, select the Genomic Alterations tab. This performs a comparison of the mutations enriched in either subgroup. <i>TP53</i> is there, as are genes in the P53 pathway, enriched in HPV negative tumours. The first gene enriched for mutations in HPV positive tumours is <i>TRAF3</i>, a gene involved in immune defence against viruses, which is commonly deleted in HPV positive tumours.<br/><br/>
+[Return to core session concluding remarks](#concluding-remarks)<br/>
 </p>
 
-<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/>
+---
+<br/><br/><br/><br/>
 
-### Session walkthrough
+### Core session walkthrough
 <p align="justify">
-The video below is a walkthrough of the exercises outlined above for the exploration of <i>TP53</i> mutations in over 10,000 samples of The Cancer Genome Atlas.<br/>
+The video below is a walkthrough of the core exercises outlined above for the exploration of <i>TP53</i> mutations in over 10,000 samples of The Cancer Genome Atlas.<br/>
 </p>
 {% include youtube.html id="zyrF5zJZSoI" %}
 <br/>
 [Return to tutorial introduction.](#introduction)
-<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/>
 
 ### Explainers
 #### cBioPortal explained
@@ -204,39 +240,39 @@ The video below is a walkthrough of the exercises outlined above for the explora
 Text holder.
 </p>
 [Return to session](#1-open-the-cbioportal-website)
-<br/><br/><br/>
+<br/><br/>
 
 #### Sequencing explained
 <p align="justify">
 Text holder.
 </p>
 [Return to session](#1-open-the-cbioportal-website)
-<br/><br/><br/>
+<br/><br/>
 
 #### The Cancer Genome Atlas explained
 <p align="justify">
 Text holder.
 </p>
 [Return to session](#2-select-the-pancancer-tcga-dataset)
-<br/><br/><br/>
+<br/><br/>
 
 #### Gene and Protein naming explained
 <p align="justify">
 Text holder.
 </p>
 [Return to session](#2-select-the-pancancer-tcga-dataset)
-<br/><br/><br/>
+<br/><br/>
 
 #### Mutations explained
 <p align="justify">
 Text holder.
 </p>
 [Return to session](#3-explore-the-tp53-oncoprint-plot)
-<br/><br/><br/>
+<br/><br/>
 
 #### The Problem with Big Data explained
 <p align="justify">
 Text holder.
 </p>
 [Return to session](#5-TP53-mutations-and-prognosis)
-<br/><br/><br/>
+<br/><br/>

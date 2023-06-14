@@ -151,9 +151,8 @@ We are now going to explore mutations in <i>TP53</i> and other genes in three ca
 Start to think about why that might be. P53 regulates cell proliferation and cell death. Tumours need to escape P53 activity. But is mutating P53 the only way for a tumour to do this? And is regulating proliferation and cell death the only way for a tumour to form? Clearly not, because not every tumour has a <i>TP53</i> mutation, and tumours have a large number of ways to evade detection and eradication in the body.<br/><br/>
 In his epic (third) review of the <i>Hallmarks of Cancer</i> published in 2022 (<a href="/assets/files/2023-06_ENTHUSE_Hallmarks_Hanahan2022.pdf" download>download the PDF here</a>), Professor Douglas Hanahan outlines the different physiological features a cancer must overcome (image below). These are all areas where cancers can effect change on the body in order to survive. Remember, a cancer is under the pressures of evolution in just the same way as an infectious virus, a herd of giraffes, or us - just on a different scale.<br/>
 </p>
-<p align="center">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![Hanahan hallmarks 2022](/assets/images/ENTHUSE-12_2022_Hallmarks_of_Cancer.jpg){:class="img-responsive"}
-</p>
 <br/><br/>
 <p align="justify">
 In the 3 case studies below we're not going to cover all of it! But we are going to touch on different cancer mechanisms, proteins working together in pathways and how that creates redundancy or co-dependence, and different routes for cancers to form.<br/>
@@ -207,9 +206,8 @@ Eventhough this hotspot happens right at the end of the protein, it causes it to
 <p align="justify">
 The striking differences in survival are interesting, particularly as there is no obvious cooperative or antagonistic link between P53 and NPM1 function, as there was within the P53 pathway in the Sarcoma example above. The biological reason here is that mutations in <i>TP53</i> and <i>NPM1</i> send tumours in different directions. Early differences in mutation status govern the biology of the tumour. Different people may be predisposed to certain mutations, or may have had different exposures. In his 1957 book <i>The Strategy of Genes</i> the researcher C. H. Waddington used an image that has become famous in evolutionary, developmental and cancer biology, see below. As the ball runs down the slope, there are a series of choices. In our example, a <i>TP53</i> mutation sends the ball one way, an <i>NPM1</i> goes the other. Understanding the differences in the choices, and how they cause different tumours, is key for developing more personalised medicine. 
 </p>
-<p align="center">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![Waddington 1957 cell fate choice](/assets/images/ENTHUSE-12_epi_landscape_Waddington_1957.png){:class="img-responsive"}
-</p>
 <p align="justify">
 <br/><br/>
 </p>

@@ -145,13 +145,15 @@ Click on the <b>Cancer Types Summary</b> tab. As you can see the proportion of t
 
 <br/><br/><br/><br/>
 
-### Case Studies for expanding your knowledge of complex cancer biology
+### Case Studies for expanding your knowledge of cancer biology
 <p align="justify">
 We are now going to explore mutations in <i>TP53</i> and other genes in three cancer case studies. At the end of the core session we started to introduce whether or not <i>TP53</i> mutations were common in all cancers, or whether there was variability. As we're working with biological data, there is a <b>lot</b> of variability!<br/><br/>
 Start to think about why that might be. P53 regulates cell proliferation and cell death. Tumours need to escape P53 activity. But is mutating P53 the only way for a tumour to do this? And is regulating proliferation and cell death the only way for a tumour to form? Clearly not, because not every tumour has a <i>TP53</i> mutation, and tumours have a large number of ways to evade detection and eradication in the body.<br/><br/>
 In his epic (third) review of the <i>Hallmarks of Cancer</i> published in 2022 (<a href="/assets/files/2023-06_ENTHUSE_Hallmarks_Hanahan2022.pdf" download>download the PDF here</a>), Professor Douglas Hanahan outlines the different physiological features a cancer must overcome (image below). These are all areas where cancers can effect change on the body in order to survive. Remember, a cancer is under the pressures of evolution in just the same way as an infectious virus, a herd of giraffes, or us - just on a different scale.<br/>
 </p>
+<p align="center">
 ![Hanahan hallmarks 2022](/assets/images/ENTHUSE-12_2022_Hallmarks_of_Cancer.jpg){:class="img-responsive"}
+</p>
 <br/><br/>
 <p align="justify">
 In the 3 case studies below we're not going to cover all of it! But we are going to touch on different cancer mechanisms, proteins working together in pathways and how that creates redundancy or co-dependence, and different routes for cancers to form.<br/>
@@ -184,8 +186,9 @@ Remember that <i>TP53</i> was mutated in 47% of Sarcoma cases, but the percentag
 The picture is more complicated with <i>CDKN2A</i> but there is little overlap with <i>MDM2</i> mutations, and most of the <i>TP53</i> overlap is when there is a missense, change/gain of function in P53 (dark green), rather than a truncating mutation (black).<br/><br/>
 The importance in tumour biology here is that in 74% of Sarcoma samples, the P53 pathway is being broken. This is happening in multiple ways with the cancer using different mutations. This means that in Sarcoma, we can't just use <i>TP53</i> mutations as a marker of altered P53 biology - we should use all three genes in tandem.<br/>
 Now, go back to the Comparison/Survival tab, then the Survival tab. The altered group (a mutation in any one of the three genes) now has much worse survival than the unaltered group, reflecting the negative impact of breaking the P53 pathway, not just breaking P53 itself. <br/><br/>
-[Return to core session concluding remarks](#concluding-remarks)<br/>
 </p>
+[Return to core session concluding remarks](#concluding-remarks)<br/>
+
 
 #### B) Acute Myeloid Leukaemia - different cancer mechanisms
 <p align="justify">
@@ -204,11 +207,13 @@ Eventhough this hotspot happens right at the end of the protein, it causes it to
 <p align="justify">
 The striking differences in survival are interesting, particularly as there is no obvious cooperative or antagonistic link between P53 and NPM1 function, as there was within the P53 pathway in the Sarcoma example above. The biological reason here is that mutations in <i>TP53</i> and <i>NPM1</i> send tumours in different directions. Early differences in mutation status govern the biology of the tumour. Different people may be predisposed to certain mutations, or may have had different exposures. In his 1957 book <i>The Strategy of Genes</i> the researcher C. H. Waddington used an image that has become famous in evolutionary, developmental and cancer biology, see below. As the ball runs down the slope, there are a series of choices. In our example, a <i>TP53</i> mutation sends the ball one way, an <i>NPM1</i> goes the other. Understanding the differences in the choices, and how they cause different tumours, is key for developing more personalised medicine. 
 </p>
+<p align="center">
 ![Waddington 1957 cell fate choice](/assets/images/ENTHUSE-12_epi_landscape_Waddington_1957.png){:class="img-responsive"}
+</p>
 <p align="justify">
 <br/><br/>
-[Return to core session concluding remarks](#concluding-remarks)<br/>
 </p>
+[Return to core session concluding remarks](#concluding-remarks)<br/>
 
 #### C) Head & Neck Cancers - different cancer causes
 <p align="justify">
@@ -218,11 +223,9 @@ After exploring the usual tabs, click on the Comparison/Survival tab, and then t
 Click on <b>Head and Neck Squamous Cell Carcinoma (TCGA, PanCancer Atlas)</b> at the top of the page and this will open a new tab with all the information on the HNSC cohort. This shows just how much information there is available through cBioPortal - it is a truly staggering resource for the cancer research community (and the wider public!).<br/>
 Scroll down to the Subtype pie chart, hover and select the HPV+ and HPV- groups, ignoring the NA (where is no information on infection status), and click the <b>Compare</b> button. On the Survival tab, you can see that indeed, HPV positive tumours have better survival on average - so this was a confounder for the <i>TP53</i> comparison.<br/>
 Finally, select the Genomic Alterations tab. This performs a comparison of the mutations enriched in either subgroup. <i>TP53</i> is there, as are genes in the P53 pathway, enriched in HPV negative tumours. The first gene enriched for mutations in HPV positive tumours is <i>TRAF3</i>, a gene involved in immune defence against viruses, which is commonly deleted in HPV positive tumours.<br/><br/>
-[Return to core session concluding remarks](#concluding-remarks)<br/>
 </p>
+[Return to core session concluding remarks](#concluding-remarks)<br/>
 
-<br/><br/><br/><br/>
----
 <br/><br/><br/><br/>
 
 ### Core session walkthrough

@@ -244,28 +244,36 @@ The video below is a walkthrough of the core exercises outlined above for the ex
 ### Explainers
 #### cBioPortal explained
 <p align="justify">
-Text holder.
+cBioPortal is a public website which includes data from thousands of cancer studies. These data include clinical information such as survival status, tumour stage and grade, age at onset, recurrence and sex, as well as multiple different types of processed sequencing data. The majority of sequencing data are for gene expression (the activity of genes in the cancer), specific mutations (small genetic changes) and large genome structural changes, such as differences in the number of gene copies (away from the usual 2).<br/><br/>
+cBioPortal doesn't just include data from cancers, but also cancer cell lines - experimental models used in laboratories to represent types of tumour. Cancer cell lines are essentially immortal dishes of cells which are used as standard references across cancer research. Patient tumours are a more biologically and clinically relevant resource, but they require access to (and consent from) patients.<br/><br/>
+cBioPortal can be used as a first point of reference for cancer researchers to understand the broader relevance of the results they have from their own laboratory or bioinformatic experiments. It can be used to visualise and statistically interpret data, as well as generate new hypotheses. One of the key aspects of science is someone else being able to find the results that you have (reproducibility) and sharing and building upon the work of others. cBioPortal is the biggest resource for doing this (and it's free!).<br/>
 </p>
 [Return to session](#1-open-the-cbioportal-website)
 <br/><br/>
 
 #### Sequencing explained
 <p align="justify">
-Text holder.
+Sequencing is the name for a group of technologies scientists can use to read the order of bases in DNA and RNA. This allows us to find mutations, quantify how much DNA or RNA is in a cell or tissue, and to understand how DNA is structured in a cell (and what it might interact with - proteins, other bits of DNA <i>etc.</i>). <br/><br/>
+As DNA and RNA replicate by using themselves as a template, scientists have developed tools to copy this natural process to read the sequence of bases for themselves. In essence, pieces of purified DNA are stuck to glass slides (like microscope slides), melted apart to leave only one half of the double helix, and then new DNA bases are added. These added bases are modified so that they glow when they have formed a new base pairing. For example, if the stuck piece of DNA has a C, a G would base pair with it. This would then flash a colour, a camera takes a picture, then the next base is added, and so on. This process is now very fast, with some machines able to sequence 136 billion DNA bases per hour! Back in the 1990s none of this was automated and it could take several years to sequence only a few thousand bases!<br/><br/>
+Scale is one area where sequencing has changed. As scale has gone up, cost has come down. The draft version of the first human genome cost $150,000,000.00 to produce. By 2008 this had dropped to $1,000,000.00. By 2020 it was less than $1,000.00. This is why sequencing is now entering clinical practice. The next thing to solve is the huge amount of raw data sequencing produces.<br/>
 </p>
 [Return to session](#1-open-the-cbioportal-website)
 <br/><br/>
 
 #### The Cancer Genome Atlas explained
 <p align="justify">
-Text holder.
+The Cancer Genome Atlas (TCGA) was a landmark cancer omics programme launced by the US National Institute for Health National Cancer Institute in 2006. The aim was to characterise primary cancer samples from over 30 cancer types of extreme need (either by prevalence or poor prognosis) using multiple different sequencing technologies. In 2006 many of these technologies were in their infancy, or barely even functional, but the programme generated over 2.5 petabytes (1PB = 1,000,000GB) of multiomics sequencing data with extensive matched pathology and clinical metadata.<br/><br/>
+The lasting requirement was that the processed data would be made readily available (through cBioPortal and other sites) for the entire research community. The raw sequencing data (which is identifiable to the inidvidual) can also be accessed under strict data privacy regulations. <br/><br/>
+<a href="https://www.cancer.gov/ccg/research/genome-sequencing/tcga">You can read more about TCGA and its legacy here.</a><br/>
 </p>
 [Return to session](#2-select-the-pancancer-tcga-dataset)
 <br/><br/>
 
 #### Gene and Protein naming explained
 <p align="justify">
-Text holder.
+Traditionally speaking, genes were named after what happened when scientists broke them. In fruit flies you can guess what <i>wingless</i> and <i>tailess</i> do. Then scientific "humour" took over. <i>tinman</i> is for a gene necessary for heart development; <i>cheapdate</i> was a mutant found in flies that had a very low tolerance to alcohol.<br/><br/>
+In higher animals, like ourselves, gene naming became more conventional, describing the function of the encoded protein. However, people discover more functions over time, or realise that the protein wasn't actually doing that job. Some names were not really very descriptive, such as <i>TP53</i> for <i>tumour protein 53</i>. Various international organisations have since tried to standardise and rename gene names to make them clearer. However, this doesn't mean gene names and their eventual proteins are called the same - take <i>TP53</i> and p53 as a clear first example.<br/><br/>
+There is <i>usually</i> a decent association, and in lots of cases now a gene's name is fairly indicative for what its protein does. The standard (for human genes) is that gene and protein names are all in capital letters, but that a gene name is in <i>italics</i>, whereas a protein name isn't. Conventions are different between species. In mice, the italics vs not is the same, but only the first letter is capitalised. <br/>
 </p>
 [Return to session](#2-select-the-pancancer-tcga-dataset)
 <br/><br/>
@@ -279,7 +287,10 @@ Text holder.
 
 #### The Problem with Big Data explained
 <p align="justify">
-Text holder.
+"Big data" is a buzz phrase you hear a lot at the moment. It means as it sounds - lots and lots of data, about whatever. In biology it typically means either large amounts of sequencing data, or large amounts of high resolution images. <br/><br/>
+In both cases, there are issues with storage, security, ethics, sharing, accessibility, reusability <i>etc. etc</i>. But, these are incredibly rich resources for generating new questions, testing the broad applicability of existing research, and training new machine learning approaches for understanding the complexity of biology.<br/><br/>
+In sequencing studies this meant the development of a largely unused specialty in biology - computer science - leading to <i>bioinformatics</i> as a field of research. This has led to lots of infrastructure and knowledge development, but many Biologists do not put their Maths head on in the morning. Increasigly this is changing, but Biologists can often fall into data holes. We all need to be careful on how we interpret results of data and whether they are <b>significant</b> - both statistically and biologically. This is very important with <b>very</b> big data, as even tiny changes between groups can appear mathematically significant. <br/><br/>
+Always graph your results. Always think whether they make sense. Always try to see what could be confounding your conclusions!<br/>
 </p>
 [Return to session](#5-TP53-mutations-and-prognosis)
 <br/><br/>

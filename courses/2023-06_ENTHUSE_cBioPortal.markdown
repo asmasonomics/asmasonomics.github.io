@@ -124,8 +124,9 @@ Click on the <b>Cancer Types Summary</b> tab. As you can see the proportion of t
 <br/><br/>
 <p align="justify">
 In general terms, <b>solid</b> cancers (rather than blood cancers) with a high mutational burden tend to have <i>TP53</i> mutations - see the lung, esophageal, colorectal and bladder datasets, compared to Acute Myeloid Leukaemia or B cell lymphoma. As this is biology, there are some that bend this observation - particularly the two types of kidney cancer found in TCGA. Often, general observations hide features which are cancer-specific (and even specific to subtypes within those cancers).<br/><br/>
-This tutorial has given you an introduction to some of power cBioPortal has for cancer research. It makes large data (usually the sole focus of bioinformaticians) accessible to laboratory scientists, students, clinicians and the general public. But, there is so much more you can find out.<br/>
-Try hovering your mouse over one of the cancer type bars in the Cancer Types Summary plot and then select the study name from the box which appears. This takes you to the cBioPortal dashboard for this study - there is so much data here! Take a look about (<a href="https://tinyurl.com/TP53-cBioPortal-TCGA-Summary">using this link to return to the Cancer Study summary graph if needed</a>) and see how much information there is! If you have time, and you've enjoyed exploring cBioPortal so far, take a look at the case studies below. These give more opportunities to explore specific research questions, again focused on <i>TP53</i>. Remember, <i>TP353</i> is important, but there are over 20,000 genes in our bodies which make proteins and over 1,000 have direct known roles in cancer - lots more to explore!<br/>
+This tutorial has given you an introduction to some of the power cBioPortal has for cancer research. It makes large data (usually the sole focus of bioinformaticians) accessible to laboratory scientists, students, clinicians and the general public. But, there is so much more you can find out.<br/>
+Try hovering your mouse over one of the cancer type bars in the Cancer Types Summary plot and then select the study name from the box which appears. This takes you to the cBioPortal dashboard for this study - there is so much data here! Take a look about (<a href="https://tinyurl.com/TP53-cBioPortal-TCGA-Summary">using this link to return to the Cancer Study summary graph if needed</a>) and see how much information there is!<br/>
+If you have time, and you've enjoyed exploring cBioPortal so far, take a look at the case studies below. These give more opportunities to explore specific research questions, again focused on <i>TP53</i>. Remember, <i>TP353</i> is important, but there are over 20,000 genes in our bodies which make proteins and over 1,000 have direct known roles in cancer - lots more to explore!<br/>
 </p>
 [Explore the three case studies here](#case-studies-for-expanding-your-knowledge-of-cancer-biology)
 <br/><br/>
@@ -135,16 +136,16 @@ Try hovering your mouse over one of the cancer type bars in the Cancer Types Sum
 Large sequencing datasets like those in TCGA (and across the studies in cBioPortal) help researchers and clinicians understand cancers more broadly, and to identify likely subgroups of patients for new drugs. However, small research subgroups often get overlooked, even if those <i>small</i> groups represent large numbers of cancer patients every year. Imagine you identify a group of 4 cancer patients within TCGA's bladder cancer cohort (408 samples). This is only 1%, so is unlikely to get much interest from industry, eventhough it likely represents over 200 new bladder cancer cases each year in the UK alone. This is always an important thought when doing research - these data come from real people who have consented to their cancer tissue being used to help other cancer patients in the future.<br/><br/>
 Eventually sequencing will enter routine clinical practice in the UK, forming part of diagnosis and informing treatment choices, leading to truly personalised medicine. Until then we need to continue researching the role of individual molecules in cancer, the impact of mutations, and identifying or synthesising new drugs. Lots to do! Biomedical research now requires both laboratory and computational skills - and you've started down that path. Hopefully it's made you want to learn more, and maybe become a cancer researcher in the future!
 </p>
-<br/><br/>
+<br/>
 
 ### Feedback
 <p align="justify">
-Students and teachers - thank you for taking part in this two-part exploration of <i>TP53</i> mutations in cancer! We want to continue to develop and refine this joint practical and for that we need your honest feedback.<br/>
+Students and teachers - thank you for taking part in this two-part exploration of <i>TP53</i> mutations in cancer! We want to continue to develop and refine this joint practical and for that we need your honest feedback.<br/><br/>
 <b>Students</b> - please complete the feedback sheet from your teachers, and please pass on any additional comments (positive or not) back to us through your teachers. <br/>
-<b>Teachers</b> - an honest critique would be incredibly helpful! What needs more expansion, which bits are too much? <br/>
+<b>Teachers</b> - an honest critique would be incredibly helpful! What needs more expansion, which bits are too much? <br/><br/>
 Thank you!
 </p>
-<br/><br/>
+<br/>
 
 ### Acknowledgments and Funding
 <p align="justify">
@@ -152,7 +153,7 @@ The 2-part <i>TP53</i> laboratory and bioinformatics practical was initially dev
 Simon and Andrew work in the York Against Cancer-funded <a href="https://www.york.ac.uk/biology/jack-birch-unit/">Jack Birch Unit</a> at the University of York. Simon is a <a href="https://www.kidneyresearchuk.org/">Kidney Research UK</a> Intermediate Fellow and Andrew is a Lecturer in Cancer Informatics funded by the <a href="https://www.york.ac.uk/biology/">Department of Biology</a> who develops data and bioinformatic educational material in partnership with <a href="https://elixiruknode.org/">Elixir-UK</a>.
 </p>
 
-<br/><br/><br/><br/>
+<br/><br/><br/>
 
 ### Case Studies for expanding your knowledge of cancer biology
 <p align="justify">

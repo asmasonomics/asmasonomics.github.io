@@ -245,7 +245,7 @@ The video below is a walkthrough and explainer for this case study.<br/>
 <p align="justify">
 The video below is a walkthrough of the core exercises outlined above for the exploration of <i>TP53</i> mutations in over 10,000 samples of The Cancer Genome Atlas.<br/>
 </p>
-{% include youtube.html id="zyrF5zJZSoI" %}
+{% include youtube.html id="OuwVKO6UXU0" %}
 <br/>
 [Return to tutorial introduction.](#introduction)
 <br/><br/><br/><br/>

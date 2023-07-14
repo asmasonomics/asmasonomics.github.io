@@ -5,6 +5,8 @@ permalink: /publications/
 ---
 
 ### Preprints
+Rice ES, Alberdi A, Alfieri J, Athrey G, Balacco JR, Bardou P, Blackmon H, Charles M, Cheng H, Fedrigo O, Fiddaman SR, Formenti G, Frantz L, Gilbert MTP, Hearn CJ, Jarvis ED, Klopp C, **Mason AS**, Marcos S, Velez-Irizarry D, Xu L & Warren WC, [A pangenome graph reference of 30 chicken genomes allows genotyping of large and complex structural variants](10.21203/rs.3.rs-3086064/v1), Research Square (2023).
+
 Chandler JC, Jafree DJ, Malik S, Pomeranz G, Ball M, Kolatsi-Joannou M, Piapi A, Mason WJ, Woolf AS, Winyard PJ, **Mason AS**, Waters AM & Long DA, [Exploration of the single-cell transcriptomic landscape identifies aberrant glomerular cell crosstalk in a murine model of WT1 kidney disease](https://www.biorxiv.org/content/10.1101/2022.10.11.511555v2), bioRxiv (2022).
 
 ### 2023

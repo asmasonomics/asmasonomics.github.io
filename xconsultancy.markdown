@@ -16,6 +16,7 @@ Bioinformatic consultancy covering experimental planning to data analysis is ava
 * Gene set enrichment analysis
 * Unsupervised clustering
 * Data interpretation
+* Data upload for sharing and open access
 
 <span style="font-size:1.2em;">**Variant calling from WGS/WXS**</span><br/>
 * Experimental setup: depth, sample pairing, short vs long read
@@ -28,6 +29,7 @@ Bioinformatic consultancy covering experimental planning to data analysis is ava
 * Driver gene identification
 * Structural variant analyses
 * Data interpretation
+* Data upload for sharing and open access
 
 <span style="font-size:1.2em;">**ALVE characterisation**</span><br/>
 * Genotyping vs *de novo* identification

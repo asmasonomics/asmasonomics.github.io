@@ -89,7 +89,7 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 <span style="font-size:1.1em;">Fernando Vazquez Lopez</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/fernando_vaz_) *Undergraduate project student*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/FernandoVazquezLopez.jpeg"
-	content = "Fernando joined the lab for summer 2022 to study avian oncogenic endogenous retroviruses using whole genome sequencing data; hoping to gain direct research experience to help him pursue a career in applied bioinformatics. During his studies, Fernando has developed an interest in molecular evolution, sequence analysis and the applications of bioinformatics in cancer research, and has now entered his final year of an integrated masters at the University of York."
+	content = "Fernando joined the lab for summer 2022 to study avian oncogenic endogenous retroviruses using whole genome sequencing data; hoping to gain direct research experience to help him pursue a career in applied bioinformatics. He has since commenced a PhD (2023 start) at The University of Southampton, applying AI to improve diagnosis of IBD with Dr James Ashton."
 %}
 
 <span style="font-size:1.1em;">Grace Dobbs</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/grace_dobbs) *Postdoctoral research associate*<br/>

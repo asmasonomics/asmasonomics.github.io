@@ -44,7 +44,7 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 <span style="font-size:1.1em;">Mwenda Rintari</span> *MBiol project student*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/MwendaRintari.jpg"
-	content = "Mwenda joined the lab in September 2023 to undertake his final year MBiol project. With a passion for data science and 'omics data, Mwenda's project identifying the role of ERVs in cancer initiation and progression offers him a great opportunity to enhance his bioinformatics skills."
+	content = "Mwenda joined the lab in September 2023 to undertake his final year MBiol project. With a passion for data science and 'omics data, Mwenda's project identifying the role of ERVs in cancer initiation and progression offers him a great opportunity to enhance his bioinformatics skills."
 %}
 
 <span style="font-size:1.1em;">Anastasia Kaltsa</span> *MSc by Research Student (Co-supervisee)*<br/>

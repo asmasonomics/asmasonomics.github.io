@@ -86,11 +86,13 @@ Based on epidemiolgical data, and high incidence of bladder cancer in kidney tra
 <p align="justify">
 Hopefully your R libraries have finished installing, if not it hopefully won't be too much longer.<br/>
 All the workshop material is in: <br/>
+</p>
 
 ```sh
 ~/genomics/rnaseq_data/01_workshop4_BKPyV-infection/
 ```
 
+<p align="justify">
 As before, please don't copy this data. Either make symbolic links in your Workshop4 folder in your own student area, or just use the paths to the original data. I will show the latter. And don't worry, you don't have permissions to delete the data of other people.<br/><br/>
 For this workshop you will work with paired end RNA sequencing data. This means each sample has both a <b>read1.fq.gz</b> and a <b>read2.fq.gz</b> file. Data were derived from cell cultures of biomimetic human urothelium (the epithelial lining of the bladder) which were either infected with BKPyV or not. Cells originated from three different people. Cells were expanded in the lab, split into two dishes where one was infected and the other wasn't. This experimental design allows us to control for the different anti-viral response seen among different people.<br/><br/>
 </p>
@@ -195,7 +197,7 @@ for item in list
 done
 ```
 <p align="justify">
-The <b>for</b> is a keyword which tells the command line that a loop statement is coming. The <b>do</b> keyword indicates the start of the loop, and the <b>done</b> shows the end. This means you can hit enter after each line and the terminal waits to execute (like with a \). We will use this now:<br/>
+The <b>for</b> is a keyword which tells the command line that a loop statement is coming. The <b>do</b> keyword indicates the start of the loop, and the <b>done</b> shows the end. This means you can hit enter after each line and the terminal waits to execute (like with a backslash). We will use this now:<br/>
 </p>
 
 ```sh
@@ -214,7 +216,7 @@ Now it's time to go into R, using the libraries you installed before. We will us
 head BKPyVinfected-01_abundance.tsv
 
 # take the first transcript ID, missing the version (.2) at the end and check for its gene name
-grep "" ~/genomics/rnaseq_data/gencode.v44.pc_transcripts.t2g
+grep "ENST00000641515" ~/genomics/rnaseq_data/gencode.v44.pc_transcripts.t2g
 
 # now let's get into R
 R

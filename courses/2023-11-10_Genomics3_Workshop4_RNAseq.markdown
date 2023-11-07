@@ -38,8 +38,8 @@ cd ~/genomics/
 ```
 
 Change directory into your user space within the ~/genomics/students/ area, and make a new directory for this workshop. Change into that new directory. We are now ready to set up your R space.
-```sh
 
+```sh
 # create directories for your newly installed R libraries to go (this helps with version control and installing on a managed machine)
 mkdir ~/Rlibs ~/Rlibs/R_4.1.2
 
@@ -47,7 +47,7 @@ mkdir ~/Rlibs ~/Rlibs/R_4.1.2
 R 
 ```
 
-Within R, you can run the following lines one by one, or copy and paste in one go. If any package installations ask for updates, you can skip. Wilst these are installing, read the [introductory material](#introduction-to-the-material-and-researc-question-in-this-workshop) for the workshop.
+Within R, you can run the following lines one by one, or copy and paste in one go. If any package installations ask for updates, you can skip. Whilst these are installing, read the [introductory material](#introduction-to-the-material-and-researc-question-in-this-workshop) for the workshop.
 
 ```R
 
@@ -66,15 +66,17 @@ q()
 
 ```
 
-The q() command exits R and brings you back ready for the workshop.
+The q() command exits R and brings you back ready for the workshop. <br/><br/>
+
 
 ### Introduction to the material and research question in this workshop
 <p align="justify">
 Bladder cancer is the 10th most common global cancer and is one of the most expensive to treat as most cancers recur and when the disease progresses, standard practice is to remove the bladder. Despite such radical surgery, 5-year survival is <50% in muscle-invasive disease.<br/>
 There is therefore an unmet need to understand how bladder cancers start, and what can be done to prevent them. The long-standing risk factor for bladder cancer is smoking, but mutational signatures (see lecture 7 if you're unsure what these are) showed that the classic mutational profile of smoking seen in lung cancer is <b>not</b> present in bladder cancer. Instead, there are signatures of APOBEC mutagenesis - a family of enzymes which defend against viruses. These signatures are very prevalent in HPV-driven cervical cancers. However, there is no obvious viral cause for bladder cancer, and viral genomes are not found within bladder cancer genomes (as they are with HPV positive cervical cancer).<br/>
 </p>
-
+<br/>
 ![Bladder cancer mutational signature showing APOBEC mutations, but no smoking signature - SBS4](/assets/images/BLCA_SBS_mutational_signature.png){:class="img-responsive"}
+<br/><span style="font-size:0.8em;">*Deconvolution of mutational signatures. Top left plot shows the original proportion of single base substitutions in the sample. The right hand side shows the deconvolution into separate SBS derivations and their relevant proportions (totals 100% in this instance), and as proof the bottom left plot shows the reconstruction of the signatuue using the deconvoluted plots.*</span><br/>
 
 <p align="justify">
 Based on epidemiolgical data, and high incidence of bladder cancer in kidney transplant patients, researchers at York hypothesised that BK Polyomavirus (BKPyV) may be the cause. The RNAseq data in this workshop was our first effort to explore this association and formed part of a <a href="https://doi.org/10.1038/s41388-022-02235-8">publication in <i>Oncogene</i></a> in 2022.<br/><br/>
@@ -83,9 +85,14 @@ Based on epidemiolgical data, and high incidence of bladder cancer in kidney tra
 ### The workshop
 <p align="justify">
 Hopefully your R libraries have finished installing, if not it hopefully won't be too much longer.<br/>
-All the workshop material is in ~/genomics/rnaseq_data/01_workshop4_BKPyV-infection/<br/>
+All the workshop material is in: <br/>
+
+```sh
+~/genomics/rnaseq_data/01_workshop4_BKPyV-infection/
+```
+
 As before, please don't copy this data. Either make symbolic links in your Workshop4 folder in your own student area, or just use the paths to the original data. I will show the latter. And don't worry, you don't have permissions to delete the data of other people.<br/><br/>
-For this workshop you will work with paired end RNA sequencing data. This means each sample has both a read1.fq.gz and a read2.fq.gz file. Data were derived from cell cultures of biomimetic human urothelium (the epithelial lining of the bladder) which were either infected with BKPyV or not. Cells originated from three different people. Cells were expanded in the lab, split into two dishes where one was infected and the other wasn't. This experimental design allows us to control for the different anti-viral response seen among different people.<br/><br/>
+For this workshop you will work with paired end RNA sequencing data. This means each sample has both a <b>read1.fq.gz</b> and a <b>read2.fq.gz</b> file. Data were derived from cell cultures of biomimetic human urothelium (the epithelial lining of the bladder) which were either infected with BKPyV or not. Cells originated from three different people. Cells were expanded in the lab, split into two dishes where one was infected and the other wasn't. This experimental design allows us to control for the different anti-viral response seen among different people.<br/><br/>
 </p>
 
 #### Workshop Aims
@@ -93,12 +100,14 @@ For this workshop you will work with paired end RNA sequencing data. This means 
 2. Align a subset of the data to the human transcriptome, understanding where different gene expression metrics come from
 3. Perform diffential expression analysis and gene set enrichment analysis on the entire dataset, exploring the actual biology behind the data
 
+<br/><br/>
+
 ### 1 Quality control of raw RNA sequencing data with FastQC
 <p align="justify">
 Raw sequencing data is in FASTQ format. For each sequencing read (commonly 75, 100 or 150 base pairs in length), there is a name, the As, Ts, Cs and Gs of sequence, and empty line (kept as a "just in case" by the format inventors) and a quality score. When we QC our raw data, it is these quality scores that we are largely assessing - how much do we trust the data we got from the sequencing machine?<br/>
 We won't spend more time on the format here, but I have produced a video with <a href="https://elixiruknode.org/">Elixir-UK</a> which I have included below.<br/>
 </p>
-{% include youtube.html id="vP5pLJmf5io" %}
+{% include youtube.html id="tO2H3zuBouw" %} <br/>
 
 Now to run FastQC yourself. Get back to the directory you created for this workshop, and run the following:
 
@@ -109,7 +118,6 @@ module load bio/FastQC/0.11.9-Java-11
 # run on one reduced file (1 million reads only) from the infected and uninfected datasets
 fastqc -o ./ ~/genomics/rnaseq_data/01_workshop4_BKPyV-infection/01_test_files_for_fastqc/BKPyV-fastqctest_read1.fq.gz
 fastqc -o ./ ~/genomics/rnaseq_data/01_workshop4_BKPyV-infection/01_test_files_for_fastqc/uninfected-fastqctest_read1.fq.gz
-
 ```
 
 <p align="justify">
@@ -117,7 +125,7 @@ These should finish pretty quickly, creating a zip file (which we don't care abo
 To use sftp at the command line, open a new PowerShell and do the following (make sure to replace USERid with your user ID):<br/>
 </p>
 
-```
+```sh
 # or similar path to wherever you want it
 chdir C:\Users\USERid\Downloads
 
@@ -130,22 +138,22 @@ exit
 
 # this closes the PowerShell 
 exit
-
 ```
 
 <p align="justify">
 Open these html files in a browser of your choice, and look at the uninfected first. Immediately you can see that the summary is all ticks (i.e. good!) except one. Take a look through all the plots, particularly the "fail" - what is this graph telling you?<br/><br/>
 Now look at the BKPyV infected report. First look at the overrepresented sequence and copy the first one and <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch">check what it is using BLASTn</a>. What is it?<br/>
 Now look at the GC content graphs of both. These are both RNAseq datasets from human, so why do they look different?<br/><br/>
-In summary, these data were really high quality (as are all the data we have provided to you). If quality was lacking, we could trim parts of reads, or remove entire reads. Again, I've made some videos with <a href="https://elixiruknode.org/">Elixir-UK</a> on these topics.<br/
-</p>
-{% include youtube.html id="vP5pLJmf5io" %}
-{% include youtube.html id="vP5pLJmf5io" %}
+In summary, these data were really high quality (as are all the data we have provided to you). If quality was lacking, we could trim parts of reads, or remove entire reads. Again, I've made some videos with <a href="https://elixiruknode.org/">Elixir-UK</a> on these topics.<br/>
+</p><br/>
+{% include youtube.html id="0nFwZC6VZyQ" %} <br/>
+{% include youtube.html id="wXKxVhOSVa0" %} <br/>
+{% include youtube.html id="megMSTmQN7g" %} <br/><br/>
 
 ### 2 (Pseudo)alignment of reads to the human transcriptome with kallisto
 <p align="justify">
 In many cases we align/map our RNAseq reads to the reference genome, but this can be slow and error prone. With a genome as well annotated as human, we can map to the reference transcriptome - a fasta file with every known and predicted transcript from the human genome. This is much much faster and much more accurate.<br/>
-In this workshop we will use Gencode v44 protein-coding genes. Gencode is a genome annotation consortium used to inform the Ensembl genome browser. These are all major tools used by the community. I will cover these concepts in videos in weeks 7, 8 and 9.<br/><br/>
+In this workshop we will use Gencode v44 protein-coding genes. <a href="https://www.gencodegenes.org/">Gencode</a> is a genome annotation consortium used to inform the <a href="https://www.ensembl.org/index.html">Ensembl genome browser</a>. These are all major tools used by the community. I will cover these concepts in videos in weeks 7, 8 and 9.<br/><br/>
 </p>
 
 ```sh
@@ -159,12 +167,11 @@ module load bio/kallisto/0.48.0-gompi-2022a
 # run kallisto using the index and relevant read files
 kallisto quant --index ~/genomics/rnaseq_data/gencode.v44.pc_transcripts-kallisto --output-dir=BKPyVinfected-01 ~/genomics/rnaseq_data/01_workshop4_BKPyV-infection/02_reduced_files_for_workshop_mapping/BKPyVinfected-01-2M_read1.fq.gz ~/genomics/rnaseq_data/01_workshop4_BKPyV-infection/02_reduced_files_for_workshop_mapping/BKPyVinfected-01-2M_read2.fq.gz
 kallisto quant --index ~/genomics/rnaseq_data/gencode.v44.pc_transcripts-kallisto --output-dir=uninfected-01 ~/genomics/rnaseq_data/01_workshop4_BKPyV-infection/02_reduced_files_for_workshop_mapping/uninfected-01-2M_read1.fq.gz ~/genomics/rnaseq_data/01_workshop4_BKPyV-infection/02_reduced_files_for_workshop_mapping/uninfected-01-2M_read2.fq.gz
-
 ```
 
 <p align="justify">
 Each kallisto quant line should take ~2 minutes to run. After you have both - look at the rates (%) of pseudoalignment. How do they differ, and can you think why?<br/>
-Run the kallisto quant command again for the other 4 sample sets.<br/>
+Run the kallisto quant command again for the other 4 sample sets.<br/><br/>
 </p>
 
 ### 3 Convert kallisto output to gene-level expression matrix
@@ -172,7 +179,7 @@ Run the kallisto quant command again for the other 4 sample sets.<br/>
 As we have mapped to the transcriptome, we now want to bring our data to the gene-level. This is typical for differential expression analysis, as more is known about gene function rather than that of individual transcripts. This does lose information, particularly if gene expression is regulated using antisense transcripts or function is changed by alternative splicing. That's for another time.<br/><br/>
 We now want our data to be in TPMs - transcripts per million. This is a really good metric for RNAseq data as it gives a proportional relationship between transcripts in a population of cells, but because the denominator is big (a million) it is quite robust to changes unless they're real. If you're not sure about counts vs TPMs vs FPKMs and why we use different ones (and shouldn't use the latter anymore) - you can check out another <a href="https://elixiruknode.org/">Elixir-UK</a> video below.<br/>
 </p>
-{% include youtube.html id="vP5pLJmf5io" %}
+{% include youtube.html id="3Pe9xcGF_Wo" %} <br/>
 
 <p align="justify">
 Now we're going to combine all the kallisto output, sum to gene-level and start to look at changes. To do this (and to save time) our coding needs to get more complex. Here we will use a <b>for</b> loop.<br/>
@@ -231,7 +238,6 @@ write.table(txiDF,file="allTPMs.tsv",sep="\t", quote=FALSE, row.names=FALSE)
 
 #leave R 
 q()
-
 ```
 
 <p align="justify">
@@ -247,7 +253,7 @@ head -n 1 allTPMs.tsv; grep "APOBEC3A" allTPMs.tsv
 
 <p align="justify">
 Do the same for the other genes. What does the data suggest to you? Remember that BKPyVinfected-01 and uninfected-01 (<i>etc.</i>) are derived from cells from the same person.<br/>
-</p>
+</p><br/>
 
 ### 4 Differential Expression Analysis (DEA) with Sleuth
 <p align="justify">

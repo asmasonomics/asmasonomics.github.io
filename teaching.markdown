@@ -3,14 +3,17 @@ layout: page
 title: Teaching
 permalink: /teaching/
 ---
-<p align="justify">Andrew started his lectureship position in November 2022. Teaching responsibilities now include supervising final year MBiol integrated masters students and delivering course material in bioinformatics, genomics, data science and cancer to University of York undergraduates. <br/>In preparation for semesterisation at York in September 2023, Andrew is helping to bring more omics and informatics into BSc Biology at York through a revised skills in bioinformatics 2nd year course strand, and a brand new 3rd year Genomics module. We are also supporting omics and statistics teaching for PhD students and continuing to develop Elixir material at York.<br/></p>
+<p align="justify">Andrew started his lectureship position in November 2022. Teaching responsibilities now include supervising final year MBiol integrated masters students and delivering course material in bioinformatics, genomics, data science and cancer to University of York undergraduates. <br/>
+York brought in semesters in September 2023, bringing an opportunity to revisit all teaching delivered in the department. Andrew is helping to bring more omics and informatics into BSc Biology at York through a revised skills in bioinformatics 2nd year course strand, and a brand new 3rd year Genomics module. Andrew is also teaching on the new upskilling MSc in Bioinformatics, including as module organiser for the Advanced Research Topics in Bioinformatics module, providing a research seminar and project supervision. <br/> 
+We are also supporting omics and statistics teaching for PhD students and continuing to develop Elixir material at York. <br/>
+</p>
 
 <span style="font-size:1.2em;">**University teaching experience**</span><br/>
 {% include experience_cols.html content1 = "11/2022 - present<br/>10/2018 - 11/2019<br/>10/2014 - 12/2016" content2 = "University of York Lecturer in Cancer Informatics<br/>University of York Biology tutor (20h)<br/>University of Edinburgh Biology demonstrator, marker and tutor (301h)" %}
 <span style="font-size:1.02em;">**Course material**</span><br/>
-2023-01-11  [Introduction to cBioPortal](https://asmasonomics.github.io/courses/Intro_cBioPortal_Jan2023)<br/>
-2023-05-30  [BMS Bitesize: Introduction to Statistics](https://asmasonomics.github.io/courses/BMS_Bitesize_Statistics_May2023)
-2023-11-10  [Genomics 3 - Workshop 4: RNAseq](https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2023)
+2023-01-11  [Introduction to cBioPortal](https://asmasonomics.github.io/courses/Intro_cBioPortal_Jan2023) <br/>
+2023-05-30  [BMS Bitesize: Introduction to Statistics](https://asmasonomics.github.io/courses/BMS_Bitesize_Statistics_May2023) <br/>
+2023-11-10  [Genomics 3 - Workshop 4: RNAseq](https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2023) <br/>
 <br/>
 
 <br/><span style="font-size:1.2em;">**Private tutoring**</span><br/>

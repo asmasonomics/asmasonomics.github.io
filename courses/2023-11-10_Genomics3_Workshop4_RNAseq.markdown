@@ -364,7 +364,7 @@ res <- tpms %>% left_join(dea, by=c("genes"="target_id"))
 head(res)
 
 # if sleuth cannot do a stat comparison, it doesn't produce a test value so the p and q values are NA after the join
-# let's replace NA values with 1 (i.e. not significant)
+# let's replace NA values with 1 (i.e. not significant)
 res[is.na(res)] <- 1
 
 # we can create a combined metric of fold change and significance called a pi value

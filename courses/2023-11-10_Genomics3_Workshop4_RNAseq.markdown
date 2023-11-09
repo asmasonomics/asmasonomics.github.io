@@ -8,14 +8,14 @@ permalink: /courses/Genomics3_Workshop4_RNAseq_Nov2023
 <span style="font-size:1.6em;">**Genomics 3 - Workshop 4: RNAseq**</span><br/>
 
 <p align="justify">
-Welcome to Workshop 4! This workshop will build on some of the skills you developed in previous courses using gene expression data. In previous (and future) courses you have worked with <b>count</b> data to look at gene expression, and to explore genes which are differentially expressed between conditions (such as in health and disease). This data has already been processed from raw reads: performing quality control, aligning to a reference genome or transcriptome, and then summarising to gene level. In this workshop you will do the whole process, from raw reads to differential expression analysis.<br/>
+Welcome to Workshop 4! This workshop will build on some of the skills you developed in previous courses using gene expression data. In previous courses you have worked with <b>count</b> data to look at gene expression, and to explore genes which are differentially expressed between conditions (such as in health and disease). This data has already been processed from raw reads: performing quality control, aligning to a reference genome or transcriptome, and then summarising to gene level. In this workshop you will do the whole process, from raw reads to differential expression analysis.<br/>
 If you choose to base your final report on <i>this</i> workshop, you will need to choose a <b>different dataset</b> from the BKPyV dataset used in this workshop. Two other (similar) datasets are provided on the server. The bioinformatic approach will be very similar, but you will need to bring in relevant biology. Brief descriptions of the other datasets are provided in README files in each the dataset directories.<br/><br/>
 As ever, the workshop is aimed towards those with Windows machines, including the managed university machines. If you are using your own machine, you have a little more freedom. If you have a Mac, you should be aware of the differences by now (Terminal rather than PowerShell, <i>etc.</i>).<br/>
 </p>
 
 ### Before you get stuck in
 <p align="justify">
-As part of this workshop you will use the teaching0.york.ac.uk server, like last time. You will use linux modules and command line R. This should feel nice and familiar, but it's just like working at the command line. This session will generate plots at the command line which you can then download. If you do RNAseq for your final report, you may want to take your final data off the server and explore with RStudio - this is absolutely fine! Always remember there are lots of different ways to compete the same task when you're coding.<br/>
+As part of this workshop you will use the teaching0.york.ac.uk server, like last time. You will use linux modules and command line R. This should feel nice and familiar! This session will generate plots at the command line which you can then download. If you do RNAseq for your final report, you may want to take your final data off the server and explore with RStudio - this is absolutely fine! Always remember there are lots of different ways to compete the same task when you're coding.<br/>
 As soon as you can, get logged on to the server and get the following R libraries installed. You will only need to do this once.<br/>
 </p>
 
@@ -37,7 +37,7 @@ cd ~/genomics/
 # I will use this throughout the workshop material
 ```
 
-Change directory into your user space within the ~/genomics/students/ area, and make a new directory for this workshop. Change into that new directory. We are now ready to set up your R space.
+Change directory into your user space within the ~/genomics/students/ area, and make a new directory for this workshop, for example: workshop4. Change into that new directory. We are now ready to set up your R space.
 
 ```sh
 # create directories for your newly installed R libraries to go (this helps with version control and installing on a managed machine)
@@ -78,7 +78,7 @@ There is therefore an unmet need to understand how bladder cancers start, and wh
 </p>
 <br/>
 ![Bladder cancer mutational signature showing APOBEC mutations, but no smoking signature - SBS4](/assets/images/BLCA_SBS_mutational_signature.png){:class="img-responsive"}
-<br/><span style="font-size:0.8em;">*Deconvolution of mutational signatures. Top left plot shows the original proportion of single base substitutions in the sample. The right hand side shows the deconvolution into separate SBS derivations and their relevant proportions (totals 100% in this instance), and as proof the bottom left plot shows the reconstruction of the signatuue using the deconvoluted plots.*</span><br/>
+<br/><span style="font-size:0.8em;">*Deconvolution of mutational signatures. Top left plot shows the original proportion of single base substitutions in the sample. The right hand side shows the deconvolution into separate SBS derivations and their relevant proportions, and as proof the bottom left plot shows the reconstruction of the signature using the deconvoluted plots.*</span><br/>
 
 <p align="justify">
 Based on epidemiolgical data, and high incidence of bladder cancer in kidney transplant patients, researchers at York hypothesised that BK Polyomavirus (BKPyV) may be the cause. The RNAseq data in this workshop was our first effort to explore this association and formed part of a <a href="https://doi.org/10.1038/s41388-022-02235-8">publication in <i>Oncogene</i></a> in 2022.<br/><br/>
@@ -115,7 +115,11 @@ We won't spend more time on the format here, but I have produced a video with <a
 
 Now to run FastQC yourself. Get back to the directory you created for this workshop, and run the following:
 
-```sh 
+```sh
+# make a subdirectory for this part of the workshop
+mkdir 1_fastqc_test
+cd 1_fastqc_test
+ 
 # load the required module
 module load bio/FastQC/0.11.9-Java-11
 
@@ -134,7 +138,7 @@ To use sftp at the command line, open a new PowerShell and do the following (mak
 chdir C:\Users\USERid\Downloads
 
 sftp USERid@teaching0.york.ac.uk
-cd /shared/biology/bioldatat1/bl-00087h/students/USERid/workshop4/
+cd /shared/biology/bioldatat1/bl-00087h/students/USERid/workshop4/1_fastqc_test/
 get *html
 
 # this gets you out of sftp
@@ -162,6 +166,7 @@ In this workshop we will use Gencode v44 protein-coding genes. <a href="https://
 
 ```sh
 # create a directory for your work
+cd ../
 mkdir 2_kallisto_subset
 cd 2_kallisto_subset/
 
@@ -174,8 +179,7 @@ kallisto quant --index ~/genomics/rnaseq_data/gencode.v44.pc_transcripts-kallist
 ```
 
 <p align="justify">
-Each kallisto quant line should take ~2 minutes to run. After you have both - look at the rates (%) of pseudoalignment. How do they differ, and can you think why?<br/>
-Run the kallisto quant command again for the other 4 sample sets.<br/><br/>
+Each kallisto quant line should take ~2 minutes to run. After you have both - look at the rates (%) of pseudoalignment. How do they differ, and can you think why?<br/><br/>
 </p>
 
 ### 3 Convert kallisto output to gene-level expression matrix
@@ -187,7 +191,7 @@ We now want our data to be in TPMs - transcripts per million. This is a really g
 
 <p align="justify">
 Now we're going to combine all the kallisto output, sum to gene-level and start to look at changes. To do this (and to save time) our coding needs to get more complex. Here we will use a <b>for</b> loop.<br/>
-The logic of a for loop is to say, for each item in a list, do the same set of commands, until you run out of items in your list. The list could be numbers in a range, lines from a file, or files in a directory (and less commonly the individual letters in a string). This is a really important skill as it saves you typing the same line multiple times (with the chance for typos) for different samples (like the 6 kallisto quant lines from above).<br/>
+The logic of a for loop is to say, for each item in a list, do the same set of commands, until you run out of items in your list. The list could be numbers in a range, lines from a file, or files in a directory (and less commonly the individual letters in a string). This is a really important skill as it saves you typing the same line multiple times (with the chance for typos) for different samples (like the kallisto quant lines from above).<br/>
 </p>
 
 The standard format for a for loop is:
@@ -252,21 +256,21 @@ We will now manually check a few genes: <i>APOBEC3A</i> and <i>APOBEC3B</i> (vir
 </p>
 
 ```sh 
-head -n 1 allTPMs.tsv; grep "APOBEC3A" allTPMs.tsv
+head -n 1 allTPMs.tsv; egrep "APOBEC3A|KRT13|MKI67" allTPMs.tsv
 ```
 
 <p align="justify">
-Do the same for the other genes. What does the data suggest to you? Remember that BKPyVinfected-01 and uninfected-01 (<i>etc.</i>) are derived from cells from the same person.<br/>
+What does the (limited) data suggest to you?<br/>
 </p><br/>
 
 ### 4 Differential Expression Analysis (DEA) with Sleuth
 <p align="justify">
-Taking a quick look at TPMs is one thing, but we want to be unbiased and use the full statistical power of the dataset. For that we need DEA (done in R) using the full kallisto folders similar to those you made in part 2 (not the abundance.tsv files) and an input file showing our experimental design, which we will make now. This is another for loop, with with each line doing text manipulation of the experiment metadata stored in our read names - this is why consistent and informative naming is so useful.<br/><br/>
-A quick confession. You will now use some kallisto output which I created from the full dataset (not just the first 2 million reads as you did). This is because it would take more like 20-25 minutes per sample to run (rather than 2 minutes). If you do the RNAseq data for your report, you should run kallisto in full (I will give the full command at the end of the workshop material below). Part of this is we use a statistical method called bootstrapping to give us confidence in our expression values. Bootstrapping is where we re-run the data alignment multiple times to get consistent answers (like you would when building phylogenetic trees). In the full run you will do 100 bootstraps compared to the 0 you did in part 2. This explains why you <i>might</i> see (very) slight differences between your TPMs from part 3 and those of your classmates around you.<br/>
+Taking a quick look at TPMs is one thing, but we want to be unbiased and use the full statistical power of the dataset. For that we need DEA (done in R) using the full kallisto folders similar to those you made in part 2 (not the abundance.tsv files) and an input file showing our experimental design, which we will make now. This is another for loop, with each line doing text manipulation of the experiment metadata stored in our read names - this is why consistent and informative naming is so useful.<br/><br/>
+A quick confession. You will now use some kallisto output which I created from the full dataset (not just the first 2 million reads as you did). This is because it would take more like 20-25 minutes per sample to run (rather than 2 minutes). If you do the RNAseq data for your report, you should run kallisto in full for all samples (I will give the full command at the end of the workshop material below). Part of this is we use a statistical method called bootstrapping to give us confidence in our expression values. Bootstrapping is where we re-run the data alignment multiple times to get consistent answers (like you would when building phylogenetic trees). In the full run you will do 20 bootstraps compared to the 0 you did in part 2. This explains why you <i>might</i> see (very) slight differences between your TPMs from part 3 and those of your classmates around you.<br/>
 </p>
 
 ```sh
-cd ~/genomics/students/USERid/workshop4/
+cd ../
 mkdir 3_DEA
 cd 3_DEA
 
@@ -359,7 +363,7 @@ head(dea)
 res <- tpms %>% left_join(dea, by=c("genes"="target_id"))
 head(res)
 
-# if sleuth cannot do a stat comparison, it doesn't produce a value so the p and q values are NA after the join
+# if sleuth cannot do a stat comparison, it doesn't produce a test value so the p and q values are NA after the join
 # let's replace NA values with 1 (i.e. not significant)
 res[is.na(res)] <- 1
 
@@ -373,7 +377,9 @@ write.table(res, file="TPMs_and_DEA_results_file.tsv", sep="\t", row.names=FALSE
 ```
 
 <p align="justify">
-
+OK! That was a great block of R coding, and you're almost (almost) at the plotting stage.<br/><br/>
+As a recap, you took the full kallisto output which allowed you to get TPMs for each gene - a metric for gene expression. You then used the kallisto output to run sleuth - allowing you to use proper statistics to see which genes have significantly changing expression due to infection with BKPyV. Then you took the output from these two steps and merged them using an inner join. This means you have expression values and significance values in the same place.<br/><br/>
+Now you can plot!
 <br/>
 </p>
 
@@ -382,11 +388,11 @@ write.table(res, file="TPMs_and_DEA_results_file.tsv", sep="\t", row.names=FALSE
 library("ggrepel", lib.loc="~/Rlibs/R_4.1.2")
 library("EnhancedVolcano", lib.loc="~/Rlibs/R_4.1.2")
 
-# check how many significantly different genes we have, using log2FC threshold of >=0.58 (50% increase) and qvalue of <0.05
+# check how many significantly different genes we have, using log2FC threshold of >=0.58 (50% increase) or <=-0.58 (50% decrease) and qvalue of <0.05
 sum(res$log2FC>=0.58 & res$qval<0.05)
 sum(res$log2FC<=-0.58 & res$qval<0.05)
 
-# create list of most significantly different genes for labelling the volcano
+# create list of most significantly different genes for labelling the volcano - change the 100 to get more/fewer genes
 siggenes <- (res %>% arrange(desc(abs(pi))) %>% slice(1:100))$genes
 
 # let's create our volcano plot
@@ -396,13 +402,18 @@ EnhancedVolcano(res, x = "log2FC", y = "qval", FCcutoff = 0.58, pCutoff = 0.05,
 	legendPosition = 0, gridlines.major = FALSE, gridlines.minor = FALSE)
 
 # save it
+# you can't view it on the server, but use sftp or WinSCP/FileZilla to download and view
 ggsave("volcano.pdf")
 
 # don't close R!
 ```
 
 <p align="justify">
-
+You now have a volcano plot - the hallmark of an RNAseq experiment! In a volcano you plot log2 of the fold change (x axis) against the -log10 of the significance value (y axis). These two log transformations are really important for actually understanding the data.<br/><br/>
+We use log2FC so that up and down changes are symmetrical around zero. If your expression goes from 10 to 20, this is a fold change of 2, but if you go from 10 to 5 this is a fold change of 0.5. Whilst the fold change should be symmetrical, 0.5 is closer to 1 than 1 is to 2. This makes your plots wonky, and makes the up changes seem more important. If you do a log2 transform, a fold change of 1 (i.e. no change) gives a log2FC of 0. log2 of 0.5 is equal to -1 and log2 of 2 is equal to 1. Now we have a symmetrical plot.<br/><br/>
+We want to have small p/q values to give us confidence differences between conditions are not just due to chance. But, we want these important points to be highlighted at the top of our graph. If we plotted fold change against p or q values, all the important stuff would be on or very near the x axis (squished at the bottom) and all the non-significant stuff would be at the top. So, we do -log10 of the stat test value, and this puts the rubbish at the bottom and the (hopefully) interesting genes at the top.<br/><br/>
+One important note. We did include a +1 transformation when calculating fold change to get rid of seemingly huge changes between decimals (the fold change between 0.000005 and 0.0001 is huge!) but some of your most significant changes may come from very low expression. Is the biologically meaningful? Think about times when genes with low expression can still be incredibly important for cell function.<br/><br/>
+Now, our comparison doesn't have that many massively significant changes. One step is to go through the genes which have changed and try and see patterns - do they make sense? A more powerful and unbiased technique is to use gene set enrichment analysis (GSEA). Instead of just focusing on significant changes, GSEA looks for patterns in the dataset as a whole. We'll do this now.
 <br/>
 </p>
 
@@ -433,13 +444,58 @@ write.table(res, file="GSEA_results_file.tsv", sep="\t", row.names=FALSE, col.na
 q()
 ```
 <br/>
-
-### Concluding remarks
 <p align="justify">
-
+Excellent work! You have now taken a dataset from raw reads, to gene expression values, to differential expression and then to investigating the biology to answer  pertinent research question. This is genomics and bioinformatics in action!
 <br/>
 </p>
 
-### What to do if you want to do RNAseq for your report
+### Concluding remarks
+<p align="justify">
+In terms of the biology of this dataset, you have seen that infection with BKPyV causes the urothelium to alter its transcriptome (significant gene changes). These changes are to do with the antiviral response (interferon gamma and alpha responses in GSEA) and changes to the cell cycle. Normally urothelium is arrested in G0, with only about 1% of the cells in cycle at any time. The virus causes the cells to re-enter but not complete the cell cycle, instead sitting at the G2M checkpoint where BKPyV is best placed to replicate.<br/>
+The APOBEC response is there, but this is very donor-dependent (resting APOBEC3A levels vary a lot between donors) and therefore does not come up with a significant q value. But, we did see that the urothelium does actually become infected and that it can induce changes to the cell cycle and DNA replication. APOBEC responds to the presence of viral DNA/RNA. We have continued with the work to see if BKPyV infections led to the damage in DNA you would associate with the APOBEC damage in tumours - very much work still in development.<br/><br/>
+If you're interested in reading more, check out our <a href="https://doi.org/10.1038/s41388-022-02235-8">publication in <i>Oncogene</i></a>. Also, look out for MBiol projects in this area next year.
+<br/><br/>
+</p>
 
+### What to do if you want to do RNAseq for your report
+<p align="justify">
+Hopefully you've found this session useful, interesting and inspirational (plus the other learning objectives...). If you would like to do RNAseq analysis for your Genomics3 assessment, you <b>should not</b> use the data from above. Instead I have provided you with two other human datasets which you can find here:<br/>
+</p>
+
+```sh
+~/genomics/rnaseq_data/02_assessment_datasets/
+```
+
+<p align="justify">
+Pick one of these 3vs3 datasets and run through the same process as in this workshop: fastQC for looking at the reads, kallisto for the alignment, tximport in R for getting the gene-level TPM files, sleuth in R for running differential expression analysis, and then interpretation by plotting individual genes, making a volcano plot and using GSEA to report a little on the biology of the dataset. Look at the very bottom of this page for a couple of extra commands to help you.<br/><br/>
+There is more information on the assessment criteria on the VLE. Essentially we are looking for a decent introduction to the topic and relevance of the dataset, an explanation of your methods, and then your attempt to interpret the results and suggest how they address the purpose of the study. Each of the two datasets available to you has a README file you can view (use cat) with some information and tips.<br/><br/>
+Good luck, remember to support each other using the discussion boards, and do ask us for help and guidance if you need it.<br/><br/>
+</p>
+
+#### Some extra commands to help
+<p align="justify">
+Remember, you should run fastQC on each read file (all 12). You don't need to put any of the graphs into your report, but it is always good practice to check the quality of your data, and putting information on average read number is often good practice.<br/>
+You then need to run kallisto on each sample (all 6) using both read 1 and read 2. You will also include bootstrapping here (which you didn't do in the workshop) to make your DEA more robust. The command for that is below. Then your Sleuth, plotting and GSEA commands should be very similar, just changing the read names and any relevant paths to data.<br/>
+fastQC on these full files will take 10-20 minutes per file. kallisto will take 40-60 minutes per sample. Use loops, and set the commands running in the background, or using screen. Remember, you can set jobs running, and then go off and do something else while they run. Setting something running at 5pm often means it is ready for you in the morning.<br/>
+</p>
+
+```sh 
+# a fastqc loop
+# this would loop through any file ending in gz in the current directory and run fastqc one after the other
+for readfile in *gz
+  do
+    fastqc -o ./ $readfile
+done
+
+# this fastqc loop would submit each fastqc job into the background 
+for readfile in *gz
+  do
+    fastqc -o ./ $readfile &
+done
+
+# this is the command for kallisto with the bootstraps
+# you could put this in a loop too, if you're careful about how you define each file 
+# remember, sometimes it is quicker (if you're doing something once) to type it out vs spending an hour getting a loop right...
+kallisto quant --index ~/genomics/rnaseq_data/gencode.v44.pc_transcripts-kallisto --output-dir=SAMPLENAME --bootstrap-samples=20 ./SAMPLENAME_read1.fq.gz ./SAMPLENAME_read2.fq.gz 
+```
 

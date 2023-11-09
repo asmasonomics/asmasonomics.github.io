@@ -51,16 +51,18 @@ Within R, you can run the following lines one by one, or copy and paste in one g
 
 ```R
 
+install.packages("ggrepel", lib="~/Rlibs/R_4.1.2")
 install.packages("BiocManager", lib="~/Rlibs/R_4.1.2")
 library("BiocManager", lib.loc="~/Rlibs/R_4.1.2")
 
 BiocManager::install("tximport", lib="~/Rlibs/R_4.1.2")
-BiocManager::install("fgsea", lib="~/Rlibs/R_4.1.2")
 BiocManager::install("rhdf5", lib="~/Rlibs/R_4.1.2")
 
 install.packages("remotes", lib="~/Rlibs/R_4.1.2")
 library("remotes", lib.loc="~/Rlibs/R_4.1.2")
 remotes::install_github("pachterlab/sleuth", lib="~/Rlibs/R_4.1.2")
+remotes::install_github("kevinblighe/EnhancedVolcano", lib="~/Rlibs/R_4.1.2")
+remotes::install_github("ctlab/fgsea", lib="~/Rlibs/R_4.1.2")
 
 q()
 
@@ -243,7 +245,7 @@ q()
 ```
 
 <p align="justify">
-Now we have gene-level TPM values for our 6 samples - nice work! This is approximately where you would have started when you have done gene expression work before, but now you have experience of data QC, alignment and quantification.<br/><br/>
+Now we have gene-level TPM values for our samples - nice work! This is approximately where you would have started when you have done gene expression work before, but now you have experience of data QC, alignment and quantification.<br/><br/>
 Think back to our hypothesis for these data. We are trying to work out if BKPyV can infect urothelium (yep, tick), what the impact is on the transcriptome (in progress), and whether this is consistent with BKPyV causing bladder cancer (can we answer this with this experiment?).<br/>
 Often with RNAseq data you have a few key indicator genes in mind which could let you know if your experiment has worked. Before doing differential expression it is always nice to check these and get a feel for the data. This is the first time we can check the data is biologically meaningful, not just that the data we got off the machine is technically fine (our initial QC). The data could be of good technical quality, but only have sampled <i>GAPDH</i> millions of times, for example.<br/>
 We will now manually check a few genes: <i>APOBEC3A</i> and <i>APOBEC3B</i> (viral response genes thought to cause the mutational signatures we see in bladder cancer), <i>MKI67</i> (marker of active proliferation, when bladder urothelium is typically quiescent; out of cell cycle) and <i>KRT13</i> (a marker of urothelial differentiation).<br/> 
@@ -319,20 +321,127 @@ The other thing to consider here is that q<0.05 genes are <i>statistically</i> d
 Now we're going to combine our TPMs and our sleuth results and make a volcano plot.<br/>
 </p>
 
-# open tpm file
-# open sleuth file
-# merge on gene name
-# plot volcano with labels as in tab
+```sh 
+# create symbolic link for TPMs
+ln -s ~/genomics/rnaseq_data/01_workshop4_BKPyV-infection/03_full_kallisto_output_for_workshop_DEA/allTPMs.tsv allTPMs.tsv
 
-### 5 Exploring the biology with gene set enrichment analysis
+# now get back into R
+R
+```
 
-# some genes came up which we didn't expect and vice versa, so now to understand we can use gsea
-# pi values
-# fgsea
-# significant pathways
+```R
+library(tidyverse)
+library(dplyr)
+
+# load TPMs and look at it
+tpms <- read.table("~/genomics/rnaseq_data/01_workshop4_BKPyV-infection/03_full_kallisto_output_for_workshop_DEA/allTPMs.tsv", header=TRUE)
+head(tpms)
+
+# add columns for the average condition TPMs for each gene
+tpms <- mutate(tpms, BKPyVinfected_avg = rowMeans(select(tpms, starts_with("BKPyVinfected"))))
+tpms <- mutate(tpms, uninfected_avg = rowMeans(select(tpms, starts_with("uninfected"))))
+
+# calculate the log2(fold change) so that positive values are genes with higher expression in BKPyV
+# we do a "+1" so that genes with very low expression don't get big fold changes
+tpms <- mutate(tpms, log2FC = log2((BKPyVinfected_avg+1)/(uninfected_avg+1)))
+
+# round all value columns to 2 decimal places to make it more manageable(!) and take a look
+tpms <- mutate(tpms, across(2:ncol(tpms), round, 2))
+head(tpms)
+
+# now load the differential expression analysis results and take a look
+dea <- read.table("infectionDEA_results.tsv", header=TRUE)
+head(dea)
+
+# now we combine our TPMs and our DEA results using a left join on the gene names
+# in our TPMs dataframe our gene names are in a column called "genes"
+# in our DEA dataframe gene names are in a column called "target_id"
+res <- tpms %>% left_join(dea, by=c("genes"="target_id"))
+head(res)
+
+# if sleuth cannot do a stat comparison, it doesn't produce a value so the p and q values are NA after the join
+# let's replace NA values with 1 (i.e. not significant)
+res[is.na(res)] <- 1
+
+# we can create a combined metric of fold change and significance called a pi value
+res <- mutate(res, pi = (log2FC * (-1 * log10(qval))))
+
+# now we have all our data in once table, let's save it
+write.table(res, file="TPMs_and_DEA_results_file.tsv", sep="\t", row.names=FALSE, col.names=TRUE)
+
+# don't close R!
+```
+
+<p align="justify">
+
+<br/>
+</p>
+
+```R 
+# carrying on with our R session - if you accidentally closed it, just reload TPMs_and_DEA_results_file.tsv using read.table()
+library("ggrepel", lib.loc="~/Rlibs/R_4.1.2")
+library("EnhancedVolcano", lib.loc="~/Rlibs/R_4.1.2")
+
+# check how many significantly different genes we have, using log2FC threshold of >=0.58 (50% increase) and qvalue of <0.05
+sum(res$log2FC>=0.58 & res$qval<0.05)
+sum(res$log2FC<=-0.58 & res$qval<0.05)
+
+# create list of most significantly different genes for labelling the volcano
+siggenes <- (res %>% arrange(desc(abs(pi))) %>% slice(1:100))$genes
+
+# let's create our volcano plot
+EnhancedVolcano(res, x = "log2FC", y = "qval", FCcutoff = 0.58, pCutoff = 0.05,
+	lab = res$genes, selectLab = siggenes, labSize = 2.0, max.overlaps = 1000, drawConnectors = TRUE,
+	ylim = c(0, (max(-1*log10(res$qval)) + 0.5)), xlim = c((max(abs(res$log2FC))*-1), max(abs(res$log2FC))+1),
+	legendPosition = 0, gridlines.major = FALSE, gridlines.minor = FALSE)
+
+# save it
+ggsave("volcano.pdf")
+
+# don't close R!
+```
+
+<p align="justify">
+
+<br/>
+</p>
+
+```R 
+library("fgsea", lib.loc="~/Rlibs/R_4.1.2")
+
+# use our pi values to rank the genes biologically from most up to most down
+prerank <- res[c("genes", "pi")]
+prerank <- setNames(prerank$pi, prerank$genes)
+str(prerank)
+
+# run GSEA using a list of gene sets curated by MSigDB (Broad Institute)
+genesets = gmtPathways("~/genomics/rnaseq_data/h.all.v2023.2.Hs.symbols.gmt")
+fgseaRes <- fgsea(pathways = genesets, stats = rnk, minSize=15, maxSize=500)
+
+# check the top most significant hits
+head(fgseaRes[order(pval), ], 10)
+
+# plot an enrichment plot for the top hit
+plotEnrichment(genesets[["HALLMARK_E2F_TARGETS"]], prerank) + labs(title="E2F targets")
+ggsave("E2Ftargets.pdf")
+
+# create a summary plot for the top 10 most significant enriched pathways
+gseatop10 <- fgseaRes[head(order(pval), n=10), pathway]
+plotGseaTable(gseatop10, rnk, fgseaRes, gseaParam=0.5)
+
+# save your results
+write.table(res, file="GSEA_results_file.tsv", sep="\t", row.names=FALSE, col.names=TRUE)
+
+# when you're happy, the workshop is over - you can quit!
+q()
+```
+<br/>
 
 ### Concluding remarks
+<p align="justify">
 
+<br/>
+</p>
 
 ### What to do if you want to do RNAseq for your report
 

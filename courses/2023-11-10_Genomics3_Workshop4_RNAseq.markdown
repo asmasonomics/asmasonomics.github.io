@@ -47,7 +47,7 @@ mkdir ~/Rlibs ~/Rlibs/R_4.1.2
 R 
 ```
 
-Within R, you can run the following lines one by one, or copy and paste in one go. If any package installations ask for updates, you can skip. Whilst these are installing, read the [introductory material](#introduction-to-the-material-and-researc-question-in-this-workshop) for the workshop.
+Within R, you can run the following lines one by one, or copy and paste in one go. If any package installations ask for updates, you can skip. Whilst these are installing, read the introductory material for the workshop below.
 
 ```R
 
@@ -334,7 +334,7 @@ library(tidyverse)
 library(dplyr)
 
 # load TPMs and look at it
-tpms <- read.table("~/genomics/rnaseq_data/01_workshop4_BKPyV-infection/03_full_kallisto_output_for_workshop_DEA/allTPMs.tsv", header=TRUE)
+tpms <- read.table("allTPMs.tsv", header=TRUE)
 head(tpms)
 
 # add columns for the average condition TPMs for each gene
@@ -416,18 +416,15 @@ str(prerank)
 
 # run GSEA using a list of gene sets curated by MSigDB (Broad Institute)
 genesets = gmtPathways("~/genomics/rnaseq_data/h.all.v2023.2.Hs.symbols.gmt")
-fgseaRes <- fgsea(pathways = genesets, stats = rnk, minSize=15, maxSize=500)
+fgseaRes <- fgsea(pathways = genesets, stats = prerank, minSize=15, maxSize=500)
 
 # check the top most significant hits
 head(fgseaRes[order(pval), ], 10)
 
-# plot an enrichment plot for the top hit
+# plot an enrichment plot for the top hit, and explore some of the others
+# google the terms, or check the MSigDB website - do the results make sense?
 plotEnrichment(genesets[["HALLMARK_E2F_TARGETS"]], prerank) + labs(title="E2F targets")
 ggsave("E2Ftargets.pdf")
-
-# create a summary plot for the top 10 most significant enriched pathways
-gseatop10 <- fgseaRes[head(order(pval), n=10), pathway]
-plotGseaTable(gseatop10, rnk, fgseaRes, gseaParam=0.5)
 
 # save your results
 write.table(res, file="GSEA_results_file.tsv", sep="\t", row.names=FALSE, col.names=TRUE)

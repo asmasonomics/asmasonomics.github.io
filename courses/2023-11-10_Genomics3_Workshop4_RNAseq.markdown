@@ -9,7 +9,7 @@ permalink: /courses/Genomics3_Workshop4_RNAseq_Nov2023
 
 <p align="justify">
 Welcome to Workshop 4! This workshop will build on some of the skills you developed in previous courses using gene expression data. In previous courses you have worked with <b>count</b> data to look at gene expression, and to explore genes which are differentially expressed between conditions (such as in health and disease). This data has already been processed from raw reads: performing quality control, aligning to a reference genome or transcriptome, and then summarising to gene level. In this workshop you will do the whole process, from raw reads to differential expression analysis.<br/>
-If you choose to base your final report on <i>this</i> workshop, you will need to choose a <b>different dataset</b> from the BKPyV dataset used in this workshop. Two other (similar) datasets are provided on the server. The bioinformatic approach will be very similar, but you will need to bring in relevant biology. Brief descriptions of the other datasets are provided in README files in each the dataset directories.<br/><br/>
+If you choose to base your final report on <i>this</i> workshop, you will need to use the hypoxia exposed urothelium dataset and  <b>not the BKPyV dataset used in this workshop </b>. The bioinformatic approach will be very similar, but you will need to bring in relevant biology. More details on this dataset are at the end of the workshop material.<br/><br/>
 As ever, the workshop is aimed towards those with Windows machines, including the managed university machines. If you are using your own machine, you have a little more freedom. If you have a Mac, you should be aware of the differences by now (Terminal rather than PowerShell, <i>etc.</i>).<br/>
 </p>
 
@@ -446,7 +446,7 @@ q()
 <br/>
 <p align="justify">
 Excellent work! You have now taken a dataset from raw reads, to gene expression values, to differential expression and then to investigating the biology to answer  pertinent research question. This is genomics and bioinformatics in action!
-<br/>
+<br/><br/>
 </p>
 
 ### Concluding remarks
@@ -459,23 +459,25 @@ If you're interested in reading more, check out our <a href="https://doi.org/10.
 
 ### What to do if you want to do RNAseq for your report
 <p align="justify">
-Hopefully you've found this session useful, interesting and inspirational (plus the other learning objectives...). If you would like to do RNAseq analysis for your Genomics3 assessment, you <b>should not</b> use the data from above. Instead I have provided you with two other human datasets which you can find here:<br/>
+Hopefully you've found this session useful, interesting and inspirational (plus the other learning objectives...). If you would like to do RNAseq analysis for your Genomics3 assessment, you <b>should not</b> use the data from above. Instead I have provided with a similar dataset of human urothelial cell cultures grown in either normoxic (20% O2) or hypoxic (1% O2) conditions:<br/>
 </p>
 
 ```sh
-~/genomics/rnaseq_data/02_assessment_datasets/
+~/genomics/rnaseq_data/02_hypoxia_assessment_dataset/
 ```
 
 <p align="justify">
-Pick one of these 3vs3 datasets and run through the same process as in this workshop: fastQC for looking at the reads, kallisto for the alignment, tximport in R for getting the gene-level TPM files, sleuth in R for running differential expression analysis, and then interpretation by plotting individual genes, making a volcano plot and using GSEA to report a little on the biology of the dataset. Look at the very bottom of this page for a couple of extra commands to help you.<br/><br/>
-There is more information on the assessment criteria on the VLE. Essentially we are looking for a decent introduction to the topic and relevance of the dataset, an explanation of your methods, and then your attempt to interpret the results and suggest how they address the purpose of the study. Each of the two datasets available to you has a README file you can view (use cat) with some information and tips.<br/><br/>
+This is a 4vs4 dataset where urothelial cells from 4 different people have been used for cell culture. Cells were re-differentiated to form a biomimetic tissue and then split, with one half continuing to be grown in standard normoxic conditions (20% O2) and the others grown in hypoxia (1% O2). We are able to measure the ability of biomimetic urothelium to form a tight barrier (to urine, if it was in the body), and the barrier ability was highly compromised when the cells were taken into hypoxia.<br/>
+In healthy people, the urothelium is an epithelial layer some 3-6 cells thick (depending on how full the bladder is) which sits on top of a basement membrane associated with a capillary bed (i.e. it has good oxygen supply). For this report consider what reductions in oxygen would mean for a tissue, its physiology and the resultant transcriptome. Consider how this could impact bladder health, or in which bladder diseases hypoxia may play a role. Are there major regulators of hypoxia which do not change at the transcript level?<br/><br/>
+For your analysis, run through the same process as in this workshop: fastQC for looking at the reads, kallisto for the alignment, tximport in R for getting the gene-level TPM files, sleuth in R for running differential expression analysis, and then interpretation by plotting individual genes, making a volcano plot and using GSEA to report a little on the biology of the dataset. Look at the very bottom of this page for a couple of extra commands to help you.<br/>
+There is more information on the assessment criteria on the VLE. Essentially we are looking for a decent introduction to the topic and relevance of the dataset, an explanation of your methods, and then your attempt to interpret the results and suggest how they address the purpose of the study.<br/>
 Good luck, remember to support each other using the discussion boards, and do ask us for help and guidance if you need it.<br/><br/>
 </p>
 
 #### Some extra commands to help
 <p align="justify">
-Remember, you should run fastQC on each read file (all 12). You don't need to put any of the graphs into your report, but it is always good practice to check the quality of your data, and putting information on average read number is often good practice.<br/>
-You then need to run kallisto on each sample (all 6) using both read 1 and read 2. You will also include bootstrapping here (which you didn't do in the workshop) to make your DEA more robust. The command for that is below. Then your Sleuth, plotting and GSEA commands should be very similar, just changing the read names and any relevant paths to data.<br/>
+Remember, you should run fastQC on each read file (all 16). You don't need to put any of the graphs into your report, but it is always good practice to check the quality of your data, and putting information on average read number is often good practice.<br/>
+You then need to run kallisto on each sample (all 8) using both read 1 and read 2. You will also include bootstrapping here (which you didn't do in the workshop) to make your DEA more robust. The command for that is below. Then your Sleuth, plotting and GSEA commands should be very similar, just changing the read names and any relevant paths to data.<br/>
 fastQC on these full files will take 10-20 minutes per file. kallisto will take 40-60 minutes per sample. Use loops, and set the commands running in the background, or using screen. Remember, you can set jobs running, and then go off and do something else while they run. Setting something running at 5pm often means it is ready for you in the morning.<br/>
 </p>
 
@@ -494,6 +496,7 @@ for readfile in *gz
 done
 
 # this is the command for kallisto with the bootstraps
+# you could run each of the 8 samples with an '&' at the end to run in the background
 # you could put this in a loop too, if you're careful about how you define each file 
 # remember, sometimes it is quicker (if you're doing something once) to type it out vs spending an hour getting a loop right...
 kallisto quant --index ~/genomics/rnaseq_data/gencode.v44.pc_transcripts-kallisto --output-dir=SAMPLENAME --bootstrap-samples=20 ./SAMPLENAME_read1.fq.gz ./SAMPLENAME_read2.fq.gz 

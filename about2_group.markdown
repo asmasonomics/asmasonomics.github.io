@@ -11,12 +11,6 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 
 <span style="font-size:1.3em;">**Current lab members**</span><br/>
 
-<span style="font-size:1.1em;">Sarah Forrester</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/sarahf2505) *Postdoctoral research associate*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/SarahForrester.png"
-	content = "Sarah gained her PhD at the University of Liverpool using multi ‘omic approaches to analyse parasite genomic data in 2016 and has worked since then on a range of microbial systems and used a variety of bioinformatic methods. She performs HPC-driven microbial genomics research and delivers bioinformatics training, including as a Software Sustainability Institute Fellow.<br/>Since 2020 she has been working in the Chong lab using long read metagenomics and metabolomics to look at methanogenic archaea which are involved in the decomposition of organic matter during anaerobic digestion. Sarah joined the Mason Lab part-time in June 2023 to apply her data analysis skills to support data analysis in both avian and urothelial cancer projects."
-%}
-
 <span style="font-size:1.1em;">Vlad Ungureanu</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/vladUngu) *PhD Student (Co-supervisee)*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/VladUngureanu.jpeg"
@@ -27,12 +21,6 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 {% include profile_page_cols.html 
 	file = "/assets/images/RichardGawne.jpg"
 	content = "Richard gained a 1st class BSc Molecular Cell Biology degree at the University of York, followed by a distinction in the Bioinformatics MSc at the University of Birmingham. His MSc research project involved analysing RNA-seq data to investigate the genetic basis of a corneal disorder known as keratoconus. Richard returned to York to join the Mason Lab in October 2021 and will provide bioinformatics support to the group and the wider Jack Birch Unit."
-%}
-
-<span style="font-size:1.1em;">Mae Wells</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/Maee_elisa) *Research Assistant*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/MaeWells.jpg"
-	content = "Mae completed her University of York final year integrated masters project in the lab, working on clonal evolution in the 100kGP bladder cancer cohort, earning a first class degree overall. After graduating Mae returned to the group to continue her work on the 100kGP bladder cancer cohort, developing her skills in bioinformatics and presenting her work to academic and clinical audiences. Mae is looking to develop further in this area with the aim of continuing her studies in postgraduate medicine or research."
 %}
 
 <span style="font-size:1.1em;">George Hatton</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/Hatton972) *PhD Student (Co-supervisee)*<br/>
@@ -103,3 +91,16 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	file = "/assets/images/BenMusgrove.jpg"
 	content = "Ben completed his integrated masters final year project in the lab using the 100kGP bladder cancer cohort to understand copy number alterations, gaining a 1st. After graduating Ben will use his analytical and data science skills in the energy sector."
 %}
+
+<span style="font-size:1.1em;">Sarah Forrester</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/sarahf2505) *Postdoctoral research associate*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/SarahForrester.png"
+	content = "Sarah gained her PhD at the University of Liverpool using multi ‘omic approaches to analyse parasite genomic data in 2016 and has worked since then on a range of microbial systems and used a variety of bioinformatic methods. She performs HPC-driven microbial genomics research and delivers bioinformatics training, including as a Software Sustainability Institute Fellow.<br/>Since 2020 she has been working in the Chong lab using long read metagenomics and metabolomics to look at methanogenic archaea which are involved in the decomposition of organic matter during anaerobic digestion. Sarah joined the Mason Lab part-time in June 2023 to apply her data analysis skills to support data analysis in both avian and urothelial cancer projects."
+%}
+
+<span style="font-size:1.1em;">Mae Wells</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/Maee_elisa) *Research Assistant*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/MaeWells.jpg"
+	content = "Mae completed her University of York final year integrated masters project in the lab, working on clonal evolution in the 100kGP bladder cancer cohort, earning a first class degree overall. After graduating Mae returned to the group to continue her work on the 100kGP bladder cancer cohort, developing her skills in bioinformatics and presenting her work to academic and clinical audiences. Mae really enjoyed the different pace of research as a career rather than as a student!"
+%}
+

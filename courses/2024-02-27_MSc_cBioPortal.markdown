@@ -8,7 +8,7 @@ permalink: /courses/MSc_cBioPortal_Feb2024
    <summary>Reveal for the answer</summary>
    This is a check, has it worked?
 </details>
-
+<br/>
 
 <p align="justify">
 This teaching material was designed as the second part of Dr Simon Baker's <a href="https://www.yorkagainstcancer.org.uk/">York Against Cancer</a> Enthuse partnership project <i>TP53</i> practical, providing hands-on bioinformatic analysis of real cancer sequencing data. This material can be used directly as a broswer-based tutorial, or adapted with acknowledgement into a specific lesson plan.<br/><br/>

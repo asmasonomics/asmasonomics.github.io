@@ -25,7 +25,7 @@ permalink: /courses/MSc_cBioPortal_Feb2024
 
 <span style="font-size:1.2em;">**The Session**</span><br/>
 **Introduction and Learning Objectives**<br/>
-<object data="/assets/files/2024-02-27_cBioPortal_0102_Intro.pdf" type='application/pdf'></object>
+<object data="/assets/files/2024-02-27_cBioPortal_0102_Intro.pdf" width="700" height="450" type='application/pdf'></object>
 
 **cBioPortal website demo**<br/>
 <p align="justify">During the session this is a live demonstration of the cBioPortal functionality, covering the available datasets, then using TCGA Bladder Cancer (Cell 2017) data to investigate: the summary and clinical dashboard tabs, a single- and then multi-gene query. Both gene queries are used to epxlore oncoprints, lollipop plots, plotting functionality and survival.<br/></p>
@@ -52,7 +52,7 @@ The video below is an indicative recording of a cBioPortal demo.
 
 <br/>
 **Recap and Further Resources, Accessing and using underlying cBioPortal data**<br/>
-<object data="/assets/files/2024-02-27_cBioPortal_0304_LO-Recap_Resources_Downloads.pdf" width="800" height="400" type='application/pdf'></object>
+<object data="/assets/files/2024-02-27_cBioPortal_0304_LO-Recap_Resources_Downloads.pdf" width="700" height="450" type='application/pdf'></object>
 <br/><br/>
 
 <p align="justify">This tutorial was first delivered at The University of York on 27th February 2024 for the 59M and 68M MSc students. The material was written and delivered by Dr Andrew Mason, adapting previous material supported by <a href="https://elixiruknode.org/">Elixir-UK</a> and <a href="https://www.yorkagainstcancer.org.uk/">York Against Cancer</a>.<br/></p>

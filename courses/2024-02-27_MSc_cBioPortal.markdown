@@ -25,7 +25,7 @@ permalink: /courses/MSc_cBioPortal_Feb2024
 
 <span style="font-size:1.2em;">**The Session**</span><br/>
 **Introduction and Learning Objectives**<br/>
-<object data="/assets/files/2024-02-27_cBioPortal_0102_Intro.pdf" width="800" height="400" type='application/pdf'></object>
+<object data="/assets/files/2024-02-27_cBioPortal_0102_Intro.pdf" type='application/pdf'></object>
 
 **cBioPortal website demo**<br/>
 <p align="justify">During the session this is a live demonstration of the cBioPortal functionality, covering the available datasets, then using TCGA Bladder Cancer (Cell 2017) data to investigate: the summary and clinical dashboard tabs, a single- and then multi-gene query. Both gene queries are used to epxlore oncoprints, lollipop plots, plotting functionality and survival.<br/></p>

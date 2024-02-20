@@ -2,13 +2,88 @@
 layout: page
 permalink: /courses/MSc_cBioPortal_Feb2024
 ---
-<span style="font-size:1.6em;">**York Against Cancer Enthuse partnership bioinformatics session: using cBioPortal to explore *TP53* mutations**</span><br/>
+<span style="font-size:1.6em;">**Introduction to cBioPortal (59M/68M tutorial)**</span><br/>
+![cBioPortal and Elixir logos](/assets/images/cBioPortal_Elixir.jpg){:class="img-responsive"}
+<br/>
+<p align="justify"><a href="https://www.cbioportal.org/">cBioPortal</a> is a publicly available online resource for cancer genomics, with omics and clinical data available for many cancer types. In this tutorial we will introduce cBioPortal - what's there, how to use it, and what you can learn from it.<br/></p>
+
+<span style="font-size:1.2em;">**Learning objectives**</span><br/>
+1. Recognise the applications and utility of cBioPortal for cancer research
+2. Operate and explore the cBioPortal website to identify cancer data of interest
+3. Complete two cancer biology problem-solving tasks using cBioPortal
+4. Recognise the process for accessing and analysing cBioPortal data
+<br/>
+
+<span style="font-size:1.2em;">**Session outline**</span><br/>
+10.00&nbsp;&nbsp;&nbsp;Introduction and Learning Objectives<br/>
+10.05&nbsp;&nbsp;&nbsp;cBioPortal website demo<br/>
+10.15&nbsp;&nbsp;&nbsp;Problem-solving tasks<br/>
+10.40&nbsp;&nbsp;&nbsp;Recap and Further Resources<br/>
+10.45&nbsp;&nbsp;&nbsp;Accessing and using underlying cBioPortal data<br/>
+10.55&nbsp;&nbsp;&nbsp;Close
+<br/>
+
+<span style="font-size:1.2em;">**The Session**</span><br/>
+**Introduction and Learning Objectives**<br/>
+<object data="/assets/files/2024-02-27_cBioPortal_0102_Intro.pdf" width="600" height="600" type='application/pdf'></object>
+
+**cBioPortal website demo**<br/>
+<p align="justify">During the session this is a live demonstration of the cBioPortal functionality, covering the available datasets, then using TCGA Bladder Cancer (Cell 2017) data to investigate: the summary and clinical dashboard tabs, a single- and then multi-gene query. Both gene queries are used to epxlore oncoprints, lollipop plots, plotting functionality and survival.<br/></p>
+The video below is an indicative recording of a cBioPortal demo.
+{% include youtube.html id="1z03uo_kpQI" %}
+<br/>
+
+**Problem-solving tasks**<br/>
+#### Task 1 - the pan-cancer importance of *TP53* mutations
+
+
+
+
+
+#### Task 2 - exploration of the METABRIC breast cancer dataset
+
+
+
+
+
+
+
+
+
+<br/>
+**Recap and Further Resources, Accessing and using underlying cBioPortal data**<br/>
+<object data="/assets/files/2024-02-27_cBioPortal_0304_LO-Recap_Resources_Downloads.pdf" width="600" height="600" type='application/pdf'></object>
+<br/><br/>
+
+<p align="justify">This tutorial was first delivered at The University of York on 27th February 2024 for the 59M and 68M MSc students. The material was written and delivered by Dr Andrew Mason, adapting previous material supported by <a href="https://elixiruknode.org/">Elixir-UK</a> and <a href="https://www.yorkagainstcancer.org.uk/">York Against Cancer</a>.<br/></p>
+
+
 
 <details>
    <summary>Reveal for the answer</summary>
    This is a check, has it worked?
 </details>
 <br/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <p align="justify">
 This teaching material was designed as the second part of Dr Simon Baker's <a href="https://www.yorkagainstcancer.org.uk/">York Against Cancer</a> Enthuse partnership project <i>TP53</i> practical, providing hands-on bioinformatic analysis of real cancer sequencing data. This material can be used directly as a broswer-based tutorial, or adapted with acknowledgement into a specific lesson plan.<br/><br/>

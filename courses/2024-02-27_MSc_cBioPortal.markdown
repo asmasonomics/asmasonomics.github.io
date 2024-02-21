@@ -169,19 +169,19 @@ Breast cancer is one of the best served cancers in terms of genomic resources. E
 Return to the <a href="https://www.cbioportal.org/">cBioPortal homepage</a>, find and select the METABRIC invasive breast carcinoma cohort, and start to explore by selecting <b>Explore Selected Studies</b>.
 Work through the questions below and check your understanding with the brief results given.<br/></p>
 
-1. Are there differences in survival or other clinical data between the 3-gene classifier subtypes?
+1) Are there differences in survival or other clinical data between the 3-gene classifier subtypes?
 <details>
    <summary>Hint</summary>
    Select the 3-gene classifier subtypes from the pie chart, ignoring the NAs, then Compare Groups.
-   </details><br/>
+   </details>
    <details>
    <summary>Interpretation</summary>
    Survival curves are very different for the 3 groups (plus the high/low proilferative group).<br/>
    Many clinical values are significantly different (including some obvious ones about mutation status), but look at the plots - do you think these are biologically significant as well?<br/>
    Look at those clinical values which are not significantly different - are these important?
-   </details><br/>
+   </details>
 
-2. How does ER status survival change over time (5-year vs 10-year vs 20-year)?
+2) How does ER status survival change over time (5-year vs 10-year vs 20-year)?
 <details>
    <summary>Interpretation</summary>
    ER+ groups do better at first, with the low proliferative group tending to be worse than the high.<br/>

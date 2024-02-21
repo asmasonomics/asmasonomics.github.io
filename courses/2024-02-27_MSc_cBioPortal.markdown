@@ -163,16 +163,91 @@ The video below is a walkthrough and explainer for this case study.<br/>
 <br/>
 
 **Task 2 - exploration of the METABRIC breast cancer dataset**<br/>
+<p align="justify">
+You've now been shown the major plots and ways you can explore the data. You will now use that knowledge to explore the METABRIC study, one of the largest cancer cohorts in cBioPortal.<br/>
+Breast cancer is one of the best served cancers in terms of genomic resources. Explore METABRIC and consider the following questions, but also take the time to look at other sets including TCGA, a cohort built on large, aggressive tumours (across all tumour types).<br/>
+Return to the <a href="https://www.cbioportal.org/">cBioPortal homepage</a>, find and select the METABRIC invasive breast carcinoma cohort, and start to explore by selecting <b>Explore Selected Studies</b>.
+Work through the questions below and check your understanding with the brief results given.<br/></p>
 
+1. Are there differences in survival or other clinical data between the 3-gene classifier subtypes?
+<details>
+   <summary>Hint</summary>
+   Select the 3-gene classifier subtypes from the pie chart, ignoring the NAs, then Compare Groups.
+   </details><br/>
+   <details>
+   <summary>Interpretation</summary>
+   Survival curves are very different for the 3 groups (plus the high/low proilferative group).<br/>
+   Many clinical values are significantly different (including some obvious ones about mutation status), but look at the plots - do you think these are biologically significant as well?<br/>
+   Look at those clinical values which are not significantly different - are these important?
+   </details><br/>
 
+2. How does ER status survival change over time (5-year vs 10-year vs 20-year)?
+<details>
+   <summary>Interpretation</summary>
+   ER+ groups do better at first, with the low proliferative group tending to be worse than the high.<br/>
+   By 20 years, triple negative BRCA is actually doing better.<br/>
+   Why this might be is still an open topic of research. It's also hard to control for differences in diagnosis, treatment efficacy and lifestyle in such a long analysis.
+   </details><br/>
 
+3. What gene expression or mutation differences can you see between ER+ and ER- BRCA?
+<details>
+   <summary>Hint</summary>
+   You can do this by choosing the high or low proliferative group, but easier to return to the METABRIC main page and use the ER status pie chart.
+   </details><br/>
+   <details>
+   <summary>Interpretation</summary>
+   We see <i>TP53</i> again!<br/>
+   There are lots all in the same cytoband with the same occurence rates - why is this?<br/>
+   In the mRNA there are some nice positive controls, such as high <i>ESR1</i> expression in the ER+ group. Google some of the top genes (gene + breast cancer as search terms) - do these make sense?
+   </details><br/>
 
+4. Which are the most commonly mutated, likely cancer-related genes? Of the top 10, which are consistent with being tumour supressor genes (TSGs), and which as oncogenes? (Think about the mutation types). Are there hotspots in these with clinical relevance?
+<details>
+   <summary>Hint</summary>
+   Return to the METABRIC project page.<br/>
+   Look at the Mutated Genes table and use Ctrl/Cmd and your mouse to select the top 10. You will see them add to the query box at the top right. Hit query and explore.<br/>
+   </details><br/>
+   <details>
+   <summary>Interpretation</summary>
+   Loads of data to enjoy here!<br/>
+   Likely TSGs: TP53, KMT2C, GATA3, CDH1, MAP3K1<br/>
+   Likely oncogenes: PIK3CA, TP53<br/>
+   Likely passengers(?): MUC16, AHNAK2, SYNE1, DNAH11<br/>
+   TP53 occupies both TSG and oncogenic roles, depending on the mutation (break vs modify).<br/>
+   Passengers have very few/no mutations consistent with being drivers. Consider applying the OncoKB filter for known "cancer genes" on the METABRIC project page - how does this change your data?<br/>
+   Take time to explore mutual exclusivity, and all the other plots you know about.
+   </details><br/>
 
+5. Consider *MUC16*. It is not included in the 'likely cancerous' list, but is heavily mutated. What data from the lollipop mutation plots make it unlikely related to oncogenesis?
+<details>
+   <summary>Interpretation</summary>
+   As above, MUC16 mutations are likely passengers - lots of missense changes not in functional domains.<br/>
+   MUC16 is massive. Many large genes pick up mutations by chance - they are not necessarily important for cancer progression/biology.<br/>
+   In plots, for mRNA vs mut type, you can see that expression is high and that mutations do not seem to impact expression.
+   </details><br/>
 
-
-
-
+6. Looking across BRCA studies, are there any male samples? If so, how do they compare? Can you compare them confidently?
+<details>
+   <summary>Hint</summary>
+   Return to the home page.<br/>
+   Select all breast cancer studies. You get some warnings for including multiple identical samples from TCGA.<br/>
+   Deselect TCGA studies and only include the TCGA Firehose. Explore Selected Studies.<br/>
+   Go to the Charts tab at the top right and add the pie chart for Sex.
+   </details><br/>
+   <details>
+   <summary>Interpretation</summary>
+   7924 female samples and 36 male samples. You can do a comparison, but the groups are very imbalanced.<br/>
+   Plots like the survival plot are hard to interpret confidently - how would you design a study to study the differences between breast cancer in biological males vs females?
+   </details><br/>
 <br/>
+
+**Task sum up**<br/>
+<p align="justify">
+These two tasks should have given you a large exposure to what cBioPortal can show you. Think about how you can use this in your own research.<br/>
+Perhaps you have done an experiment in the lab and you want to know whether a particularly gene is important in the relevant cancer - cBioPortal can help you do this.<br/>
+You can also start with the cBioPortal data for a cancer (or cancers) of interest and approach it as a data question.
+<br/></p>
+
 <span style="font-size:1.2em;">**Recap and Further Resources, Accessing and using underlying cBioPortal data**</span><br/>
 <object data="/assets/files/2024-02-27_cBioPortal_0304_LO-Recap_Resources_Downloads.pdf" width="700" height="450" type='application/pdf'></object>
 <br/><br/>

@@ -173,13 +173,13 @@ Work through the questions below and check your understanding with the brief res
 <details>
    <summary>Hint</summary>
    Select the 3-gene classifier subtypes from the pie chart, ignoring the NAs, then Compare Groups.
-   </details>
+   </details><br/>
    <details>
    <summary>Interpretation</summary>
    Survival curves are very different for the 3 groups (plus the high/low proilferative group).<br/>
    Many clinical values are significantly different (including some obvious ones about mutation status), but look at the plots - do you think these are biologically significant as well?<br/>
    Look at those clinical values which are not significantly different - are these important?
-   </details>
+   </details><br/>
 
 2) How does ER status survival change over time (5-year vs 10-year vs 20-year)?
 <details>
@@ -189,7 +189,7 @@ Work through the questions below and check your understanding with the brief res
    Why this might be is still an open topic of research. It's also hard to control for differences in diagnosis, treatment efficacy and lifestyle in such a long analysis.
    </details><br/>
 
-3. What gene expression or mutation differences can you see between ER+ and ER- BRCA?
+3) What gene expression or mutation differences can you see between ER+ and ER- BRCA?
 <details>
    <summary>Hint</summary>
    You can do this by choosing the high or low proliferative group, but easier to return to the METABRIC main page and use the ER status pie chart.
@@ -201,7 +201,7 @@ Work through the questions below and check your understanding with the brief res
    In the mRNA there are some nice positive controls, such as high <i>ESR1</i> expression in the ER+ group. Google some of the top genes (gene + breast cancer as search terms) - do these make sense?
    </details><br/>
 
-4. Which are the most commonly mutated, likely cancer-related genes? Of the top 10, which are consistent with being tumour supressor genes (TSGs), and which as oncogenes? (Think about the mutation types). Are there hotspots in these with clinical relevance?
+4) Which are the most commonly mutated, likely cancer-related genes? Of the top 10, which are consistent with being tumour supressor genes (TSGs), and which as oncogenes? (Think about the mutation types). Are there hotspots in these with clinical relevance?
 <details>
    <summary>Hint</summary>
    Return to the METABRIC project page.<br/>
@@ -218,7 +218,7 @@ Work through the questions below and check your understanding with the brief res
    Take time to explore mutual exclusivity, and all the other plots you know about.
    </details><br/>
 
-5. Consider *MUC16*. It is not included in the 'likely cancerous' list, but is heavily mutated. What data from the lollipop mutation plots make it unlikely related to oncogenesis?
+5) Consider *MUC16*. It is not included in the 'likely cancerous' list, but is heavily mutated. What data from the lollipop mutation plots make it unlikely related to oncogenesis?
 <details>
    <summary>Interpretation</summary>
    As above, MUC16 mutations are likely passengers - lots of missense changes not in functional domains.<br/>
@@ -226,7 +226,7 @@ Work through the questions below and check your understanding with the brief res
    In plots, for mRNA vs mut type, you can see that expression is high and that mutations do not seem to impact expression.
    </details><br/>
 
-6. Looking across BRCA studies, are there any male samples? If so, how do they compare? Can you compare them confidently?
+6) Looking across BRCA studies, are there any male samples? If so, how do they compare? Can you compare them confidently?
 <details>
    <summary>Hint</summary>
    Return to the home page.<br/>
@@ -246,7 +246,7 @@ Work through the questions below and check your understanding with the brief res
 These two tasks should have given you a large exposure to what cBioPortal can show you. Think about how you can use this in your own research.<br/>
 Perhaps you have done an experiment in the lab and you want to know whether a particularly gene is important in the relevant cancer - cBioPortal can help you do this.<br/>
 You can also start with the cBioPortal data for a cancer (or cancers) of interest and approach it as a data question.
-<br/></p>
+<br/><br/></p>
 
 <span style="font-size:1.2em;">**Recap and Further Resources, Accessing and using underlying cBioPortal data**</span><br/>
 <object data="/assets/files/2024-02-27_cBioPortal_0304_LO-Recap_Resources_Downloads.pdf" width="700" height="450" type='application/pdf'></object>

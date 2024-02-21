@@ -71,9 +71,9 @@ Mutations happen all over <i>TP53</i>, but there are some patterns which allow u
 Use the Missense, Trucating, Inframe <i>etc.</i> table to the right of the plot to select only Driver mutations (hover your mouse to the right of 4213 and the word 'ONLY' will appear), then select only truncating mutations. What is the distribution of these mutations? Why are truncating mutations much less common at the end of the protein (after the blue domain)?<br/>
 </p>
 <details>
-   <summary>Remove that filter and do the same for Missense mutations - what are the major differences here?<br/></summary>
+   <summary>Remove that filter and do the same for Missense mutations - what are the major differences here?</summary>
    Driver missense mutations are exclusively found in the functional domains, and not elsewhere in the protein.
-</details>
+</details><br/>
 ![TP53 Lollipop from TCGA PanCancer Atlas](/assets/images/ENTHUSE-04_TP53_Lollipop_Missense.jpg){:class="img-responsive"}
 <br/>
 <p align="justify">
@@ -87,17 +87,16 @@ The x axis here goes to 30 years, but often cancer survival statistics are measu
 cBioPortal helpfully gives us some warnings (blue and yellow boxes). Any statistical test has assumptions and confounding variables - features which could explain differences in the data which we are not being shown here. Before scrolling past the screenshot below (where <i>some</i> answers are), write down 4 confounding variables which could influence how we interpret this graph. Think about how those variables could influence your conclusions.<br/>
 </p>
 <details>
-   <summary>Are your confounding variables in this list? Did you think of others?<br/></summary>
-   You could have come up with some of the following ideas for confounding factors:
-   - Different responses in different cancers
-   - Different survival times in different cancers (<i>i.e.</i> treatment success)
-   - Difference in how advanced a tumour was when diagnosed
-   - Biological sex differences
-   - Severity of the *TP53* mutation in that person compared to other people in the altered group
-   - Other mutations in *TP53* mutated tumours (or in the unaltered group)
-   - Age at diagnosis (see how the plot shape changes with "Disease-specific" survival)
-   - Lifestyle factors such as weight, smoking status, economic status, employment history (think exposures)<br/>
-</details>
+   <summary>Are your confounding variables in this list? Did you think of others?</summary>
+   Different responses in different cancers<br/>
+   Different survival times in different cancers (<i>i.e.</i> treatment success)<br/>
+   Difference in how advanced a tumour was when diagnosed<br/>
+   Biological sex differences<br/>
+   Severity of the <i>TP53</i> mutation in that person compared to other people in the altered group<br/>
+   Other mutations in <i>TP53</i> mutated tumours (or in the unaltered group)<br/>
+   Age at diagnosis (see how the plot shape changes with "Disease-specific" survival)<br/>
+   Lifestyle factors such as weight, smoking status, economic status, employment history (think exposures)<br/>
+</details><br/>
 ![TP53 survival from TCGA PanCancer Atlas](/assets/images/ENTHUSE-05_TP53_Survival.jpg){:class="img-responsive"}
 <br/><br/>
 
@@ -128,8 +127,7 @@ On the Cancer Types Summary graph, hover over the Sarcoma bar on the chart and c
 <details>
    <summary>What do you observe in Sarcoma compared to all cancers from TCGA?</summary>
    Interestingly, eventhough <i>TP53</i> mutations are very common in Sarcoma, and the mutations are spread across the protein as before, there is no significant difference in survival.
-   </details><br/><br/>
-
+   </details><br/>
 In biology, proteins rarely act on their own, instead forming <b>pathways</b> with other proteins and molecules to complete functions. Select the <b>Pathways</b> tab.<br/>
 The top pathway is the eponymous P53 pathway, with <i>TP53</i> at the centre promoting (arrow) senescence (ageing) and apoptosis (cell death), and inhibiting (flat arrowhead) growth and proliferation.<br/>
 </p>
@@ -162,7 +160,7 @@ Now, go back to the Comparison/Survival tab, then the Survival tab. The altered 
 The video below is a walkthrough and explainer for this case study.<br/>
 </p>
 {% include youtube.html id="vP5pLJmf5io" %}
-<br/><br/>
+<br/>
 
 **Task 2 - exploration of the METABRIC breast cancer dataset**<br/>
 
@@ -180,11 +178,3 @@ The video below is a walkthrough and explainer for this case study.<br/>
 <br/><br/>
 
 <p align="justify">This tutorial was first delivered at The University of York on 27th February 2024 for the 59M and 68M MSc students. The material was written and delivered by Dr Andrew Mason, adapting previous material supported by <a href="https://elixiruknode.org/">Elixir-UK</a> and <a href="https://www.yorkagainstcancer.org.uk/">York Against Cancer</a>.<br/></p>
-
-
-
-<details>
-   <summary>Reveal for the answer</summary>
-   This is a check, has it worked?
-</details>
-<br/>

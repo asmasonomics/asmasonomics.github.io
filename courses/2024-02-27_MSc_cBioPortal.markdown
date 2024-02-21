@@ -69,8 +69,11 @@ You will see that mutations at R273 are the most common across the cohort. In gr
 <p align="justify">
 Mutations happen all over <i>TP53</i>, but there are some patterns which allow us to understand the biology of what P53 is doing in tumours. Dark green points represent missense mutations, where the amino acid is changing. Black points are nonsense mutations, where the rest of the protein after the mutation is truncated (creates an early stop codon).<br/>
 Use the Missense, Trucating, Inframe <i>etc.</i> table to the right of the plot to select only Driver mutations (hover your mouse to the right of 4213 and the word 'ONLY' will appear), then select only truncating mutations. What is the distribution of these mutations? Why are truncating mutations much less common at the end of the protein (after the blue domain)?<br/>
-Remove that filter and do the same for Missense mutations - what are the major differences here?<br/>
 </p>
+<details>
+   <summary>Remove that filter and do the same for Missense mutations - what are the major differences here?<br/></summary>
+   Driver missense mutations are exclusively found in the functional domains, and not elsewhere in the protein.
+</details>
 ![TP53 Lollipop from TCGA PanCancer Atlas](/assets/images/ENTHUSE-04_TP53_Lollipop_Missense.jpg){:class="img-responsive"}
 <br/>
 <p align="justify">
@@ -83,20 +86,23 @@ Click on the <b>Comparison/Survival</b> tab and then the small <b>Survival</b> t
 The x axis here goes to 30 years, but often cancer survival statistics are measured at 5 or 10 years. Try using the slider to see how survival rates change over time.<br/><br/>
 cBioPortal helpfully gives us some warnings (blue and yellow boxes). Any statistical test has assumptions and confounding variables - features which could explain differences in the data which we are not being shown here. Before scrolling past the screenshot below (where <i>some</i> answers are), write down 4 confounding variables which could influence how we interpret this graph. Think about how those variables could influence your conclusions.<br/>
 </p>
+<details>
+   <summary>Are your confounding variables in this list? Did you think of others?<br/></summary>
+   You could have come up with some of the following ideas for confounding factors:
+   - Different responses in different cancers
+   - Different survival times in different cancers (<i>i.e.</i> treatment success)
+   - Difference in how advanced a tumour was when diagnosed
+   - Biological sex differences
+   - Severity of the *TP53* mutation in that person compared to other people in the altered group
+   - Other mutations in *TP53* mutated tumours (or in the unaltered group)
+   - Age at diagnosis (see how the plot shape changes with "Disease-specific" survival)
+   - Lifestyle factors such as weight, smoking status, economic status, employment history (think exposures)<br/>
+</details>
 ![TP53 survival from TCGA PanCancer Atlas](/assets/images/ENTHUSE-05_TP53_Survival.jpg){:class="img-responsive"}
 <br/><br/>
-You could have come up with some of the following ideas for confounding factors:
-- Different responses in different cancers
-- Different survival times in different cancers (<i>i.e.</i> treatment success)
-- Difference in how advanced a tumour was when diagnosed
-- Biological sex differences
-- Severity of the *TP53* mutation in that person compared to other people in the altered group
-- Other mutations in *TP53* mutated tumours (or in the unaltered group)
-- Age at diagnosis (see how the plot shape changes with "Disease-specific" survival)
-- Lifestyle factors such as weight, smoking status, economic status, employment history (think exposures)<br/>
 
 <p align="justify">
-Biology gives <b>noisy</b> data (unlike physics and chemistry) because there is natural variation between individuals, so there are always more confounding variables to consider. In statistics, if something is a big confounder, we can try and "control" for it during analysis. <br/>
+Biology gives <b>noisy</b> data because there is natural variation between individuals, so there are always more confounding variables to consider. In statistics, if something is a big confounder, we can try and "control" for it during analysis. <br/>
 As we identified above, cancer type is a likely confounder in our understanding of <i>TP53</i> mutations. <i>TP53</i> is the most commonly mutated gene in cancer generally, but do you think it's mutated in all cancer types equally?<br/><br/>
 Click on the <b>Cancer Types Summary</b> tab. As you can see the proportion of tumours with <i>TP53</i> mutations does vary a lot. In the plot, green is any kind of single nucleotide mutation, and the other colours represent copy number changes changes such as deletions.<br/>Have a play with the y-axis value (does <b>Counts</b> change your interpretation? Is frequency or count more informative?), and changing from Cancer Study to Cancer Type to Cancer Type Detailed. What patterns can you see?<br/>
 </p>
@@ -118,8 +124,12 @@ In his epic (third) review of the <i>Hallmarks of Cancer</i> published in 2022 (
 
 <p align="justify">
 <a href="https://tinyurl.com/TP53-cBioPortal-TCGA-Summary">Return to the Cancer Study summary graph.</a><br/><br/>
-On the Cancer Types Summary graph, hover over the Sarcoma bar on the chart and click on <b>Query this study for <i>TP53</i></b>. Now focused on this one study, look at the OncoPrint, Mutations and Comparison/Survival tabs - what do you observe in Sarcoma compared to all cancers from TCGA?<br/>
-Interestingly, eventhough <i>TP53</i> mutations are very common in Sarcoma, and the mutations are spread across the protein as before, there is no significant difference in survival.<br/><br/>
+On the Cancer Types Summary graph, hover over the Sarcoma bar on the chart and click on <b>Query this study for <i>TP53</i></b>. Now focused on this one study, look at the OncoPrint, Mutations and Comparison/Survival tabs.
+<details>
+   <summary>What do you observe in Sarcoma compared to all cancers from TCGA?</summary>
+   Interestingly, eventhough <i>TP53</i> mutations are very common in Sarcoma, and the mutations are spread across the protein as before, there is no significant difference in survival.
+   </details><br/><br/>
+
 In biology, proteins rarely act on their own, instead forming <b>pathways</b> with other proteins and molecules to complete functions. Select the <b>Pathways</b> tab.<br/>
 The top pathway is the eponymous P53 pathway, with <i>TP53</i> at the centre promoting (arrow) senescence (ageing) and apoptosis (cell death), and inhibiting (flat arrowhead) growth and proliferation.<br/>
 </p>
@@ -132,7 +142,15 @@ At the top of the page, under Sarcoma (TCGA, PanCancer Atlas), click on the penc
 ![TP53 pathway](/assets/images/ENTHUSE-08_TP53_MDM2_CDKN2A.png){:class="img-responsive"}
 <br/>
 <p align="justify">
-Remember that <i>TP53</i> was mutated in 47% of Sarcoma cases, but the percentage of tumours with a mutation in at least 1 of <i>TP53</i>, <i>CDKN2A</i> and <i>MDM2</i> is now 74%. What does this suggest? Head to the OncoPrint tab again - what does this show?<br/>
+Remember that <i>TP53</i> was mutated in 47% of Sarcoma cases, but the percentage of tumours with a mutation in at least 1 of <i>TP53</i>, <i>CDKN2A</i> and <i>MDM2</i> is now 74%. 
+<details>
+   <summary>What does this suggest?</summary>
+   The increased percentage of affected cases suggests people are not commonly mutated in all three genes at the same time.
+   </details><br/> 
+<details>
+   <summary>Head to the OncoPrint tab again - what does this show?</summary>
+   As we thought - cases with a mutation in <i>TP53</i> very rarely have mutations in the other two genes.
+   </details><br/>
 </p>
 ![TP53 MDM2 CDKN2A mutual exclusivity](/assets/images/ENTHUSE-09_TP53_MDM2_CDKN2A_mutexcl.jpg){:class="img-responsive"}
 <br/>

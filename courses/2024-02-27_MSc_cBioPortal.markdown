@@ -169,7 +169,7 @@ Breast cancer is one of the best served cancers in terms of genomic resources. E
 Return to the <a href="https://www.cbioportal.org/">cBioPortal homepage</a>, find and select the METABRIC invasive breast carcinoma cohort, and start to explore by selecting <b>Explore Selected Studies</b>.
 Work through the questions below and check your understanding with the brief results given.<br/></p>
 
-1) Are there differences in survival or other clinical data between the 3-gene classifier subtypes?
+1)Are there differences in survival or other clinical data between the 3-gene classifier subtypes?
 <details>
    <summary>Hint</summary>
    Select the 3-gene classifier subtypes from the pie chart, ignoring the NAs, then Compare Groups.
@@ -181,7 +181,7 @@ Work through the questions below and check your understanding with the brief res
    Look at those clinical values which are not significantly different - are these important?
    </details><br/>
 
-2) How does ER status survival change over time (5-year vs 10-year vs 20-year)?
+2)How does ER status survival change over time (5-year vs 10-year vs 20-year)?
 <details>
    <summary>Interpretation</summary>
    ER+ groups do better at first, with the low proliferative group tending to be worse than the high.<br/>
@@ -189,7 +189,7 @@ Work through the questions below and check your understanding with the brief res
    Why this might be is still an open topic of research. It's also hard to control for differences in diagnosis, treatment efficacy and lifestyle in such a long analysis.
    </details><br/>
 
-3) What gene expression or mutation differences can you see between ER+ and ER- BRCA?
+3)What gene expression or mutation differences can you see between ER+ and ER- BRCA?
 <details>
    <summary>Hint</summary>
    You can do this by choosing the high or low proliferative group, but easier to return to the METABRIC main page and use the ER status pie chart.
@@ -201,7 +201,7 @@ Work through the questions below and check your understanding with the brief res
    In the mRNA there are some nice positive controls, such as high <i>ESR1</i> expression in the ER+ group. Google some of the top genes (gene + breast cancer as search terms) - do these make sense?
    </details><br/>
 
-4) Which are the most commonly mutated, likely cancer-related genes? Of the top 10, which are consistent with being tumour supressor genes (TSGs), and which as oncogenes? (Think about the mutation types). Are there hotspots in these with clinical relevance?
+4)Which are the most commonly mutated, likely cancer-related genes? Of the top 10, which are consistent with being tumour supressor genes (TSGs), and which as oncogenes? (Think about the mutation types). Are there hotspots in these with clinical relevance?
 <details>
    <summary>Hint</summary>
    Return to the METABRIC project page.<br/>
@@ -218,7 +218,7 @@ Work through the questions below and check your understanding with the brief res
    Take time to explore mutual exclusivity, and all the other plots you know about.
    </details><br/>
 
-5) Consider *MUC16*. It is not included in the 'likely cancerous' list, but is heavily mutated. What data from the lollipop mutation plots make it unlikely related to oncogenesis?
+5)Consider *MUC16*. It is not included in the 'likely cancerous' list, but is heavily mutated. What data from the lollipop mutation plots make it unlikely related to oncogenesis?
 <details>
    <summary>Interpretation</summary>
    As above, MUC16 mutations are likely passengers - lots of missense changes not in functional domains.<br/>
@@ -226,7 +226,7 @@ Work through the questions below and check your understanding with the brief res
    In plots, for mRNA vs mut type, you can see that expression is high and that mutations do not seem to impact expression.
    </details><br/>
 
-6) Looking across BRCA studies, are there any male samples? If so, how do they compare? Can you compare them confidently?
+6)Looking across BRCA studies, are there any male samples? If so, how do they compare? Can you compare them confidently?
 <details>
    <summary>Hint</summary>
    Return to the home page.<br/>

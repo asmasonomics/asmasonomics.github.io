@@ -7,7 +7,7 @@ permalink: /courses/BABS4_Biochem_DataWorkshop3_March2024
 
 <span style="font-size:1.6em;">**BABS4 - Data Workshop 3**</span><br/>
 
-<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=ff92dbc6-c7a3-47c1-96ac-b1260104d15f&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=ff92dbc6-c7a3-47c1-96ac-b1260104d15f&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="390" width="640" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 
 
 

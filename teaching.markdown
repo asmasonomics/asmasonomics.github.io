@@ -11,11 +11,12 @@ We are also supporting omics and statistics teaching for PhD students and contin
 <span style="font-size:1.2em;">**University teaching experience**</span><br/>
 {% include experience_cols.html content1 = "11/2022 - present<br/>10/2018 - 11/2019<br/>10/2014 - 12/2016" content2 = "University of York Lecturer in Cancer Informatics<br/>University of York Biology tutor (20h)<br/>University of Edinburgh Biology demonstrator, marker and tutor (301h)" %}
 <span style="font-size:1.02em;">**Course material**</span><br/>
-2023-01-11  [Introduction to cBioPortal](https://asmasonomics.github.io/courses/Intro_cBioPortal_Jan2023) <br/>
-2023-05-30  [BMS Bitesize: Introduction to Statistics](https://asmasonomics.github.io/courses/BMS_Bitesize_Statistics_May2023) <br/>
-2023-11-10  [Genomics 3 - Workshop 4: RNAseq](https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2023) <br/>
-2024-02-27  [Introduction to cBioPortal - 59M/68M tutorial](https://asmasonomics.github.io/courses/MSc_cBioPortal_Feb2024) <br/>
+
 2024-03-11  [BABS4 - Data Workshop 3](https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop3_March2024) <br/>
+2024-02-27  [Introduction to cBioPortal - 59M/68M tutorial](https://asmasonomics.github.io/courses/MSc_cBioPortal_Feb2024) <br/>
+2023-11-10  [Genomics 3 - Workshop 4: RNAseq](https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2023) <br/>
+2023-05-30  [BMS Bitesize: Introduction to Statistics](https://asmasonomics.github.io/courses/BMS_Bitesize_Statistics_May2023) <br/>
+2023-01-11  [Introduction to cBioPortal](https://asmasonomics.github.io/courses/Intro_cBioPortal_Jan2023) <br/>
 
 <br/><span style="font-size:1.2em;">**Private tutoring**</span><br/>
 <p align="justify">Andrew has over 200 hours experience of private one-to-one tutoring in Biology, Chemistry and Maths at GCSE, Scottish National 5 and Scottish Higher levels, and has availability for new students.<br/>

@@ -8,10 +8,8 @@ permalink: /courses/BABS4_Biochem_DataWorkshop3_March2024
 <span style="font-size:1.6em;">**BABS4 - Data Workshop 3**</span><br/>
 
 <p align="justify">
-Welcome to Data Workshop 3!<br/>
-This is the first of two RNAseq workshops as part of the BABS4 (66I) "Gene expression and biochemical interactions strand". If you're from the future and are completing Workshop 4,  <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop4_March2024">please follow this link to the correct material</a>.<br/>
+Welcome to Data Workshop 3! This is the first of two RNAseq workshops as part of the BABS4 (66I) "Gene expression and biochemical interactions strand". If you're from the future and are completing Workshop 4,  <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop4_March2024">please follow this link to the correct material</a>.<br/>
 The material below will cover many of the R commands needed to fully analyse these data. If you're feeling a bit rusty, <a href="https://3mmarand.github.io/R4BABS/r4babs4/week-1/workshop.html">please consult Emma's material from the BABS4 core data workshop in week 1</a>.<br/>
-<br/>
 </p>
 
 ### Introduction
@@ -28,6 +26,51 @@ Hopefully this all sounds quite familiar! If not, after this morning, make time 
 <br/>
 
 ### The workshop
+#### Set up your RStudio project
+<p align="justify">
+Start RStudio from the Start menu.<br/>
+Make a new RStudio project. Put it in a sensible place with a sensible name. Remember that if you are using a university machine, select a location via the M/H drives, not just using the "Documents" shortcut. This <b>will</b> create problems for you!<br/>
+Use the Files pane to make subdirectories for your <code>raw_data</code>, <code>proc_data</code> and <code>plots</code>. These names are suggestions only.<br/>
+Make a new script file, perhaps <code>data_workshop_3.R</code>, to complete your work.<br/>
+</p>
+
+#### Access the data
+<p align="justify">
+During workshop 3 you will need 3 <i>Haemophilus influenzae</i> datafiles. Download and add to your <code>raw_data</code> subdirectory.<br/>
+From here on, <i>Haemophilus influenzae</i> will be <b>abbreviated to Hi</b>.<br/><br/>
+
+<a href="/assets/coursefiles/2024-03_66I/Hi_PRJNA293882_counts.tsv" download>Hi_PRJNA293882_counts.tsv</a>. These are the RNAseq data from Hi. The data includes 11 different conditions, each with three replicates (explained below). This is a tab separated file with sample names in the first row and feature IDs in the first column. The data are counts of the number of reads.<br/><br/>
+</p>
+
+| Condition | Strain | Media | OD<sub>600</sub> | time | replicates |
+| --- | --- | --- | --- | --- | --- |
+| kw20-BHI1 | kw20 | BHI | 0.02 | NA | -F,-G,-H |
+| kw20-BHI2 | kw20 | BHI | 0.60 | NA | -F,-G,-H |
+| kw20-BHI3 | kw20 | BHI | 1.00 | NA | -F,-G,-H |
+| kw20-MIV0 | kw20 | MIV | 0.25 | 0 | -A,-B,-C |
+| kw20-MIV1 | kw20 | MIV | 0.25 | 10 | -A,-B,-C |
+| kw20-MIV2 | kw20 | MIV | 0.25 | 30 | -A,-B,-C |
+| kw20-MIV3 | kw20 | MIV | 0.25 | 100 | -A,-B,-C |
+| sxyx-MIV0 | Sxy- | MIV | 0.25 | 0 | -A,-B,-D |
+| sxyx-MIV1 | Sxy- | MIV | 0.25 | 10 | -A,-B,-D |
+| sxyx-MIV2 | Sxy- | MIV | 0.25 | 30 | -A,-B,-D |
+| sxyx-MIV3 | Sxy- | MIV | 0.25 | 100 | -A,-B,-D |
+
+<p align="justify">
+<a href="/assets/coursefiles/2024-03_66I/Hi_feature_names.tsv" download>Hi_feature_names.tsv</a>. This is a tab separated file with the Hi feature ID in column 1, the symbol for that feature in column 2 (if there is one, else "." is used as a placeholder), and a description in column 3 (vague at times!). There is a header. <br/><br/>
+<a href="/assets/coursefiles/2024-03_66I/Hi_feature_locations.bed" download>Hi_feature_locations.bed</a>. This is a tab separated file with a particular format called BED format. This means the columns have standard data types, so there is no header. Column 1 is the sequence a feature is located. Column 2 is the start position and column 3 the end position. Column 4 has the Hi feature ID. Column 5 has the biotype of the feature. Column 6 has the strand.<br/><br/> 
+</p>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,18 +1,25 @@
 ---
 layout: page
-permalink: /courses/BABS4_Biochem_DataWorkshop3_March2024
+permalink: /courses/BABS4_Biochem_DataWorkshop4_March2024
 ---
 
 ![BABS4 banner](/assets/images/babs4_banner.jpg){:class="img-responsive"}
 
-<span style="font-size:1.6em;">**BABS4 - Data Workshop 3**</span><br/>
+<span style="font-size:1.6em;">**BABS4 - Data Workshop 4**</span><br/>
 
 <p align="justify">
-Welcome to Data Workshop 3!<br/>
-This is the first of two RNAseq workshops as part of the BABS4 (66I) "Gene expression and biochemical interactions strand". If you're from the future and are completing Workshop 4,  <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop4_March2024">please follow this link to the correct material</a>.<br/>
-The material below will cover many of the R commands needed to fully analyse these data. If you're feeling a bit rusty, <a href="https://3mmarand.github.io/R4BABS/r4babs4/week-1/workshop.html">please consult Emma's material from the BABS4 core data workshop in week 1</a>.<br/>
+Welcome to Data Workshop 4!<br/>
+This is the second of two RNAseq workshops as part of the BABS4 (66I) "Gene expression and biochemical interactions strand". This material carries on directly from the material in workshop 3. If you need to re-do any of that workshop, or just need to refresh your memory, <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop3_March2024">please follow this link to the previous material</a>.<br/>
 <br/>
 </p>
+
+
+THIS IS A SKELETON - NOT FOR USE
+
+
+
+
+
 
 ### Introduction
 <p align="justify">

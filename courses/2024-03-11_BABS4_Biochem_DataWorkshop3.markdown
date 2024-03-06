@@ -171,10 +171,10 @@ gam_counts <- counts |> filter(row.names(counts) %in% c("gene-HI_1483")) |>
   as.data.frame()
 
 # set the column name
-colnames(gam_counts) <- "gam"
+colnames(gam_counts) <- "gamcounts"
 
 # plot
-ggplot(gam_counts, aes(x = rownames(gam_counts), y = gam)) + 
+ggplot(gam_counts, aes(x = rownames(gam_counts), y = gamcounts)) + 
   geom_bar(stat = "identity") + 
   scale_x_discrete(guide = guide_axis(angle = 90)) +
   labs(x = "samples", y = "Hi gam total reads")
@@ -231,14 +231,13 @@ Normalising count data gives us a fairer way to compare between samples and even
 	 <li><b>Feature length</b>. Longer features expressed at similar levels to shorter ones would generate more reads. </li>
 	 <li><b>Total sequencing depth</b>. As we saw above, physically generating more reads may give artificially higher counts. </li>
    </ol>
-</details><br/><br/>
+</details><br/>
 The TPM of any feature can be calculated by:
 <ol>
 <li>dividing the feature counts by the feature length (<i>i.e.</i> counts per base)</li>
 <li>dividing counts/base by the total counts for the sample</li>
-<li>multiplying by 1 million to get numbers we can work with (otherwise everything is very small decimals)</li>
+<li>multiplying by 1 million to get numbers we can work with (otherwise everything is very small)</li>
 </ol>
-<br/>
 So let's get on with it. 
 </p>
 
@@ -247,15 +246,63 @@ So let's get on with it.
 # let's first subset our data to only our core comparison: the impact of starvation media on Hi
 core_counts <- counts |> select(starts_with("kw20.MIV"))
 
+# we have the position information on all features in featlocs, so we can create a new column for the feature lengths
+featlens <- data.frame(mutate(featlocs, feat_len = (featlocs$end+1)-featlocs$start))
+rownames(featlens) <- featlens$feat_ID
 
+# we now need to combine our datasets so we can divide the feature counts by feature lengths for each sample
+# to join two datasets you need a key to link associated data together
+# that's why we've made the rownames the feature IDs (feat_ID) in both dataframes (hence column 0 in the merge)
+withlens <- merge(core_counts, featlens, by=0)
+rownames(withlens) <- withlens$Row.names
 
+# create a new dataframe with the sample counts divided by the lengths
+counts_per_base <- subset(withlens, select = colnames(core_counts)) / withlens$feat_len
+
+# now we use apply() to divide each value by the sum of its column, then multiply by a million to make it TPM
+# the 2 indicates the function is applied on columns, rather than rows (where it would be 1)
+tpms <- data.frame(apply(counts_per_base, 2, function(x){(x/sum(x))*1000000}))
+
+# check each column now totals 1 million 
+colSums(tpms)
+
+# round the data to 2 decimal places to make it more human readable (does each column still total 1 million?)
+tpms <- round(tpms, 2)
+
+# now, let's make a quick assessment as to how consistent TPMs and counts are with each other, using gam
+# extract just the gam TPMs, as we did with counts above
+gam_tpms <- tpms |> filter(row.names(tpms) %in% c("gene-HI_1483")) |> t() |> as.data.frame()
+colnames(gam_tpms) <- "gamtpms"
+
+# merge the TPM and count gam subset dataframes and plot as a scatter
+gamcor <- merge(gam_tpms, gam_counts, by=0)
+rownames(gamcor) <- gamcor$Row.names
+
+ggplot(gamcor, aes(x=gamtpms, y=gamcounts)) + 
+  geom_point() + 
+  geom_text_repel(label=rownames(gamcor)) + 
+  labs(x = "gam TPMs", y = "gam read counts") +
+  ylim(0, max(gamcor$gamcounts))
+  
+# calculate the correlation
+cor(gamcor$gamcounts, gamcor$gamtpms, method = c("pearson"))
 
 ```
+![gam count vs tpm](/assets/coursefiles/2024-03_66I/plots/03_normalise_001.png){:class="img-responsive"}
 
+<p align="justify">
+<br/>
+The correlation is pretty good for this gene (and it's usually quite good), though both MIV0.A and MIV3.C have quite different TPMs to what their read counts might indicate.<br/>
+</p>
+<br/>
 
-
-
-
+#### Principal component analysis
+<p align="justify">
+Before we do our stat testing for differences between conditions, it is always a good idea to perform principal component analysis (PCA).<br/><br/>
+Our data is "high dimensional data", because we have lots more rows than we could plot simultaneously to describe the samples. We can just about interpret plots on 3 axes, but no further. PCA is a method for "dimension reduction". It works by looking at correlated variance across the samples in each row of data. In biology this is quite easy to rationalise. Genes work in pathways, or may be regulated by the same transcription factor, so you can imagine that these genes would go up and down in expression together (<i>i.e.</i> they are not each truly independent measures of the samples). This means you can reduce your data to a smaller number of "principal components" where correlated measurements are collapsed together. You can then plot the most informative principal components (<i>i.e.</i> those accounting for the most correlated variance in the data) to get a feel for how your samples group together (or not).<br/><br/>
+The important thing here is that differential expression (like with any stat test) is only able to detect significant changes if your data are not too noisy (<i>i.e.</i> high in variance). So if your samples do not group together nicely by PCA it may be informative for removing samples (outliers) or explain why some comparisons will not give significant differences.<br/><br/>
+Hopefully this becomes clearer with a plot.<br/>
+</p>
 
 
 

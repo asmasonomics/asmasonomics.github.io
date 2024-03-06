@@ -177,15 +177,49 @@ ggplot(gam_counts, aes(x = rownames(gam_counts), y = gam)) +
   scale_x_discrete(guide = guide_axis(angle = 90)) +
   labs(x = "samples", y = "Hi gam total reads")
 
+```
+![gam bar chart](/assets/coursefiles/2024-03_66I/plots/03_explore_003.png){:class="img-responsive"}
+
+<p align="justify">
+<br/>
+Great - we've already started to explore one of our genes of interest. But, we can't just compare raw counts on their own.<br/>
+<details>
+   <summary>Why not? (Hint: are there any patterns in the bar chart related to the samples?)</summary>
+   There are patterns of high/low/medium <i>etc</i> across the replicates. We don't know whether this is biological or technical at this point.<br/>
+   But, before we can compare between genes, we need to know if each sample was sequenced to the same total depth (<i>i.e.</i> total number of reads). Otherwise, samples with more reads may just have higher counts - there may be no biological difference. Let's check.<br/>
+</details><br/>
+</p>
+
+```R
+
+# create a dataframe with sums for each column
+count_tots <- data.frame(colSums(counts))
+colnames(count_tots) <- "sum"
+
+# let's check the ratio between the highest and lowest total read counts
+max_reads <- max(count_tots$sum)
+min_reads <- min(count_tots$sum)
+max_reads / min_reads
+
+# the highest has almost 4x as many reads as the lowest - no wonder there were differences in our last bar chart
+
+# plot all the read totals to look for variance
+ggplot(count_tots, aes(x = rownames(count_tots), y = sum)) + 
+  geom_bar(stat = "identity") + 
+  scale_x_discrete(guide = guide_axis(angle = 90)) +
+  labs(x = "samples", y = "total reads")
 
 ```
+![read count totals bar chart](/assets/coursefiles/2024-03_66I/plots/03_explore_004.png){:class="img-responsive"}
 
+<p align="justify">
+<br/>
+When we run differential expression analysis (DEA) later, DESeq2 accounts for the differences in read counts automatically. But, when we want to plot individual genes and make nice graphs we need to normalise the data. We are going to convert our read count data to <b>TPM</b> - transcripts per million.<br/><br/>
+I briefly covered TPM in the Introduction to Transcriptomics video, but I also have a <a href="https://www.youtube.com/watch?v=3Pe9xcGF_Wo&t=5s">specific video on RNAseq units</a> if you want to know a bit more.<br/>
+</p>
+<br/>
 
-
-
-
-
-
+#### Normalise the count data
 
 
 

@@ -878,7 +878,7 @@ gene-HI_0896	ftsN	cell_division_protein
 gene-HI_0897	emrB	multidrug_resistance_protein_B
 gene-HI_0898	emrA	multidrug_resistance_protein_A
 gene-HI_0899	folA	dihydrofolate_reductase
-gene-HI_0900	gamma-glutamyl_kinase)_(proB	glutamate_5-kinase
+gene-HI_0900	proB	glutamate_5-kinase
 gene-HI_0901	.	conserved_hypothetical_protein
 gene-HI_0902	.	conserved_hypothetical_protein
 gene-HI_0904	lgt	prolipoprotein_diacylglyceryl_transferase

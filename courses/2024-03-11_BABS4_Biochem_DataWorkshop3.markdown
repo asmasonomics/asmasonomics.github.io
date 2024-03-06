@@ -28,21 +28,20 @@ Hopefully this all sounds quite familiar! If not, after this morning, make time 
 ### The workshop
 #### Set up your RStudio project
 <p align="justify">
-Start RStudio from the Start menu.<br/>
-Make a new RStudio project. Put it in a sensible place with a sensible name. Remember that if you are using a university machine, select a location via the M/H drives, not just using the "Documents" shortcut. This <b>will</b> create problems for you!<br/>
-Use the Files pane to make subdirectories for your <code>raw_data</code>, <code>proc_data</code> and <code>plots</code>. These names are suggestions only.<br/>
-Make a new script file, perhaps <code>data_workshop_3.R</code>, to complete your work.<br/>
+Start RStudio from the Start menu.<br/><br/>
+Make a new RStudio project. Put it in a sensible place with a sensible name. Remember that if you are using a university machine, select a location via the M/H drives, not just using the "Documents" shortcut. This <b>will</b> create problems for you!<br/><br/>
+Use the Files pane to make subdirectories for your <code>raw_data</code>, <code>proc_data</code> and <code>plots</code>. These names are suggestions only. Make a new script file, perhaps <code>data_workshop_3.R</code>, to complete your work.<br/><br/>
 </p>
 
 #### Access the data
 <p align="justify">
-During workshop 3 you will need 3 <i>Haemophilus influenzae</i> datafiles. Download and add to your <code>raw_data</code> subdirectory.<br/>
-From here on, <i>Haemophilus influenzae</i> will be <b>abbreviated to Hi</b>.<br/><br/>
+During workshop 3 you will need 3 <i>Haemophilus influenzae</i> datafiles. Download and add to your <code>raw_data</code> subdirectory. From here on, <i>Haemophilus influenzae</i> will be <b>abbreviated to Hi</b>.<br/><br/>
 
-<a href="/assets/coursefiles/2024-03_66I/Hi_PRJNA293882_counts.tsv" download>Hi_PRJNA293882_counts.tsv</a>. These are the RNAseq data from Hi. The data includes 11 different conditions, each with three replicates (explained below). This is a tab separated file with sample names in the first row and feature IDs in the first column. The data are counts of the number of reads.<br/><br/>
+<a href="/assets/coursefiles/2024-03_66I/Hi_PRJNA293882_counts.tsv" download>Hi_PRJNA293882_counts.tsv</a>. These are the RNAseq data from Hi. The data includes 11 different conditions, each with three replicates (explained below). This is a tab separated file with sample names in the first row and feature IDs in the first column. The data are counts of the number of reads.<br/>
+kw20 is the wildtype strain. OD<sub>600</sub> is a measure of cell suspension density. Sxy is a transcription factor (encoded by <i>tfoX</i>) which regulates competence. The Sxy- strain is a null mutant strain where Sxy is non-functional. <br/><br/>
 </p>
 
-| Condition | Strain | Media | OD<sub>600</sub> | time | replicates |
+| Condition | Strain | Media | OD<sub>600</sub> | time (mins) | replicates |
 | --- | --- | --- | --- | --- | --- |
 | kw20-BHI1 | kw20 | BHI | 0.02 | NA | -F,-G,-H |
 | kw20-BHI2 | kw20 | BHI | 0.60 | NA | -F,-G,-H |
@@ -60,6 +59,133 @@ From here on, <i>Haemophilus influenzae</i> will be <b>abbreviated to Hi</b>.<br
 <a href="/assets/coursefiles/2024-03_66I/Hi_feature_names.tsv" download>Hi_feature_names.tsv</a>. This is a tab separated file with the Hi feature ID in column 1, the symbol for that feature in column 2 (if there is one, else "." is used as a placeholder), and a description in column 3 (vague at times!). There is a header. <br/><br/>
 <a href="/assets/coursefiles/2024-03_66I/Hi_feature_locations.bed" download>Hi_feature_locations.bed</a>. This is a tab separated file with a particular format called BED format. This means the columns have standard data types, so there is no header. Column 1 is the sequence a feature is located. Column 2 is the start position and column 3 the end position. Column 4 has the Hi feature ID. Column 5 has the biotype of the feature. Column 6 has the strand.<br/><br/> 
 </p>
+
+#### Load your libraries
+<p align="justify">
+We need the following packages for this workshop:<br/>
+<ul>
+	<li><code>tidyverse</code> <a href="https://doi.org/10.21105/joss.01686">Wickham <i>et al.,</i> 2019</a>
+	<li><code>DESeq2</code> <a href="https://doi.org/doi:10.18129/B9.bioc.DESeq2">Love <i>et al.,</i> 2014</a>
+	<li><code>EnhancedVolcano</code> <a href="https://github.com/kevinblighe/EnhancedVolcano">Blighe <i>et al.,</i> 2018</a>
+	<li><code>ggplot2</code> <a href="https://ggplot2-book.org/">Wickham <i>et al.,</i> 2016</a>
+	<li><code>dplyr</code> <a href="https://doi.org/10.21105/joss.01686">Wickham <i>et al.,</i> 2019</a> (this is part of tidyverse, but I always find loading it explicably helps with redundancy issues later on)
+</ul><br/>
+Load these libraries.
+</p>
+
+```R
+
+library(tidyverse)
+library(DESeq2)
+library(EnhancedVolcano)
+library(ggplot2)
+library(dplyr)
+
+```
+<br/>
+
+#### Load datasets
+```R
+
+# counts data
+counts <- read.table("raw_data/Hi_PRJNA293882_counts.tsv", row.names = 1, header = TRUE)
+
+# feature IDs and symbols where possible
+featname <- read_tsv("raw_data/Hi_feature_names.tsv")
+
+# feature locations, setting the column names for BED format
+featlocs <- read_tsv("raw_data/Hi_feature_locations.bed", col_names = c("chr","start","end","feat_ID","biotype","strand"))
+
+```
+<br/>
+
+#### Explore the datasets
+<p align="justify">
+Take some time to explore the data using <code>view()</code>, <code>summary()</code> and <code>head()</code>. Does the data look right? Do the column names make sense? Do you understand what each file is showing you?<br/><br/>
+Let's start to see what the data looks like, and how we can bring the datasets together.<br/>
+</p>
+
+```R
+
+# explore the counts data by making a histogram of the read counts in the first column
+counts |> ggplot(aes(x = kw20.BHI1.F)) + geom_histogram()
+
+```
+![kw20.BHI1.F histogram](/assets/coursefiles/2024-03_66I/plots/03_explore_001.png){:class="img-responsive"}
+<p align="justify">
+<br/>
+<details>
+   <summary>What is this histogram telling you about the distribution of read counts in this sample?</summary>
+   Most features have a "low" read count, less than ~10000. But a few features have very high read counts.<br/>
+   So how can we make the plot easier to interpret?
+</details><br/>
+</p>
+
+```R
+
+# try a log10 transform of the same column
+counts |> ggplot(aes(x = log10(kw20.BHI1.F + 1))) + geom_histogram()
+
+# we do +1 inside the transform because log10(1) is 0. This means the graph is not disrupted by large minus numbers (representing 0.0001 values etc) and missing 0 values.
+# less of a problem here because read counts are integers, but it may be relevant later on.
+
+```
+![kw20.BHI1.F log10 histogram](/assets/coursefiles/2024-03_66I/plots/03_explore_002.png){:class="img-responsive"}
+
+<p align="justify">
+<br/>
+Much clearer! The count data has a fairly normal distribution with the means just above a thousand counts (10<sup>3</sup> on the x axis).<br/><br/>
+Now let's explore the other two datasets we loaded in.<br/>
+</p>
+
+```R
+
+# take a look at the top of the feature ID file with symbols and gene descriptions
+head(featname)
+
+# OK, so we get some symbols - maybe we can look for the muA, muB and gam genes we have been working on?
+# use grep (pattern matcher) to check the symbol column for the three genes
+featname[grep("muA|muB|gam", featname$symbol),]
+
+# Success!
+# those IDs suggest the features are quite close together. Let's use the location data to check.
+# use the same pattern match as before, but extract the IDs and use them as a search term in the location data
+mu_feats <- featname[grep("muA|muB|gam", featname$symbol),]$feat_id
+mu_feats_grep <- paste(mu_feats, collapse = "|")
+featlocs[grep(mu_feats_grep, featlocs$feat_ID),]
+
+# Yes - very close together
+# in the BLAST/PHASTER workshop we were trying to annotate the prophage region annotated by PHASTER - we can use the location data now to speed this up
+# use the coordinates from PHASTER (data workshop 2) to extract all IDs in the region
+hi_prophage_region <- featlocs |> filter(between(start, 1558774, 1597183))
+
+# think how you can use the code above to take these IDs from the prophage region to extract the gene symbols
+# this will help your annotation of the prophage region from last session
+
+# so now we have counts and feature IDs for genes we care about - what does gam look like?
+# filter the counts data for the gam feature ID, transpose to turn the row into a column, and then convert back to a dataframe
+gam_counts <- counts |> filter(row.names(counts) %in% c("gene-HI_1483")) |> 
+  t() |> 
+  as.data.frame()
+
+# set the column name
+colnames(gam_counts) <- "gam"
+
+# plot
+ggplot(gam_counts, aes(x = rownames(gam_counts), y = gam)) + 
+  geom_bar(stat = "identity") + 
+  scale_x_discrete(guide = guide_axis(angle = 90)) +
+  labs(x = "samples", y = "Hi gam total reads")
+
+
+```
+
+
+
+
+
+
+
 
 
 

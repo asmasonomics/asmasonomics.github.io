@@ -304,16 +304,57 @@ The important thing here is that differential expression (like with any stat tes
 Hopefully this becomes clearer with a plot.<br/>
 </p>
 
+```R
 
+# perform PCA on the tpm dataframe
+res_pca <- princomp(tpms)
 
+# extract the variance accounted for by each principal component (squared standard deviation as proportion of total)
+pca_var <- round((data.frame(res_pca$sdev^2/sum(res_pca$sdev^2)))*100,2)
+colnames(pca_var) <- "var_perc"
+pca_var
 
+# most of the variance is accounted for by PCs 1 and 2. You can now plot a scatter of these samples to see if they group based on these components
+# extract PCs 1 and 2
+pca_comps <- data.frame(res_pca$loadings[, c("Comp.1", "Comp.2")])
 
+# create axis labels which include the % variance accounted for by each component
+pca_x <- paste(c("PC1 ("), pca_var["Comp.1",], c("%)"))
+pca_y <- paste(c("PC2 ("), pca_var["Comp.2",], c("%)"))
 
+# scatter
+ggplot(pca_comps, aes(x=Comp.1, y=Comp.2)) + 
+  geom_point() + 
+  geom_text_repel(label=rownames(data.frame(res_pca$loadings[, 1:2]))) +
+  labs(x = pca_x, y = pca_y)
 
+# you could plot PC1 vs PC3 or PC2 vs PC3 to further interogate the data and the relationships
 
+```
+![PCA](/assets/coursefiles/2024-03_66I/plots/03_normalise_002.png){:class="img-responsive"}
+<p align="justify">
+<br/>
+<details>
+   <summary>What does this plot tell you about the samples?</summary>
+   <ol>
+     <li>The control samples are tightly grouped and well away from the rest. This suggests consistency in this group (good for stats), and that exposure to the starvation media <b>does</b> appear to have a measurable impact on the Hi transcriptome - good news!</li>
+	 <li>The t=10mins (MIV1) and t=30mins (MIV2) conditions are quite similar by this plot.</li>
+	 <li>The t=100mins (MIV3) samples are very variable. This may reflect differential responses of the cultures (which <i>should</i> be genetically identical...) but also noise in the data.</li>
+   </ol>
+</details>
+<br/>
+Genes with higher expression also have higher variance, so a log transformation will reduce that weighting. Try rerunning the PCA code with: <code>res_pca_log10 <- princomp(log10(tpms+1))</code><br/><br/>
+<details>
+   <summary>Does the log transformation give a different result, or tell you anything new about the data?</summary>
+   The log transformation strongly suggests that the "C" replicates across conditions were quite different to the rest. It's possible these were processed all at the same time, different to those of A and B, maybe even by a different person. We may be able to control for this technical artefact during differential expression.
+</details>
+<br/>
+</p>
 
+![log10 PCA](/assets/coursefiles/2024-03_66I/plots/03_normalise_003.png){:class="img-responsive"}
+<br/><br/>
 
-
+#### Differential expression analysis
 
 
 

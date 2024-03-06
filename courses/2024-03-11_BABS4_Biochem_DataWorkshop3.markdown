@@ -222,6 +222,44 @@ I briefly covered TPM in the Introduction to Transcriptomics video, but I also h
 <br/>
 
 #### Normalise the count data
+<p align="justify">
+Normalising count data gives us a fairer way to compare between samples and even between genes in the samples.<br/><br/>
+<details>
+   <summary>What three things influence the read count for any feature?</summary>
+   <ol>
+     <li><b>Expression level</b>. The biologically interesting one! Features which have higher expression should generate more sequencing reads. </li>
+	 <li><b>Feature length</b>. Longer features expressed at similar levels to shorter ones would generate more reads. </li>
+	 <li><b>Total sequencing depth</b>. As we saw above, physically generating more reads may give artificially higher counts. </li>
+   </ol>
+</details><br/><br/>
+The TPM of any feature can be calculated by:
+<ol>
+<li>dividing the feature counts by the feature length (<i>i.e.</i> counts per base)</li>
+<li>dividing counts/base by the total counts for the sample</li>
+<li>multiplying by 1 million to get numbers we can work with (otherwise everything is very small decimals)</li>
+</ol>
+<br/>
+So let's get on with it. 
+</p>
+
+```R
+
+# let's first subset our data to only our core comparison: the impact of starvation media on Hi
+core_counts <- counts |> select(starts_with("kw20.MIV"))
+
+
+
+
+```
+
+
+
+
+
+
+
+
+
 
 
 

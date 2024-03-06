@@ -64,12 +64,13 @@ kw20 is the wildtype strain. OD<sub>600</sub> is a measure of cell suspension de
 <p align="justify">
 We need the following packages for this workshop:<br/>
 <ul>
-	<li><code>tidyverse</code> <a href="https://doi.org/10.21105/joss.01686">Wickham <i>et al.,</i> 2019</a>
-	<li><code>DESeq2</code> <a href="https://doi.org/doi:10.18129/B9.bioc.DESeq2">Love <i>et al.,</i> 2014</a>
-	<li><code>EnhancedVolcano</code> <a href="https://github.com/kevinblighe/EnhancedVolcano">Blighe <i>et al.,</i> 2018</a>
-	<li><code>ggplot2</code> <a href="https://ggplot2-book.org/">Wickham <i>et al.,</i> 2016</a>
-	<li><code>dplyr</code> <a href="https://doi.org/10.21105/joss.01686">Wickham <i>et al.,</i> 2019</a> (this is part of tidyverse, but I always find loading it explicably helps with redundancy issues later on)
-</ul><br/>
+	<li><code>tidyverse</code> <a href="https://doi.org/10.21105/joss.01686">Wickham <i>et al.,</i> 2019</a></li>
+	<li><code>DESeq2</code> <a href="https://doi.org/doi:10.18129/B9.bioc.DESeq2">Love <i>et al.,</i> 2014</a></li>
+	<li><code>EnhancedVolcano</code> <a href="https://github.com/kevinblighe/EnhancedVolcano">Blighe <i>et al.,</i> 2018</a></li>
+	<li><code>ggplot2</code> <a href="https://ggplot2-book.org/">Wickham <i>et al.,</i> 2016</a></li>
+	<li><code>dplyr</code> <a href="https://doi.org/10.21105/joss.01686">Wickham <i>et al.,</i> 2019</a> (this is part of tidyverse, but I always find loading it explicably helps with redundancy issues later on)</li>
+</ul>
+<br/>
 Load these libraries.
 </p>
 

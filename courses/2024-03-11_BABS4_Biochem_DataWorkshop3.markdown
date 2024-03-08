@@ -79,9 +79,17 @@ Load these libraries.
 
 library(tidyverse)
 library(DESeq2)
-library(EnhancedVolcano)
 library(ggplot2)
 library(dplyr)
+library(EnhancedVolcano)
+
+# if EnhancedVolcano is not found as a package, do the following:
+install.packages("remotes")
+library("remotes")
+# press enter to skip updates when prompted
+remotes::install_github("kevinblighe/EnhancedVolcano")
+library(EnhancedVolcano)
+
 
 ```
 <br/>
@@ -96,7 +104,7 @@ counts <- read.table("raw_data/Hi_PRJNA293882_counts.tsv", row.names = 1, header
 featname <- read.table("raw_data/Hi_feature_names.tsv", row.names = 1, header = TRUE)
 
 # feature locations, setting the column names for BED format
-featlocs <- read_tsv("raw_data/Hi_feature_locations.bed", col_names = c("chr","start","end","feat_ID","biotype","strand"))
+featlocs <- read.table("raw_data/Hi_feature_locations.bed", header = FALSE, col.names = c("chr","start","end","feat_ID","biotype","strand"))
 
 ```
 <br/>
@@ -153,7 +161,7 @@ featname[grep("muA|muB|gam", featname$symbol),]
 # Success!
 # those IDs suggest the features are quite close together. Let's use the location data to check.
 # use the same pattern match as before, but extract the IDs and use them as a search term in the location data
-mu_feats <- featname[grep("muA|muB|gam", featname$symbol),]$feat_id
+mu_feats <- rownames(featname[grep("muA|muB|gam", featname$symbol),])
 mu_feats_grep <- paste(mu_feats, collapse = "|")
 featlocs[grep(mu_feats_grep, featlocs$feat_ID),]
 
@@ -447,7 +455,7 @@ comp_tpms <- mutate(comp_tpms, MIV0_avg = rowMeans(select(comp_tpms, contains("M
 comp_tpms <- mutate(comp_tpms, log2FC = log2((MIV2_avg+1)/(MIV0_avg+1)))
 comp_red_tpms <- comp_tpms |> select(-starts_with("kw20.MIV"))
 
-dds_tpm <- merge(dds_results_padj_ordered, comp_red_tpms, by=0)
+dds_tpm <- merge(dds_results, comp_red_tpms, by=0)
 rownames(dds_tpm) <- dds_tpm$Row.names
 dds_tpm <- dds_tpm[,-1]
 
@@ -479,8 +487,8 @@ Looking at a table like this is tricky, so let's make a volcano plot!<br/>
 # we need the square brackets here otherwise "." takes on its special meaning of "match any character"
 withsymbols <- dds_tpm[- grep("[.]", dds_tpm$symbol),]
 
-# take the top 50 based on absolute log2FC (so this includes big negatives if there are any)
-siggenes <- head(withsymbols |> arrange(desc(abs(log2FC))), 50)$symbol
+# take the top 60 based on absolute log2FC (so this includes big negatives if there are any)
+siggenes <- head(withsymbols |> arrange(desc(abs(log2FC))), 60)$symbol
 
 # make the volcano plot - you can personalise these forever, check out - https://github.com/kevinblighe/EnhancedVolcano
 # the cutoffs define the dotted line thresholds and default colours
@@ -504,7 +512,7 @@ The volcano plot highlights the large number of very significant changes in the 
 </details>
 <details>
    <summary>Don't forget about the downregulated genes - any common themes?</summary>
-   The <i>rpL</i> and <i>rpS</i> genes encode the large and small ribosomal subunits. <i>fis</i> activates rRNA transcription and <i>deaD</i> assists in ribosome assembly. It looks like there is a general downregulation of translation machinery.<br/><br/>
+   The <i>rpL</i> and <i>rpS</i> genes encode the large and small ribosomal subunits. <i>fis</i> activates rRNA transcription. It looks like there is a general downregulation of translation machinery.<br/><br/>
 </details>
 <details>  
    <summary>Do you recognise <i>tfoX</i>?</summary>

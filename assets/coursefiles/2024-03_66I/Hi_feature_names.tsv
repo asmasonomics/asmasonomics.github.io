@@ -187,10 +187,10 @@ gene-HI_0195.1	aefA	conserved_hypothetical_transmembrane_protein
 gene-HI_0196	aroC	chorismate_synthase
 gene-HI_0197	mepA	penicillin-insensitive_murein_endopeptidase
 gene-HI_0198	.	conserved_hypothetical_transmembrane_protein
-gene-HI_0199	kdo)2-(lauroyl)-lipid_IVA_acyltransferase_(msbB	lipid_A_biosynthesis
+gene-HI_0199	msbB	lipid_A_biosynthesis_kdo)2-(lauroyl)-lipid_IVA_acyltransferase
 gene-HI_0200	selD	selenide%2C_water_dikinase
 gene-HI_0201	rpL19	ribosomal_protein_L19
-gene-HI_0202	guanine-N1)-methyltransferase_(trmD	tRNA
+gene-HI_0202	trmD	tRNA_guanine-N1)-methyltransferase
 gene-HI_0203	.	conserved_hypothetical_protein
 gene-HI_0204	rpS16	ribosomal_protein_S16
 gene-HI_0205	.	predicted_coding_region_HI0205
@@ -337,10 +337,10 @@ gene-HI_0354	.	ABC_transporter%2C_ATP-binding_protein
 gene-HI_0355	.	ABC_transporter%2C_permease_protein
 gene-HI_0357	.	thiamine_biosynthesis_protein%2C_putative
 gene-HI_0358	.	transcriptional_activator%2C_putative
-gene-HI_0359	chelated)_ABC_transporter%2C_permease_protein_(yfeD	iron
-gene-HI_0360	chelated)_ABC_transporter%2C_permease_protein_(yfeC	iron
-gene-HI_0361	chelated)_transporter%2C_ATP-binding_protein_(yfeB	iron
-gene-HI_0362	chelated)_ABC_transporter%2C_periplasmic-binding_protein_(yfeA	iron
+gene-HI_0359	yfeD	iron_chelated_ABC_transporter%2C_permease_protein
+gene-HI_0360	yfeC	iron_chelated_ABC_transporter%2C_permease_protein
+gene-HI_0361	yfeB	iron_chelated_transporter%2C_ATP-binding_protein
+gene-HI_0362	yfeA	iron_chelated_ABC_transporter%2C_periplasmic-binding_protein
 gene-HI_0364	.	penicillin-binding_protein_7%2C_putative
 gene-HI_0365	.	conserved_hypothetical_protein
 gene-HI_0366	.	fimbrial_biogenesis_and_twitching_motility_protein%2C_putative
@@ -583,7 +583,7 @@ gene-HI_0602	hemY	hemY_protein
 gene-HI_0602.1	.	predicted_coding_region_HI0602.1
 gene-HI_0603	hemX	uroporphyrin-III_C-methyltransferase
 gene-HI_0604	cyaA	adenylate_cyclase
-gene-HI_0605	NAD+)_(gpsA	glycerol-3-phosphate_dehydrogenase
+gene-HI_0605	gpsA	glycerol-3-phosphate_dehydrogenase_NAD+
 gene-HI_0606	cysE	serine_acetyltransferase
 gene-HI_0607	.	shikimate_5-dehydrogenase-related_protein
 gene-HI_0608	.	conserved_hypothetical_protein
@@ -826,7 +826,7 @@ gene-HI_0844	mob	molybdopterin-guanine_dinucleotide_biosynthesis_protein
 gene-HI_0845	.	conserved_hypothetical_protein
 gene-HI_0846	por	periplasmic_oxidoreductase
 gene-HI_0847	.	conserved_hypothetical_protein
-gene-HI_0848	uracil-5-)-methyltransferase_(trmA	tRNA
+gene-HI_0848	trmA	tRNA_uracil-5-)-methyltransferase
 gene-HI_0849	.	conserved_hypothetical_protein
 gene-HI_0850	.	sigma-E_factor_regulatory_protein%2C_putative
 gene-HI_0851	mobB	molybdopterin-guanine_dinucleotide_biosynthesis_protein_B
@@ -867,7 +867,7 @@ gene-HI_0885	dsbD	thiol:disulfide_interchange_protein
 gene-HI_0886	.	predicted_coding_region_HI0886
 gene-HI_0887	purH	phosphoribosylaminoimidazolecarboxamide_formyltransferase
 gene-HI_0888	purD	phosphoribosylamine--glycine_ligase
-gene-HI_0889	serine_methylase)_(glyA	serine_hydroxymethyltransferase
+gene-HI_0889	glyA	serine_hydroxymethyltransferase_serine_methylase
 gene-HI_0890	.	conserved_hypothetical_protein
 gene-HI_0891	.	conserved_hypothetical_protein
 gene-HI_0892	rhlB	ATP-dependent_RNA_helicase
@@ -966,7 +966,7 @@ gene-HI_0983	.	predicted_coding_region_HI0983
 gene-HI_0984	.	conserved_hypothetical_protein
 gene-HI_0985	dprA	DNA_processing_chain_A
 gene-HI_0986	leuA	2-isopropylmalate_synthase
-gene-HI_0987	beta-IPM_dehydrogenase)_(leuB	3-isopropylmalate_dehydrogenase
+gene-HI_0987	leuB	3-isopropylmalate_dehydrogenase_beta-IPM_dehydrogenase
 gene-HI_0988	leuC	3-isopropylmalate_dehydratase%2C_alpha_subunit
 gene-HI_0989	leuD	3-isopropylmalate_dehydratase_small_subunit
 gene-HI_0990	iga1	immunoglobin_A1_protease
@@ -1037,7 +1037,7 @@ gene-HI_1058	.	predicted_coding_region_HI1058
 gene-HI_1059	rnhB	ribonuclease_HII
 gene-HI_1060	lpxB	lipid-A-disaccharide_synthetase
 gene-HI_1061	lpxA	UDP-N-acetylglucosamine_acetyltransferase
-gene-HI_1062	acyl_carrier_protein)_dehydrase_(fabZ	(3R)-hydroxymyristol
+gene-HI_1062	fabZ	(3R)-hydroxymyristol_acyl_carrier_protein)_dehydrase
 gene-HI_1063	.	predicted_coding_region_HI1063
 gene-HI_1064	.	conserved_hypothetical_protein
 gene-HI_1065	pyrH	uridylate_kinase
@@ -1143,7 +1143,7 @@ gene-HI_1167	serC	phosphoserine_aminotransferase
 gene-HI_1168	.	conserved_hypothetical_protein
 gene-HI_1169	.	predicted_coding_region_HI1169
 gene-HI_1170	.	predicted_coding_region_HI1170
-gene-HI_1171	trpG	anthranilate_synthase_component_II
+gene-HI_1171	trpG-1171	anthranilate_synthase_component_II
 gene-HI_1172	metX	S-adenosylmethionine_synthetase
 gene-HI_1173	sprT	sprt_protein
 gene-HI_1174	.	opacity_protein%2C_putative
@@ -1315,7 +1315,7 @@ gene-HI_1348	pepT	peptidase_T
 gene-HI_1349	.	conserved_hypothetical_protein
 gene-HI_1350	cdd	cytidine_deaminase
 gene-HI_1351	.	conserved_hypothetical_protein
-gene-HI_1352	proline_permease)_(putP	sodium/proline_symporter
+gene-HI_1352	putP	sodium/proline_symporter_proline_permease
 gene-HI_1353	cafA	cytoplasmic_axial_filament_protein
 gene-HI_1354	glnS	glutaminyl-tRNA_synthetase
 gene-HI_1355	.	conserved_hypothetical_protein
@@ -1388,7 +1388,7 @@ gene-HI_1421	.	predicted_coding_region_HI1421
 gene-HI_1422	.	predicted_coding_region_HI1422
 gene-HI_1423	.	predicted_coding_region_HI1423
 gene-HI_1424	.	integrase/recombinase%2C_putative
-gene-HI_1425	and_nitrate)_reduction_regulatory_protein_(fnr	fumarate
+gene-HI_1425	fnr	fumarate_and_nitrate_reduction_regulatory_protein
 gene-HI_1426	.	conserved_hypothetical_protein
 gene-HI_1427	.	predicted_coding_region_HI1427
 gene-HI_1428	purN	phosphoribosylglycinamide_formyltransferase
@@ -1513,7 +1513,7 @@ gene-HI_1543	.	conserved_hypothetical_protein
 gene-HI_1544	.	NAD(P)H_oxidoreductase%2C_putative
 gene-HI_1545	.	sodium:dicarboxylate_symporter_protein
 gene-HI_1546	.	impA_protein%2C_putative
-gene-HI_1547	phenylalanine_repressible)_(aroG	phospho-2-dehydro-3-deoxyheptonate_aldolase
+gene-HI_1547	aroG	phospho-2-dehydro-3-deoxyheptonate_aldolase
 gene-HI_1548	.	conserved_hypothetical_transmembrane_protein
 gene-HI_1549	.	ABC_transporter%2C_ATP-binding_protein
 gene-HI_1550	bioD-2	dethiobiotin_synthase
@@ -1623,7 +1623,7 @@ gene-HI_1657	.	conserved_hypothetical_protein
 gene-HI_1658	.	hemolysin%2C_putative
 gene-HI_1659	nrdA	ribonucleoside-diphosphate_reductase%2C_alpha_chain
 gene-HI_1660	nrdB	ribonucleoside_diphosphate_reductase%2C_beta_chain
-gene-HI_1661	.	2-oxoglutarate_dehydrogenase_E2_component%2C_dihydrolipoamide_succinyltransferase(sucB
+gene-HI_1661	sucB	2-oxoglutarate_dehydrogenase_E2_component%2C_dihydrolipoamide_succinyltransferase
 gene-HI_1662	sucA	2-oxoglutarate_dehydrogenase_E1_component
 gene-HI_1663	.	conserved_hypothetical_protein
 gene-HI_1664	.	conserved_hypothetical_protein

@@ -30,7 +30,8 @@ Hopefully this all sounds quite familiar! If not, after this morning, make time 
 <p align="justify">
 Start RStudio from the Start menu.<br/><br/>
 Make a new RStudio project. Put it in a sensible place with a sensible name. Remember that if you are using a university machine, select a location via the M/H drives, not just using the "Documents" shortcut. This <b>will</b> create problems for you!<br/><br/>
-Use the Files pane to make subdirectories for your <code>raw_data</code>, <code>proc_data</code> and <code>plots</code>. These names are suggestions only. Make a new script file, perhaps <code>data_workshop_3.R</code>, to complete your work.<br/><br/>
+Use the Files pane to make subdirectories for your <code>raw_data</code>, <code>proc_data</code> and <code>plots</code>. These names are suggestions only. Make a new script file, perhaps <code>babs4_rnaseq_workshop.R</code>, to complete your work.<br/><br/>
+Remember, you will eventually submit a <b>single</b> RStudio project which should represent the entire project over both workshops (3&4).<br/><br/>
 </p>
 
 #### Access the data
@@ -92,7 +93,7 @@ library(dplyr)
 counts <- read.table("raw_data/Hi_PRJNA293882_counts.tsv", row.names = 1, header = TRUE)
 
 # feature IDs and symbols where possible
-featname <- read_tsv("raw_data/Hi_feature_names.tsv")
+featname <- read.table("raw_data/Hi_feature_names.tsv", row.names = 1, header = TRUE)
 
 # feature locations, setting the column names for BED format
 featlocs <- read_tsv("raw_data/Hi_feature_locations.bed", col_names = c("chr","start","end","feat_ID","biotype","strand"))
@@ -349,24 +350,222 @@ Genes with higher expression also have higher variance, so a log transformation 
    The log transformation strongly suggests that the "C" replicates across conditions were quite different to the rest. It's possible these were processed all at the same time, different to those of A and B, maybe even by a different person. We may be able to control for this technical artefact during differential expression.
 </details>
 <br/>
-</p>
-
-![log10 PCA](/assets/coursefiles/2024-03_66I/plots/03_normalise_003.png){:class="img-responsive"}
-<br/><br/>
-
-#### Differential expression analysis
-
-
-
-
-
-
-
-
-<p align="justify">
+Your PCA plots would be good ones to save. Make sure you give them sensible names and put them in your <code>plots</code> directory to keep things organised.<br/>
+You can use the Export function on the Plots pane of RStudio, or code it. See below the PCA image.<br/>
 <br/>
 </p>
 
+![log10 PCA](/assets/coursefiles/2024-03_66I/plots/03_normalise_003.png){:class="img-responsive"}
+<br/>
+
+```R 
+
+ggplot(pca_comps, aes(x=Comp.1, y=Comp.2)) + 
+  geom_point() + 
+  geom_text_repel(label=rownames(data.frame(res_pca$loadings[, 1:2]))) +
+  labs(x = pca_x, y = pca_y)
+ggsave("plots/tpm_pca.pdf")
+
+```
+
+<br/><br/>
+
+#### Differential expression analysis
+<p align="justify">
+We're now going to focus in on the main comparison for this workshop: the impact of the changed media after 30 mins (<i>i.e.</i> comparing <i>t</i>=30 against <i>t</i>=0; MIV2 vs MIV0).
+<br/>
+</p>
+
+```R
+
+# reduce counts matrix to just the groups we want
+comp_counts <- counts[, grep("kw20.MIV0|kw20.MIV2", colnames(counts))]
+
+# DESeq2 needs a dataframe detailing the experimental setup
+sample_info <- data.frame(colnames(comp_counts))
+colnames(sample_info) <- c("sample")
+rownames(sample_info) <- sample_info$sample
+sample_info
+
+# currently sample_info looks very sparse, but we actually have all the information we need because of our consistent sample naming
+# we can split the sample name and this gives us the genotype (kw20), condition (MIV0, MIV2) and replicates (A,B,C) 
+sample_info <- sample_info |> separate(sample, c("genotype", "condition", "replicate"))
+
+# crucial check needed now - are the columns in the counts data all found in the rownames of the sample_info (and in the same order)
+all(rownames(sample_info) %in% colnames(comp_counts))
+all(rownames(sample_info) == colnames(comp_counts))
+
+# these are both TRUE, which is good. If these are FALSE, you need to reorder your columns/rows to make them match
+
+# now we can run the differential expression
+# the design parameter tells DESeq2 what comparison you want to make
+dds <- DESeqDataSetFromMatrix(countData = comp_counts, colData = sample_info, design = ~ condition)
+
+# explicitly set the control condition so fold changes are in the direction you want/makes biological sense
+dds$condition <- relevel(dds$condition, ref = "MIV0")
+
+# run DESeq2
+dds <- DESeq(dds)
+dds_results <- results(dds)
+
+# get some quick summaries of 'significant' changes and take a look at the results
+summary(results(dds, alpha=0.05, lfcThreshold = 1))
+dds_results
+
+```
+<p align="justify">
+<br/>
+Good news! There are lots of significant changes. We use as log<sub>2</sub> fold change as it makes positive and negative changes symmetrical - see the table below for an explainer. We also need to have an 'adjusted' p value, not just the normal p value. The adjustment accounts for multiple testing of the data, where chance differences could come through as false positives. Effectively the adjustment makes our threshold for significance more stringent.<br/><br/>
+When we compare values in two groups, we divide our experimental group by our control group to generate fold change values. So if something goes up in the experimental group, fold change will be greater than 1. Doubling expression or halving expression should be equivalent in our heads (they are <i>reciprocal</i> values), but they differ in their arithmetic distance from 1 (see the table). This means increasing expression could have a fold change value from >1 all the way to infinity. But a decrease can only go from <1 to approaching 0 - see the left histogram below.<br/>
+A log<sub>2</sub> transformation of the fold change brings the equivalence back, making it symmetrical around 0 (see right hand histogram). This is why volcano plots use a log<sub>2</sub> x axis.<br/>
+</p>
+| gene | test<sub>* avg TPM*</sub> | control<sub>* avg TPM*</sub> | test/control | log<sub>2</sub>(test/control) |
+| --- | --- | --- | --- | --- | 
+| geneA | 100 | 50 | 2 | 1 | 
+| geneB | 50 | 100 | 0.5 | -1 | 
+| geneC | 20 | 20 | 1 | 0 |
+![FC log2FC comparison](/assets/coursefiles/2024-03_66I/plots/03_dea_001.png){:class="img-responsive"}
+
+<p align="justify">
+<br/><br/>
+That's the maths explainer over. Let's get back to interrogating the results of our DEA.<br/>
+</p>
+
+```R 
+
+# currently our results all have the feature ID, so let's add in the gene symbol and TPMs
+# first merge with the featnames to get symbols
+dds_results <- merge(as.data.frame(dds_results), featname, by=0)
+rownames(dds_results) <- dds_results$Row.names
+dds_results <- dds_results[,-1]
+
+# then subset the TPMs, calculate log2FC and merge together
+comp_tpms <- tpms[, grep("kw20.MIV0|kw20.MIV2", colnames(tpms))]
+comp_tpms <- mutate(comp_tpms, MIV0_avg = rowMeans(select(comp_tpms, contains("MIV0"))), 
+                    MIV2_avg = rowMeans(select(comp_tpms, contains("MIV2"))))
+comp_tpms <- mutate(comp_tpms, log2FC = log2((MIV2_avg+1)/(MIV0_avg+1)))
+comp_red_tpms <- comp_tpms |> select(-starts_with("kw20.MIV"))
+
+dds_tpm <- merge(dds_results_padj_ordered, comp_red_tpms, by=0)
+rownames(dds_tpm) <- dds_tpm$Row.names
+dds_tpm <- dds_tpm[,-1]
+
+# we now have log2FC values calculated from the DESeq2-normalised counts and our TPMs
+# are they well correlated?
+cor(dds_tpm$log2FoldChange, dds_tpm$log2FC, method = c("pearson"))
+
+# now you have some context (particularly gene names), order by most significant and take a look at the top 20
+head(dds_tpm[order(dds_tpm$padj),], 20)
+
+```
+
+<p align="justify">
+<br/>
+<details>
+   <summary>Are there genes here which make sense?</summary>
+   The <i>com</i> genes are <b>competence</b> genes, so that makes a lot of sense. We also have DNA (<i>dprA</i>) or recombination (<i>rec2</i>) regulators.<br>
+   There are also lots of genes without symbols. This is fine! It may represent new biology to explore. Some of the descriptions for these unnamed ones make sense though - protein transport <i>etc</i>.
+   <br/>
+</details>
+Looking at a table like this is tricky, so let's make a volcano plot!<br/>
+</p>
+
+```R 
+
+# first extract a list of genes (with symbols) to annotate the biggest changes on our volcano
+# subset the dataframe where the symbols column does not equal "."
+# we need the square brackets here otherwise "." takes on its special meaning of "match any character"
+withsymbols <- dds_tpm[- grep("[.]", dds_tpm$symbol),]
+
+# take the top 50 based on absolute log2FC (so this includes big negatives if there are any)
+siggenes <- head(withsymbols |> arrange(desc(abs(log2FC))), 50)$symbol
+
+# make the volcano plot - you can personalise these forever, check out - https://github.com/kevinblighe/EnhancedVolcano
+# the cutoffs define the dotted line thresholds and default colours
+# the second line is all about the labels used 
+# the third line are some personal preferences on the plot layout - play with these!
+EnhancedVolcano(dds_tpm, x = "log2FC", y = "padj", FCcutoff = 1, pCutoff = 0.05,
+                lab = dds_tpm$symbol, selectLab = siggenes, labSize = 4.5, max.overlaps = 1000, drawConnectors = TRUE,
+                legendPosition = 0, gridlines.major = FALSE, gridlines.minor = FALSE)
+
+# there are a lot of big, significant changes in this dataset - I would perhaps suggest making the FCcutoff harsher. The plot below is for 2.5
+
+```
+![MIV0 MIV2 volcano](/assets/coursefiles/2024-03_66I/plots/03_dea_002.png){:class="img-responsive"}
+
+<p align="justify">
+<br/>
+The volcano plot highlights the large number of very significant changes in the dataset after culture in the starvation media, MIV. We've already mentioned some of the genes such as <i>dprA</i> and <i>comA</i>. Next session we will work more on exactly what the biological impact is, but for now investigate a few more of the groups. This can be from the description column in the results, or by some tactical research on google.<br/><br/>
+<details>
+   <summary>What do the <i>pur</i> and <i>trp</i> genes do?</summary>
+   Genes such as <i>purC</i> are involved in making nucleotides. Similarly, genes like <i>trpC</i> make the amino acid tryptophan. MIV lacks both of these metabolites.<br/>
+   
+   <summary>Don't forget about the downregulated genes - any common themes?</summary>
+   The <i>rpL</i> and <i>rpS</i> genes encode the large and small ribosomal subunits. <i>fis</i> activates rRNA transcription and <i>deaD</i> assists in ribosome assembly. It looks like there is a general downregulation of translation machinery.<br/>
+   
+   <summary>Do you recognise <i>tfoX</i>?</summary>
+   <i>tfoX</i> encodes the Sxy protein which is involved in competence response (directly via CRP). It is upregulated here and we have another Hi dataset which has a Sxy null mutant. Can you make any hypotheses about what may happen in Sxy mutants when they are grown in MIV?<br/>
+   
+   <summary>What about <i>muA</i>, <i>muB</i> and <i>gam</i>?</summary>
+   They don't come up in this most significant list. You could change the <code>siggenes</code> variable to include only these genes and see where they are on the volcano. Or use your <code>grep</code> commands from earlier in the workshop to extract these genes from the results file.<br/>
+   Modest but statistically significant upregulation is seen across all genes. So there is constituitive expression, enhanced in MIV.<br/>
+</details>
+<br/>
+</p>
+
+#### Finishing up for today
+<p align="justify">
+Fantastic work! Lots of R coding and you've taken a big dataset, normalised it, extracted the columns you're biologically interested in, and performed differential expression analysis. Next session you'll be focused on what this actually means, relating this to genome location and how these genes may be regulated through regulons. Before that you need to make sure you've got everything saved so you don't need to do it again.<br/><br/>
+Make sure you have saved the plots you want to save - particularly the PCA and volcano plots - and also the relevant datasets which you've modified.
+<br/>
+</p>
+
+```R 
+
+write.table(dds_tpm, file="proc_data/MIV0vsMIV2_DEA_full_results.tsv", sep="\t", row.names=TRUE)
+write.table(tpms, file="proc_data/full_dataset_TPMs.tsv", sep="\t", row.names=TRUE)
+write.table(comp_tpms, file="proc_data/MIV0vsMIV2_TPMs.tsv", sep="\t", row.names=TRUE)
+
+# and anything else you've done which is relevant to you
+
+```
+<br/>
+<p align="justify">
+<b>GREAT WORK!</b> See you next week!
+<br/>
+</p>
+<br/><br/><br/>
+
+#### Consolidation and extending the workshop analysis (if you're interested)
+<p align="justify">
+If you want to check your understanding, the best bet is to look back through the workshop section headers and make sure you understand what each step was for. It's easy to put your head down and ignore the biology - so always bring it back to that. Remember, the question was how <i>Haemophilus influenzae</i>, a naturally competent bacterium, would respond when placed in starvation conditions and what this says about the regulation of the competence response.<br/><br/>
+You will need to weave the RNAseq data analysis into your project report. So, how does this data support your wet lab work, and the BLAST/PHASTER practical in data workshop 2? How does it fit together? Can you check the wet lab results in the RNAseq data?<br/>
+There is also the opportunity to use the other datasets available to you to further explore these questions, and to explore the data more too.<br/><br/>
+
+One outstanding question is why the C replicates were so different from the rest (look back at your PCA plots). I mentioned that we might be able to control for this difference. Let's take a look.
+<br/>
+</p>
+
+```R 
+
+# revisit the DEA section - we're going to run another type of DEA
+# we can include the replicate information (which is in sample_info) to control for variance based on the replicate
+# when we instruct the DEA design, put variable you want to control before the experimental variable you want to measure
+dds2 <- DESeqDataSetFromMatrix(countData = comp_counts, colData = sample_info, design = ~ replicate + condition)
+
+# you can then follow the rest of the analysis we did, include summaries and making the volcano plot
+
+```
+<p align="justify">
+Often we control for replicate if there is a genuine reason to do so, such as replicates coming from different labs, isolates or donor backgrounds. In this case, "C" is not really a separate grouping and we don't know for certain it was treated differently - this may simply reflect genuine biological variance (rather than a technical annoyance). We do get a few more significant hits, but we already had more significant hits than we could feasibly validate in the lab, so it's unlikely we've gained anything properly new.<br/><br/>
+However, we can flip the DESeq2 design to work out what it was about the replicates that caused the variance on the PCA.<br/>
+If you try this, you'll see that lots of ribosomal RNA comes up as significant. Remember, our dataset was derived after rRNA depletion, so any rRNA leftover is simply a measure of how (in)efficient the library prep was. It looks like the C samples had a worse prep, and therefore have more rRNA leftover, hence the variance on the plot. Again, we have lots of significant results despite this, but a solution could be to remove any rRNA genes from the count matrix, removing this problem. There is a good reason to do this. The danger is <b>overdoing it</b>. This is where good data management and note taking comes in.<br/><br/>
+
+Another good question is whether the response we see at <i>t</i>=30 happens earlier (MIV1; <i>t</i>=10) and/or is maintained (MIV3; <i>t</i>=100). Things you now have the skills to answer. <br/><br/>
+Could you make snesible hypotheses about the other datasets you have access to, that may also help your understanding of the Hi competence response under stress? I look forward to seeing what you might come up with...
+</p>
+
+<br/><br/><br/><br/><br/><br/>
 
 ### Video explainers
 #### Introduction to transcriptomics

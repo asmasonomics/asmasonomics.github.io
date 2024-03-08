@@ -497,23 +497,23 @@ EnhancedVolcano(dds_tpm, x = "log2FC", y = "padj", FCcutoff = 1, pCutoff = 0.05,
 
 <p align="justify">
 <br/>
-The volcano plot highlights the large number of very significant changes in the dataset after culture in the starvation media, MIV. We've already mentioned some of the genes such as <i>dprA</i> and <i>comA</i>. Next session we will work more on exactly what the biological impact is, but for now investigate a few more of the groups. This can be from the description column in the results, or by some tactical research on google.<br/><br/>
+The volcano plot highlights the large number of very significant changes in the dataset after culture in the starvation media, MIV. We've already mentioned some of the genes such as <i>dprA</i> and <i>comA</i>. Next session we will work more on exactly what the biological impact is, but for now investigate a few more of the groups. This can be from the description column in the results, or by some tactical research on google.<br/>
 <details>
    <summary>What do the <i>pur</i> and <i>trp</i> genes do?</summary>
-   Genes such as <i>purC</i> are involved in making nucleotides. Similarly, genes like <i>trpC</i> make the amino acid tryptophan. MIV lacks both of these metabolites.<br/>
+   Genes such as <i>purC</i> are involved in making nucleotides. Similarly, genes like <i>trpC</i> make the amino acid tryptophan. MIV lacks both of these metabolites.<br/><br/>
 </details>
 <details>
    <summary>Don't forget about the downregulated genes - any common themes?</summary>
-   The <i>rpL</i> and <i>rpS</i> genes encode the large and small ribosomal subunits. <i>fis</i> activates rRNA transcription and <i>deaD</i> assists in ribosome assembly. It looks like there is a general downregulation of translation machinery.<br/>
+   The <i>rpL</i> and <i>rpS</i> genes encode the large and small ribosomal subunits. <i>fis</i> activates rRNA transcription and <i>deaD</i> assists in ribosome assembly. It looks like there is a general downregulation of translation machinery.<br/><br/>
 </details>
 <details>  
    <summary>Do you recognise <i>tfoX</i>?</summary>
-   <i>tfoX</i> encodes the Sxy protein which is involved in competence response (directly via CRP). It is upregulated here and we have another Hi dataset which has a Sxy null mutant. Can you make any hypotheses about what may happen in Sxy mutants when they are grown in MIV?<br/>
+   <i>tfoX</i> encodes the Sxy protein which is involved in competence response (directly via CRP). It is upregulated here and we have another Hi dataset which has a Sxy null mutant. Can you make any hypotheses about what may happen in Sxy mutants when they are grown in MIV?<br/><br/>
 </details>
 <details>   
    <summary>What about <i>muA</i>, <i>muB</i> and <i>gam</i>?</summary>
    They don't come up in this most significant list. You could change the <code>siggenes</code> variable to include only these genes and see where they are on the volcano. Or use your <code>grep</code> commands from earlier in the workshop to extract these genes from the results file.<br/>
-   Modest but statistically significant upregulation is seen across all genes. So there is constituitive expression, enhanced in MIV.<br/>
+   Modest but statistically significant upregulation is seen across all genes. So there is constituitive expression, enhanced in MIV.<br/><br/>
 </details>
 <br/>
 </p>

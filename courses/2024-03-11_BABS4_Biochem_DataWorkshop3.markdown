@@ -419,15 +419,16 @@ Good news! There are lots of significant changes. We use as log<sub>2</sub> fold
 When we compare values in two groups, we divide our experimental group by our control group to generate fold change values. So if something goes up in the experimental group, fold change will be greater than 1. Doubling expression or halving expression should be equivalent in our heads (they are <i>reciprocal</i> values), but they differ in their arithmetic distance from 1 (see the table). This means increasing expression could have a fold change value from >1 all the way to infinity. But a decrease can only go from <1 to approaching 0 - see the left histogram below.<br/>
 A log<sub>2</sub> transformation of the fold change brings the equivalence back, making it symmetrical around 0 (see right hand histogram). This is why volcano plots use a log<sub>2</sub> x axis.<br/>
 </p>
-| gene | test<sub>* avg TPM*</sub> | control<sub>* avg TPM*</sub> | test/control | log<sub>2</sub>(test/control) |
+
+| gene | test<sub>avg TPM</sub> | control<sub>avg TPM</sub> | test/control | log<sub>2</sub>(test/control) |
 | --- | --- | --- | --- | --- | 
 | geneA | 100 | 50 | 2 | 1 | 
 | geneB | 50 | 100 | 0.5 | -1 | 
 | geneC | 20 | 20 | 1 | 0 |
+
 ![FC log2FC comparison](/assets/coursefiles/2024-03_66I/plots/03_dea_001.png){:class="img-responsive"}
 
 <p align="justify">
-<br/><br/>
 That's the maths explainer over. Let's get back to interrogating the results of our DEA.<br/>
 </p>
 
@@ -467,6 +468,7 @@ head(dds_tpm[order(dds_tpm$padj),], 20)
    There are also lots of genes without symbols. This is fine! It may represent new biology to explore. Some of the descriptions for these unnamed ones make sense though - protein transport <i>etc</i>.
    <br/>
 </details>
+<br/>
 Looking at a table like this is tricky, so let's make a volcano plot!<br/>
 </p>
 
@@ -499,13 +501,16 @@ The volcano plot highlights the large number of very significant changes in the 
 <details>
    <summary>What do the <i>pur</i> and <i>trp</i> genes do?</summary>
    Genes such as <i>purC</i> are involved in making nucleotides. Similarly, genes like <i>trpC</i> make the amino acid tryptophan. MIV lacks both of these metabolites.<br/>
-   
+</details>
+<details>
    <summary>Don't forget about the downregulated genes - any common themes?</summary>
    The <i>rpL</i> and <i>rpS</i> genes encode the large and small ribosomal subunits. <i>fis</i> activates rRNA transcription and <i>deaD</i> assists in ribosome assembly. It looks like there is a general downregulation of translation machinery.<br/>
-   
+</details>
+<details>  
    <summary>Do you recognise <i>tfoX</i>?</summary>
    <i>tfoX</i> encodes the Sxy protein which is involved in competence response (directly via CRP). It is upregulated here and we have another Hi dataset which has a Sxy null mutant. Can you make any hypotheses about what may happen in Sxy mutants when they are grown in MIV?<br/>
-   
+</details>
+<details>   
    <summary>What about <i>muA</i>, <i>muB</i> and <i>gam</i>?</summary>
    They don't come up in this most significant list. You could change the <code>siggenes</code> variable to include only these genes and see where they are on the volcano. Or use your <code>grep</code> commands from earlier in the workshop to extract these genes from the results file.<br/>
    Modest but statistically significant upregulation is seen across all genes. So there is constituitive expression, enhanced in MIV.<br/>
@@ -562,10 +567,12 @@ However, we can flip the DESeq2 design to work out what it was about the replica
 If you try this, you'll see that lots of ribosomal RNA comes up as significant. Remember, our dataset was derived after rRNA depletion, so any rRNA leftover is simply a measure of how (in)efficient the library prep was. It looks like the C samples had a worse prep, and therefore have more rRNA leftover, hence the variance on the plot. Again, we have lots of significant results despite this, but a solution could be to remove any rRNA genes from the count matrix, removing this problem. There is a good reason to do this. The danger is <b>overdoing it</b>. This is where good data management and note taking comes in.<br/><br/>
 
 Another good question is whether the response we see at <i>t</i>=30 happens earlier (MIV1; <i>t</i>=10) and/or is maintained (MIV3; <i>t</i>=100). Things you now have the skills to answer. <br/><br/>
-Could you make snesible hypotheses about the other datasets you have access to, that may also help your understanding of the Hi competence response under stress? I look forward to seeing what you might come up with...
+Could you make sensible hypotheses about the other datasets you have access to, that may also help your understanding of the Hi competence response under stress? I look forward to seeing what you might come up with...
 </p>
 
 <br/><br/><br/><br/><br/><br/>
+[Return to tutorial introduction.](#introduction)<br/>
+<br/><br/>
 
 ### Video explainers
 #### Introduction to transcriptomics

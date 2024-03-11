@@ -73,9 +73,26 @@ We need the following packages for this workshop:<br/>
 	<li><code>dplyr</code> <a href="https://doi.org/10.21105/joss.01686">Wickham <i>et al.,</i> 2019</a> (this is part of tidyverse, but I always find loading it explicably helps with redundancy issues later on)</li>
 </ul>
 <br/>
-Load these libraries.<br/><br/>
 <b>Note</b> - this workshop is designed to run (and has been tested) on the managed University desktops. If you choose to run the workshop on your personal laptop, you may need to install additional packages. Remember that <code>install.packages()</code> only works if a library a standard CRAN package. For DESeq2 and EnhancedVolcano, this is not the case - see guidance below. Update your version of R/RStudio before attempting to install new packages for the workshop.<br/>
-<b>Remember</b> - you can use the <a href="https://www.york.ac.uk/it-services/tools/vds/virtual-desktop/">University of York Virtual Desktop Service</a> to connect to a managed machine from your laptop to get the same experience of a managed machine from the comfort of your own laptop/desktop.<br/>
+<b>Remember</b> - you can use the <a href="https://www.york.ac.uk/it-services/tools/vds/virtual-desktop/">University of York Virtual Desktop Service</a> to connect to a managed machine from your laptop to get the same experience of a managed machine from the comfort of your own laptop/desktop.<br/><br/>
+<details>
+   <summary>Open this if you're attempting installations on your own laptop.</summary>
+   I thoroughly advise you to use a managed machine or the virtual desktop service - this will make life easier! If you choose to go ahead on your own machine, read on.<br/><br/>
+   Update your version of R and RStudio.<br/>
+   <code>tidyverse</code>, <code>ggplot2</code> and <code>dplyr</code> can be installed simply using the <code>install.packages()</code> built-in installer.<br/><br/>
+   <b>Remember</b>, installations are <i>not</i> instantaneous! The console (the window at the bottom left of RStudio) shows you when processes are still ongoing. The cursor will return when the process is done. So, if R/RStudio is asking you for information, such as whether or not you want to update other libraries <i>etc.</i> you need to answer this before running another line of code, otherwise R will keep waiting and waiting. Read the output - often you can skip updating other packages. This is far quicker for sure. Some updates may take >40 minutes and you won't be able to do anything else on RStudio until this is done.<br/><br/>
+   Both <code>DESeq2</code> and <code>EnhancedVolcano</code> <b>cannot</b> be installed successfully with <code>install.packages()</code>. For DESeq2, you need to first install BiocManager, then load the BiocManager library, then use BiocManager to install DESeq2, then load the DESeq2 library:<br/>
+   <code>
+   install.packages("BiocManager")<br/>
+   library(BiocManager)<br/>
+   BiocManager::install("DESeq2")<br/>
+   library(DESeq2)<br/>
+   </code>
+   You need to install <code>EnhancedVolcano</code> using the <code>remotes</code> package and <code>remotes::install_github()</code> as in the main material above.<br/><br/>
+   Good luck!<br/>
+</details>
+
+Load these libraries.<br/><br/>
 </p>
 
 ```R
@@ -95,27 +112,6 @@ library(EnhancedVolcano)
 
 ```
 <br/>
-<p align="justify">
-<br/>
-<details>
-   <summary>Open this if you're attempting installations on your own laptop.</summary>
-   I thoroughly advise you to use a managed machine or the virtual desktop service - this will make life easier!<br/>
-   If you choose to go ahead on your own machine, read on.<br/><br/>
-   Update your version of R and RStudio.<br/>
-   <code>tidyverse</code>, <code>ggplot2</code> and <code>dplyr</code> can be installed simply using the <code>install.packages()</code> built-in installer.<br/><br/>
-   <b>Remember</b>, installations are <i>not</i> instantaneous! The console (the window at the bottom left of RStudio) shows you when processes are still ongoing. The cursor will return when the process is done. So, if R/RStudio is asking you for information, such as whether or not you want to update other libraries <i>etc.</i> you need to answer this before running another line of code, otherwise R will keep waiting and waiting. Read the output - often you can skip updating other packages. This is far quicker for sure. Some updates may take >40 minutes and you won't be able to do anything else on RStudio until this is done.<br/><br/>
-   Both <code>DESeq2</code> and <code>EnhancedVolcano</code> <b>cannot</b> be installed successfully with <code>install.packages()</code>. For DESeq2, you need to first install BiocManager, then load the BiocManager library, then use BiocManager to install DESeq2, then load the DESeq2 library:<br/>
-   <code>
-   install.packages("BiocManager")<br/>
-   library(BiocManager)<br/>
-   BiocManager::install("DESeq2")<br/>
-   library(DESeq2)<br/>
-   </code>
-   You need to install <code>EnhancedVolcano</code> using the <code>remotes</code> package and <code>remotes::install_github()</code> as in the main material above.<br/><br/>
-   Good luck!<br/>
-</details><br/><br/>
-</p>
-
 
 #### Load datasets
 ```R

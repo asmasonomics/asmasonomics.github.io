@@ -19,7 +19,8 @@ In their <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.p
 </p>
 ![Hi experimental setup](/assets/images/2024-03-11_66I-DW3_Hi_exp_setup.png){:class="img-responsive"} <br/>
 <p align="justify">
-Hopefully this all sounds quite familiar! If not, after this morning, make time to watch the videos we've generated to support these two workshops. These are embedded below and on the VLE.<br/>
+Hopefully this all sounds quite familiar! If not, after this morning, make time to watch the videos we've generated to support these two workshops. These are embedded below and on the VLE.<br/><br/>
+You can also download the introductory slides <a href="/assets/coursefiles/2024-03_66I/66I-DW3_introductory_slides.pdf" download>here as a PDF</a>
 </p>
 [Introduction to transcriptomics](#introduction-to-transcriptomics)<br/>
 [How has the data in this workshop been processed so far?](#data-processing-before-this-workshop)

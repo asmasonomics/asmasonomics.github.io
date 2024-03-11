@@ -91,12 +91,12 @@ We need the following packages for this workshop:<br/>
    You need to install <code>EnhancedVolcano</code> using the <code>remotes</code> package and <code>remotes::install_github()</code> as in the main material above.<br/><br/>
    Good luck!<br/>
 </details>
-
-Load these libraries.<br/><br/>
+<br/>
 </p>
 
 ```R
 
+# load these libraries
 library(tidyverse)
 library(DESeq2)
 library(ggplot2)

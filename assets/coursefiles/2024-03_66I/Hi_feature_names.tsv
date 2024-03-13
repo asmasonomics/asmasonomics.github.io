@@ -1405,7 +1405,7 @@ gene-HI_1436	.	conserved_hypothetical_protein
 gene-HI_1436.2	.	predicted_coding_region_HI1436.2
 gene-HI_1437	xseB	exodeoxyribonuclease%2C_small_subunit
 gene-HI_1438	ispA	geranyltranstransferase
-gene-HI_1439	dxs)_{Escherichia_coli	1-deoxyxylulose-5-phosphate_synthase
+gene-HI_1439	dxs	1-deoxyxylulose-5-phosphate_synthase
 gene-HI_1440	sspB	stringent_starvation_protein_B
 gene-HI_1441	sspA	stringent_starvation_protein_A
 gene-HI_1442	rpS9	ribosomal_protein_S9
@@ -1678,7 +1678,7 @@ gene-HI_1712	ptsI	phosphoenolpyruvate-protein_phosphotransferase
 gene-HI_1713	ptsH	phosphocarrier_protein_HPr
 gene-HI_1714	.	conserved_hypothetical_protein
 gene-HI_1715	.	conserved_hypothetical_protein
-gene-HI_1716	rfe)%2C_putative	undecaprenyl-phosphate_alpha-N-acetylglucosaminyltransferase
+gene-HI_1716	rfe	undecaprenyl-phosphate_alpha-N-acetylglucosaminyltransferase_%2C_putative
 gene-HI_1717	.	predicted_coding_region_HI1717
 gene-HI_1718	.	predicted_coding_region_HI1718
 gene-HI_1719	glnD	uridylyl_transferase

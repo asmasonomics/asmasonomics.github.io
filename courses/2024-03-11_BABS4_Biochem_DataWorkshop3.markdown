@@ -423,6 +423,11 @@ sample_info
 # we can split the sample name and this gives us the genotype (kw20), condition (MIV0, MIV2) and replicates (A,B,C) 
 sample_info <- sample_info |> separate(sample, c("genotype", "condition", "replicate"))
 
+### during the workshop, some people working on personal machines had issues with the separate() command
+### this is part of tidyverse, so make sure that is loaded and updated, and try again
+### if that still doesn't work, see the base R (i.e. no libraries needed) one-liner solution which replaces the 5 code lines above
+### sample_info <- read.table(text=gsub("[.]", ",", colnames(comp_counts)), sep=",", col.names=c("genotype", "condition", "replicate"), row.names = colnames(comp_counts))
+
 # crucial check needed now - are the columns in the counts data all found in the rownames of the sample_info (and in the same order)
 all(rownames(sample_info) %in% colnames(comp_counts))
 all(rownames(sample_info) == colnames(comp_counts))

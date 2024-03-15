@@ -23,7 +23,8 @@ Hopefully this all sounds quite familiar! If not, after this morning, make time 
 You can also download the introductory slides <a href="/assets/coursefiles/2024-03_66I/66I-DW3_introductory_slides.pdf" download>here as a PDF</a>.<br/>
 </p>
 [Introduction to transcriptomics](#introduction-to-transcriptomics)<br/>
-[How has the data in this workshop been processed so far?](#data-processing-before-this-workshop)
+[How has the data in this workshop been processed so far?](#data-processing-before-this-workshop)<br/>
+[What is a sequencing read?](#what-is-a-sequencing-read)
 <br/>
 
 ### The workshop
@@ -626,6 +627,15 @@ This video was included in the week 4 teaching materials on the VLE to view befo
 This video was included in the week 5 teaching materials on the VLE to support the workshop material. We introduce you to the data you will analyse in these two data workshops (3 and 4), and tell you what has happened to go from raw sequencing data (files for each sample total c.40 million lines) to the counts matrix you will work on (1745 rows and 6 columns, in the first instance).<br/>
 </p>
 <iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=117ba13f-1f0c-4c2a-8f48-b12a00929d38&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="100%" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
+<br/>
+[Return to tutorial introduction.](#introduction)<br/>
+[Begin the workshop.](#the-workshop)<br/><br/>
+
+#### What is a sequencing read
+<p align="justify">
+This video was included in the week 6 teaching materials on the VLE to support the workshop material. We had some confusion as to what a sequencing read actually is - so hopefully this explainer helps.<br/>
+</p>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b2f4da0d-6a2c-4e94-a633-b13300fce3cc&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="405" width="100%" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>
 <br/>
 [Return to tutorial introduction.](#introduction)<br/>
 [Begin the workshop.](#the-workshop)<br/><br/>

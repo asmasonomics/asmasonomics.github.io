@@ -18,3 +18,9 @@ This is the second of two RNAseq workshops as part of the BABS4 (66I) "Gene expr
 Course material will be complete before 13th March 2024.
 
 <div class="tenor-gif-embed" data-postid="14031649369780344580" data-share-method="host" data-aspect-ratio="1.52778" data-width="100%"><a href="https://tenor.com/view/hypno-toad-gif-14031649369780344580">Hypno Toad GIF</a>from <a href="https://tenor.com/search/hypno+toad-gifs">Hypno Toad GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+
+
+
+What is a sequencing read video
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b2f4da0d-6a2c-4e94-a633-b13300fce3cc&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="405" width="100%" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe>

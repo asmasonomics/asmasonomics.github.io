@@ -67,6 +67,7 @@ tpms <- read.table("proc_data/full_dataset_TPMs.tsv", row.names = 1, header = TR
 dds_tpm <- read.table("proc_data/MIV0vsMIV2_DEA_full_results.tsv", row.names = 1, header = TRUE)
 
 ```
+<br/>
 
 #### Check our understanding from data workshop 3
 <p align="justify">
@@ -117,7 +118,7 @@ ggplot(dds_tpm, aes(x=log2FC, y=-log10(padj))) +
 <p align="justify">
 As we explored last time, there are geners upregulated here related to competence (<i> e.g. comA</i>) and DNA binding and recognition (<i> e.g. dprA</i>), but there are also genes involved in tryptophan metabolism, purine metabolism and carbohydrate metabolism,  among others. Are these genes simply a starvation response?<br/><br/>
 We could test this (slowly) by looking up genes individually. But a better (faster) way to do this is gene set enrichment analysis (GSEA). This is very similar to gene ontology (GO) analysis, but standard GO typically only considers unordered gene lists, rather than the ranked lists we will provide (ranked by fold change). 
-<br/>
+<br/><br/>
 </p>
 
 #### GSEA
@@ -240,7 +241,7 @@ gsearesults[grep("Competence|competence", gsearesults$Description),]
 ```
 ![carbhydrate metabolic process](/assets/coursefiles/2024-03_66I/plots/04_gsea_002.png){:class="img-responsive"}
 <p align="justify">
-This two panel plot is how the individual gene set enrichment scores are calculated. On the x axis at the bottom, the vertical lines show the position of each gene in the ranked log2FC order. The green line is the ES building up and up based on the spacing of gene set genes in the rank list, eventually peaking (this is the ES). The top panel shows the rank position against the metric for ranking (the fold change).<br/>
+This two panel plot is how the individual gene set enrichment scores are calculated. On the x axis at the bottom, the vertical lines show the position of each gene in the ranked log2FC order. The green line is the ES building up and up based on the spacing of gene set genes in the rank list, eventually peaking (this is the ES). The top panel shows the rank position against the metric for ranking (the fold change).<br/><br/>
 </p>
 
 #### Nutrient deficiency response without the competence response?
@@ -367,7 +368,7 @@ MIV0BHI3_withoutsymbols_sig <- rownames(head(MIV0BHI3_withoutsymbols |> arrange(
 <p align="justify">
 So what are these? The HI_1457 gives a bit of a hint with "opacity protein". You could google this, but some features may be less informative - HI_1456 just says "predicted coding region", for example.<br/>
 What I have also made available to you is the nucleotide sequence of each feature in your counts dataframe - <a href="/assets/coursefiles/2024-03_66I/Hi_feature_sequences.fa" download>download Hi_feature_sequences.fa</a> - so you could open this file in notepad, or wherever and extract the nucleotide sequence you're after. You could then use this as a query for <a href="https://tinyurl.com/ncbi-blastx">NCBI's blastx</a>, which uses a translated version of your nucleotide query against a protein database (as in, it converts the nucleotides in your query to protein to get more diverse search results). What does this tell you - could this give you more information on some of the big changing genes in your DEA results?
-<br/>
+<br/><br/>
 </p>
 
 #### Can we extract a competence-specific response?
@@ -408,7 +409,7 @@ If the transcriptomic changes were identical in both conditions, all genes would
 I've chosen to highlight those genes which would not be considered as significantly different in the BHI3 comparison, but are in the MIV2. Here we see the clear competence genes like <i>dprA</i> and <i>comA</i>, and the competence transcription factor <i>tfoX</i>. Mess about with these thresholds and see where the carbohydrate biosynthesis genes have gone (hint - much closer to x=y).<br/><br/>
 So now we have a much reduced and more-specific-to-competence list of genes. We still have the pur and trp genes - doe sthat mean they have a more specific role in competence, rather than these nutrients being absent from the media? I recommend contextualising your results with the literature (cough, mark scheme, cough) to see whether these genes make a lot of sense. <br/>
 Also, would a similar comparison with any of the other datasets be equally/more informative on the competence response?<br/><br/>
-Note. You don't have to have a shared condition (like MIV0 in our case) in order to compare. It <b>is</b> useful as having a shared condition means you have a definite (rather than potentially assumed) shared baseline. Something to mention/highlight/control for.<br/>
+Note. You don't have to have a shared condition (like MIV0 in our case) in order to compare. It <b>is</b> useful as having a shared condition means you have a definite (rather than potentially assumed) shared baseline. Something to mention/highlight/control for.<br/><br/>
 </p>
 
 #### Can the sequencing data show us if muA, muB and gam are transcribed together?
@@ -476,7 +477,7 @@ With short read sequencing, the reads themselves are too short to cover the span
 #### Finishing up for today
 <p align="justify">
 The aim of today was to reinforce and expand on data workshop 3, and start to properly integrate the biological interpretation of the data. Well done! Your coding skills have now taken you from a single dataframe of counts to multi-condition comparisons, gene set enrichment analysis and integration with the literature. This is a real expansion of your coding skills and an opportunity to have worked with big data.<br/><br/>
-Before you finish today, make sure you understand <b>why</b> you have been doing this analysis - chat with the demonstrators - does it all link together in your head, particularly for making a single narrative with your wet lab work? Also: save, save, save and make lots of comments on your code!<br/>
+Before you finish today, make sure you understand <b>why</b> you have been doing this analysis - chat with the demonstrators - does it all link together in your head, particularly for making a single narrative with your wet lab work? Also: save, save, save and make lots of comments on your code!<br/><br/>
 </p>
 
 #### Expansions to the project

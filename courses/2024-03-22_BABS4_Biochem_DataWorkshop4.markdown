@@ -460,7 +460,7 @@ ggplot(gam_cors_top, aes(x=log10(min_gam_dist+1), y=gam_cor)) +
 ```
 ![mu correlation by distance](/assets/coursefiles/2024-03_66I/plots/04_mu_001.png){:class="img-responsive"}
 <p align="justify">
-This plot shows correlation values between the expression of different genes and <i>gam<i> (y axis) and how far away from <i>gam</i> each of those genes is (x axis). Most genes are quite a long way from <i>gam</i> (>100,000 bases away; >10^5 bases) and have varying to little correlation. However, genes closest to the prophage region are well correlated with <i>gam</i>.<br/>
+This plot shows correlation values between the expression of different genes and <i>gam</i> (y axis) and how far away from <i>gam</i> each of those genes is (x axis). Most genes are quite a long way from <i>gam</i> (>100,000 bases away; >10^5 bases) and have varying to little correlation. However, genes closest to the prophage region are well correlated with <i>gam</i>.<br/>
 This suggests there is a strong positional effect to expression across the mu prophage region.<br/>
 <details>
    <summary>But does this actually prove they are transcribed together?</summary>

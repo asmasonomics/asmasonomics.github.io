@@ -17,7 +17,7 @@ This is the second of two RNAseq workshops as part of the BABS4 (66I) "Gene expr
 <p align="justify">
 In data workshop 3, you took a full RNAseq dataset from the <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0217255">Black <i>et al.</i> 2020 paper</a> and eventually created a volcano plot showing the impact on the <i>Haemophilus influenzae</i> (Hi) transcriptome after cultures were transferred to starvation conditions for 30 minutes. A lot had changed, but what did it actually mean? This workshop is all about getting you to consider <b>the biology</b> so you can see how linking in this "big data" analysis can help you contextualise and understand your wet lab practicals and (hopefully) give you a better understanding of why natural competence is important.<br/><br/>
 You can download the introductory slides <a href="/assets/coursefiles/2024-03_66I/66I-DW4_introductory_slides.pdf" download>here as a PDF</a>.<br/><br/>
-Please do ask us (biological) questions in this workshop. You have all the coding skills to explore and graph these data - so discuss with us possible questions you could ask to extend your understanding. Consequently, if you're having issues with installations on your personal laptop, we will largely direct you to the <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop3_March2024#access-the-data">updated advice in the workshop 3 material</a> or to use a managed machine (or the virtual desktop service).<br/><br/>
+Please do ask us <b>biological</b> questions in this workshop. You have all the coding skills to explore and graph these data - so discuss with us possible questions you could ask to extend your understanding. Consequently, if you're having issues with installations on your personal laptop, we will largely direct you to the <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop3_March2024#access-the-data">updated advice in the workshop 3 material</a> or to use a managed machine (or the virtual desktop service).<br/><br/>
 Remember, the data we are using comes from RNAseq read counts. We had some confusion last week about what a read is, so I added a video explainer to the VLE as well as at the bottom of this page.<br/>
 </p>
 [Introduction to transcriptomics](#introduction-to-transcriptomics)<br/>
@@ -28,8 +28,8 @@ Remember, the data we are using comes from RNAseq read counts. We had some confu
 <p align="justify">
 <b>REALLY IMPORTANT THING TO READ</b><br/>
 When designing this workshop, it has to work as a standalone workshop. BUT. Your RStudio Project submission should treat data workshops 3 and 4 as a single entity. This means ideally you should have a single script file and variable names which are consistent between the weeks.<br/>
-To make it standalone, I have had to provide some of the processed data from last session. If your code is working, you will not need to load these as part of your finished project. Evidence of people doing so will <b>be assumed to be evidence of code not working, which will impact your RStudio project mark</b>.<br/><br/>
-Remember, completing just the material from these two workshops is sufficient for a pass, but not to hit the excellence criteria. You should expand <b>your</b> analysis beyond the workshop and ensure that your code and project forms a coherent, single entity. I would recommend you create a fresh project for the assessment which runs successfully.<br/><br/>
+To make this session independent (in case you missed last week), I have had to provide some of the processed data from last session. If your code is working, you will not need to load these as part of your finished project. Evidence of people doing so will <b>be assumed to be evidence of code not working, which will impact your RStudio project mark</b>.<br/><br/>
+Remember, completing just the material from these two workshops is sufficient for a pass, but not to hit the excellence criteria. You should <b>expand your analysis beyond the workshop</b> and ensure that your code and project forms a coherent, single entity. I would recommend you create a fresh project for the assessment which runs successfully.<br/><br/>
 </p>
 
 #### Setup
@@ -223,10 +223,12 @@ gseaplot(gse, by = "all", title = gse$Description[1], geneSetID = 1)
 
 <p align="justify">
 Here we have the top 10 terms for enriched gene sets (activated) and suppressed ones. Size of the circle represents how many genes are in each set, with the gene ratio saying how many contributed to the ES in our data. The colour indicates the significance. There's lots of customisation available here.<br/><br/>
-So what about the results? The GSEA really highlights the starvation response - increases in sugar, amino acid and small molecule metabolism, and decreases in protein synthesis. Nothing about competence? But is that a surprise?
-<br/>
 </p>
-
+![carbhydrate metabolic process](/assets/coursefiles/2024-03_66I/plots/04_gsea_002.png){:class="img-responsive"}
+<p align="justify">
+This two panel plot is how the individual gene set enrichment scores are calculated. On the x axis at the bottom, the vertical lines show the position of each gene in the ranked log2FC order. The green line is the ES building up and up based on the spacing of gene set genes in the rank list, eventually peaking (this is the ES). The top panel shows the rank position against the metric for ranking (the fold change).<br/><br/>
+The GSEA really highlights the starvation response - increases in sugar, amino acid and small molecule metabolism, and decreases in protein synthesis. Nothing about competence? But is that a surprise?
+</p>
 ```R
 
 # check for gam in any leading edge gene set
@@ -239,17 +241,13 @@ gsearesults[grep("Competence|competence", gsearesults$Description),]
 # But, as predicted, GSEA (using E. coli genes...) does show the big metabolic shifts
 
 ```
-![carbhydrate metabolic process](/assets/coursefiles/2024-03_66I/plots/04_gsea_002.png){:class="img-responsive"}
-<p align="justify">
-This two panel plot is how the individual gene set enrichment scores are calculated. On the x axis at the bottom, the vertical lines show the position of each gene in the ranked log2FC order. The green line is the ES building up and up based on the spacing of gene set genes in the rank list, eventually peaking (this is the ES). The top panel shows the rank position against the metric for ranking (the fold change).<br/><br/>
-</p>
 
 #### Nutrient deficiency response without the competence response?
 <p align="justify">
-An unfortunate consequence of our model system is that we induce many transcriptomic changes by altering the media - not just the competence response. We want to study the biology of competence, so can we control for this added noise in the system?<br/>
+An unfortunate consequence of our model system is that we induce many transcriptomic changes by altering the media - not just the competence response. We want to study <i>just</i> the biology of competence, so can we control for this added noise in the system?<br/>
 One way is to include another differential expression analysis where only the nutrient stress response may be present, effectively allowing you to subtract the starvation response from the competence + starvation response we already have.<br/>
-From our other available data (check back to the workshop 3 introduction), we have cells growing in rich media (BHI) but where the cell density is getting high - so where nutrients may be starting to become sparse (without being so sparse it induces the same response as being in the starvation MIV media). <br/><br/>
-We will now run DEA on the BHI3 (most dense) cells against the MIV0 control (not dense, same control as our original) to try and tease out the specific competence response. <b>Think about this</b> - is this a good comparison to make, is it the most informative from the data we have?<br/>
+From our other available data (check back to the workshop 3 introduction), we have cells growing in rich media (BHI) but where the cell density is getting high - so where nutrients may be becoming sparse (without being <i>so</i> sparse it induces the same response as being in the starvation MIV media). <br/><br/>
+We will now run DEA on the BHI3 (most dense) cells against the MIV0 control (not dense; same control as our original) to try and tease out the specific competence response. <b>Think about this</b> - is this a good comparison to make, is it the most informative from the data we have?<br/>
 Regardless, let's jump in.<br/>
 </p>
 
@@ -348,8 +346,9 @@ EnhancedVolcano(MIV0BHI3_dds_results, x = "log2FC", y = "padj", FCcutoff = 1, pC
 ![MIV0 vs BHI3 volcano](/assets/coursefiles/2024-03_66I/plots/04_dea_002.png){:class="img-responsive"}
 <p align="justify">
 Another volcano! But this time far fewer significantly different genes.<br/><br/>
-Those that are different again highlight increases in carbohydrate and amino acid metabolism, but we don't see the competence or DNA recognition genes - perhaps this control has worked!<br/>
-Look at the downregulated genes - mu! <i>gam</i> doesn't come up at first glance, but muA, MuI and muL all do, and they're in the same operon. Interesting!<br/><br/>
+Those that are different, again highlight increases in carbohydrate and amino acid metabolism, but we don't see the competence or DNA recognition genes - perhaps this control has worked!<br/>
+Look at the downregulated genes - mu!<br/>
+<i>gam</i> doesn't come up at first glance, but muA, MuI and muL all do, and they're in the same operon. Interesting!<br/><br/>
 One thing to say here is that we are resolutely ignoring some genes with the biggest changes, both in last week's work and here. We are only looking at stuff with symbols, but we could be ignoring some interesting biology. These could be quite well studied genes, but they just haven't been named properly in Hi yet...  Let's flip our focus for a minute.<br/>
 </p>
 
@@ -367,14 +366,14 @@ MIV0BHI3_withoutsymbols_sig <- rownames(head(MIV0BHI3_withoutsymbols |> arrange(
 
 <p align="justify">
 So what are these? The HI_1457 gives a bit of a hint with "opacity protein". You could google this, but some features may be less informative - HI_1456 just says "predicted coding region", for example.<br/>
-What I have also made available to you is the nucleotide sequence of each feature in your counts dataframe - <a href="/assets/coursefiles/2024-03_66I/Hi_feature_sequences.fa" download>download Hi_feature_sequences.fa</a> - so you could open this file in notepad, or wherever and extract the nucleotide sequence you're after. You could then use this as a query for <a href="https://tinyurl.com/ncbi-blastx">NCBI's blastx</a>, which uses a translated version of your nucleotide query against a protein database (as in, it converts the nucleotides in your query to protein to get more diverse search results). What does this tell you - could this give you more information on some of the big changing genes in your DEA results?
+What I have also made available to you is the nucleotide sequence of each feature in your counts dataframe - <a href="/assets/coursefiles/2024-03_66I/Hi_feature_sequences.fa" download> Hi_feature_sequences.fa</a> - so you could open this file in notepad, or wherever and extract the nucleotide sequence you're after. You could then use this as a query for <a href="https://tinyurl.com/ncbi-blastx">NCBI's blastx</a>, which uses a translated version of your nucleotide query against a protein database (as in, it converts the nucleotides in your query to protein to get more diverse search results). What does this tell you - could this give you more information on some of the big changing genes in your DEA results?
 <br/><br/>
 </p>
 
 #### Can we extract a competence-specific response?
 <p align="justify">
-Quick reminder of what we're attempting to do. In workshop 3, we induced competence response in Hi using starvation medium. But. This also gave a starvation response. Today, we've compared our control to cells growing in greater density, so the cells may be starting to face nutrient limits, without it causing so much stress you get the full stress (starvation + competence) response we had before. <br/>
-Now we have both these comparisons, we can attempt to subtract the nutirent limit response to leave just genes involved in competence.<br/>
+Quick reminder of what we're attempting to do. In workshop 3, we looked at the induced competence response in Hi using starvation medium. But. This also gave a starvation response. Today, we've compared the same control samples to cells growing in greater density, so the cells may be starting to face nutrient limits, without it causing so much stress you get the full stress (starvation + competence) response we had before. <br/>
+Now we have both these comparisons, we can attempt to subtract the nutrient limit response to leave just genes involved in competence.<br/>
 </p>
 
 ```R
@@ -405,11 +404,12 @@ ggplot(dea_comp, aes(x=MIV0BHI3_log2FC, y=MIV0MIV2_log2FC)) +
 ![multi DEA comparison](/assets/coursefiles/2024-03_66I/plots/04_dea_003.png){:class="img-responsive"}
 <p align="justify">
 We have now compared the log2FC changes in two separate differential expression analyses.<br/><br/>
-If the transcriptomic changes were identical in both conditions, all genes would fall on the indicated y=x line. Changes which are specific to each DEA fall directly on their respective axes - y axis for MIV0 vs MIV2 and x axis for MIV0 vs BHI3. Genes near the origin due not change (much) in either comparison. There are more changes (and of greater magnitude) for the MIV0 vs MIV2, so the plot is not square - always check the axis scale.<br/><br/>
-I've chosen to highlight those genes which would not be considered as significantly different in the BHI3 comparison, but are in the MIV2. Here we see the clear competence genes like <i>dprA</i> and <i>comA</i>, and the competence transcription factor <i>tfoX</i>. Mess about with these thresholds and see where the carbohydrate biosynthesis genes have gone (hint - much closer to x=y).<br/><br/>
-So now we have a much reduced and more-specific-to-competence list of genes. We still have the pur and trp genes - doe sthat mean they have a more specific role in competence, rather than these nutrients being absent from the media? I recommend contextualising your results with the literature (cough, mark scheme, cough) to see whether these genes make a lot of sense. <br/>
+If the transcriptomic changes were identical in both conditions, all genes would fall on the indicated y=x line. Changes which are specific to each DEA fall directly on their respective axes - y axis for MIV0 vs MIV2 and x axis for MIV0 vs BHI3. Genes near the origin do not change (much) in either comparison. There are more changes (and of greater magnitude) for the MIV0 vs MIV2, so the plot is not square - always check the axis scale.<br/><br/>
+I've chosen to highlight those genes which would not be considered as significantly different in the BHI3 comparison, but are in the MIV2 (<i>i.e.</i> genes close to the y axis). Here we see the competence genes like <i>dprA</i> and <i>comA</i>, and the competence transcription factor <i>tfoX</i>. Mess about with these thresholds and see where the carbohydrate biosynthesis genes have gone (hint - much closer to x=y).<br/><br/>
+So now we have a much reduced and more specific-to-competence list of genes. We still have the <i>pur</i> and <i>trp</i> genes - does that mean they have a more specific role in competence, rather than these nutrients being absent from the media? I recommend contextualising your results with the literature (cough, mark scheme, cough) to see whether these genes make a lot of sense. <br/>
 Also, would a similar comparison with any of the other datasets be equally/more informative on the competence response?<br/><br/>
-Note. You don't have to have a shared condition (like MIV0 in our case) in order to compare. It <b>is</b> useful as having a shared condition means you have a definite (rather than potentially assumed) shared baseline. Something to mention/highlight/control for.<br/><br/>
+Note. You don't have to have a shared control condition (like MIV0 in our case) in order to compare. It <b>is</b> useful, as having a shared condition means you have a definite (rather than potentially assumed) shared baseline. Something to mention/highlight/control for.<br/><br/><br/>
+Let's switch focus now, using our large dataset to look again at the <i>mu</i> prophage region.<br/><br/>
 </p>
 
 #### Can the sequencing data show us if muA, muB and gam are transcribed together?
@@ -460,13 +460,14 @@ ggplot(gam_cors_top, aes(x=log10(min_gam_dist+1), y=gam_cor)) +
 ```
 ![mu correlation by distance](/assets/coursefiles/2024-03_66I/plots/04_mu_001.png){:class="img-responsive"}
 <p align="justify">
-There certainly does seem to be a strong positional effect to correlated expression across the mu prophage region.<br/>
+This plot shows correlation values between the expression of different genes and <i>gam<i> (y axis) and how far away from <i>gam</i> each of those genes is (x axis). Most genes are quite a long way from <i>gam</i> (>100,000 bases away; >10^5 bases) and have varying to little correlation. However, genes closest to the prophage region are well correlated with <i>gam</i>.<br/>
+This suggests there is a strong positional effect to expression across the mu prophage region.<br/>
 <details>
    <summary>But does this actually prove they are transcribed together?</summary>
    No! For bacteria, such a good correlation is <b>highly</b> suggestive, but again, non-conclusive.
    <br/><br/>
 </details>
-With short read sequencing, the reads themselves are too short to cover the span of distance. The only way would be to see read pairs spanning the region, but this (with a distance over a few hundred bases) is unlikely to occur due to size selection during library prep. <br/>
+With short read sequencing, the reads themselves are too short to cover the span of distance. The only way would be to see read pairs spanning the region, but this (with a distance over a few hundred bases) is unlikely to occur due to size selection during library prep. <br/><br/>
 <details>
    <summary>Can you think of a sequencing-based technology that could resolve this?</summary>
    Long read sequencing. In theory these methods capture the entire length of a transcript, even if that is an entire operon. For such a specific question (which could be solved with the right PCR primers...), long read sequencing is probably expensive overkill, unless you wanted to confirm other co-transcribed regions at the same time. Always think about narrow vs broad use in the context of financial decisions in experimental planning.<br/><br/>

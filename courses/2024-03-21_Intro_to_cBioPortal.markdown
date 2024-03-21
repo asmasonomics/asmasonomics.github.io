@@ -2,10 +2,10 @@
 layout: page
 permalink: /courses/Intro_cBioPortal_Mar2024
 ---
-<span style="font-size:1.6em;">**Introduction to cBioPortal (59M/68M tutorial)**</span><br/>
+<span style="font-size:1.6em;">**Introduction to cBioPortal**</span><br/>
 ![cBioPortal and Elixir logos](/assets/images/cBioPortal_Elixir.jpg){:class="img-responsive"}
 <br/>
-<p align="justify"><a href="https://www.cbioportal.org/">cBioPortal</a> is a publicly available online resource for cancer genomics, with omics and clinical data available for many cancer types. In this tutorial we will introduce cBioPortal - what's there, how to use it, and what you can learn from it.<br/></p>
+<p align="justify"><a href="https://www.cbioportal.org/">cBioPortal</a> is a publicly available online resource for cancer genomics, with omics and clinical data available for many cancer types. In this 90 minute session we will introduce cBioPortal - what's there, how to use it, and what you can learn from it. We will then have some led problem solving activities to get to grips with the website, and finish with tips and advice for how you can use the data, plus a demonstration of how you can link to cBioPortal programmatically using R.<br/></p>
 
 <span style="font-size:1.4em;">**Learning objectives**</span><br/>
 1. Recognise the applications and utility of cBioPortal for cancer research
@@ -15,12 +15,15 @@ permalink: /courses/Intro_cBioPortal_Mar2024
 <br/>
 
 <span style="font-size:1.4em;">**Session outline**</span><br/>
-10.00&nbsp;&nbsp;&nbsp;Introduction and Learning Objectives<br/>
-10.05&nbsp;&nbsp;&nbsp;cBioPortal website demo<br/>
-10.15&nbsp;&nbsp;&nbsp;Problem-solving tasks<br/>
-10.40&nbsp;&nbsp;&nbsp;Recap and Further Resources<br/>
-10.45&nbsp;&nbsp;&nbsp;Accessing and using underlying cBioPortal data<br/>
-10.55&nbsp;&nbsp;&nbsp;Close
+12.30&nbsp;&nbsp;&nbsp;Zoom room opens and welcoming remarks<br/>
+12.35&nbsp;&nbsp;&nbsp;Introduction and Learning Objectives<br/>
+12.45&nbsp;&nbsp;&nbsp;cBioPortal website demo<br/>
+12.55&nbsp;&nbsp;&nbsp;Problem-solving tasks<br/>
+13.30&nbsp;&nbsp;&nbsp;Recap and Further Resources<br/>
+13.35&nbsp;&nbsp;&nbsp;Accessing and using underlying cBioPortal data<br/>
+13.45&nbsp;&nbsp;&nbsp;RStudio demo for accessing cBioPortal data<br/>
+13.55&nbsp;&nbsp;&nbsp;Summary and final remarks<br/>
+14.00&nbsp;&nbsp;&nbsp;Close
 <br/>
 
 <span style="font-size:1.4em;">**The Session**</span><br/>
@@ -241,6 +244,39 @@ Work through the questions below and check your understanding with the brief res
    </details><br/>
 <br/>
 
+**Developing your understanding further**<br/>
+<p align="justify">
+This web page will remain accessible for you to refer back, check your understanding and go through the tasks again at your leisure. The best way to develop your learning further is to explore a dataset that you care about - whether that's a specific cancer or a particular sequencing data type.<br/><br/>
+If you have finished the set tasks quickly, you could take your own deep dive until the next part of the session starts. cBioPortal updates all the time - so if you find something really cool, tell us!<br/>
+Alternatively, if you want some more (lightly guided, and no provided answers) practice, there are a couple of additional tasks you can reveal below.<br/><br/>
+<details>
+   <summary>AML: blood cancer with low mutational burden</summary>
+   Despite being a rare cancer, Acute Myeloid Leukemia is widely studied, due to its broad age range and very poor survival. Choose the TCGA (NEJM 2013) and OHSU datasets, and select the samples with mutation information.<br/>
+   <ol>
+     <li>Look at some of the clinical data - how do survival, other clinical features and mutation status vary between male and female, or depending on age of diagnosis?</li>
+	 <li>How does the mutational burden data compare to solid cancers such as bladder and colorectal? How is this reflected in the most mutated genes?</li>
+	 <li>Select the cancer-likely genes (filtered) with more than 8% frequency and submit the query. Do the 2 cohorts look similar, or are there major differences?</li>
+	 <li>Are any of these top 11 most mutated genes co-occuring or mutually exclusive?</li>
+	 <li>Do the lollipop diagrams suggest these genes are tumour suppressors, or oncogenes? Are there hotspots, any with clinical actions?</li>
+	 <li>I would say the <i>NPM1</i> plot is a bit strange. Highly mutated, but do you think its likely these mutations are impacting cancer development? Take a look at the UniProt link (NPM_HUMAN) and scroll to the protein domains section. Does this change your opinion?</li>
+	 <li>Do any of these most mutated genes exhibit differences in survival, or other clinical features?</li>
+   </ol>
+</details><br/><br/>
+<details>
+   <summary>Kidney cancers: diverse diseases from the same organ</summary>
+   Often the public (and us researchers) conflate multiple cancers together from the same organ. cBioPortal includes TCGA data from both kidney renal papillary cell carcinoma, and clear cell carcinoma. In this task we will explore both, and use some of the limited group functionality comparisons - this can be a bit clunky.<br/>
+   <ol>
+     <li>Select TCGA's Firehose Legacy Kidney Renal Papillary Cell Carcinoma. As with the previous tasks, explore the most mutated genes, sex imbalances.</li>
+	 <li>Given the male imbalance, the mutations in <i>AR</i> (androgen receptor) could be interesting. Filter for male. Filter for <i>AR</i> mutations and calculate whether expression of <i>AR</i> differs, how <i>AR</i> is mutated and what other genes are co-occuring or mutually exclusive.</li>
+	 <li>Change your query, and have a similar exploration of TCGA's Kidney clear clear cell data. Do you notice any immediate differences?</li>
+	 <li>Return to the cBioPortal homepage (or alter the query) and select both datasets. In the cancer types, use the compare groups functionality to compare the two cohorts. What are the first obvious differences? Are there clinical differences (beyond tissue and other coding classifiers)?</li>
+	 <li>Both types of kidney cancer appear more common in males. Select only female patient samples and redo the comparison. What has changed?</li>
+	 <li>Still with the female samples, take the 5 most mutated likely cancer genes. Do the 2 cohorts match well? Are there co-occurences or mutually exclusive genes?</li>
+	 <li>The lollipop plot for <i>SETD2</i> is curious, consistent with tumour suppressor mutations, but also potentially oncogenic activation of the SET domain. Modify the query to just <i>SETD2</i> and just the renal clear cell carcinoma dataset - can't compare expression data between datasets readily. Explore the plots of expression when split by copy number or mutation status. Are there many differences?</li>
+   </ol>
+</details>
+<br/><br/></p>
+
 **Task sum up**<br/>
 <p align="justify">
 These two tasks should have given you a large exposure to what cBioPortal can show you. Think about how you can use this in your own research.<br/>
@@ -252,4 +288,7 @@ You can also start with the cBioPortal data for a cancer (or cancers) of interes
 <object data="/assets/files/2024-02-27_cBioPortal_0304_LO-Recap_Resources_Downloads.pdf" width="700" height="450" type='application/pdf'></object>
 <br/><br/>
 
-<p align="justify">This tutorial was first delivered at The University of York on 27th February 2024 for the 59M and 68M MSc students. The material was written and delivered by Dr Andrew Mason, adapting previous material supported by <a href="https://elixiruknode.org/">Elixir-UK</a> and <a href="https://www.yorkagainstcancer.org.uk/">York Against Cancer</a>.<br/></p>
+<p align="justify">
+This tutorial was adapted from an initial in-person training event delivered by Dr Andrew Mason at The University of York on the 11th January 2023. Delivery and development of this material was supported by <a href="https://elixiruknode.org/">Elixir-UK</a> and <a href="https://www.yorkagainstcancer.org.uk/">York Against Cancer</a>.<br/><br/>
+Problem-solving tasks were further refined through a tutorial delivered to MSc students in February 2024. For the delivery of this session on zoom in March 2024, the RStudio section was added to demonstrate the ability to access the data programmatically.<br/>
+</p>

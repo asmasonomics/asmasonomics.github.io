@@ -28,7 +28,7 @@ permalink: /courses/Intro_cBioPortal_Mar2024
 
 ### The Session
 #### Introduction and Learning Objectives
-<object data="/assets/files/2024-02-27_cBioPortal_0102_Intro.pdf" width="700" height="450" type='application/pdf'></object>
+<object data="/assets/files/2024-03-21_cBioPortal_0102_Intro.pdf" width="700" height="450" type='application/pdf'></object>
 <br/>
 
 #### cBioPortal website demo
@@ -284,13 +284,11 @@ Alternatively, if you want some more (lightly guided, and no provided answers) p
 
 #### Task sum up
 <p align="justify">
-These two tasks should have given you a large exposure to what cBioPortal can show you. Think about how you can use this in your own research.<br/>
-Perhaps you have done an experiment in the lab and you want to know whether a particularly gene is important in the relevant cancer - cBioPortal can help you do this.<br/>
-You can also start with the cBioPortal data for a cancer (or cancers) of interest and approach it as a data question.
+These two tasks should have given you a large exposure to what cBioPortal can show you. Think about how you can use this in your own research. Perhaps you have done an experiment in the lab and you want to know whether a particularly gene is important in the relevant cancer - cBioPortal can help you do this. You can also start with the cBioPortal data for a cancer (or cancers) of interest and approach it as a data question.
 <br/><br/></p>
 
 ### Recap and Further Resources, Accessing and using underlying cBioPortal data
-<object data="/assets/files/2024-02-27_cBioPortal_0304_LO-Recap_Resources_Downloads.pdf" width="700" height="450" type='application/pdf'></object>
+<object data="/assets/files/2024-03-21_cBioPortal_0304_LO-Recap-Data-Access.pdf" width="700" height="450" type='application/pdf'></object>
 <br/><br/>
 
 ### Accessing cBioPortal data programmatically using R

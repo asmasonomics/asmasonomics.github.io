@@ -26,21 +26,26 @@ permalink: /courses/Intro_cBioPortal_Mar2024
 14.00&nbsp;&nbsp;&nbsp;Close
 <br/>
 
-<span style="font-size:1.4em;">**The Session**</span><br/>
-<span style="font-size:1.2em;">**Introduction and Learning Objectives**</span><br/>
+### The Session
+#### Introduction and Learning Objectives
 <object data="/assets/files/2024-02-27_cBioPortal_0102_Intro.pdf" width="700" height="450" type='application/pdf'></object>
 <br/>
 
-<span style="font-size:1.2em;">**cBioPortal website demo**</span><br/>
-<p align="justify">During the session this is a live demonstration of the cBioPortal functionality, covering the available datasets, then using TCGA Bladder Cancer (Cell 2017) data to investigate: the summary and clinical dashboard tabs, a single- and then multi-gene query. Both gene queries are used to epxlore oncoprints, lollipop plots, plotting functionality and survival.<br/></p>
+#### cBioPortal website demo
+<p align="justify">
+During the session this is a live demonstration of the cBioPortal functionality, covering the available datasets, then using TCGA Bladder Cancer (Cell 2017) data to investigate: the summary and clinical dashboard tabs, a single- and then multi-gene query. Both gene queries are used to epxlore oncoprints, lollipop plots, plotting functionality and survival.<br/>
+</p>
 The video below is an indicative recording of a cBioPortal demo.
 {% include youtube.html id="1z03uo_kpQI" %}
 <br/>
 
-<span style="font-size:1.2em;">**Problem solving tasks**</span><br/>
-<p align="justify">Now you've seen what cBioPortal is and the kinds of data available, it's time to explore! In the guided examples below, follow the instructions and think about the questions posed - how is the data able to support your conclusions, and what caveats must you consider?<br/></p>
+### Problem solving tasks
+<p align="justify">
+Now you've seen what cBioPortal is and the kinds of data available, it's time to explore! In the guided examples below, follow the instructions and think about the questions posed - how is the data able to support your conclusions, and what caveats must you consider?<br/><br/>
+Below there are two main tasks for you to complete. As this session is over Zoom, asking questions feels a bit trickier! But we have provided a <a href="https://tinyurl.com/cBioPortal-Qs-Mar2024">Google Form for Questions</a>. Andrew will answer these as they appear.<br/><br/>
+</p>
 
-**Task 1 - the pan-cancer importance of *TP53* mutations**<br/>
+#### Task 1 - the pan-cancer importance of *TP53* mutations
 <p align="justify">This first task covers <i>TP53</i> mutations across the 32 different cancer studies of The Cancer Genome Atlas, an enormous international study to better understand the diversity of genetic changes in over 10,000 cancer patients. <i>TP53</i> is one of the most commonly studied genes in cancer as it is known as the "Guardian of the Genome". It is also very commonly mutated, as you will see.<br/></p>
 
 <p align="justify">
@@ -115,7 +120,7 @@ In general terms, <b>solid</b> cancers (rather than blood cancers) with a high m
 This tutorial has given you an introduction to some of the power cBioPortal has for cancer research. It makes large data (usually the sole focus of bioinformaticians) accessible to laboratory scientists, students, clinicians and the general public. But, there is so much more you can find out.<br/>
 Try hovering your mouse over one of the cancer type bars in the Cancer Types Summary plot and then select the study name from the box which appears. This takes you to the cBioPortal dashboard for this study - there is so much data here! Take a look about (<a href="https://tinyurl.com/TP53-cBioPortal-TCGA-Summary">using this link to return to the Cancer Study summary graph if needed</a>) and see how much information there is!<br/><br/></p>
 
-**Task 1A - the pan-cancer importance of *TP53* mutations**<br/>
+##### Task 1A - the pan-cancer importance of *TP53* mutations
 <p align="justify">
 We are now going to explore mutations in <i>TP53</i> and other genes in a sarcoma case study. By looking in multiple cancers we can see whether or not <i>TP53</i> mutations are common in all cancers, or whether there is variability. As we're working with biological data, there is a <b>lot</b> of variability!<br/><br/>
 Start to think about why that might be. P53 (the protein name for the product from the <i>TP53</i> gene) regulates cell proliferation and cell death. Tumours need to escape P53 activity. But is mutating P53 the only way for a tumour to do this? And is regulating proliferation and cell death the only way for a tumour to form? Clearly not, because not every tumour has a <i>TP53</i> mutation, and tumours have a large number of ways to evade detection and eradication in the body.<br/><br/>
@@ -165,7 +170,7 @@ The video below is a walkthrough and explainer for this case study.<br/>
 {% include youtube.html id="vP5pLJmf5io" %}
 <br/>
 
-**Task 2 - exploration of the METABRIC breast cancer dataset**<br/>
+#### Task 2 - exploration of the METABRIC breast cancer dataset
 <p align="justify">
 You've now been shown the major plots and ways you can explore the data. You will now use that knowledge to explore the METABRIC study, one of the largest cancer cohorts in cBioPortal.<br/>
 Breast cancer is one of the best served cancers in terms of genomic resources. Explore METABRIC and consider the following questions, but also take the time to look at other sets including TCGA, a cohort built on large, aggressive tumours (across all tumour types).<br/>
@@ -244,7 +249,7 @@ Work through the questions below and check your understanding with the brief res
    </details><br/>
 <br/>
 
-**Developing your understanding further**<br/>
+#### Developing your understanding further
 <p align="justify">
 This web page will remain accessible for you to refer back, check your understanding and go through the tasks again at your leisure. The best way to develop your learning further is to explore a dataset that you care about - whether that's a specific cancer or a particular sequencing data type.<br/><br/>
 If you have finished the set tasks quickly, you could take your own deep dive until the next part of the session starts. cBioPortal updates all the time - so if you find something really cool, tell us!<br/>
@@ -277,17 +282,27 @@ Alternatively, if you want some more (lightly guided, and no provided answers) p
 </details>
 <br/><br/></p>
 
-**Task sum up**<br/>
+#### Task sum up
 <p align="justify">
 These two tasks should have given you a large exposure to what cBioPortal can show you. Think about how you can use this in your own research.<br/>
 Perhaps you have done an experiment in the lab and you want to know whether a particularly gene is important in the relevant cancer - cBioPortal can help you do this.<br/>
 You can also start with the cBioPortal data for a cancer (or cancers) of interest and approach it as a data question.
 <br/><br/></p>
 
-<span style="font-size:1.2em;">**Recap and Further Resources, Accessing and using underlying cBioPortal data**</span><br/>
+### Recap and Further Resources, Accessing and using underlying cBioPortal data
 <object data="/assets/files/2024-02-27_cBioPortal_0304_LO-Recap_Resources_Downloads.pdf" width="700" height="450" type='application/pdf'></object>
 <br/><br/>
 
+### Accessing cBioPortal data programmatically using R
+<p align="justify">
+I have just talked to you about how you can download the data from cBioPortal yourself, but I've also mentioned that the data formats aren't the nicest. The best way to work with them is in a programming language such as R or Python. Both have supported ways to access cBioPortal (called APIs), but I will give you a demo now on how to do this in R.<br/><br/>
+If you want to code along rather than just watch, the files you need are below. I'm running it in RStudio. These materials will remain available, so please do work through this at your own speed after the session. I will upload a recorded demo shortly after the session.<br/><br/>
+The script file to run the demo yourself can be downloaded here - <a href="/assets/coursefiles/2024-03-21_cBioPortal/2024-03-21_cBioPortal_TCGA-BLCA_API_MAF_demo.R" download>2024-03-21_cBioPortal_TCGA-BLCA_API_MAF_demo.R</a><br/>
+The oncoKB gene list can be downloaded here - <a href="/assets/coursefiles/2024-03-21_cBioPortal/2024-02-08_oncoKB_list.tsv" download>2024-02-08_oncoKB_list.tsv</a><br/>
+<br/><br/><br/>
+</p>
+
+### Delivery information and support
 <p align="justify">
 This tutorial was adapted from an initial in-person training event delivered by Dr Andrew Mason at The University of York on the 11th January 2023. Delivery and development of this material was supported by <a href="https://elixiruknode.org/">Elixir-UK</a> and <a href="https://www.yorkagainstcancer.org.uk/">York Against Cancer</a>.<br/><br/>
 Problem-solving tasks were further refined through a tutorial delivered to MSc students in February 2024. For the delivery of this session on zoom in March 2024, the RStudio section was added to demonstrate the ability to access the data programmatically.<br/>

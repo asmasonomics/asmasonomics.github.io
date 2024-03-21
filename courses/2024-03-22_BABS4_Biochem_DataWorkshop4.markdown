@@ -110,7 +110,7 @@ ggplot(dds_tpm, aes(x=log2FC, y=-log10(padj))) +
   scale_colour_manual(values = c("blue", "gray", "red")) +
   geom_hline(yintercept = -log10(0.05), linetype = "dotted") + geom_vline(xintercept = c(-1,1), linetype = "dotted") + 
   theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
-  geom_text_repel(data=subset(withsymbols, abs(log2FC) > 1), aes(x=log2FC, y=-log10(padj), label=symbol), max.overlaps = 1000)
+  geom_text_repel(data=subset(withsymbols, abs(log2FC) > 3), aes(x=log2FC, y=-log10(padj), label=symbol), max.overlaps = 1000)
 
 ```
 ![MIV0 MIV2 volcano](/assets/coursefiles/2024-03_66I/plots/04_dea_001.png){:class="img-responsive"}
@@ -455,6 +455,7 @@ gam_cors <- transform(gam_cors, min_gam_dist = pmin(gam_circ_dist, gam_noncirc_d
 gam_cors_top <- (gam_cors[order(-gam_cors$gam_cor),])[,c("gam_cor", "symbol", "min_gam_dist")]
 ggplot(gam_cors_top, aes(x=log10(min_gam_dist+1), y=gam_cor)) + 
   geom_point() + 
+  geom_text_repel(data = gam_cors_top |> mutate(label = ifelse(gam_cor > 0.87, rownames(gam_cors_top), "")), aes(label = label), max.overlaps = 100) +
   theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
 
 ```

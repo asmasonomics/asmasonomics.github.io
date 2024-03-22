@@ -42,6 +42,10 @@ Download these into your <code>raw_data</code> directory if starting fresh (if n
 <a href="/assets/coursefiles/2024-03_66I/Hi_feature_names.tsv" download>Hi_feature_names.tsv</a>. This is a tab separated file with the Hi feature ID in column 1, the symbol for that feature in column 2 (if there is one, else "." is used as a placeholder), and a description in column 3 (vague at times!). There is a header.<br/><br/>
 <a href="/assets/coursefiles/2024-03_66I/Hi_feature_locations.bed" download>Hi_feature_locations.bed</a>. This is a tab separated file with a particular format called BED format. This means the columns have standard data types, so there is no header. Column 1 is the sequence a feature is located. Column 2 is the start position and column 3 the end position. Column 4 has the Hi feature ID. Column 5 has the biotype of the feature. Column 6 has the strand.<br/><br/>
 
+<b>New raw data for this session</b><br/>
+Download these into your <code>raw_data</code> directory.<br/><br/>
+<a href="/assets/coursefiles/2024-03_66I/Hi_GC_1kb.bed" download>Hi_GC_1kb.bed</a>. This file splits the Hi genome into 1000 bp (1kb) bins and has the GC% for each bin. Tab separated: chromosome, start, end, GC%.<br/><br/>
+
 <b>Processed data from workshop 3</b><br/>
 Download these into your <code>proc_data</code> directory if starting fresh, or create a fresh directory if you want to keep everything very separate.<br/><br/>
 <a href="/assets/coursefiles/2024-03_66I/full_dataset_TPMs.tsv" download>full_dataset_TPMs.tsv</a>. This is a tab separated file with all the TPMs from the Black <i>et al.</i> dataset. <b>One change to the file you generated</b> is that this is for all 33 samples, not just the kw20-MIV samples.<br/><br/>
@@ -60,7 +64,12 @@ library(dplyr)
 # load original raw data
 counts <- read.table("raw_data/Hi_PRJNA293882_counts.tsv", row.names = 1, header = TRUE)
 featname <- read.table("raw_data/Hi_feature_names.tsv", row.names = 1, header = TRUE)
+
 featlocs <- read.table("raw_data/Hi_feature_locations.bed", header = FALSE, col.names = c("chr","start","end","feat_ID","biotype","strand"))
+rownames(featlocs) <- featlocs$feat_ID
+
+# new raw data for this session (for the circos plot)
+gc <- read.table("raw_data/Hi_GC_1kb.bed", header=FALSE, col.names = c("chr", "start", "end", "GC"))
 
 # load processed data
 tpms <- read.table("proc_data/full_dataset_TPMs.tsv", row.names = 1, header = TRUE)
@@ -408,8 +417,72 @@ If the transcriptomic changes were identical in both conditions, all genes would
 I've chosen to highlight those genes which would not be considered as significantly different in the BHI3 comparison, but are in the MIV2 (<i>i.e.</i> genes close to the y axis). Here we see the competence genes like <i>dprA</i> and <i>comA</i>, and the competence transcription factor <i>tfoX</i>. Mess about with these thresholds and see where the carbohydrate biosynthesis genes have gone (hint - much closer to x=y).<br/><br/>
 So now we have a much reduced and more specific-to-competence list of genes. We still have the <i>pur</i> and <i>trp</i> genes - does that mean they have a more specific role in competence, rather than these nutrients being absent from the media? I recommend contextualising your results with the literature (cough, mark scheme, cough) to see whether these genes make a lot of sense. <br/>
 Also, would a similar comparison with any of the other datasets be equally/more informative on the competence response?<br/><br/>
-Note. You don't have to have a shared control condition (like MIV0 in our case) in order to compare. It <b>is</b> useful, as having a shared condition means you have a definite (rather than potentially assumed) shared baseline. Something to mention/highlight/control for.<br/><br/><br/>
-Let's switch focus now, using our large dataset to look again at the <i>mu</i> prophage region.<br/><br/>
+Note. You don't have to have a shared control condition (like MIV0 in our case) in order to compare. It <b>is</b> useful, as having a shared condition means you have a definite (rather than potentially assumed) shared baseline. Something to mention/highlight/control for.<br/><br/>
+</p>
+
+#### Full-genome summary visualisation with Circos plots
+<p align="justify">
+Now we have lots of information on which genes are changing we can try and summarise this data at the full genome level using a circos plot. This plots the Hi genome as a circle and then we can layer tracks on and around this circle to show the distribution of genes or particular features (<i>e.g.</i> regions or GC content). <br/><br/>
+Circos plots can get massive, complex and strange very quickly (<a href="https://circos.ca/">check out some examples here</a>), often becoming too complex to actually be useful. But, they are used a lot in biological data visualisation, so we'd like you to have a go. Hopefully it will also help you to link with the PHASTER results from data workshop 2.<br/><br/>
+A big problem I've faced when designing this material is that many circos plotting libraries have thousands of dependencies. We are therefore keeping it simple, so the plots you make are definitely customisable - but we're not expecting some of the incredibly complex images we can see on the front covers of scientific journals.
+<br/>
+</p>
+
+```R 
+
+# install and load our library
+install.packages('BioCircos')
+library(BioCircos)
+
+# we will now create a list of tracks, each time adding more information
+# then we visualise it all in one go
+
+# set the plot title in the middle of the circle (you may want to mess with x and y until you are happy)
+tracklist <- BioCircosTextTrack("titletrack", "Hi kw20", opacity = 0.5, x = -0.2, y = 0)
+
+# define an arc region to indicate where the mu prophage region lies
+tracklist <- tracklist + BioCircosArcTrack("prophage region", "L42023.1", 1558774, 1597183, 
+                                           opacities = c(1), minRadius = 1.25, maxRadius = 1.4,
+                                           labels = c("mu prophage"))
+
+# use the Hi GC content file (new raw data for this workshop) to create a GC content plot
+tracklist <- tracklist + BioCircosLineTrack("GC", "L42023.1", gc$start, gc$GC, 
+                                            minRadius = 0.4, maxRadius = 0.68, color = "black",
+                                            labels = c("GC content"))
+
+# we will now merge our MIV0 vs MIV2 (data workshop 3) DEA results with the feature locations, retaining useful columns
+# this means we will be able to view our log2FC values as a genome-distributed heatmaps
+dea <- merge(dds_tpm, featlocs, by=0)
+rownames(dea) <- dea$Row.names
+dea <- dea[,c("symbol", "log2FC", "chr", "start", "end", "strand")]
+
+# use this to create a new heatmap track
+# the colors form a red to blue gradient (from high pos to low neg log2FC)
+# pick colours you like!
+tracklist <- tracklist + BioCircosHeatmapTrack("DEA", "L42023.1", 
+                                               dea$start, dea$end, dea$log2FC,
+                                               minRadius = 0.8, maxRadius = 0.95,
+                                               color = c("#FF0000", "#0000FF"),
+                                               labels = c("MIV0vsMIV2 DEA"))
+
+# I'm only showing one heatmap track here - this could be another good way to highlight regions of the genome 
+# which are up or down in different condition comparisons...
+
+# finally, render the circos plot
+BioCircos(tracklist, genome = list("L42023.1" = 1830138), genomeLabelTextSize = 0,
+          genomeTicksScale = 1e5, genomeTicksTextSize = 12)
+
+# remember to save
+ggsave("plots/circos.pdf")
+
+```
+![circos](/assets/coursefiles/2024-03_66I/plots/04_circos_001.png){:class="img-responsive"}
+<p align="justify">
+As so many genes were upregulated in the MIV2 condition relative to MIV0, the heatmap looks pretty warm. If you add another heatmap track with today's BHI3 vs MIV0 comparison, you should start to see those regions which are consistently up between conditions (<i>i.e.</i> carbohydrate metabolism) and those which are up only in the competence-inducing conditions (<i>i.e. comA, dprA</i>). Nice to have the GC plot too to get some genome-level descriptions. GC content always fluctuates, but the mean values are often quite species-specific. Interesting that the prophage region has a higher than Hi-average content - pretty good supporting evidence for this actually being a phage integration, rather than convergent evolution. You can include gene density or TF binding site density as line tracks in this way too.<br/><br/>
+The <code>BioCircos</code> functionality is pretty limited, so you might want to label a few genes manually on top of your generated figure. Similarly, it would be good to add a little scale bar to the GC content track - you can extract the min and max values from the <code>gc</code> dataframe.<br/>
+Sometimes coding a figure to exactly how we want it is very very hard, and not worth the effort when you can add labels manually. Always consider how much time you sink into a task (often compared with how many times you are likely to do that task).<br/><br/>
+We can label up specific regions on a circos plot very easily, such as the prophage region. Think about how you might link figures from different parts of the practicals and data workshops. Remember, you don't <i>have</i> to report your results in the order you did them - think about the narrative. In this case the given order is pretty sensible - but always think about your structure for maximum clarity.<br/><br/><br/>
+Now we've started to consider the spatial organisation of genes in the Hi genome, and we're looking at the prophage region again, we can ask whether the RNAseq data directly informs your outstanding diagnostic PCR questions.<br/><br/>
 </p>
 
 #### Can the sequencing data show us if muA, muB and gam are transcribed together?
@@ -440,7 +513,6 @@ head(gam_cors, 25)
 # look at all those mu genes, or those without symbols but numerically close HI IDs
 
 # add in location information
-rownames(featlocs) <- featlocs$feat_ID
 gam_cors <- merge(gam_cors, featlocs, by=0)
 rownames(gam_cors) <- gam_cors$Row.names
 gam_cors <- gam_cors[,-1]

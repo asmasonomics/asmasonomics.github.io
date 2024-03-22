@@ -424,13 +424,14 @@ Note. You don't have to have a shared control condition (like MIV0 in our case) 
 <p align="justify">
 Now we have lots of information on which genes are changing we can try and summarise this data at the full genome level using a circos plot. This plots the Hi genome as a circle and then we can layer tracks on and around this circle to show the distribution of genes or particular features (<i>e.g.</i> regions or GC content). <br/><br/>
 Circos plots can get massive, complex and strange very quickly (<a href="https://circos.ca/">check out some examples here</a>), often becoming too complex to actually be useful. But, they are used a lot in biological data visualisation, so we'd like you to have a go. Hopefully it will also help you to link with the PHASTER results from data workshop 2.<br/><br/>
-A big problem I've faced when designing this material is that many circos plotting libraries have thousands of dependencies. We are therefore keeping it simple, so the plots you make are definitely customisable - but we're not expecting some of the incredibly complex images we can see on the front covers of scientific journals.
+A big problem I've faced when designing this material is that many circos plotting libraries have thousands of dependencies. We are therefore keeping it simple, so the plots you make are definitely customisable - but we're not expecting some of the incredibly complex images we can see on the front covers of scientific journals!
 <br/>
 </p>
 
 ```R 
 
-# install and load our library
+# install and load the BioCircos library
+# the vignette and further information are here - https://cran.r-project.org/web/packages/BioCircos/vignettes/BioCircos.html
 install.packages('BioCircos')
 library(BioCircos)
 

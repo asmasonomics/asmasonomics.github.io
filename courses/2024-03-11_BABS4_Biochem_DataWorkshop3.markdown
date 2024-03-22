@@ -272,8 +272,8 @@ So let's get on with it.
 
 ```R
 
-# let's first subset our data to only our core comparison: the impact of starvation media on Hi
-core_counts <- counts |> select(starts_with("kw20.MIV"))
+#[EDIT] - do not subset the counts, instead work on the full dataset # let's first subset our data to only our core comparison: the impact of starvation media on Hi
+#core_counts <- counts |> select(starts_with("kw20.MIV"))
 
 # we have the position information on all features in featlocs, so we can create a new column for the feature lengths
 featlens <- data.frame(mutate(featlocs, feat_len = (featlocs$end+1)-featlocs$start))
@@ -282,11 +282,16 @@ rownames(featlens) <- featlens$feat_ID
 # we now need to combine our datasets so we can divide the feature counts by feature lengths for each sample
 # to join two datasets you need a key to link associated data together
 # that's why we've made the rownames the feature IDs (feat_ID) in both dataframes (hence column 0 in the merge)
-withlens <- merge(core_counts, featlens, by=0)
+
+#[EDIT] - we haven't created a core_counts subset now, so just use the full counts dataframe
+#withlens <- merge(core_counts, featlens, by=0)
+withlens <- merge(counts, featlens, by=0)
 rownames(withlens) <- withlens$Row.names
 
 # create a new dataframe with the sample counts divided by the lengths
-counts_per_base <- subset(withlens, select = colnames(core_counts)) / withlens$feat_len
+#[EDIT] - we haven't created a core_counts subset now, so just use the full counts dataframe
+#counts_per_base <- subset(withlens, select = colnames(core_counts)) / withlens$feat_len
+counts_per_base <- subset(withlens, select = colnames(counts)) / withlens$feat_len
 
 # now we use apply() to divide each value by the sum of its column, then multiply by a million to make it TPM
 # the 2 indicates the function is applied on columns, rather than rows (where it would be 1)
@@ -341,7 +346,11 @@ Hopefully this becomes clearer with a plot.<br/>
 ```R
 
 # perform PCA on the tpm dataframe
-res_pca <- princomp(tpms)
+#[EDIT] - previously this was just for the kw20.MIV* samples. Running on the full set is fine but will change the plot below
+#res_pca <- princomp(tpms)
+# we will subset the data here just to our core kw20.MIV samples
+kw20MIV_tpms <- tpms |> select(starts_with("kw20.MIV"))
+res_pca <- princomp(kw20MIV_tpms)
 
 # extract the variance accounted for by each principal component (squared standard deviation as proportion of total)
 pca_var <- round((data.frame(res_pca$sdev^2/sum(res_pca$sdev^2)))*100,2)

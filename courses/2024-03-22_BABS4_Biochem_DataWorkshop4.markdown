@@ -48,7 +48,8 @@ Download these into your <code>raw_data</code> directory.<br/><br/>
 
 <b>Processed data from workshop 3</b><br/>
 Download these into your <code>proc_data</code> directory if starting fresh, or create a fresh directory if you want to keep everything very separate.<br/><br/>
-<a href="/assets/coursefiles/2024-03_66I/full_dataset_TPMs.tsv" download>full_dataset_TPMs.tsv</a>. This is a tab separated file with all the TPMs from the Black <i>et al.</i> dataset. <b>One change to the file you generated</b> is that this is for all 33 samples, not just the kw20-MIV samples.<br/><br/>
+<a href="/assets/coursefiles/2024-03_66I/full_dataset_TPMs.tsv" download>full_dataset_TPMs.tsv</a>. This is a tab separated file with all the TPMs from the Black <i>et al.</i> dataset. <b>One change to the file you generated</b> is that this is for all 33 samples, not just the kw20-MIV samples.<br/>
+<i>After the conclusion of workshop 4, I adapted the workshop 3 material and indicated this to all students by email on 22/03/24.</i><br/><br/>
 <a href="/assets/coursefiles/2024-03_66I/MIV0vsMIV2_DEA_full_results.tsv" download>MIV0vsMIV2_DEA_full_results.tsv</a>. This is a tab separated file with the results from the DESeq2 analysis up to plotting the volcano. This should match yours.<br/><br/>
 
 I will highlight any libraries you need as we go along.<br/><br/>

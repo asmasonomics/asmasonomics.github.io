@@ -5,7 +5,10 @@ permalink: /courses/Intro_cBioPortal_Mar2024
 <span style="font-size:1.6em;">**Introduction to cBioPortal**</span><br/>
 ![cBioPortal and Elixir logos](/assets/images/cBioPortal_Elixir.jpg){:class="img-responsive"}
 <br/>
-<p align="justify"><a href="https://www.cbioportal.org/">cBioPortal</a> is a publicly available online resource for cancer genomics, with omics and clinical data available for many cancer types. In this 90 minute session we will introduce cBioPortal - what's there, how to use it, and what you can learn from it. We will then have some led problem solving activities to get to grips with the website, and finish with tips and advice for how you can use the data, plus a demonstration of how you can link to cBioPortal programmatically using R.<br/></p>
+<p align="justify"><a href="https://www.cbioportal.org/">cBioPortal</a> is a publicly available online resource for cancer genomics, with omics and clinical data available for many cancer types. In this 90 minute session we will introduce cBioPortal - what's there, how to use it, and what you can learn from it. We will then have some led problem solving activities to get to grips with the website, and finish with tips and advice for how you can use the data, plus a demonstration of how you can link to cBioPortal programmatically using R. All this material will be maintained for future reference.<br/><br/>
+You can download the slide deck for the workshop here as a <a href="/assets/files/2024-03-21_Intro_to_cBioPortal.pdf" download>PDF</a> or <a href="/assets/files/2024-03-21_Intro_to_cBioPortal.pptx" download>Powerpoint (pptx)</a>.<br/><br/>
+There are embedded videos for the cBioPortal website demo, the end of the <i>TP53</i> problem-solving exercise and the cBioPortal API and MAFtools demo.<br/>
+</p>
 
 <span style="font-size:1.4em;">**Learning objectives**</span><br/>
 1. Recognise the applications and utility of cBioPortal for cancer research

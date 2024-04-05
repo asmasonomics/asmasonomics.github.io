@@ -3,7 +3,6 @@ layout: page
 permalink: /courses/MasonLab_Linux_onboarding
 ---
 
-## Linux introductory guide for the Mason Lab
 <p align="justify">
 Welcome to the group!<br/><br/>
 Much of your work in the lab will involve using the University's high performance computing infrastructure: Viking2. The is a Linux system. You may be familiar with Linux already. If so, this page should just be a series of signposts for you. If not, you get signposts to training as well.

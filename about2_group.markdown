@@ -7,7 +7,7 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 
 <span style="font-size:1.3em;">**Lab members over time**</span>
 ![Mason Lab over time](/assets/images/lab_gantt.jpg){:class="img-responsive"}
-<br/>
+<br/><br/>
 [Linux onboarding information for group members](https://asmasonomics.github.io/courses/MasonLab_Linux_onboarding)
 <br/><br/>
 

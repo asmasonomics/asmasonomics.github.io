@@ -300,7 +300,7 @@ I have just talked to you about how you can download the data from cBioPortal yo
 If you want to code along rather than just watch, the files you need are below. I'm running it in RStudio. These materials will remain available, so please do work through this at your own speed after the session. I will upload a recorded demo shortly after the session.<br/><br/>
 The script file to run the demo yourself can be downloaded here - <a href="/assets/coursefiles/2024-03-21_cBioPortal/2024-03-21_cBioPortal_TCGA-BLCA_API_MAF_demo.R" download>2024-03-21_cBioPortal_TCGA-BLCA_API_MAF_demo.R</a><br/>
 The oncoKB gene list can be downloaded here - <a href="/assets/coursefiles/2024-03-21_cBioPortal/2024-02-08_oncoKB_list.tsv" download>2024-02-08_oncoKB_list.tsv</a><br/>
-A jupyter notebook of the code (stored on Gist) can be viewed and downloaded here - <a href="https://gist.github.com/asmasonomics/b726d9328a92bd8556168fc868fbbcf0" download>Introduction_to_cBioPortal_cbioportalR_and_MAFtools_demo.ipynb</a><br/><br/>
+A jupyter notebook of the code (stored on Gist) can be viewed and downloaded here - <a href="https://gist.github.com/asmasonomics/b726d9328a92bd8556168fc868fbbcf0">Introduction_to_cBioPortal_cbioportalR_and_MAFtools_demo.ipynb</a><br/><br/>
 The video below is an indicative recording of the RStudio demo.
 {% include youtube.html id="iBWoEs_1-Eg" %}
 <br/><br/><br/>

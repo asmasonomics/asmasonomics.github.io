@@ -25,16 +25,16 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Richard gained a 1st class BSc Molecular Cell Biology degree at the University of York, followed by a distinction in the Bioinformatics MSc at the University of Birmingham. His MSc research project involved analysing RNA-seq data to investigate the genetic basis of a corneal disorder known as keratoconus. Richard returned to York to join the Mason Lab in October 2021 and will provide bioinformatics support to the group and the wider Jack Birch Unit."
 %}
 
+<span style="font-size:1.1em;">Saleh Alsuhyami</span> *PhD Student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/SalehAlsuhyami.jpg"
+	content = "Saleh achieved his bachelor from the University of Taif (Saudi Arabia) with second honors in Lab Sciences and Clinical Biotechnology in 2014. He then worked in Namerah General Hospital for 18 months before moving into academia supported by The University of Bisha (Saudi Arabia). This started with an MSc in Medical and Molecular Virology from The University of Manchester completed in 2020, and now with a PhD at York. Saleh started his PhD on Human Endogenous Retroviruses (HERVs) and their dysregulation in urothelial carcinoma in April 2024."
+%}
+
 <span style="font-size:1.1em;">George Hatton</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/Hatton972) *PhD Student (Co-supervisee)*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/GeorgeHatton.jpg"
 	content = "George gained a 1st class MBiol in Biology from the University of York in 2023, completing his final year project in the Jack Birch Unit on the induction and localisation of anti-viral APOBEC3 proteins during BK Polyomavirus infection. George then successfully applied for a 3-year York Against Cancer-sponsored PhD studentship in Biomedical Science continuing the work of his Master’s. The PhD will expand on our knowledge of the role BK plays in bladder cancer oncogenesis, with George developing wet lab and bioinformatic skills supervised by Dr Simon Baker, Dr Andrew Mason and Prof Jenny Southgate."
-%}
-
-<span style="font-size:1.1em;">Mwenda Rintari</span> *MBiol project student*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/MwendaRintari.jpg"
-	content = "Mwenda joined the lab in September 2023 to undertake his final year MBiol project. With a passion for data science and omics, Mwenda's project offers him a great opportunity to enhance his bioinformatics skills. The project will generate WGS and RNAseq data from patients with metachronous upper tract and bladder urothelial carcinoma to evaluate the role of clonal seeding in UC recurrence. This project is supported by York Against Cancer and Action Bladder Cancer UK."
 %}
 
 <span style="font-size:1.1em;">Anastasia Kaltsa</span> *MSc by Research Student (Co-supervisee)*<br/>
@@ -73,7 +73,7 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 <span style="font-size:1.1em;">Emilia Cross</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/emiliacrossxx) *FRAME undergraduate project student*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/EmiliaCross.jpg"
-	content = "Emilia successfully applied for a FRAME summer studentship to work in the lab in Summer 2022 on a project to study APOBEC tissue specificity in bladder cancer, using the 100kGP cohort. Following her project, Emilia has now entered her final year as a University of York integrated masters student. Emilia has developed a keen interest in cancer bioinformatics and hopes to pursue a research career in this area."
+	content = "Emilia successfully applied for a FRAME summer studentship to work in the lab in Summer 2022 on a project to study APOBEC tissue specificity in bladder cancer, using the 100kGP cohort. Following her project, Emilia has now entered her final year as a University of York integrated masters student. Emilia has developed a keen interest in cancer bioinformatics and hopes to pursue a research career in this area. Emilia commenced a cancer omics PhD at Imperial College London in Summer 2024."
 %}
 
 <span style="font-size:1.1em;">Fernando Vazquez Lopez</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/fernando_vaz_) *Undergraduate project student*<br/>
@@ -106,3 +106,8 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Mae completed her University of York final year integrated masters project in the lab, working on clonal evolution in the 100kGP bladder cancer cohort, earning a first class degree overall. After graduating Mae returned to the group to continue her work on the 100kGP bladder cancer cohort, developing her skills in bioinformatics and presenting her work to academic and clinical audiences. Mae really enjoyed the different pace of research as a career rather than as a student!"
 %}
 
+<span style="font-size:1.1em;">Mwenda Rintari</span> *MBiol project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/MwendaRintari.jpg"
+	content = "Mwenda joined the lab in September 2023 to undertake his final year MBiol project. With a passion for data science and omics, Mwenda's project offers him a great opportunity to enhance his bioinformatics skills. The project will generate WGS and RNAseq data from patients with metachronous upper tract and bladder urothelial carcinoma to evaluate the role of clonal seeding in UC recurrence. This project is supported by York Against Cancer and Action Bladder Cancer UK. Mwenda is now pursuing a PhD in cancer omics."
+%}

@@ -37,6 +37,12 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "George gained a 1st class MBiol in Biology from the University of York in 2023, completing his final year project in the Jack Birch Unit on the induction and localisation of anti-viral APOBEC3 proteins during BK Polyomavirus infection. George then successfully applied for a 3-year York Against Cancer-sponsored PhD studentship in Biomedical Science continuing the work of his Master’s. The PhD will expand on our knowledge of the role BK plays in bladder cancer oncogenesis, with George developing wet lab and bioinformatic skills supervised by Dr Simon Baker, Dr Andrew Mason and Prof Jenny Southgate."
 %}
 
+<span style="font-size:1.1em;">Ellie Robinson</span> *Bioinformatics MSc project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/EllieRobinson.jpg"
+	content = "Ellie graduated in 2023 with a 1st class BSc in Biomedical Science from Liverpool John Moores University. Ellie joined the Mason lab in June 2024 to undertake the final project of her MSc in Bioinformatics at the University of York. Ellie’s project involves exploring the relevance of an *in vitro* urothelial hypoxia signature in benign and malignant bladder disease."
+%}
+
 <span style="font-size:1.1em;">Anastasia Kaltsa</span> *MSc by Research Student (Co-supervisee)*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/AnastasiaKaltsa.jpeg"

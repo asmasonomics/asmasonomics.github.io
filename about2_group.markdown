@@ -49,6 +49,18 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Anastasia obtained her medical degree from Aristotle University in Greece and moved to the UK for her specialty training in Obstetrics and Gynaecology. She is currently a year 4 trainee in the Yorkshire and the Humber Deanery. She developed a special interest in Urogynaecology and successfully applied for a part-time MSc by research project in the Jack Birch Unit, supervised by Prof Jenny Southgate and Dr Andrew Mason. The project focuses on benign urogynaecological conditions, providing knowledge and research experience to pursue her subspecialty training."
 %}
 
+<span style="font-size:1.1em;">Charlie Barker</span> *Undergraduate project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/CharlieBarker.jpg"
+	content = "Charlie joined the Mason Lab in June 2024, after completing the 3rd year of his integrated masters degree in biology at York. His summer project involves using TCGA WGS data to determine the transcriptomic impact of non-coding mutations in muscle invasive bladder cancer. Charlie hopes to develop both his bioinformatic skills and understanding of cancer biology prior to starting a 1 year placement with the GSK Genomics R&D team."
+%}
+
+<span style="font-size:1.1em;">Hugo Aguado</span> *Undergraduate project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/person.png"
+	content = "*Coming soon...*"
+%}
+
 <br/>
 <span style="font-size:1.3em;">**Past lab members**</span><br/>
 

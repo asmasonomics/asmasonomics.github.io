@@ -57,8 +57,8 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 
 <span style="font-size:1.1em;">Hugo Aguado</span> *Undergraduate project student*<br/>
 {% include profile_page_cols.html 
-	file = "/assets/images/person.png"
-	content = "*Coming soon...*"
+	file = "/assets/images/HugoAguado.jpg"
+	content = "Hugo joined the Mason Lab in June 2024 for a summer studentship  after finishing his 3rd year of his BSc Genetics degree from the University of York. His summer project involves using RNAseq data generated from TCGA to be mapped against the most recent human reference genome. Hugo hopes to improve his bioinformatics skills ahead of Masters applications."
 %}
 
 <br/>

@@ -3,8 +3,7 @@ layout: page
 permalink: /courses/2024-07_PGCAP
 ---
 
-## Teaching qualifications - PGCAP
-
+<span style="font-size:1.5em;">**Teaching qualifications - PGCAP**</span>
 <p align="justify">
 I've always seen teaching as a part of my academic identity, rather than "something I have to do". I sought out undergraduate teaching in Edinburgh as a PhD student, did some private tutoring to high school students, and have then relished the opportunity to teach here at York as a Lecturer. <br/><br/>
 Quite rightly there is a need for researchers to actually learn some teaching practice before they start teaching students who pay large fees and expect a decent experience. In Edinburgh I took this on myself through the <i>Introduction to Academic Practice</i> module (IntroAP) - a course accredited by the Higher Education Academy (now AdvanceHE) resulting in Associate Fellowship (AFHEA). This involved some sessions on teaching theory (pedagogy), a reflective piece of writing and a reciprocal peer teaching observation. This genuinely opened my eyes to new ways to teach which weren't just the ways I would learn best.<br/><br/>

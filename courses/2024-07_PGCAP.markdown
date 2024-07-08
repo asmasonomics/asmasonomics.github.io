@@ -1,0 +1,45 @@
+---
+layout: page
+permalink: /courses/MasonLab_PGCAP
+---
+
+<p align="justify">
+I've always seen teaching as a part of my academic identity, rather than "something I have to do". I sought out undergraduate teaching in Edinburgh as a PhD student, did some private tutoring to high school students, and have then relished the opportunity to teach here at York as a Lecturer. <br/><br/>
+Quite rightly there is a need for researchers to actually learn some teaching practice before they start teaching students who pay large fees and expect a decent experience. In Edinburgh I took this on myself through the <i>Introduction to Academic Practice</i> module (IntroAP) - a course accredited by the Higher Education Academy (now AdvanceHE) resulting in Associate Fellowship (AFHEA). This involved some sessions on teaching theory (pedagogy), a reflective piece of writing and a reciprocal peer teaching observation. This genuinely opened my eyes to new ways to teach which weren't just the ways I would learn best.<br/><br/>
+In York, all Lecturers are expected to complete the Postgraduate Certificate in Academic Practice (PGCAP) which, again, is accredited by AdvanceHE but results in Fellowship (FHEA). This is a 2-year Masters-level programme with 3 modules: <i>Learning, Teaching and Assessment in Higher Education</i> (LTAHE - a more thorough version of Edinburgh's IntroAP course), <i>Scholarship of Teaching and Learning</i> (SoTL - a piece of pedagogical research), and <i>Academic Identity and Professional Development</i> (AIPD - a reflective assessment of the role of Higher Education and your place and trajectory within it).<br/><br/>
+The whole programme is a big time commitment, but also a condition of employment for Lecturers. In theory there is reduced teaching load during PGCAP, but I'm not sure I really felt that - but that may have been because of semesterisation coiniciding with PGCAP for me. I admit I felt resentment about the time impact across the programme, and didn't really feel the research project was a good use of my time (particularly compared with doing my own <i>actual</i> research), but it <b>has</b> been useful overall.<br/><br/>
+I've included my assessments here for posterity and to remind myself occasionally. Having not been particularly self-reflective (ever) in my life, the start of 2024 was a time with lots of personal reflection, and this spilled into my job a lot, sparked in part by the AIPD submission. Hopefully I will keep checking back to this. I've kept reflecting, so I'm not really sure the tone of my AIPD matches what I think anymore (writing this 6 weeks after submission). But I think that's important too.<br/><br/>
+Anyway. Enjoy a read if you're interested. These do reflect my genuine experiences at York. <br/>
+</p>
+
+### My submitted assessments
+#### Introduction to Academic Practice (January 2016)
+<p align="justify">
+Passing this module required a reflective critique of teaching practice against the UKPSF, a reciprocal peer teaching observation, engagement with online material, and attendance at two other continuing professional development courses.<br/>
+</p>
+<object width="500" height="700" type="application/pdf" data="/assets/coursefiles/PGCAP/00_UoE-IntroAP.pdf">
+</object>
+<br/>
+
+#### Learning, Teaching and Assessment in Higher Education (May 2023)
+<p align="justify">
+Passing this module required a reflective critique against all aspects of teaching in the UKPSF, a teaching observation from course staff, a microteaching exercise and active engagement with the course material.<br/>
+</p>
+<object width="500" height="700" type="application/pdf" data="/assets/coursefiles/PGCAP/01_LTAHE.pdf">
+</object>
+<br/>
+
+#### Scholarship of Teaching and Learning (March 2024)
+<p align="justify">
+This module required completion of a piece of pedagogical research to Masters-level quality. I completed my research on the stage 3 Genomics module I was helping to launch at York. This piece therefore included assessment of the students before and after the course including their feedback, and the broader place of our teaching within the Russell Group. The analysis <i>was</i> useful in terms of improving the course for second delivery (Semester 1 2024), but it was a lot of work for the same impact as a couple of conversations Dan (MO) and I had already had. However, this was far more interesting and useful than an assessment of attendance data, which was the original department-suggested idea...<br/>
+</p>
+<object width="500" height="700" type="application/pdf" data="/assets/coursefiles/PGCAP/02_SoTL.pdf">
+</object>
+<br/>
+
+#### Academic Identity and Professional Development (May 2024)
+<p align="justify">
+This module required completion of a reflective piece covering our academic journey, trajectory and ambissions, including our concept of disciplinarity and the purpose of higher education in society. We also had to attend a number of development workshops aimed at building us as more well-rounded academics. I must say that the module did not excite me at the start, but the workshops were interesting and thought-provoking, and the assessment itself provided a very useful catalyst for me to actually think about what I wanted from academia. That's a work in progress...!<br/>
+</p>
+<object width="500" height="700" type="application/pdf" data="/assets/coursefiles/PGCAP/03_AIPD.pdf">
+</object>

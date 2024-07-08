@@ -5,7 +5,10 @@ permalink: /teaching/
 ---
 <p align="justify">Andrew started his lectureship position in November 2022. Teaching responsibilities now include supervising final year MBiol integrated masters students and delivering course material in bioinformatics, genomics, data science and cancer to University of York undergraduates. <br/>
 York brought in semesters in September 2023, bringing an opportunity to revisit all teaching delivered in the department. Andrew is helping to bring more omics and informatics into BSc Biology at York through a revised skills in bioinformatics 2nd year course strand, and a brand new 3rd year Genomics module. Andrew is also teaching on the new upskilling MSc in Bioinformatics, including as module organiser for the Advanced Research Topics in Bioinformatics module, providing a research seminar and project supervision. <br/> 
-We are also supporting omics and statistics teaching for PhD students and continuing to develop Elixir material at York. <br/>
+We are also supporting omics and statistics teaching for PhD students and continuing to develop Elixir material at York. <br/><br/>
+Andrew completed his University of York <a href="https://www.york.ac.uk/staff/teaching/develop/pgcap/">Postgraduate Certificate of Academic Practice (PGCAP)</a> in Summer 2024, gaining Fellowship status from <a href="https://www.advance-he.ac.uk/">AdvanceHE</a>. This followed on from Andrew's Associate Fellowship gained in 2016 whilst at The University of Edinburgh. <br/>
+<a href="https://asmasonomics.github.io/courses/2024-07_PGCAP">Read more about this process here</a>.
+<br/>
 </p>
 
 <span style="font-size:1.2em;">**University teaching experience**</span><br/>

@@ -3,6 +3,8 @@ layout: page
 permalink: /courses/2024-07_PGCAP
 ---
 
+## Teaching qualifications - PGCAP
+
 <p align="justify">
 I've always seen teaching as a part of my academic identity, rather than "something I have to do". I sought out undergraduate teaching in Edinburgh as a PhD student, did some private tutoring to high school students, and have then relished the opportunity to teach here at York as a Lecturer. <br/><br/>
 Quite rightly there is a need for researchers to actually learn some teaching practice before they start teaching students who pay large fees and expect a decent experience. In Edinburgh I took this on myself through the <i>Introduction to Academic Practice</i> module (IntroAP) - a course accredited by the Higher Education Academy (now AdvanceHE) resulting in Associate Fellowship (AFHEA). This involved some sessions on teaching theory (pedagogy), a reflective piece of writing and a reciprocal peer teaching observation. This genuinely opened my eyes to new ways to teach which weren't just the ways I would learn best.<br/><br/>
@@ -17,7 +19,7 @@ Anyway. Enjoy a read if you're interested. These do reflect my genuine experienc
 <p align="justify">
 Passing this module required a reflective critique of teaching practice against the UKPSF, a reciprocal peer teaching observation, engagement with online material, and attendance at two other continuing professional development courses.<br/>
 </p>
-<object width="500" height="700" type="application/pdf" data="/assets/coursefiles/PGCAP/00_UoE-IntroAP.pdf">
+<object width="800" height="700" type="application/pdf" data="/assets/coursefiles/PGCAP/00_UoE-IntroAP.pdf">
 </object>
 <br/>
 
@@ -25,7 +27,7 @@ Passing this module required a reflective critique of teaching practice against 
 <p align="justify">
 Passing this module required a reflective critique against all aspects of teaching in the UKPSF, a teaching observation from course staff, a microteaching exercise and active engagement with the course material.<br/>
 </p>
-<object width="500" height="700" type="application/pdf" data="/assets/coursefiles/PGCAP/01_LTAHE.pdf">
+<object width="800" height="700" type="application/pdf" data="/assets/coursefiles/PGCAP/01_LTAHE.pdf">
 </object>
 <br/>
 
@@ -33,7 +35,7 @@ Passing this module required a reflective critique against all aspects of teachi
 <p align="justify">
 This module required completion of a piece of pedagogical research to Masters-level quality. I completed my research on the stage 3 Genomics module I was helping to launch at York. This piece therefore included assessment of the students before and after the course including their feedback, and the broader place of our teaching within the Russell Group. The analysis <i>was</i> useful in terms of improving the course for second delivery (Semester 1 2024), but it was a lot of work for the same impact as a couple of conversations Dan (MO) and I had already had. However, this was far more interesting and useful than an assessment of attendance data, which was the original department-suggested idea...<br/>
 </p>
-<object width="500" height="700" type="application/pdf" data="/assets/coursefiles/PGCAP/02_SoTL.pdf">
+<object width="800" height="700" type="application/pdf" data="/assets/coursefiles/PGCAP/02_SoTL.pdf">
 </object>
 <br/>
 
@@ -41,5 +43,5 @@ This module required completion of a piece of pedagogical research to Masters-le
 <p align="justify">
 This module required completion of a reflective piece covering our academic journey, trajectory and ambissions, including our concept of disciplinarity and the purpose of higher education in society. We also had to attend a number of development workshops aimed at building us as more well-rounded academics. I must say that the module did not excite me at the start, but the workshops were interesting and thought-provoking, and the assessment itself provided a very useful catalyst for me to actually think about what I wanted from academia. That's a work in progress...!<br/>
 </p>
-<object width="500" height="700" type="application/pdf" data="/assets/coursefiles/PGCAP/03_AIPD.pdf">
+<object width="800" height="700" type="application/pdf" data="/assets/coursefiles/PGCAP/03_AIPD.pdf">
 </object>

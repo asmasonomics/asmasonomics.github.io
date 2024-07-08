@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /courses/MasonLab_PGCAP
+permalink: /courses/2024-07_PGCAP
 ---
 
 <p align="justify">

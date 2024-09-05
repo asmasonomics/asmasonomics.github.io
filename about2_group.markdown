@@ -19,16 +19,28 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Vlad completed an MEng in Electronic and Computer Engineering at the University of York before working as a graduate software developer.<br/>In February 2020 he returned to York on a GCRF-funded RA position (predominantly within the Mason lab) which included transcriptomic clustering from low <i>n</i>, high feature datasets and development of an RNAseq visualisation tool. He began a 3-year inter-disciplinary PhD at York in October 2020, and is working on methods to incorporate multiple sequencing data types to improve clinical utility of sequencing-derived bladder cancer subtypes."
 %}
 
-<span style="font-size:1.1em;">Richard Gawne</span> *Bioinformatician*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/RichardGawne.jpg"
-	content = "Richard gained a 1st class BSc Molecular Cell Biology degree at the University of York, followed by a distinction in the Bioinformatics MSc at the University of Birmingham. His MSc research project involved analysing RNA-seq data to investigate the genetic basis of a corneal disorder known as keratoconus. Richard returned to York to join the Mason Lab in October 2021 and will provide bioinformatics support to the group and the wider Jack Birch Unit."
-%}
-
 <span style="font-size:1.1em;">Saleh Alsuhyami</span> *PhD Student*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/SalehAlsuhyami.jpg"
 	content = "Saleh achieved his bachelor from the University of Taif (Saudi Arabia) with second honors in Lab Sciences and Clinical Biotechnology in 2014. He then worked in Namerah General Hospital for 18 months before moving into academia supported by The University of Bisha (Saudi Arabia). This started with an MSc in Medical and Molecular Virology from The University of Manchester completed in 2020, and now with a PhD at York. Saleh started his PhD on Human Endogenous Retroviruses (HERVs) and their dysregulation in urothelial carcinoma in April 2024."
+%}
+
+<span style="font-size:1.1em;">Marcello Beltrami</span> *Bioinformatician*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/person.png"
+	content = "Update coming"
+%}
+
+<span style="font-size:1.1em;">Charlotte Garton</span> *MSc by Research student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/CharlotteGarton.jpg"
+	content = "Charlotte completed her BSc in Biology at the University of York, where she developed a keen interest in cancer biology, epigenetics, and bioinformatics. Her undergraduate studies included a year in industry, during which she focused on whole genome sequencing of <i>Salmonella enterica</i> for serotype prediction and single nucleotide variant (SNV) analysis. For her final year project, she studied transcription factor binding and epigenetic modifications in prostate cancer.  In September 2024, Charlotte began her MSc project, utilising a multi-modal bioinformatics approach to investigate sex-specific dysregulation of the COMPASS complex in bladder cancer."
+%}
+
+<span style="font-size:1.1em;">Hugo Aguado</span> *MSc by Research student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/HugoAguado.jpg"
+	content = "Hugo joined the Mason Lab in June 2024 for a summer studentship  after finishing his BSc Genetics degree from the University of York. His summer project investigated the impact of changing genome annotations on TPM stability from TCGA's BLCA cohort. Building on this interest in improving annotation specificity, Hugo began an MSc by Research in September 2024, co-supervised by Dr Katherine Bridge (CBR), using long and short read polyA sequencing to identify tissue- and cancer-specific splicing changes and the impact on expression quantification."
 %}
 
 <span style="font-size:1.1em;">George Hatton</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/Hatton972) *PhD Student (Co-supervisee)*<br/>
@@ -37,28 +49,10 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "George gained a 1st class MBiol in Biology from the University of York in 2023, completing his final year project in the Jack Birch Unit on the induction and localisation of anti-viral APOBEC3 proteins during BK Polyomavirus infection. George then successfully applied for a 3-year York Against Cancer-sponsored PhD studentship in Biomedical Science continuing the work of his Master’s. The PhD will expand on our knowledge of the role BK plays in bladder cancer oncogenesis, with George developing wet lab and bioinformatic skills supervised by Dr Simon Baker, Dr Andrew Mason and Prof Jenny Southgate."
 %}
 
-<span style="font-size:1.1em;">Ellie Robinson</span> *Bioinformatics MSc project student*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/EllieRobinson.jpg"
-	content = "Ellie graduated in 2023 with a 1st class BSc in Biomedical Science from Liverpool John Moores University. Ellie joined the Mason lab in June 2024 to undertake the final project of her MSc in Bioinformatics at the University of York. Ellie’s project involves exploring the relevance of an *in vitro* urothelial hypoxia signature in benign and malignant bladder disease."
-%}
-
 <span style="font-size:1.1em;">Anastasia Kaltsa</span> *MSc by Research Student (Co-supervisee)*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/AnastasiaKaltsa.jpeg"
 	content = "Anastasia obtained her medical degree from Aristotle University in Greece and moved to the UK for her specialty training in Obstetrics and Gynaecology. She is currently a year 4 trainee in the Yorkshire and the Humber Deanery. She developed a special interest in Urogynaecology and successfully applied for a part-time MSc by research project in the Jack Birch Unit, supervised by Prof Jenny Southgate and Dr Andrew Mason. The project focuses on benign urogynaecological conditions, providing knowledge and research experience to pursue her subspecialty training."
-%}
-
-<span style="font-size:1.1em;">Charlie Barker</span> *Undergraduate project student*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/CharlieBarker.jpg"
-	content = "Charlie joined the Mason Lab in June 2024, after completing the 3rd year of his integrated masters degree in biology at York. His summer project involves using TCGA WGS data to determine the transcriptomic impact of non-coding mutations in muscle invasive bladder cancer. Charlie hopes to develop both his bioinformatic skills and understanding of cancer biology prior to starting a 1 year placement with the GSK Genomics R&D team."
-%}
-
-<span style="font-size:1.1em;">Hugo Aguado</span> *Undergraduate project student*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/HugoAguado.jpg"
-	content = "Hugo joined the Mason Lab in June 2024 for a summer studentship  after finishing his 3rd year of his BSc Genetics degree from the University of York. His summer project involves using RNAseq data generated from TCGA to be mapped against the most recent human reference genome. Hugo hopes to improve his bioinformatics skills ahead of Masters applications."
 %}
 
 <br/>
@@ -128,4 +122,22 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 {% include profile_page_cols.html 
 	file = "/assets/images/MwendaRintari.jpg"
 	content = "Mwenda joined the lab in September 2023 to undertake his final year MBiol project. With a passion for data science and omics, Mwenda's project offers him a great opportunity to enhance his bioinformatics skills. The project will generate WGS and RNAseq data from patients with metachronous upper tract and bladder urothelial carcinoma to evaluate the role of clonal seeding in UC recurrence. This project is supported by York Against Cancer and Action Bladder Cancer UK. Mwenda is now pursuing a PhD in cancer omics."
+%}
+
+<span style="font-size:1.1em;">Richard Gawne</span> *Bioinformatician*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/RichardGawne.jpg"
+	content = "Richard gained a 1st class BSc Molecular Cell Biology degree at the University of York, followed by a distinction in the Bioinformatics MSc at the University of Birmingham. His MSc research project involved analysing RNA-seq data to investigate the genetic basis of a corneal disorder known as keratoconus. Richard returned to York to join the Mason Lab in October 2021 and provided broad bioinformatic support and expertise on multiple projects. Richard left the group in September 2024 to begin a prestigious NHS STP position on the Genomics and Bioinformatics track."
+%}
+
+<span style="font-size:1.1em;">Ellie Robinson</span> *Bioinformatics MSc project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/EllieRobinson.jpg"
+	content = "Ellie graduated in 2023 with a 1st class BSc in Biomedical Science from Liverpool John Moores University. Ellie joined the Mason lab in June 2024 to undertake the final project of her MSc in Bioinformatics at the University of York. Ellie’s project involves exploring the relevance of an *in vitro* urothelial hypoxia signature in benign and malignant bladder disease."
+%}
+
+<span style="font-size:1.1em;">Charlie Barker</span> *Undergraduate project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/CharlieBarker.jpg"
+	content = "Charlie joined the Mason Lab in June 2024, after completing the 3rd year of his integrated masters degree in biology at York. His summer project involves using TCGA WGS data to determine the transcriptomic impact of non-coding mutations in muscle invasive bladder cancer. Charlie hopes to develop both his bioinformatic skills and understanding of cancer biology prior to starting a 1 year placement with the GSK Genomics R&D team."
 %}

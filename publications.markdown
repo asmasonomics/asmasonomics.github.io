@@ -10,7 +10,7 @@ Kealey D, Ellerington R, Bansal S, Zeng AGX, Medeiros JJF, West KA, Blacknell NM
 Turvey G, de Alba EL, Stewart E, Byrom L, Cook H, Sofi S, Alati A, Ainscough J, **Mason AS**, Anston AA & Coverley D, [Dominant CIZ1 fragments drive epigenetic instability and are expressed in early stage cancers](https://doi.org/10.1101/2023.09.22.558821), bioRxiv (2023).
 
 ### 2024
-Chandler JC, Jafree DJ, Malik S, Pomeranz G, Ball M, Kolatsi-Joannou M, Piapi A, Mason WJ, Woolf AS, Winyard PJ, **Mason AS**, Waters AM & Long DA, [Exploration of the single-cell transcriptomic landscape identifies aberrant glomerular cell crosstalk in a murine model of WT1 kidney disease](https://www.biorxiv.org/content/10.1101/2022.10.11.511555v2), *The Journal of Pathology* (in press).
+Chandler JC, Jafree DJ, Malik S, Pomeranz G, Ball M, Kolatsi-Joannou M, Piapi A, Mason WJ, Woolf AS, Winyard PJ, **Mason AS**, Waters AM & Long DA (2024), [Exploration of the single-cell transcriptomic landscape identifies aberrant glomerular cell crosstalk in a murine model of WT1 kidney disease](http://doi.org/10.1002/path.6339), *The Journal of Pathology*, 264(2):212-27.
 
 ### 2023
 Rice ES, Alberdi A, Alfieri J, Athrey G, Balacco JR, Bardou P, Blackmon H, Charles M, Cheng H, Fedrigo O, Fiddaman SR, Formenti G, Frantz L, Gilbert MTP, Hearn CJ, Jarvis ED, Klopp C, **Mason AS**, Marcos S, Velez-Irizarry D, Xu L & Warren WC (2023), [A pangenome graph reference of 30 chicken genomes allows genotyping of large and complex structural variants](https://doi.org/10.1186/s12915-023-01758-0), *BMC Biology*, 21:267.

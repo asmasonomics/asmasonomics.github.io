@@ -27,8 +27,8 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 
 <span style="font-size:1.1em;">Marcello Beltrami</span> *Bioinformatician*<br/>
 {% include profile_page_cols.html 
-	file = "/assets/images/person.png"
-	content = "Update coming"
+	file = "/assets/images/MarcelloBeltrami.png"
+	content = "Marcello graduated with a first class Microbiology BSc from the University of Reading. During his second year he realized that there was a possibility of merging two of his biggest passions: computer science and biology. As a result, he pursued a Masters in Bioinformatics at the University of Birmingham, where his research project involved analysing RNA-seq data of glioblastoma multiforme cell lines to determine the effect of drug resistance mutations on pathway regulation. Marcello joined the Mason lab as a Bioinformatics Technician in September 2024."
 %}
 
 <span style="font-size:1.1em;">Charlotte Garton</span> *MSc by Research student*<br/>

@@ -43,6 +43,12 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Hugo joined the Mason Lab in June 2024 for a summer studentship  after finishing his BSc Genetics degree from the University of York. His summer project investigated the impact of changing genome annotations on TPM stability from TCGA's BLCA cohort. Building on this interest in improving annotation specificity, Hugo began an MSc by Research in September 2024, co-supervised by Dr Katherine Bridge (CBR), using long and short read polyA sequencing to identify tissue- and cancer-specific splicing changes and the impact on expression quantification."
 %}
 
+<span style="font-size:1.1em;">Joy Njeru</span> *MBiomedSci project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/JoyNjeru.jpg"
+	content = "Joy joined the lab in September 2024 for her MBiomedSci, project. With a background in Accounting and Finance, Joy brings an interdisciplinary perspective to healthcare and research. Her passion for understanding biological systems has led her to explore bioinformatics, where data-driven insights can revolutionise medical science. She aims to develop her expertise in data analysis and contribute to cutting-edge research in genomics, disease mapping, and personalised medicine. With a strong interest in cancer biology and bioinformatics, she is excited to develop new skills that will enhance her understanding of bladder cancer and other diseases."
+%}
+
 <span style="font-size:1.1em;">George Hatton</span> [<img src="/assets/images/Twitter-Logo.jpg" width="18">](https://twitter.com/Hatton972) *PhD Student (Co-supervisee)*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/GeorgeHatton.jpg"

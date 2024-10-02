@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /courses/Genomics3_Workshop4_RNAseq_Nov2023
+permalink: /courses/Genomics3_Workshop4_RNAseq_Nov2024
 ---
 
 ![Genomics3 banner](/assets/images/genomics_banner.jpeg){:class="img-responsive"}
@@ -61,7 +61,6 @@ BiocManager::install("rhdf5", lib="~/Rlibs/R_4.1.2")
 install.packages("remotes", lib="~/Rlibs/R_4.1.2")
 library("remotes", lib.loc="~/Rlibs/R_4.1.2")
 remotes::install_github("pachterlab/sleuth", lib="~/Rlibs/R_4.1.2")
-remotes::install_github("kevinblighe/EnhancedVolcano", lib="~/Rlibs/R_4.1.2")
 remotes::install_github("ctlab/fgsea", lib="~/Rlibs/R_4.1.2")
 
 q()
@@ -386,7 +385,7 @@ Now you can plot!
 ```R 
 # carrying on with our R session - if you accidentally closed it, just reload TPMs_and_DEA_results_file.tsv using read.table()
 library("ggrepel", lib.loc="~/Rlibs/R_4.1.2")
-library("EnhancedVolcano", lib.loc="~/Rlibs/R_4.1.2")
+library("ggplot2")
 
 # check how many significantly different genes we have, using log2FC threshold of >=0.58 (50% increase) or <=-0.58 (50% decrease) and qvalue of <0.05
 sum(res$log2FC>=0.58 & res$qval<0.05)
@@ -395,11 +394,20 @@ sum(res$log2FC<=-0.58 & res$qval<0.05)
 # create list of most significantly different genes for labelling the volcano - change the 100 to get more/fewer genes
 siggenes <- (res %>% arrange(desc(abs(pi))) %>% slice(1:100))$genes
 
+# create new column stating whether a gene is sig up or down, or not
+res$DEA <- "NO"
+res$DEA[res$log2FC > 0.58 & res$qval < 0.05] <- "UP"
+res$DEA[res$log2FC < -0.58 & res$qval < 0.05] <- "DOWN"
+
 # let's create our volcano plot
-EnhancedVolcano(res, x = "log2FC", y = "qval", FCcutoff = 0.58, pCutoff = 0.05,
-	lab = res$genes, selectLab = siggenes, labSize = 2.0, max.overlaps = 1000, drawConnectors = TRUE,
-	ylim = c(0, (max(-1*log10(res$qval)) + 0.5)), xlim = c((max(abs(res$log2FC))*-1), max(abs(res$log2FC))+1),
-	legendPosition = 0, gridlines.major = FALSE, gridlines.minor = FALSE)
+# first line is the plot, second gives the colours and no legend, third defines the colours
+# fourth line gives the threshold lines, fifth gives a clean white background, sixth sets the labels 
+ggplot(res, aes(x=log2FC, y=-log10(qval))) + 
+  geom_point(aes(colour = DEA), show.legend = FALSE) + 
+  scale_colour_manual(values = c("blue", "gray", "red")) +
+  geom_hline(yintercept = -log10(0.05), linetype = "dotted") + geom_vline(xintercept = c(-0.58,0.58), linetype = "dotted") + 
+  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
+  geom_text_repel(data=subset(res, abs(log2FC) > 0.58), aes(x=log2FC, y=-log10(qval), label=symbol), max.overlaps = 1000)
 
 # save it
 # you can't view it on the server, but use sftp or WinSCP/FileZilla to download and view
@@ -419,6 +427,7 @@ Now, our comparison doesn't have that many massively significant changes. One st
 
 ```R 
 library("fgsea", lib.loc="~/Rlibs/R_4.1.2")
+library("ggplot2")
 
 # use our pi values to rank the genes biologically from most up to most down
 prerank <- res[c("genes", "pi")]
@@ -430,12 +439,28 @@ genesets = gmtPathways("~/genomics/rnaseq_data/h.all.v2023.2.Hs.symbols.gmt")
 fgseaRes <- fgsea(pathways = genesets, stats = prerank, minSize=15, maxSize=500)
 
 # check the top most significant hits
-head(fgseaRes[order(pval), ], 10)
+top10_fgseaRes <- head(fgseaRes[order(pval), ], 10)
+top10_fgseaRes
 
 # plot an enrichment plot for the top hit, and explore some of the others
 # google the terms, or check the MSigDB website - do the results make sense?
 plotEnrichment(genesets[["HALLMARK_E2F_TARGETS"]], prerank) + labs(title="E2F targets")
 ggsave("E2Ftargets.pdf")
+
+# create a bar chart of the best hits
+ggplot(top10_fgseaRes, aes(x = NES, y=reorder(pathway, -pval), fill = factor(sign(NES)))) +
+	geom_bar(stat = "identity", width = 0.8) +
+	labs(title = "GSEA", x = "Normalised Enrichment Score (NES)", y = "Pathway") +
+	theme_minimal(base_size = 16) +
+	scale_fill_manual(values = c("#0754A2", "#B10029"), guide = "none") +
+	scale_y_discrete(labels = function(x) gsub("^HALLMARK_", "", x)) +
+	theme(axis.text = element_text(color = "black"),
+		  axis.title = element_text(color = "black"),
+		  panel.grid.major = element_blank(),
+		  panel.grid.minor = element_blank())
+
+# save bar chart
+ggsave("GSEA_best_hits_bar.pdf")
 
 # save your results
 write.table(res, file="GSEA_results_file.tsv", sep="\t", row.names=FALSE, col.names=TRUE)
@@ -469,7 +494,16 @@ Hopefully you've found this session useful, interesting and inspirational (plus 
 <p align="justify">
 This is a 4vs4 dataset where urothelial cells from 4 different people have been used for cell culture. Cells were re-differentiated to form a biomimetic tissue and then split, with one half continuing to be grown in standard normoxic conditions (20% O2) and the others grown in hypoxia (1% O2). We are able to measure the ability of biomimetic urothelium to form a tight barrier (to urine, if it was in the body), and the barrier ability was highly compromised when the cells were taken into hypoxia.<br/>
 In healthy people, the urothelium is an epithelial layer some 3-6 cells thick (depending on how full the bladder is) which sits on top of a basement membrane associated with a capillary bed (i.e. it has good oxygen supply). For this report consider what reductions in oxygen would mean for a tissue, its physiology and the resultant transcriptome. Consider how this could impact bladder health, or in which bladder diseases hypoxia may play a role. Are there major regulators of hypoxia which do not change at the transcript level?<br/><br/>
-For your analysis, run through the same process as in this workshop: fastQC for looking at the reads, kallisto for the alignment, tximport in R for getting the gene-level TPM files, sleuth in R for running differential expression analysis, and then interpretation by plotting individual genes, making a volcano plot and using GSEA to report a little on the biology of the dataset. Look at the very bottom of this page for a couple of extra commands to help you.<br/>
+For your analysis, run through the same process as in this workshop: fastQC for looking at the reads, kallisto for the alignment, tximport in R for getting the gene-level TPM files, sleuth in R for running differential expression analysis, and then interpretation by plotting individual genes, making a volcano plot and using GSEA to report a little on the biology of the dataset. Look at the very bottom of this page for a couple of extra commands to help you.<br/><br/>
+The way to access the higher marks is to go beyond what we show you in the workshop material. This includes biological interpretation, but also showing us some independent bioinformatics. You could consider some of the following:<br/>
+<ol>
+     <li>Plotting individual genes of interest from the TPMs </li>
+	 <li>Specifically plotting/investigating pathways/sets of genes, such as HIF targets </li>
+	 <li>Expanding your GSEA analysis using other gene lists from <a href="https://www.gsea-msigdb.org/gsea/msigdb/collections.jsp">MSigDB</a> (you will need to create a free account)</li>
+	 <li>Generating informative plots which we haven't show you </li>
+	 <li>Investigating the relevance of interesting genes in other urothelial settings, such as diseases where hypoxia may be important, like cancer - you could try <a href="https://www.cbioportal.org/">cbioportal</a> </li>
+   </ol>
+<br/>
 There is more information on the assessment criteria on the VLE. Essentially we are looking for a decent introduction to the topic and relevance of the dataset, an explanation of your methods, and then your attempt to interpret the results and suggest how they address the purpose of the study.<br/>
 Good luck, remember to support each other using the discussion boards, and do ask us for help and guidance if you need it.<br/><br/>
 </p>

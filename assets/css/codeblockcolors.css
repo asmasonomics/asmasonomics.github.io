@@ -1,20 +1,20 @@
 /* sh code block */
 .highlight .language-sh, pre.language-sh {
-    background-color: #e0f7fa;
-    padding: 10px;
-    border-radius: 4px;
+    background-color: #e0f7fa !important; 
+    padding: 10px !important;
+    border-radius: 4px !important;
 }
 
 /* R code block */
 .highlight .language-r, pre.language-r {
-    background-color: #fff3e0;
-    padding: 10px;
-    border-radius: 4px;
+    background-color: #fff3e0 !important;
+    padding: 10px !important;
+    border-radius: 4px !important;
 }
 
 /* Python code block */
 .highlight .language-python, pre.language-python {
-    background-color: #d4edda;
-    padding: 10px;
-    border-radius: 4px;
+    background-color: #d4edda !important;
+    padding: 10px !important;
+    border-radius: 4px !important;
 }

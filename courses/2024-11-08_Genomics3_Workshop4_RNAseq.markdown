@@ -49,7 +49,7 @@ R
 
 Within R, you can run the following lines one by one, or copy and paste in one go. If any package installations ask for updates, you can skip. Whilst these are installing, read the introductory material for the workshop below.
 
-```r
+```R
 
 install.packages("ggrepel", lib="~/Rlibs/R_4.1.2")
 install.packages("BiocManager", lib="~/Rlibs/R_4.1.2")

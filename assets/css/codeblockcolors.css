@@ -1,0 +1,20 @@
+/* sh code block */
+.highlight .language-sh, pre.language-sh {
+    background-color: #e0f7fa;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* R code block */
+.highlight .language-r, pre.language-r {
+    background-color: #fff3e0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Python code block */
+.highlight .language-python, pre.language-python {
+    background-color: #d4edda;
+    padding: 10px;
+    border-radius: 4px;
+}

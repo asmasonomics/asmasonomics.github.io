@@ -306,15 +306,17 @@ The <code>for</code> loop looks very complicated. But look at each part to see w
 <code>cut</code> - splits strings or data into lists based on a delimiter, this is the <code>-d</code> bit. We're splitting our string into a list on <code>/</code> or <code>-</code> in this loop, and then capturing the second (<code>-f2</code>) item in that list.<br/>
 <code>awk</code> is a whole language in itself, like R, and is fantastic for manipulating files in columns. Here we're using it to check our sample names to put our samples into groups (either 0 or 1).<br/>
 Then we use <code>echo</code> to print everything we want.<br/><br/>
-Easy, really... The key thing is that this loop looks complex, but whenever you write your own loop you do it in stages: you don't just write that in one go. You chekc that you're looping through the right thing, that you're getting the information from each variable, then that your output looks right <i>before</i> you commit it to file. <br/><br/>
+Easy, really... The key thing is that this loop looks complex, but whenever you write your own loop you do it in stages: you don't just write that in one go. You check that you're looping through the right thing, that you're getting the information from each variable, then that your output looks right <i>before</i> you commit it to file. <br/><br/>
 No we can use the output of the loop and jump back into R.
 </p><br/>
 
 ```sh 
+# enter R again from the terminal
 R
 
 ```
 ```R
+# load libraries we need
 library(tidyverse)
 library(readr)
 library(sleuth)
@@ -443,12 +445,14 @@ You now have a volcano plot - the hallmark of an RNAseq experiment! In a volcano
 We use log2FC so that up and down changes are symmetrical around zero. If your expression goes from 10 to 20, this is a fold change of 2, but if you go from 10 to 5 this is a fold change of 0.5. Whilst the fold change should be symmetrical, 0.5 is closer to 1 than 1 is to 2. This makes your plots wonky, and makes the up changes seem more important. If you do a log2 transform, a fold change of 1 (i.e. no change) gives a log2FC of 0. log2 of 0.5 is equal to -1 and log2 of 2 is equal to 1. Now we have a symmetrical plot.<br/><br/>
 We want to have small p/q values to give us confidence differences between conditions are not just due to chance. But, we want these important points to be highlighted at the top of our graph. If we plotted fold change against p or q values, all the important stuff would be on or very near the x axis (squished at the bottom) and all the non-significant stuff would be at the top. So, we do -log10 of the stat test value, and this puts the rubbish at the bottom and the (hopefully) interesting genes at the top.<br/><br/>
 One important note. We did include a +1 transformation when calculating fold change to get rid of seemingly huge changes between decimals (the fold change between 0.000005 and 0.0001 is huge!) but some of your most significant changes may come from very low expression. Is this biologically meaningful? Think about times when genes with low expression can still be incredibly important for cell function.<br/><br/>
-Some comparisons will yeild thousands of significant differences. This dataset is more manageable. One approach is to go through the genes which have changed and try and see patterns - do they make sense? This is a lot of work, even with just a few genes.<br/>
-A more powerful and unbiased technique is to use gene set enrichment analysis (GSEA). Instead of just focusing on significant changes, GSEA looks for patterns in the dataset as a whole. We'll do this now.
+Some comparisons will yield thousands of significant differences. This dataset is more manageable. One approach is to go through the genes which have changed and try and see patterns - do they make sense? This is a lot of work, even with just a few genes.<br/>
+A more powerful and unbiased technique is to use gene set enrichment analysis (GSEA). Instead of just focusing on genes we consider significant (based on arbitrary thresholds), GSEA looks for patterns in the dataset as a whole. We'll do this now.
 <br/>
 </p>
 
 ```R 
+# still in R
+
 library(fgsea)
 library(ggplot2)
 
@@ -488,7 +492,9 @@ ggsave("GSEA_best_hits_bar.pdf")
 # save your results
 write.table(res, file="GSEA_results_file.tsv", sep="\t", row.names=FALSE, col.names=TRUE)
 
-# when you're happy, the workshop is over - you can quit!
+# what's your interpretation?
+
+# when you're happy, the workshop is over - you can quit R!
 q()
 
 ```
@@ -510,13 +516,8 @@ If you're interested in reading more, check out our <a href="https://doi.org/10.
 ### What to do if you want to do RNAseq for your report
 <p align="justify">
 Hopefully you've found this session useful, interesting and inspirational (plus the other learning objectives...). If you would like to do RNAseq analysis for your Genomics3 assessment, you <b>should not</b> use the data from above. Instead I have provided with a similar dataset of human urothelial cell cultures grown in either normoxic (20% O<sub>2</sub>) or hypoxic (2% O<sub>2</sub>) conditions:<br/>
-</p>
-
-```sh
-/shared/biology/bioldata1/bl-00087h/data/rnaseq_data/02_hypoxia_assessment_dataset/
-```
-
-<p align="justify">
+<code>/shared/biology/bioldata1/bl-00087h/data/rnaseq_data/02_hypoxia_assessment_dataset/</code>
+<br/><br/>
 This is a 4vs4 dataset where urothelial cells from 4 different people have been used for cell culture. Cells were re-differentiated to form a biomimetic tissue and then split, with one half continuing to be grown in standard normoxic conditions (20% O<sub>2</sub>) and the others grown in hypoxia (2% O<sub>2</sub>). We are able to measure the ability of biomimetic urothelium to form a tight barrier (to urine, if it was in the body), and the barrier ability was highly compromised when the cells were taken into hypoxia.<br/>
 In healthy people, the urothelium is an epithelial layer some 3-6 cells thick (depending on how full the bladder is) which sits on top of a basement membrane associated with a capillary bed (<i>i.e.</i> it has good oxygen supply). For this report consider what reductions in oxygen would mean for a tissue, its physiology and the resultant transcriptome. Consider how this could impact bladder health, or in which bladder diseases hypoxia may play a role. Are there major regulators of hypoxia which do not change at the transcript level?<br/><br/>
 For your analysis, run through the same process as in this workshop: FastQC for looking at the reads, kallisto for the alignment, tximport in R for getting the gene-level TPM files, sleuth in R for running differential expression analysis, and then interpretation by plotting individual genes, making a volcano plot and using GSEA to report a little on the biology of the dataset. Look at the very bottom of this page for a couple of extra commands to help you.<br/><br/>

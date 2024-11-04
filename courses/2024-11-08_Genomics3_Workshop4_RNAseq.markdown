@@ -10,7 +10,7 @@ permalink: /courses/Genomics3_Workshop4_RNAseq_Nov2024
 <p align="justify">
 Welcome to Workshop 4! This workshop will build on some of the skills you developed in previous courses using gene expression data. In previous courses you have worked with <b>count</b> data to look at gene expression, and to explore genes which are differentially expressed between conditions (such as in health and disease). This data has already been processed from raw reads: performing quality control, aligning to a reference genome or transcriptome, and then summarising to gene level. In this workshop you will do the whole process, from raw reads to differential expression analysis.<br/>
 If you choose to base your final report on <i>this</i> workshop, you will need to use the hypoxia exposed urothelium dataset and  <b>not the BKPyV dataset used in this workshop </b>. The bioinformatic approach will be very similar, but you will need to bring in relevant biology. More details on this dataset are at the end of the workshop material.<br/><br/>
-As ever, the workshop is aimed towards the dual-boot Linux machines in G/N/169. You will work at the Linux command line, including working in ```R``` from the command line.<br/><br/>
+As ever, the workshop is aimed towards the dual-boot Linux machines in G/N/169. You will work at the Linux command line, including working in <code>R</code> from the command line.<br/><br/>
 </p>
 
 ### Introduction to the material and research question in this workshop
@@ -170,7 +170,7 @@ grep "ENST00000641515" ../rnaseq_data/gencode.v44.pc_transcripts.t2g
 ```
 
 <p align="justify">
-Now it's time to go into R. R is a program like any other and can be run from the terminal by entering the command ```R```. This starts R, just like you would open R or RStudio on a Windows (or Linux...<i>next week...</i>) machine.<br/><br/>
+Now it's time to go into R. R is a program like any other and can be run from the terminal by entering the command <code>R</code>. This starts R, just like you would open R or RStudio on a Windows (or Linux...<i>next week...</i>) machine.<br/><br/>
 We've done all the package installations you need for this workshop, so you <i>shouldn't</i> need to install any packages. If you're asked to do so, ask us for help before start installing things.<br/>
 We will now use an R package called tximport to combine the different datasets together and summarise to the gene level.<br/>
 </p>
@@ -277,7 +277,7 @@ Whilst this code is useful here to just check your dataset makes sense, it could
 
 #### 3 Differential Expression Analysis (DEA) with Sleuth
 <p align="justify">
-Taking a quick look at TPMs is one thing, but we want to be unbiased and use the full statistical power of the dataset. For that we need DEA (done in R) using the full kallisto directories similar to those you made in part 2 (<i>not</i> the abundance.tsv files) and an input file showing our experimental design, which we will make now. This is another ```for``` loop, with each line doing text manipulation of the experiment metadata stored in our read names - this is why consistent and informative naming is so useful.<br/><br/>
+Taking a quick look at TPMs is one thing, but we want to be unbiased and use the full statistical power of the dataset. For that we need DEA (done in R) using the full kallisto directories similar to those you made in part 2 (<i>not</i> the abundance.tsv files) and an input file showing our experimental design, which we will make now. This is another <code>for</code> loop, with each line doing text manipulation of the experiment metadata stored in our read names - this is why consistent and informative naming is so useful.<br/><br/>
 A quick confession. You will now use some kallisto output which I created from the full dataset (not just the first 2 million reads as you did). This is because it would take more like 20-25 minutes per sample to run (rather than 2 minutes). If you do the RNAseq data for your report, you should run kallisto in full for all samples (I will give the full command at the end of the workshop material below). Part of this is we use a statistical method called bootstrapping to give us confidence in our expression values. Bootstrapping is where we re-run the data alignment multiple times to get consistent answers (like you would when building phylogenetic trees). In the full run you will do 20 bootstraps compared to the 0 you did in part 2. This explains why you <i>might</i> see (very) slight differences between your TPMs from part 3 and those of your classmates around you.<br/>
 </p>
 
@@ -301,11 +301,11 @@ done
 ```
 
 <p align="justify">
-The ```for``` loop looks very complicated. But look at each part to see what it is doing. We are looping ("iterating") through the abundance.h5 files in each sample directory (the variable ```sampledir``` here is out "iterable" - the variable we're using at each stage of the loop). The abundance.h5 files are made by kallisto. We then use the name of this directory to create the rest of the information we need. Some useful linux commands are used:<br/><br/>
-```rev``` - reverses the characters in your output. This is useful if you know you want the end of something, but the start may by of inconsistent length or format<br/>
-```cut``` - splits strings or data into lists based on a delimiter, this is the ```-d``` bit. We're splitting our string into a list on ```/``` or ```-``` in this loop, and then capturing the second (```-f2```) item in that list.<br/>
-```awk``` is a whole language in itself, like R, and is fantastic for manipulating files in columns. Here we're using it to check our sample names to put our samples into groups (either 0 or 1).<br/>
-Then we use ```echo``` to print everything we want.<br/><br/>
+The <code>for</code> loop looks very complicated. But look at each part to see what it is doing. We are looping ("iterating") through the abundance.h5 files in each sample directory (the variable <code>sampledir</code> here is out "iterable" - the variable we're using at each stage of the loop). The abundance.h5 files are made by kallisto. We then use the name of this directory to create the rest of the information we need. Some useful linux commands are used:<br/><br/>
+<code>rev</code> - reverses the characters in your output. This is useful if you know you want the end of something, but the start may by of inconsistent length or format<br/>
+<code>cut</code> - splits strings or data into lists based on a delimiter, this is the <code>-d</code> bit. We're splitting our string into a list on <code>/</code> or <code>-</code> in this loop, and then capturing the second (<code>-f2</code>) item in that list.<br/>
+<code>awk``` is a whole language in itself, like R, and is fantastic for manipulating files in columns. Here we're using it to check our sample names to put our samples into groups (either 0 or 1).<br/>
+Then we use <code>echo</code> to print everything we want.<br/><br/>
 Easy, really... The key thing is that this loop looks complex, but whenever you write your own loop you do it in stages: you don't just write that in one go. You chekc that you're looping through the right thing, that you're getting the information from each variable, then that your output looks right <i>before</i> you commit it to file. <br/><br/>
 No we can use the output of the loop and jump back into R.
 </p><br/>
@@ -342,7 +342,7 @@ q()
 ```
 
 <p align="justify">
-As we are running statistical tests for so many genes, we need to have a p value correction. Sleuth uses Benjamini-Hochberg, a ranking system to reduce false positives. We then use these 'q' values, again with a stringent threshold such as <0.05. Use ```head```, ```less```, ```grep``` or other tools you know to look at the significant genes - do any come up that you recognise? Do any of our "quick check" genes come up? If not, why do you think this is?<br/><br/>
+As we are running statistical tests for so many genes, we need to have a p value correction. Sleuth uses Benjamini-Hochberg, a ranking system to reduce false positives. We then use these 'q' values, again with a stringent threshold such as <0.05. Use <code>head</code>, <code>less</code>, <code>grep</code> or other tools you know to look at the significant genes - do any come up that you recognise? Do any of our "quick check" genes come up? If not, why do you think this is?<br/><br/>
 The other thing to consider here is that q<0.05 genes are <i>statistically</i> different, but that doesn't necessarily equal biologically significant - the fold change in expression could be very small, but appear very significant just due to the power of the test (i.e. the ability of the test to see changes). This is particularly common when you have replicates from cell lines (as these are more like technical repeats than biological ones).<br/><br/>
 Now we're going to combine our TPMs and our sleuth results and make a volcano plot.<br/>
 </p>

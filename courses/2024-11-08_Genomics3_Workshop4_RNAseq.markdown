@@ -34,7 +34,7 @@ Based on epidemiolgical data, and high incidence of bladder cancer in kidney tra
 
 <br/><br/>
 
-#### 0 Setup your directories
+#### 0 Set up your directories
 <p align="justify">
 <b>Remember, you should be working on a Linux machine in G/N/169 for this workshop.</b><br/>
 Assuming that you are, open up a terminal window, change into your student directory, and set up the directories for this workshop:<br/>
@@ -116,7 +116,6 @@ module load kallisto/0.51.1-gompi-2023b
 
 # run kallisto using the index and relevant read files
 kallisto quant --index ../rnaseq_data/gencode.v44.pc_transcripts.processed-kallisto --output-dir=BKPyVinfected-01 ../rnaseq_data/01_workshop4_BKPyV-infection/02_reduced_files_for_workshop_mapping/BKPyVinfected-01-2M_read1.fq.gz ../rnaseq_data/01_workshop4_BKPyV-infection/02_reduced_files_for_workshop_mapping/BKPyVinfected-01-2M_read2.fq.gz
-
 kallisto quant --index ../rnaseq_data/gencode.v44.pc_transcripts.processed-kallisto --output-dir=uninfected-01 ../rnaseq_data/01_workshop4_BKPyV-infection/02_reduced_files_for_workshop_mapping/uninfected-01-2M_read1.fq.gz ../rnaseq_data/01_workshop4_BKPyV-infection/02_reduced_files_for_workshop_mapping/uninfected-01-2M_read2.fq.gz
 
 ```

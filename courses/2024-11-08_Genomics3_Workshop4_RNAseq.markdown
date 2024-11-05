@@ -42,6 +42,7 @@ Assuming that you are, open up a terminal window, change into your student direc
 
 ```sh
 # change into your student directory
+# this assumes you have made a directory which matches your username exactly - change if needed
 cd /shared/biology/bioldata1/bl-00087h/students/${USER}/
 
 # create directories for this workshop, and set their permissions

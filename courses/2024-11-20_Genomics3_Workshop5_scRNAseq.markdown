@@ -89,7 +89,7 @@ Placeholder text.
 <br/><br/>
 </p>
 
-### What to do if you want to do RNAseq for your report
+### What to do if you want to do scRNAseq for your report
 <p align="justify">
 Placeholder text.
 <br/><br/>

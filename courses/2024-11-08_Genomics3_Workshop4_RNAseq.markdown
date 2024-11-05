@@ -275,13 +275,8 @@ What does the (limited) data suggest to you?<br/><br/>
 We used a function so we didn't have to do the same (long) block of R code for each gene we wanted to plot. It's possible you may want to mess with the y axis scale (log, perhaps?) as the genes have quite different expression levels.<br/>
 The code will also generate bars with standard deviation errors (but we only had one sample in each group).<br/><br/>
 Whilst this code is useful here to just check your dataset makes sense, it could also be useful code to use in your report if you want to highlight particular lists of genes you think are relevant. For now, you could try some other genes by making a new <code>gene_list</code> and re-running the code from there.<br/><br/>
-Now that you've exited R, you can view your saved graph by running:
+Now that you've exited R, you can view your saved graph by running: <code>firefox indicator_genes.pdf</code>
 </p><br/>
-```sh
-firefox indicator_genes.pdf
-
-```
-<br/>
 
 #### 3 Differential Expression Analysis (DEA) with Sleuth
 <p align="justify">

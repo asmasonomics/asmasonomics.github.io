@@ -17,6 +17,7 @@ Andrew completed his University of York <a href="https://www.york.ac.uk/staff/te
 {% include experience_cols.html content1 = "11/2022 - present<br/>10/2018 - 11/2019<br/>10/2014 - 12/2016" content2 = "University of York Lecturer in Cancer Informatics<br/>University of York Biology tutor (20h)<br/>University of Edinburgh Biology demonstrator, marker and tutor (301h)" %}
 <span style="font-size:1.02em;">**Course material**</span><br/>
 
+2024-11-20  [Genomics 3 - Workshop 5: scRNAseq](https://asmasonomics.github.io/courses/Genomics3_Workshop5_scRNAseq_Nov2024) <br/>
 2024-11-08  [Genomics 3 - Workshop 4: RNAseq](https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2024) <br/>
 2024-03-22  [BABS4 - Data Workshop 4](https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop4_March2024) <br/>
 2024-03-21  [Introduction to cBioPortal](https://asmasonomics.github.io/courses/Intro_cBioPortal_Mar2024) <br/>

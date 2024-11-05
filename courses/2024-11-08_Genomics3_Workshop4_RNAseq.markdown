@@ -123,7 +123,7 @@ kallisto quant --index ../rnaseq_data/gencode.v44.pc_transcripts.processed-kalli
 
 <p align="justify">
 Each kallisto quant line should take ~2 minutes to run. After you have both - look at the rates (%) of pseudoalignment. How do they differ, and can you think why?<br/><br/>
-We have using kallisto to map to all the annotated transcripts of the human genome. Whilst knowing how individual transcript variants behave can be very interesting, we typically focus our interpretation at the <i>gene</i> level. More is known about gene function rather than that of individual transcripts. This does lose information, particularly if gene expression is regulated using antisense transcripts or function is changed by alternative splicing... But that's for another time.<br/><br/>
+We have using kallisto to map to all the annotated protein-coding gene transcripts of the human genome. Whilst knowing how individual transcript variants behave can be very interesting, we typically focus our interpretation at the <i>gene</i> level. More is known about gene function rather than that of individual transcripts. This does lose information, particularly if gene expression is regulated using antisense transcripts or function is changed by alternative splicing... But that's for another time.<br/><br/>
 We now want our data to be in TPMs - transcripts per million. This is a really good metric for RNAseq data as it gives a proportional relationship between transcripts in a population of cells, but because the denominator is big (a million) it is quite robust to changes unless they're real. If you're not sure about counts vs TPMs vs FPKMs and why we use different ones (and shouldn't use the latter anymore) - you can check out another <a href="https://elixiruknode.org/">Elixir-UK</a> video below.<br/>
 </p>
 {% include youtube.html id="3Pe9xcGF_Wo" %} <br/>
@@ -224,9 +224,9 @@ library(tidyr)
 prepare_data_for_plot <- function(data, gene_names) {
   data %>%
     # Filter for the specified genes
-    filter(Gene %in% gene_names) %>%
+    filter(genes %in% gene_names) %>%
     # Reshape from wide to long format
-    pivot_longer(cols = -Gene, names_to = "Group", values_to = "Value") %>%
+    pivot_longer(cols = -genes, names_to = "Group", values_to = "Value") %>%
     # Extract group prefix based on column name
     mutate(GroupPrefix = case_when(
       startsWith(Group, "BKPyV") ~ "BKPyV",
@@ -234,7 +234,7 @@ prepare_data_for_plot <- function(data, gene_names) {
       TRUE ~ "Other"  # This handles unexpected prefixes, if any
     )) %>%
     # Calculate mean and standard deviation for each prefix group and gene
-    group_by(Gene, GroupPrefix) %>%
+    group_by(genes, GroupPrefix) %>%
     summarise(
       Mean = mean(Value),
       SD = sd(Value),

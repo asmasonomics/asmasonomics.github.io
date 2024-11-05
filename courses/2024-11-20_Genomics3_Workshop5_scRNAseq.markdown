@@ -12,9 +12,9 @@ Welcome to Workshop 5! In the last workshop we worked on <b>bulk</b> RNAseq data
 </p>
 {% include image_cols.html 
 	file = "/assets/images/labelled_urinary_tract_wb_smaller.jpg"
-	content = "Cancers are complex ecosystems. For bladder cancer, the actual cancer consists of dysregulated urothelial cells - the epithelial cells which line the bladder wall (and the upper urinary tract up the ureters and into the renal pelvis of the kidney). But surgical samples do not just contain these urothelial carcinoma cells. We also capture white and red blood cells, fibroblasts, muscle <i>etc. etc.</i> Some of these cells may be genuinely part of the tumour microenvironment (TME) or it could be that the surgeon also sampled some normal(ish) tissue which was next to the main tumour (paracancerous). This is really important as patients with tumours which are heavily infiltrated (lots of immune cells within the TME) tend to do better than those where the tumour is evading immune surveillance. Infilitration is often used as a marker of treatment success (or resistance)."
+	content = "Cancers are complex ecosystems. For bladder cancer, the actual cancer consists of dysregulated urothelial cells - the epithelial cells which line the bladder wall (and the upper urinary tract up the ureters and into the renal pelvis of the kidney). But surgical samples do not just contain these urothelial carcinoma cells. We also capture white and red blood cells, fibroblasts, muscle <i>etc. etc.</i> Some of these cells may be genuinely part of the tumour microenvironment (TME) or it could be that the surgeon also sampled some normal(ish) tissue which was next to the main tumour (paracancerous). <br/>
+	This is really important as patients with tumours which are heavily infiltrated (lots of immune cells within the TME) tend to do better than those where the tumour is evading immune surveillance. Infilitration is often used as a marker of treatment success (or resistance)."
 %}
-<br/>
 Whilst a bulk transcriptome averages out the transcriptomes of all cells in a population (<i>e.g.</i> making a very murky cancer plus immune plus RBCs plus muscle picture, where the murkiness may be different between patients, but only for technical reasons, not biological), scRNAseq allows you to identify different cell types in your data. You can work with these independently (effectively filtering out the noise) or you can study interactions, changes in function <i>etc. etc.</i> - we're still only in the infancy of working out how scRNAseq can aid our research questions. <br/><br/>
 One thing to remember is that scRNAseq still has some drawbacks:<br/>
 <ol>
@@ -22,15 +22,13 @@ One thing to remember is that scRNAseq still has some drawbacks:<br/>
 	 <li>You can look at heterogeneity, but you can only sample a (relatively) small number of cells (typically ~10k per sequencing run - bulk will have RNA from a population often in excess of 1M cells)</li>
 	 <li>There is a limit of detection - genes with low expression will be poorly represented</li>
    </ol>
-<br/>
 These are important points to consider as you do your analysis (and when you're interpreting the data).<br/><br/>
-</p>
 
 ### Introduction to the material
 <p align="justify">
-scRNAseq can be massive, so we're starting with data which has already mapped to the human transcriptome. In this workshop you will work exclusively in <code>R</code>, but using RStudio (nice and familiar), but still on the Linux system. The workshop is aimed towards the dual-boot Linux machines in G/N/169, but in theory you <i>could</i> do this analysis on a Windows machine. We <b>do not</b> recommend this however, as working on the managed machines means you have access to all the data, any workshop-required R libraries have been installed for you already, and you have increased computational power working on Linux rather than Windows.<br/><br/>
+Raw scRNAseq data can be massive (>200M reads per file is standard), so we're starting with data which has already been mapped and quantified to the gene level. In this workshop you will work exclusively in <code>R</code>, but using RStudio (nice and familiar), but still on the Linux system. The workshop is aimed towards the dual-boot Linux machines in G/N/169, but in theory you <i>could</i> do this analysis on a Windows machine. We <b>do not</b> recommend this however, as working on the managed machines means you have access to all the data, any workshop-required R libraries have been installed for you already, and you have increased computational power working on Linux rather than Windows.<br/><br/>
 In the workshop you will start with genome-mapped data. You will perform QC and filtering to keep only high quality and informative cells. You will perform dimension reduction, clustering, community annotation, differential expression, gene set enrichment analysis and functional annotation - lots of graphs.<br/><br/>
-If you choose to base your final report on <i>this</i> workshop, you will need to expand/adapt the analysis in the workshop to some related, but different data we have provided. The bioinformatic approach will be very similar, but you will need to address an appropriate question for your chosen dataset, and bring in the relevant biology. More details on these options are at the end of the workshop material.<br/>
+If you choose to base your final report on <i>this</i> workshop, you will need to expand/adapt the analysis in the workshop to some related, but different data we have provided. The bioinformatic approach will be very similar, but you will need to address an appropriate question for your chosen dataset, and bring in the relevant biology. More details on these options are at the end of the workshop material.<br/><br/>
 </p>
 
 ### The workshop
@@ -44,6 +42,7 @@ This is summarised nicely in this <a href="https://doi.org/10.1038/nrc3817">2015
 <p align="justify">
 Around 80% of people present at non-muscle-invasive stage (NMIBC) and 5-year survival is pretty good. However muscle-invasive (MIBC) disease has a 5-year survival lower than 50%, even with the standard-of-care radical treatment of removing the bladder. In this workshop you will work with scRNAseq data from a T1 tumour and a T3 tumour to identify whether there are differences between the malignant cells and tumour microenvironment between these tumour stages. These data were derived from Lai <i>et al.</i> (2021) published in the <a href="https://doi.org/10.1002/ijc.33794"><i>International Journal of Cancer</i></a>.
 <br/><br/>
+</p>
 
 #### Workshop Aims
 1. Quality check your scRNAseq data, removing uninformative or low quality cells

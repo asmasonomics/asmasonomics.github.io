@@ -219,6 +219,7 @@ We will now check a few genes: <i>APOBEC3A</i> and <i>APOBEC3B</i> (viral respon
 # load libraries
 library(dplyr)
 library(tidyr)
+library(ggplot2)
 
 # write a function which can take a list of multiple genes, and create average and standard deviation value per group, ready to plot
 prepare_data_for_plot <- function(data, gene_names) {
@@ -252,7 +253,7 @@ grpd_gene_list_data <- prepare_data_for_plot(txiDF, gene_list)
 print(grpd_gene_list_data)
 
 # plot
-ggplot(grpd_gene_list_data, aes(x = Gene, y = Mean, fill = GroupPrefix)) +
+ggplot(grpd_gene_list_data, aes(x = genes, y = Mean, fill = GroupPrefix)) +
   geom_bar(stat = "identity", position = position_dodge()) +
   geom_errorbar(aes(ymin = Mean - SD, ymax = Mean + SD), 
                 width = 0.2, position = position_dodge(0.9)) +
@@ -271,9 +272,16 @@ q()
 
 <p align="justify">
 What does the (limited) data suggest to you?<br/><br/>
-We used a function so we didn't have to do the same (long) block of R code for each gene we wanted to plot. It's possible you may want to mess with the y axis scale (log, perhaps?) as the genes have quite different expression levels.<br/><br/>
-Whilst this code is useful here to just check your dataset makes sense, it could also be useful code to use in your report if you want to highlight particular lists of genes you think are relevant.
+We used a function so we didn't have to do the same (long) block of R code for each gene we wanted to plot. It's possible you may want to mess with the y axis scale (log, perhaps?) as the genes have quite different expression levels.<br/>
+The code will also generate bars with standard deviation errors (but we only had one sample in each group).<br/><br/>
+Whilst this code is useful here to just check your dataset makes sense, it could also be useful code to use in your report if you want to highlight particular lists of genes you think are relevant. For now, you could try some other genes by making a new <code>gene_list</code> and re-running the code from there.<br/><br/>
+Now that you've exited R, you can view your saved graph by running:
 </p><br/>
+```sh
+firefox indicator_genes.pdf
+
+```
+<br/>
 
 #### 3 Differential Expression Analysis (DEA) with Sleuth
 <p align="justify">
@@ -316,6 +324,9 @@ R
 
 ```
 ```R
+# access the Genomics shared libraries with this command
+.libPaths("../rnaseq_data/R_4.3.3")
+
 # load libraries we need
 library(tidyverse)
 library(readr)
@@ -326,6 +337,7 @@ s2c <- read.table("infectionDEA.info", header=TRUE, stringsAsFactors=FALSE)
 t2g <- dplyr::select(read.table("../rnaseq_data/gencode.v44.pc_transcripts.t2g", header=TRUE, stringsAsFactors=FALSE), target_id = ensembl_transcript_id, ext_gene = external_gene_name)
 
 # build a sleuth object, aggregating to gene level
+# the "summarizing bootstraps" step can take a few minutes
 so <- sleuth_prep(s2c, ~express + biorep, extra_bootstrap_summary=TRUE, num_cores=1, target_mapping=t2g, transformation_function = function(x) log2(x+1.5), gene_mode=TRUE, aggregation_column = 'ext_gene')
 
 # fit the statistical models
@@ -359,6 +371,9 @@ R
 ```
 
 ```R
+# access the Genomics shared libraries with this command
+.libPaths("../rnaseq_data/R_4.3.3")
+
 library(tidyverse)
 library(dplyr)
 
@@ -431,7 +446,7 @@ ggplot(res, aes(x=log2FC, y=-log10(qval))) +
   scale_colour_manual(values = c("blue", "gray", "red")) +
   geom_hline(yintercept = -log10(0.05), linetype = "dotted") + geom_vline(xintercept = c(-1,1), linetype = "dotted") + 
   theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
-  geom_text_repel(data=subset(res, (abs(log2FC) > 1 & qval < 0.05)), aes(x=log2FC, y=-log10(qval), label=genes), max.overlaps = 1000)
+  geom_text_repel(data=subset(res, (abs(log2FC) > 1 & qval < 0.05)), aes(x=log2FC, y=-log10(qval), label=genes), max.overlaps = 1000, size=2.5)
 
 # save it
 ggsave("volcano.pdf")
@@ -454,7 +469,6 @@ A more powerful and unbiased technique is to use gene set enrichment analysis (G
 # still in R
 
 library(fgsea)
-library(ggplot2)
 
 # use our pi values to rank the genes biologically from most up to most down
 prerank <- res[c("genes", "pi")]
@@ -462,7 +476,9 @@ prerank <- setNames(prerank$pi, prerank$genes)
 str(prerank)
 
 # run GSEA using a list of gene sets curated by MSigDB (Broad Institute)
-genesets = gmtPathways("../rnaseq_data/h.all.v2023.2.Hs.symbols.gmt")
+genesets = gmtPathways("../rnaseq_data/h.all.v2024.1.Hs.symbols.gmt")
+
+# run GSEA - this will produce warnings, don't worry!
 fgseaRes <- fgsea(pathways = genesets, stats = prerank, minSize=15, maxSize=500)
 
 # check the top most significant hits
@@ -487,10 +503,10 @@ ggplot(top10_fgseaRes, aes(x = NES, y=reorder(pathway, -pval), fill = factor(sig
 		  panel.grid.minor = element_blank())
 
 # save bar chart
-ggsave("GSEA_best_hits_bar.pdf")
+ggsave("GSEA-hallmarks_best_hits_bar.pdf")
 
 # save your results
-write.table(res, file="GSEA_results_file.tsv", sep="\t", row.names=FALSE, col.names=TRUE)
+write.table(res, file="GSEA-hallmarks_results_file.tsv", sep="\t", row.names=FALSE, col.names=TRUE)
 
 # what's your interpretation?
 

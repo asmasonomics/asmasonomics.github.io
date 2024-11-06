@@ -71,6 +71,14 @@ library(clustree)
 ```
 <br/><br/>
 
+
+| Sample | Age | Sex | T stage | Grade | Cell number (preQC) |
+| --- | --- | --- | --- | --- | --- |
+| BC2 | 67 | M | T1 | High | TBC |
+| BC5 | 81 | M | T3 | High | TBC |
+
+
+
 #### 1 Relevant Subheading
 <p align="justify">
 Placeholder text.
@@ -91,8 +99,26 @@ Placeholder text.
 
 ### What to do if you want to do scRNAseq for your report
 <p align="justify">
-Placeholder text.
-<br/><br/>
+During this workshop you worked with and compared scRNAseq data from one T1 NMIBC (patient BC2) and one T3 MIBC (patient BC5). For your report you should work on one of the other paired sets we have generated for you. These data and the likely research question to investigate are indicated below.<br/> 
+All the datasets are available in <code>/shared/biology/bioldata1/bl-00087h/data/singlecell_rnaseq_data/02_assessment_options/</code><br/><br/>
+<code>assessment01_BC2-BC3</code> - Urothelial carcinoma heterogeneity within malignant NMIBC (BC2 vs BC3)<br/>
+<code>assessment02_BC1-BC6</code> - Urothelial heterogeneity within non-malignant NMIBC "papilloma" (BC1 vs BC6)<br/>
+<code>assessment03_BC4-BCN</code> - Urothelial transcriptomes between malignant MIBC and paracancerous "normal" from one patient (BC4 vs BCN)<br/>
+<code>assessment04_BC2-BC6</code> - Urothelial transcriptomes between non-malignant papilloma and malignant NMIBC (BC6 vs BC2)<br/>br/>
+</p>
+#### Sample metadata
+| Sample | Age | Sex | T stage | Grade | Cell number (preQC) |
+| --- | --- | --- | --- | --- | --- |
+| BC1 | 67 | M | Ta | Low | TBC |
+| BC2 | 67 | M | T1 | High | TBC |
+| BC3 | 38 | M | T1 | High | TBC |
+| BC4 | 80 | M | T2 | High | TBC |
+| BC6 | 58 | M | Ta | Low | TBC |
+| BCN | 80 | M | BC4 adjN | NA | TBC |
+<br/>
+<p align="justify">
+For your analysis for the report, simply follow the start of the workshop, setting up a new RStudio project, creating symbolic links for the scRNAseq data <i>etc.</i>, and then use the same analysis strategy as we did in the workshop. You will need to change some names, thresholds <i>etc.</i><br/><br/>
+You are very welcome to analyse more than one paired set for your report, and bring in some interpretation or extended analysis from the workshop, perhaps. But, <b>do not try to combine multiple pairs in a single analysis pipeline</b>. This <i>would</i> be a great thing to do, if you had more computational time and memory. There are multiple steps which could take far too long to run on a standard machine. We have tested and adjusted these datasets to make sure they work for you!<br/><br/>
 The way to access the higher marks is to go beyond what we show you in the workshop material. This includes biological interpretation, but also showing us some independent bioinformatics. You could consider some of the following:<br/>
 <ol>
      <li> </li>
@@ -101,10 +127,4 @@ The way to access the higher marks is to go beyond what we show you in the works
 <br/>
 There is more information on the assessment criteria on the VLE. Essentially we are looking for a decent introduction to the topic and relevance of the dataset, an explanation of your methods, and then your attempt to interpret the results and suggest how they address the purpose of the study.<br/>
 Good luck, remember to support each other using the discussion boards, and do ask us for help and guidance if you need it.<br/><br/>
-</p>
-
-#### Some extra comands to help
-<p align="justify">
-Placeholder text.
-<br/><br/>
 </p>

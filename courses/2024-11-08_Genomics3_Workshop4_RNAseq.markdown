@@ -67,7 +67,7 @@ ln -s /shared/biology/bioldata1/bl-00087h/data/rnaseq_data rnaseq_data
    module load bio/FastQC/0.11.9-Java-11
    module load bio/kallisto/0.48.0-gompi-2022a
    </code></pre>
-   <br/><br/>
+   <br/>
    2) You will need to use this index for kallisto:<br/>
    <code>../rnaseq_data/kallist0.48.0_gencode.v44.pc_transcripts.processed-kallisto</code>
    <br/><br/>
@@ -79,7 +79,7 @@ ln -s /shared/biology/bioldata1/bl-00087h/data/rnaseq_data rnaseq_data
    Everything else should work, but you will need to download any figures you make (or the FastQC html files) using WinSCP/FileZilla/<code>ftp</code>. We have not provided support for this process.<br/>
 </details>
 </p>
-<br/><br/>
+<br/>
 
 #### 1 Quality control of raw RNA sequencing data with FastQC
 <p align="justify">

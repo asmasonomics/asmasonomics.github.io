@@ -5,6 +5,11 @@ permalink: /courses/Genomics3_Workshop4_RNAseq_Nov2023
 
 ![Genomics3 banner](/assets/images/genomics_banner.jpeg){:class="img-responsive"}
 
+<br/><br/>
+<span style="font-size:1.4em;">**This is the material from 2023. <a href="https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2024">The 2024 material is here.</a>**</span><br/>
+<br/><br/>
+
+
 <span style="font-size:1.6em;">**Genomics 3 - Workshop 4: RNAseq**</span><br/>
 
 <p align="justify">

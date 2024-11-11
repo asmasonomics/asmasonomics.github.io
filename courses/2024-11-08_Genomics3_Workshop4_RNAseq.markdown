@@ -63,18 +63,18 @@ ln -s /shared/biology/bioldata1/bl-00087h/data/rnaseq_data rnaseq_data
    <br/>
    The <b>best</b> option is to work in G/N/169. But if this isn't possible you <i>can</i> complete the work using teaching0. I have put some things in place to help, but I can't support this workshop over multiple platforms. I say again - use G/N/169.<br/><br/>
    1) You will need to use the following FastQC and kallisto versions:
-   ```sh
+   <pre><code class="language-bash">
    module load bio/FastQC/0.11.9-Java-11
    module load bio/kallisto/0.48.0-gompi-2022a
-   ```
+   </code></pre>
    <br/><br/>
    2) You will need to use this index for kallisto:<br/>
    <code>../rnaseq_data/kallist0.48.0_gencode.v44.pc_transcripts.processed-kallisto</code>
    <br/><br/>
    3) When you use <code>R</code> it will be version 4.1.2 (not v4.3.3). You will need to change the <code>.libPaths()</code> commands across the workshop:
-   ```R
+   <pre><code class="language-r">
    .libPaths("../rnaseq_data/R_4.1.2")
-   ```
+   </code></pre>
    <br/>
    Everything else should work, but you will need to download any figures you make (or the FastQC html files) using WinSCP/FileZilla/<code>ftp</code>. We have not provided support for this process.<br/>
 </details>

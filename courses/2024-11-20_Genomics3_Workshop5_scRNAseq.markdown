@@ -107,7 +107,7 @@ Finally, open a new script file called <code>workshop5.R</code> or similar, and 
 
 # load relevant libraries
 library(tidyverse)
-library(seurat)
+library(Seurat)
 library(clustree)
 library(ggplot2)
 library(ggrepel)
@@ -123,8 +123,8 @@ OK. You should now be set for the workshop. Let's get started!
 <details>
    <summary>What to do if you don't or can't work in G/N/169.</summary>
    <br/>
-   The <b>best</b> option is to work in G/N/169. But if this isn't possible you <i>can</i> complete the work using RStudio on your own machine (or a University Windows one). You would need to install all R libraries and their dependencies yourself, dealing with any R version issues or differences yourself, and download a copy of the (large) datasets from the <code>/shared/biology/bioldata1/bl-00087h/data/singlecell_rnaseq_data/01_workshop/</code> directory yourself.<br/>
-   I have provided <b>zero</b> support for this option!<br/><br/>
+   The <b>best</b> option is to work in G/N/169. But if this isn't possible you <i>can</i> complete the work using RStudio on your own machine (or a University Windows one). You would need to install all R libraries and their dependencies yourself, dealing with any R version issues or differences yourself. I have provided <b>zero</b> support for this option!<br/>
+   <code>fgsea</code> may not work on Windows (the line of code should run in about 10 seconds - longer than a minute at it isn't working). You could try <code>enrichplot</code> and <code>clusterProfiler</code> instead.<br/><br/>
    Unfortunately I can't put this workshop on teaching0 as the R version is now incompatible with the current Seurat version.
 </details>
 </p>

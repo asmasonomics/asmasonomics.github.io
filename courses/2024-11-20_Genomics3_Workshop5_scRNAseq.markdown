@@ -719,7 +719,7 @@ The cool thing is that you've been able to bring your RNAseq knowledge from work
 ### What to do if you want to do scRNAseq for your report
 <p align="justify">
 During this workshop you worked with and compared scRNAseq data from one T1 NMIBC (patient BC2) and one T3 MIBC (patient BC5). For your report you should work on one of the other paired sets we have generated for you. These data and the likely research question to investigate are indicated below.<br/><br/>
-Datasets: <code>/shared/biology/bioldata1/bl-00087h/data/singlecell_rnaseq_data/02_assessment_options/</code><br/><br/>
+Datasets:<br/> <code>/shared/biology/bioldata1/bl-00087h/data/singlecell_rnaseq_data/02_assessment_options/</code><br/><br/>
 <code>assessment01_BC2-BC3</code> - Urothelial carcinoma heterogeneity within malignant NMIBC (BC2 vs BC3)<br/>
 <code>assessment02_BC1-BC6</code> - Urothelial heterogeneity within non-malignant NMIBC "papilloma" (BC1 vs BC6)<br/>
 <code>assessment03_BC4-BCN</code> - Urothelial transcriptomes between malignant MIBC and paracancerous "normal" from one patient (BC4 vs BCN)<br/>

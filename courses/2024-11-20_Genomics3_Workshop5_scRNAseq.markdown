@@ -124,6 +124,7 @@ OK. You should now be set for the workshop. Let's get started!
    <summary>What to do if you don't or can't work in G/N/169.</summary>
    <br/>
    The <b>best</b> option is to work in G/N/169. But if this isn't possible you <i>can</i> complete the work using RStudio on your own machine (or a University Windows one). You would need to install all R libraries and their dependencies yourself, dealing with any R version issues or differences yourself. I have provided <b>zero</b> support for this option!<br/>
+   <a href="https://drive.google.com/drive/folders/1Dfx0B49xX_sQfXrrYGLkaTkMNdGzCLS8?usp=drive_link">The workshop material can be downloaded here.</a><br/>
    <code>fgsea</code> may not work on Windows (the line of code should run in about 10 seconds - longer than a minute at it isn't working). You could try <code>enrichplot</code> and <code>clusterProfiler</code> instead.<br/><br/>
    Unfortunately I can't put this workshop on teaching0 as the R version is now incompatible with the current Seurat version.
 </details>
@@ -723,7 +724,8 @@ Datasets:<br/> <code>/shared/biology/bioldata1/bl-00087h/data/singlecell_rnaseq_
 <code>assessment01_BC2-BC3</code> - Urothelial carcinoma heterogeneity within malignant NMIBC (BC2 vs BC3)<br/>
 <code>assessment02_BC1-BC6</code> - Urothelial heterogeneity within non-malignant NMIBC "papilloma" (BC1 vs BC6)<br/>
 <code>assessment03_BC4-BCN</code> - Urothelial transcriptomes between malignant MIBC and paracancerous "normal" from one patient (BC4 vs BCN)<br/>
-<code>assessment04_BC2-BC6</code> - Urothelial transcriptomes between non-malignant papilloma and malignant NMIBC (BC6 vs BC2)<br/>
+<code>assessment04_BC2-BC6</code> - Urothelial transcriptomes between non-malignant papilloma and malignant NMIBC (BC6 vs BC2)<br/><br/>
+If you are doing this workshop on RStudio on Windows (don't!), <a href="https://drive.google.com/drive/folders/1z010tOSzME7J6RSN0aw5HTdAcrSKXaZp?usp=drive_link">the assessment material can be downloaded here.</a><br/>
 </p>
 #### Sample metadata
 

@@ -599,7 +599,7 @@ prerank <- setNames(prerank$pi, prerank$genes)
 str(prerank)
 
 # load hallmarks gene set
-genesets = gmtPathways("h.all.v2024.1.Hs.symbols.gmt")
+genesets = gmtPathways("data/h.all.v2024.1.Hs.symbols.gmt")
 
 # run gsea
 fgseaRes <- fgsea(pathways = genesets, stats = prerank, minSize=15, maxSize=500)
@@ -692,7 +692,7 @@ prerank <- setNames(prerank$pi, prerank$genes)
 str(prerank)
 
 # try some of the other gene sets to improve your understanding of the differences
-genesets = gmtPathways("c2.cp.v2024.1.Hs.symbols.gmt")
+genesets = gmtPathways("data/c2.cp.v2024.1.Hs.symbols.gmt")
 fgseaRes <- fgsea(pathways = genesets, stats = prerank, minSize=15, maxSize=300, eps=0)
 
 # check top GSEA hits for each side of the volcano

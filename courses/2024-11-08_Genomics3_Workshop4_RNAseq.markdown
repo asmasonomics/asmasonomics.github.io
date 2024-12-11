@@ -217,7 +217,7 @@ library(tximport)
 t2g <- read.csv("../rnaseq_data/gencode.v44.pc_transcripts.t2g", sep="\t", header=TRUE)
 
 # create a list of abundance files
-files <- list.files(".","tsv$")
+files <- list.files(".","abundance.tsv$")
 
 # remove the abundance.tsv from the name to get the sample ID
 names(files) <- gsub("_abundance.tsv", "", files)

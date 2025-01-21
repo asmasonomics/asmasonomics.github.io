@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Bioinformatics group researching human and avian cancers at The University of York.
 #baseurl: "" # the subpath where you want the homepage to be, e.g. /blog
 url: "https://asmasonomics.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: asmasonomics
+bluesky_username: asmasonomics
 github_username:  asmasonomics
 
 # Build settings

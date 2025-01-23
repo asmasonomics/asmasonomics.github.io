@@ -8,19 +8,19 @@ permalink: /courses/BABS4_Biochem_DataWorkshop3_March2025
 <span style="font-size:1.6em;">**BABS4 - Data Workshop 3**</span><br/>
 
 <p align="justify">
-Welcome to Data Workshop 3! This is the first of two RNAseq workshops as part of the BABS4 (66I) "Gene expression and biochemical interactions strand". If you're from the future and are completing Workshop 4,  <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop4_March2024">please follow this link to the correct material</a>.<br/>
+Welcome to Data Workshop 3! This is the first of two RNAseq workshops as part of the BABS4 (66I) "Gene expression and biochemical interactions strand". If you're from the future and are completing Workshop 4,  <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop4_March2025">please follow this link to the correct material</a>.<br/>
 The material below will cover many of the R commands needed to fully analyse these data. If you're feeling a bit rusty, <a href="https://3mmarand.github.io/R4BABS/r4babs4/week-1/workshop.html">please consult Emma's material from the BABS4 core data workshop in week 1</a>.<br/>
 </p>
 
 ### Introduction
 <p align="justify">
-In this workshop you will work on publicly available RNAseq data from wildtype <i>Haemophilus influenzae</i>. Remember, this bacterium is naturally competent. During stress, gene networks which regulate competence should be activated to help with survival in difficult conditions.<br/>
-In their <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0217255">2020 paper, Black <i>et al.,</i></a> aimed to measure this competence response by switching happily proliferating <i>Haemophilus influenzae</i> in BHI medium, to a "starvation" medium called MIV. They took RNA at multiple time points and had cultures in triplicate to assess the deviation in response and enable statistical testing. We will focus initially on the control (<i>t</i>=0 minutes in MIV; kw20-MIV0) compared with <i>t</i>=30 minutes (kw20-MIV2).<br/>
+In this workshop you will work on publicly available RNAseq data from wildtype <i>Haemophilus influenzae</i>. This bacterium is naturally competent. During stress, gene networks which regulate competence should be activated to help with survival in difficult conditions. Remember, during this module you are interested in <b>HiGam</b> and whether it plays a role in a <b>non-canonical</b> competence response. In these two data analysis workshops you will study the <b>canonical</b> competence response - does HiGam have a role?<br/><br/>
+In their <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0217255">2020 paper, Black <i>et al.,</i></a> aimed to measure the canonical competence response by switching happily proliferating <i>Haemophilus influenzae</i> in BHI medium, to a "starvation" medium called MIV. They took RNA at multiple time points and had cultures in triplicate to assess the deviation in response and enable statistical testing. We will focus initially on the control (<i>t</i>=0 minutes in MIV; kw20-MIV0) compared with <i>t</i>=30 minutes (kw20-MIV2).<br/>
 </p>
 ![Hi experimental setup](/assets/images/2024-03-11_66I-DW3_Hi_exp_setup.png){:class="img-responsive"} <br/>
 <p align="justify">
 Hopefully this all sounds quite familiar! If not, after this morning, make time to watch the videos we've generated to support these two workshops. These are embedded below and on the VLE.<br/><br/>
-You can also download the introductory slides <a href="/assets/coursefiles/2024-03_66I/66I-DW3_introductory_slides.pdf" download>here as a PDF</a>.<br/>
+You can also download the introductory slides <a href="/assets/coursefiles/2025-03_66I_replacement_plots/66I-DW3_introductory_slides.pdf" download>here as a PDF</a>.<br/>
 </p>
 [Introduction to transcriptomics](#introduction-to-transcriptomics)<br/>
 [How has the data in this workshop been processed so far?](#data-processing-before-this-workshop)<br/>
@@ -80,7 +80,7 @@ library(ggrepel)
 
 #### Access the data
 <p align="justify">
-During workshop 3 you will need 3 <i>Haemophilus influenzae</i> datafiles. Download and add to your <code>raw_data</code> subdirectory. From here on, <i>Haemophilus influenzae</i> will be <b>abbreviated to Hi</b>.<br/><br/>
+During workshop 3 you will need 3 <i>Haemophilus influenzae</i> datafiles. From here on, <i>Haemophilus influenzae</i> will be <b>abbreviated to Hi</b>.<br/><br/>
 
 <a href="/assets/coursefiles/2024-03_66I/Hi_PRJNA293882_counts.tsv" download>Hi_PRJNA293882_counts.tsv</a>. These are the RNAseq data from Hi. The data includes 11 different conditions, each with three replicates (explained below). This is a tab separated file with sample names in the first row and feature IDs in the first column. The data are counts of the number of reads.<br/>
 kw20 is the wildtype strain. OD<sub>600</sub> is a measure of cell suspension density. Sxy is a transcription factor (encoded by <i>tfoX</i>) which regulates competence. The Sxy- strain is a null mutant strain where Sxy is non-functional. <br/><br/>
@@ -361,6 +361,7 @@ ggplot(pca_comps, aes(x=Comp.1, y=Comp.2)) +
      <li>The control samples are tightly grouped and well away from the rest. This suggests consistency in this group (good for stats), and that exposure to the starvation media <b>does</b> appear to have a measurable impact on the Hi transcriptome - good news!</li>
 	 <li>The t=10mins (MIV1) and t=30mins (MIV2) conditions are quite similar by this plot.</li>
 	 <li>The t=100mins (MIV3) samples are very variable. This may reflect differential responses of the cultures (which <i>should</i> be genetically identical...) but also noise in the data.</li>
+	 <li>The <i>Sxy</i> null mutants are interspersed with the other MIV treatments - one to remember for later...</li>
    </ol>
 </details>
 <br/>
@@ -392,7 +393,7 @@ ggsave("plots/tpm_pca.pdf")
 
 #### Differential expression analysis
 <p align="justify">
-We're now going to focus in on the main comparison for this workshop: the impact of the changed media after 30 mins (<i>i.e.</i> comparing <i>t</i>=30 against <i>t</i>=0; MIV2 vs MIV0).
+We're now going to focus in on the main comparison for this workshop: the impact of the changed media on wildtype Hi (strain kw20) after 30 mins (<i>i.e.</i> comparing <i>t</i>=30 against <i>t</i>=0; MIV2 vs MIV0).
 <br/>
 </p>
 
@@ -557,7 +558,7 @@ The volcano plot highlights the large number of very significant changes in the 
 
 #### Finishing up for today
 <p align="justify">
-Fantastic work! Lots of R coding and you've taken a big dataset, normalised it, extracted the columns you're biologically interested in, and performed differential expression analysis. Next session you'll be focused on what this actually means, relating this to genome location and how these genes may be regulated through regulons. Before that you need to make sure you've got everything saved so you don't need to do it again.<br/><br/>
+Fantastic work! Lots of R coding and you've taken a big dataset, normalised it, extracted the columns you're biologically interested in, and performed differential expression analysis. Next session you'll be focused on what this actually means, relating this to genome location and how these genes may be regulated. Before that you need to make sure you've got everything saved so you don't need to do it again.<br/><br/>
 Make sure you have saved the plots you want to save - particularly the PCA and volcano plots - and also the relevant datasets which you've modified.
 <br/>
 </p>

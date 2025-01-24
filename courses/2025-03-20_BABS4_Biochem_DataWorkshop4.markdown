@@ -17,10 +17,13 @@ Remember, during this module you are interested in <b>HiGam</b> and whether it p
 ### Introduction
 <p align="justify">
 In data workshop 3, you took a full RNAseq dataset from the <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0217255">Black <i>et al.</i> 2020 paper</a> and eventually created a volcano plot showing the impact on the <i>Haemophilus influenzae</i> (Hi) transcriptome after cultures were transferred to starvation conditions for 30 minutes. A lot had changed, but what did it actually mean? This workshop is all about getting you to consider <b>the biology</b> so you can see how linking in this "big data" analysis can help you contextualise and understand your wet lab practicals and (hopefully) give you a better understanding of why natural competence is important.<br/><br/>
-You can download the introductory slides <a href="/assets/coursefiles/2025-03_66I_replacement_plots/66I-DW4_introductory_slides.pdf" download>here as a PDF</a>.<br/><br/>
 Please do ask us <b>biological</b> questions in this workshop. You have all the coding skills to explore and graph these data - so discuss with us possible questions you could ask to extend your understanding. Consequently, if you're having issues with installations on your personal laptop, we will largely direct you to the <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop3_March2025#access-the-data">advice in the workshop 3 material</a> or to use a managed machine (or the virtual desktop service).<br/><br/>
-Remember, the data we are using comes from RNAseq read counts. There is a video explainer on what a sequencing read actually is. You can find this at the bottom of this page.<br/>
+You can download the introductory slides <a href="/assets/coursefiles/2025-03_66I_replacement_plots/66I-DW4_introductory_slides.pdf" download>here as a PDF</a>.
 </p>
+<br/>
+<object width="800" height="700" type="application/pdf" data="/assets/coursefiles/2025-03_66I_replacement_plots/66I-DW4_introductory_slides.pdf">
+</object>
+<br/>
 [Introduction to transcriptomics](#introduction-to-transcriptomics)<br/>
 [How has the data in this workshop been processed so far?](#data-processing-before-this-workshop)<br/>
 [What is a sequencing read?](#what-is-a-sequencing-read)

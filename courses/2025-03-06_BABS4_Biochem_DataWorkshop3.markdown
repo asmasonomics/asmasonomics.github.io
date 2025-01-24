@@ -20,8 +20,12 @@ In their <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.p
 ![Hi experimental setup](/assets/images/2024-03-11_66I-DW3_Hi_exp_setup.png){:class="img-responsive"} <br/>
 <p align="justify">
 Hopefully this all sounds quite familiar! If not, after this morning, make time to watch the videos we've generated to support these two workshops. These are embedded below and on the VLE.<br/><br/>
-You can also download the introductory slides <a href="/assets/coursefiles/2025-03_66I_replacement_plots/66I-DW3_introductory_slides.pdf" download>here as a PDF</a>.<br/>
+You can also download the introductory slides <a href="/assets/coursefiles/2025-03_66I_replacement_plots/66I-DW3_introductory_slides.pdf" download>here as a PDF</a>.
 </p>
+<br/>
+<object width="800" height="700" type="application/pdf" data="/assets/coursefiles/2025-03_66I_replacement_plots/66I-DW3_introductory_slides.pdf">
+</object>
+<br/>
 [Introduction to transcriptomics](#introduction-to-transcriptomics)<br/>
 [How has the data in this workshop been processed so far?](#data-processing-before-this-workshop)<br/>
 [What is a sequencing read?](#what-is-a-sequencing-read)
@@ -34,6 +38,13 @@ Start RStudio from the Start menu.<br/><br/>
 Make a new RStudio project. Put it in a sensible place with a sensible name. Remember that if you are using a university machine, select a location via the M/H drives, not just using the "Documents" shortcut. This <b>will</b> create problems for you!<br/><br/>
 Use the Files pane to make subdirectories for your <code>raw_data</code>, <code>proc_data</code> and <code>plots</code>. These names are suggestions only. Make a new script file, perhaps <code>babs4_rnaseq_workshop.R</code>, to complete your work.<br/><br/>
 Remember, you will eventually submit a <b>single</b> RStudio project which should represent the entire project over both workshops (3&4).<br/><br/>
+<b>IMPORTANT PLEASE READ</b><br/>
+Most errors you will come across today are one of two reasons:<br/>
+<ol>
+  <li><b>Typos!</b> It can be very hard to find a stray <code>,</code> - copy and paste code and use the <kbd>Tab</kbd> to autocomplete where you can.</li>
+  <li>Files not being where you expect - this is all about your current working directory and where files are relative to that. To check your working directory, run <code>getwd()</code> and then use the Files pane to work out where you are relative to the files you want.</li>
+</ol>
+<br/><br/>
 </p>
 
 #### Load your libraries
@@ -71,9 +82,12 @@ We need the following packages for this workshop:<br/>
 
 # load these libraries
 library(tidyverse)
-library(DESeq2)
 library(ggplot2)
 library(ggrepel)
+library(DESeq2)
+
+### if you need to install any of tidyverse, ggplot2 or ggrepel, use install.packages()
+### if you need to install DESeq2 first load library(BiocManager) then do BiocManager::install("DESeq2")
 
 ```
 <br/>
@@ -320,7 +334,7 @@ The correlation is pretty good for this gene (and it's usually quite good), thou
 #### Principal component analysis
 <p align="justify">
 Before we do our stat testing for differences between conditions, it is always a good idea to perform principal component analysis (PCA).<br/><br/>
-Our data is "high dimensional data", because we have lots more rows than we could plot simultaneously to describe the samples. We can just about interpret plots on 3 axes, but no further. PCA is a method for "dimension reduction". It works by looking at correlated variance across the samples in each row of data. In biology this is quite easy to rationalise. Genes work in pathways, or may be regulated by the same transcription factor, so you can imagine that these genes would go up and down in expression together (<i>i.e.</i> they are not each truly independent measures of the samples). This means you can reduce your data to a smaller number of "principal components" where correlated measurements are collapsed together. You can then plot the most informative principal components (<i>i.e.</i> those accounting for the most correlated variance in the data) to get a feel for how your samples group together (or not).<br/><br/>
+Our data is "high dimensional data", because we have lots more rows than we could plot simultaneously to describe the samples. We can just about interpret plots on 3 axes, but no further. PCA is a method for "dimension reduction". It works by looking at correlated variance across the samples in each row of data. In biology this is quite easy to rationalise. Genes work in pathways, or may be regulated by the same transcription factor, so you can imagine that these genes would go up and down in expression together (<i>i.e.</i> they are not each truly independent measures). This means you can reduce your data to a smaller number of "principal components" where correlated measurements are collapsed together. You can then plot the most informative principal components (<i>i.e.</i> those accounting for the most correlated variance in the data) to get a feel for how your samples group together (or not). These principal components would hopefully align with our biological interpretation, such as treatment group, mutation status, biological sex, differentiation status <i>etc. etc.</i> (although it's not always perfect, or clear what a principal component means...)<br/><br/>
 The important thing here is that differential expression (like with any stat test) is only able to detect significant changes if your data are not too noisy (<i>i.e.</i> high in variance). So if your samples do not group together nicely by PCA it may be informative for removing samples (outliers) or explain why some comparisons will not give significant differences.<br/><br/>
 Hopefully this becomes clearer with a plot.<br/>
 </p>
@@ -520,15 +534,8 @@ ggplot(dds_tpm, aes(x=log2FC, y=-log10(padj))) +
   theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
   geom_text_repel(size=3, data=subset(withsymbols, abs(log2FC) > 3), aes(x=log2FC, y=-log10(padj), label=symbol), max.overlaps = Inf)
 
-# make the volcano plot - you can personalise these forever, check out - https://github.com/kevinblighe/EnhancedVolcano
-# the cutoffs define the dotted line thresholds and default colours
-# the second line is all about the labels used 
-# the third line are some personal preferences on the plot layout - play with these!
-EnhancedVolcano(dds_tpm, x = "log2FC", y = "padj", FCcutoff = 1, pCutoff = 0.05,
-                lab = dds_tpm$symbol, selectLab = siggenes, labSize = 4.5, max.overlaps = 1000, drawConnectors = TRUE,
-                legendPosition = 0, gridlines.major = FALSE, gridlines.minor = FALSE)
-
-# there are a lot of big, significant changes in this dataset - play with the fold change threshold in the <code>geom_text_repel</code> line.
+# there are a lot of big, significant changes in this dataset
+# play with the fold change threshold in the geom_text_repel line to alter how many/which genes are labelled
 
 ```
 ![MIV0 MIV2 volcano](/assets/coursefiles/2025-03_66I_replacement_plots/03_dea_002.png){:class="img-responsive"}

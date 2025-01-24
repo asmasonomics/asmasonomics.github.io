@@ -63,18 +63,15 @@ gc <- read.table("raw_data/Hi_GC_1kb.bed", header=FALSE, col.names = c("chr", "s
 #### Check our understanding from data workshop 3
 <p align="justify">
 By the end of data workshop 3 you created a volcano plot highlighting the transcriptomic changes in Hi when grown in starvation conditions (MIV). Remember that the way we induce the Hi competence response in the lab is by starving the cells.<br/>
-Starving the cells obviously has a knock on impact - the cells are not just inducing the competence response, but are also turning on pathways needed to synthesise/process the metabolites they need which were previously coming from the rich media (BHI). One of the challenges is we want to know what is the competence response, and what is a general stress response. <br/>
+Starving the cells obviously has a knock on impact - the cells are not just inducing the competence response, but are also turning on pathways needed to synthesise/process the metabolites they need which were previously coming from the rich media (BHI). One of the challenges is we want to know what is the competence response, rather than a general stress response. <br/>
 </p>
 
 ```R 
 
 # let's regenerate your volcano plot from last time, just to check everything is working
+library(tidyverse)
 library(ggplot2)
 library(ggrepel)
-
-# define the list of significant genes to add as plot labels
-withsymbols <- dds_tpm[- grep("[.]", dds_tpm$symbol),]
-siggenes <- head(withsymbols |> arrange(desc(abs(log2FC))), 60)$symbol
 
 # generate the plot
 ggplot(dds_tpm, aes(x=log2FC, y=-log10(padj))) + 
@@ -88,8 +85,8 @@ ggplot(dds_tpm, aes(x=log2FC, y=-log10(padj))) +
 ![MIV0 MIV2 volcano](/assets/coursefiles/2025-03_66I_replacement_plots/03_dea_002.png){:class="img-responsive"}
 
 <p align="justify">
-As we explored last time, there are geners upregulated here related to competence (<i> e.g. comA</i>) and DNA binding and recognition (<i> e.g. dprA</i>), but there are also genes involved in tryptophan metabolism, purine metabolism and carbohydrate metabolism,  among others. Are these genes simply a starvation response?<br/><br/>
-We could test this (slowly) by looking up genes individually. Another (faster) way to do this is gene set enrichment analysis (GSEA). This is very similar to gene ontology (GO) analysis, but standard GO typically only considers unordered gene lists, rather than lists ranked by fold change as you could provide after RNAseq.<br/>
+As we explored last time, there are genes upregulated here related to competence (<i>e.g. comA</i>) and DNA binding and recognition (<i>e.g. dprA</i>), but there are also genes involved in tryptophan metabolism, purine metabolism and carbohydrate metabolism, among others. Are these genes simply a starvation response?<br/><br/>
+We could test this (slowly) by looking up genes individually. Another (faster) way to do this is gene set enrichment analysis (GSEA). This is very similar to gene ontology (GO) analysis, but standard GO typically only considers unordered gene lists, rather than lists ranked by fold change as you could provide after RNAseq.<br/><br/>
 GSEA is not part of today's workshop, but you could include it as an optional extra in your report - there are some pointers at the end of the workshop material. Today we will instead use some of the other tested conditions from the Black <i>et al</i> paper to further explore what is really happening in canonical competence. 
 <br/><br/>
 </p>
@@ -117,7 +114,7 @@ From our other available data (check back to the workshop 3 introduction and the
 | sxyx-MIV3 | Sxy- | MIV | 0.25 | 100 | -A,-B,-D |
 
 <p align="justify">
-We will now run DEA on the BHI3 (most dense) cells against the MIV0 control (not dense; same control as our original) to try and tease out the specific competence response. <b>Think about this</b> - is this a good comparison to make, is it the most informative from the data we have?<br/>
+We will now run DEA on the BHI3 (most dense) cells against the MIV0 control (not dense; same control as our original) to try and tease out the specific competence response. <b>Think about this</b> - is this a good comparison to make, is it the most informative from the data we have?<br/><br/>
 Regardless, let's jump in.<br/>
 </p>
 
@@ -161,8 +158,6 @@ ggplot(condcomp_pcacomps, aes(x=Comp.1, y=Comp.2)) +
 
 # PCA doesn't tell you everything - let's carry on and run DEA for these two conditions
 
-# install DESeq2 if you need to (skipping updates again)
-#BiocManager::install("DESeq2")
 library(DESeq2)
 
 # extract count subset
@@ -220,19 +215,18 @@ ggplot(MIV0BHI3_dds_results, aes(x=log2FC, y=-log10(padj))) +
 ![MIV0 vs BHI3 volcano](/assets/coursefiles/2025-03_66I_replacement_plots/04_dea_002.png){:class="img-responsive"}
 <p align="justify">
 Another volcano! But this time far fewer significantly different genes.<br/><br/>
-Those that are different, again highlight increases in carbohydrate and amino acid metabolism, but we don't see the competence or DNA recognition genes - perhaps this control has worked!<br/>
-Look at the downregulated genes - mu!<br/>
+Those that <i>are</i> different again highlight increases in carbohydrate and amino acid metabolism, but we don't see the competence or DNA recognition genes - perhaps this control has worked!<br/><br/>
+And look at the downregulated genes - mu!<br/><br/>
 <i>gam</i> doesn't come up at first glance, but muA, MuI and muL all do, and they're in the same operon. Interesting!<br/><br/>
-One thing to say here is that we are resolutely ignoring some genes with the biggest changes, both in last week's work and here. We are only looking at stuff with symbols, but we could be ignoring some interesting biology. These could be quite well studied genes, but they just haven't been named properly in Hi yet...  Let's flip our focus for a minute.<br/>
+One thing to say here is that we are resolutely ignoring some genes with the biggest changes (the points towards the top of the volcano plot), both in last week's work and here. We are only looking at genes with actual names, but we could be ignoring some interesting biology in these presumably poorly characterised features. These could be quite well studied genes, but they just haven't been named properly in Hi yet...  Let's flip our focus for a minute.<br/>
 </p>
 
 ```R 
 
 # focus only on genes without a symbol, using the HI identifiers in the row names
 MIV0BHI3_withoutsymbols <- MIV0BHI3_dds_results[grep("[.]", MIV0BHI3_dds_results$symbol),]
-MIV0BHI3_withoutsymbols_sig <- rownames(head(MIV0BHI3_withoutsymbols |> arrange(desc(abs(log2FC))), 10))
 
-# plot the volcano if you like, make sure to change the lab and selectLab flags (think rownames again...)
+# plot the volcano if you like, make sure to change the subset() line in geom_text_repel
 # or just view the MIV0BHI3_withoutsymbols_sig dataframe
 # HI_1456 and HI_1457 have massive changes!
 
@@ -246,7 +240,7 @@ What I have also made available to you is the nucleotide sequence of each featur
 
 #### Can we extract a competence-specific response?
 <p align="justify">
-Quick reminder of what we're attempting to do. In workshop 3, we looked at the induced competence response in Hi using starvation medium. But. This also gave a starvation response. Today, we've compared the same control samples to cells growing in greater density, so the cells may be starting to face nutrient limits, without it causing so much stress you get the full stress (starvation + competence) response we had before. <br/>
+Quick reminder of what we're attempting to do here. In workshop 3, we looked at the induced competence response in Hi using starvation medium. But. This also gave a starvation response. Today, we've compared the same control samples to cells growing in greater density, so the cells may be starting to face nutrient limits, without it causing so much stress you get the full stress (starvation + competence) response we had before. <br/>
 Now we have both these comparisons, we can attempt to subtract the nutrient limit response to leave just genes involved in competence.<br/>
 </p>
 
@@ -279,81 +273,17 @@ ggplot(dea_comp, aes(x=MIV0BHI3_log2FC, y=MIV0MIV2_log2FC)) +
 <p align="justify">
 We have now compared the log2FC changes in two separate differential expression analyses.<br/><br/>
 If the transcriptomic changes were identical in both conditions, all genes would fall on the indicated y=x line. Changes which are specific to each DEA fall directly on their respective axes - y axis for MIV0 vs MIV2 and x axis for MIV0 vs BHI3. Genes near the origin do not change (much) in either comparison. There are more changes (and of greater magnitude) for the MIV0 vs MIV2, so the plot is not square - always check the axis scale.<br/><br/>
-I've chosen to highlight those genes which would not be considered as significantly different in the BHI3 comparison, but are in the MIV2 (<i>i.e.</i> genes close to the y axis). Here we see the competence genes like <i>dprA</i> and <i>comA</i>, and the competence transcription factor <i>tfoX</i>. Mess about with these thresholds and see where the carbohydrate biosynthesis genes have gone (hint - much closer to x=y).<br/><br/>
+I've highlighted genes which are not significantly different in the BHI3 comparison, but are significantly different in the MIV2 comparison (<i>i.e.</i> genes close to the y axis). Here we see the competence genes like <i>dprA</i> and <i>comA</i>, and the competence transcription factor <i>tfoX</i>. Mess about with these thresholds and see where the carbohydrate biosynthesis genes have gone (hint - much closer to x=y).<br/><br/>
 So now we have a much reduced and more specific-to-competence list of genes. We still have the <i>pur</i> and <i>trp</i> genes - does that mean they have a more specific role in competence, rather than these nutrients being absent from the media? I recommend contextualising your results with the literature (cough, mark scheme, cough) to see whether these genes make a lot of sense. <br/>
-Also, would a similar comparison with any of the other datasets be equally/more informative on the competence response?<br/><br/>
-Note. You don't have to have a shared control condition (like MIV0 in our case) in order to compare. It <b>is</b> useful, as having a shared condition means you have a definite (rather than potentially assumed) shared baseline. Something to mention/highlight/control for.<br/><br/>
-</p>
-
-#### Full-genome summary visualisation with Circos plots
-<p align="justify">
-Now we have lots of information on which genes are changing we can try and summarise this data at the full genome level using a circos plot. This plots the Hi genome as a circle and then we can layer tracks on and around this circle to show the distribution of genes or particular features (<i>e.g.</i> regions or GC content). <br/><br/>
-Circos plots can get massive, complex and strange very quickly (<a href="https://circos.ca/">check out some examples here</a>), often becoming too complex to actually be useful. But, they are used a lot in biological data visualisation, so we'd like you to have a go. Hopefully it will also help you to link with the PHASTER results from data workshop 2.<br/><br/>
-A big problem I've faced when designing this material is that many circos plotting libraries have thousands of dependencies. We are therefore keeping it simple, so the plots you make are definitely customisable - but we're not expecting some of the incredibly complex images we can see on the front covers of scientific journals!
-<br/>
-</p>
-
-```R 
-
-# install and load the BioCircos library
-# the vignette and further information are here - https://cran.r-project.org/web/packages/BioCircos/vignettes/BioCircos.html
-install.packages('BioCircos')
-library(BioCircos)
-
-# we will now create a list of tracks, each time adding more information
-# then we visualise it all in one go
-
-# set the plot title in the middle of the circle (you may want to mess with x and y until you are happy)
-tracklist <- BioCircosTextTrack("titletrack", "Hi kw20", opacity = 0.5, x = -0.2, y = 0)
-
-# define an arc region to indicate where the mu prophage region lies
-tracklist <- tracklist + BioCircosArcTrack("prophage region", "L42023.1", 1558774, 1597183, 
-                                           opacities = c(1), minRadius = 1.25, maxRadius = 1.4,
-                                           labels = c("mu prophage"))
-
-# use the Hi GC content file (new raw data for this workshop) to create a GC content plot
-tracklist <- tracklist + BioCircosLineTrack("GC", "L42023.1", gc$start, gc$GC, 
-                                            minRadius = 0.4, maxRadius = 0.68, color = "black",
-                                            labels = c("GC content"))
-
-# we will now merge our MIV0 vs MIV2 (data workshop 3) DEA results with the feature locations, retaining useful columns
-# this means we will be able to view our log2FC values as a genome-distributed heatmaps
-dea <- merge(dds_tpm, featlocs, by=0)
-rownames(dea) <- dea$Row.names
-dea <- dea[,c("symbol", "log2FC", "chr", "start", "end", "strand")]
-
-# use this to create a new heatmap track
-# the colors form a red to blue gradient (from high pos to low neg log2FC)
-# pick colours you like!
-tracklist <- tracklist + BioCircosHeatmapTrack("DEA", "L42023.1", 
-                                               dea$start, dea$end, dea$log2FC,
-                                               minRadius = 0.8, maxRadius = 0.95,
-                                               color = c("#FF0000", "#0000FF"),
-                                               labels = c("MIV0vsMIV2 DEA"))
-
-# I'm only showing one heatmap track here - this could be another good way to highlight regions of the genome 
-# which are up or down in different condition comparisons...
-
-# finally, render the circos plot
-BioCircos(tracklist, genome = list("L42023.1" = 1830138), genomeLabelTextSize = 0,
-          genomeTicksScale = 1e5, genomeTicksTextSize = 12)
-
-# remember to save
-ggsave("plots/circos.pdf")
-
-```
-![circos](/assets/coursefiles/2024-03_66I/plots/04_circos_001.png){:class="img-responsive"}
-<p align="justify">
-As so many genes were upregulated in the MIV2 condition relative to MIV0, the heatmap looks pretty warm. If you add another heatmap track with today's BHI3 vs MIV0 comparison, you should start to see those regions which are consistently up between conditions (<i>i.e.</i> carbohydrate metabolism) and those which are up only in the competence-inducing conditions (<i>i.e. comA, dprA</i>). Nice to have the GC plot too to get some genome-level descriptions. GC content always fluctuates, but the mean values are often quite species-specific. Interesting that the prophage region has a higher than Hi-average content - pretty good supporting evidence for this actually being a phage integration, rather than convergent evolution. You can include gene density or TF binding site density as line tracks in this way too.<br/><br/>
-The <code>BioCircos</code> functionality is pretty limited, so you might want to label a few genes manually on top of your generated figure. Similarly, it would be good to add a little scale bar to the GC content track - you can extract the min and max values from the <code>gc</code> dataframe.<br/>
-Sometimes coding a figure to exactly how we want it is very very hard, and not worth the effort when you can add labels manually. Always consider how much time you sink into a task (often compared with how many times you are likely to do that task).<br/><br/>
-We can label up specific regions on a circos plot very easily, such as the prophage region. Think about how you might link figures from different parts of the practicals and data workshops. Remember, you don't <i>have</i> to report your results in the order you did them - think about the narrative. In this case the given order is pretty sensible - but always think about your structure for maximum clarity.<br/><br/><br/>
-Now we've started to consider the spatial organisation of genes in the Hi genome, and we're looking at the prophage region again, we can ask whether the RNAseq data directly informs your outstanding diagnostic PCR questions.<br/><br/>
+Also, would a similar comparison with any of the other datasets be equally/more informative on the competence response? That would be a good way to extend the workshop material...<br/><br/>
+Note. You don't have to have a shared control condition (like MIV0 in our case) in order to compare. It <b>is</b> useful, as having a shared condition means you have a definite (rather than potentially assumed) shared baseline. Something to mention/highlight/control for.<br/><br/><br/>
+<b>Remember</b>, the overarching question from the module is whether Hi has a functional <i>gam</i> homologue (HiGam), and, if so, deduce if HiGam has a role in a non-canonical (<i>i.e.</i> "not the usual") competence response.<br/> 
+In these two data workshops we have studied the canonical Hi competence response. Think about how you can use the analysis you've done to address the module question in your final report.<br/> 
 </p>
 
 #### Can the sequencing data show us if muA, muB and gam are transcribed together?
 <p align="justify">
-An outstanding question from your diagnostic PCR practical is whether muA, muB and gam are explicitly transcribed together. Our short read sequencing data has the potential to answer this question by looking to see if these genes (and other in the mu prophage region) are more closely correlated with each other than with distant genes. Let's look.<br/>
+An outstanding question from your diagnostic PCR practical is whether muA, muB and gam are explicitly transcribed together. Our short read sequencing data has the potential to answer this question by looking to see if these genes (and others in the mu prophage region) are more closely correlated with each other than with distant genes. Let's look.<br/>
 </p>
 
 ```R 
@@ -413,11 +343,94 @@ With short read sequencing, the reads themselves are too short to cover the span
 <br/>
 </p>
 
+#### Full-genome summary visualisation with Circos plots
+<p align="justify">
+Now we have lots of information on which genes are changing in the canonical competence response, we can try and summarise this data at the full genome level using a circos plot. This plots the Hi genome as a circle and then we can layer tracks on and around this circle to show the distribution of genes or particular features (<i>e.g.</i> regions or GC content). <br/><br/>
+Circos plots can get massive, complex and strange very quickly (<a href="https://circos.ca/">check out some examples here</a>), often becoming too complex to actually be useful. But, they are used a lot in biological data visualisation, so we'd like you to have a go. Hopefully it will also help you to link with the PHASTER results from data workshop 2.<br/><br/>
+A big problem I've faced when designing this material is that many circos plotting libraries have thousands of dependencies. We are therefore keeping it simple, so the plots you make are definitely customisable - but we're not expecting some of the incredibly complex images we can see on the front covers of scientific journals!
+<br/>
+</p>
+
+```R 
+
+# install and load the BioCircos library
+# the vignette and further information are here - https://cran.r-project.org/web/packages/BioCircos/vignettes/BioCircos.html
+#install.packages('BioCircos')
+library(BioCircos)
+
+# we will now create a list of tracks, each time adding more information
+# then we visualise it all in one go
+
+# set the plot title in the middle of the circle (you may want to mess with x and y until you are happy)
+tracklist <- BioCircosTextTrack("titletrack", "Hi kw20", opacity = 0.5, x = -0.2, y = 0)
+
+# define an arc region to indicate where the mu prophage region lies
+tracklist <- tracklist + BioCircosArcTrack("prophage region", "L42023.1", 1558774, 1597183, 
+                                           opacities = c(1), minRadius = 1.25, maxRadius = 1.4,
+                                           labels = c("mu prophage"))
+
+# use the Hi GC content file (new raw data for this workshop) to create a GC content plot
+tracklist <- tracklist + BioCircosLineTrack("GC", "L42023.1", gc$start, gc$GC, 
+                                            minRadius = 0.4, maxRadius = 0.68, color = "black",
+                                            labels = c("GC content"))
+											
+# line tracks can be a good way to add other trend values - the gam correlations, for example
+
+# we will now merge our MIV0 vs MIV2 (data workshop 3) DEA results with the feature locations, retaining useful columns
+# this means we will be able to view our log2FC values as a genome-distributed heatmaps
+dea <- merge(dds_tpm, featlocs, by=0)
+rownames(dea) <- dea$Row.names
+dea <- dea[,c("symbol", "log2FC", "chr", "start", "end", "strand")]
+
+# use this to create a new heatmap track
+# the colors form a red to blue gradient (from high pos to low neg log2FC)
+# pick colours you like!
+tracklist <- tracklist + BioCircosHeatmapTrack("DEA", "L42023.1", 
+                                               dea$start, dea$end, dea$log2FC,
+                                               minRadius = 0.8, maxRadius = 0.95,
+                                               color = c("#FF0000", "#0000FF"),
+                                               labels = c("MIV0vsMIV2 DEA"))
+
+# I'm only showing one heatmap track here - this could be another good way to highlight regions of the genome 
+# which are up or down in different condition comparisons...
+
+# finally, render the circos plot
+BioCircos(tracklist, genome = list("L42023.1" = 1830138), genomeLabelTextSize = 0,
+          genomeTicksScale = 1e5, genomeTicksTextSize = 12)
+
+# remember to save
+ggsave("plots/circos.pdf")
+
+```
+![circos](/assets/coursefiles/2024-03_66I/plots/04_circos_001.png){:class="img-responsive"}
+<p align="justify">
+As so many genes were upregulated in the MIV2 condition relative to MIV0, the heatmap looks pretty warm. If you add another heatmap track with today's BHI3 vs MIV0 comparison, you should start to see those regions which are consistently up between conditions (<i>i.e.</i> carbohydrate metabolism) and those which are up only in the competence-inducing conditions (<i>i.e. comA, dprA</i>). Nice to have the GC plot too to get some genome-level descriptions. GC content always fluctuates, but the mean values are often quite species-specific. Interesting that the prophage region has a higher than Hi-average content - pretty good supporting evidence for this actually being a phage integration, rather than convergent evolution. You can include gene density or TF binding site density as line tracks in this way too.<br/><br/>
+The <code>BioCircos</code> functionality is pretty limited, so you might want to label a few genes manually on top of your generated figure. Similarly, it would be good to add a little scale bar to the GC content track - you can extract the min and max values from the <code>gc</code> dataframe.<br/>
+Sometimes coding a figure to exactly how we want it is very very hard, and not worth the effort when you can add labels manually. Always consider how much time you sink into a task (often compared with how many times you are likely to do that task).<br/><br/>
+We can label up specific regions on a circos plot very easily, such as the prophage region. Think about how you might link figures from different parts of the practicals and data workshops. Remember, you don't <i>have</i> to report your results in the order you did them - think about the narrative. In this case the given order is pretty sensible - but always think about your structure for maximum clarity.<br/><br/><br/>
+Now we've started to consider the spatial organisation of genes in the Hi genome, and we're looking at the prophage region again, we can ask whether the RNAseq data directly informs your outstanding diagnostic PCR questions.<br/><br/>
+</p>
+
 #### Finishing up for today
 <p align="justify">
-The aim of today was to reinforce and expand on data workshop 3, and start to properly integrate the biological interpretation of the data. Well done! Your coding skills have now taken you from a single dataframe of counts to multi-condition comparisons, gene set enrichment analysis and integration with the literature. This is a real expansion of your coding skills and an opportunity to have worked with big data.<br/><br/>
+The aim of today was to reinforce and expand on data workshop 3, and start to properly integrate the biological interpretation of the data. Well done! Your coding skills have now taken you from a single dataframe of counts to multi-condition comparisons and integration with the literature. This is a real expansion of your coding skills and an opportunity to have worked with big data.<br/><br/>
 Before you finish today, make sure you understand <b>why</b> you have been doing this analysis - chat with the demonstrators - does it all link together in your head, particularly for making a single narrative with your wet lab work? Also: save, save, save and make lots of comments on your code!<br/><br/>
 </p>
+
+```R
+
+# use write.table() for your main dataframes
+
+# good idea to save your image as well
+save.image("BABS4_workshop4_complete.RData")
+
+```
+<br/>
+<p align="justify">
+<b>GREAT WORK!</b> I'm looking forward to seeing your reports!
+<br/>
+</p>
+<br/><br/><br/>
 
 #### Expansions to the project
 <p align="justify">
@@ -437,7 +450,6 @@ The first time we ran this workshop we did some GSEA, but we found most of the c
 
 ```R 
 
-# install BiocManager if you need to, otherwise just load it
 # install.packages("BiocManager")
 library(BiocManager)
 

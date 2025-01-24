@@ -44,7 +44,7 @@ Most errors you will come across today are one of two reasons:<br/>
   <li><b>Typos!</b> It can be very hard to find a stray <code>,</code> - copy and paste code and use the <kbd>Tab</kbd> to autocomplete where you can.</li>
   <li>Files not being where you expect - this is all about your current working directory and where files are relative to that. To check your working directory, run <code>getwd()</code> and then use the Files pane to work out where you are relative to the files you want.</li>
 </ol>
-<br/><br/>
+<br/>
 </p>
 
 #### Load your libraries

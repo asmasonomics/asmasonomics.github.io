@@ -186,7 +186,7 @@ head(featname)
 
 # OK, so we get some symbols - maybe we can look for the muA, muB and gam genes we have been working on?
 # use grep (pattern matcher) to check the symbol column for the three genes
-rownames(featlocs[grep("muA|muB|gam", featname$symbol),])
+rownames(featname[grep("muA|muB|gam", featname$symbol),])
 
 # Success!
 # those IDs suggest the features are quite close together. Let's use the location data to check.

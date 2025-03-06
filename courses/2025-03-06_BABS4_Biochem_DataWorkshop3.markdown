@@ -186,14 +186,14 @@ head(featname)
 
 # OK, so we get some symbols - maybe we can look for the muA, muB and gam genes we have been working on?
 # use grep (pattern matcher) to check the symbol column for the three genes
-featname[grep("muA|muB|gam", rownames(featlocs)),]
+rownames(featlocs[grep("muA|muB|gam", featname$symbol),])
 
 # Success!
 # those IDs suggest the features are quite close together. Let's use the location data to check.
 # use the same pattern match as before, but extract the IDs and use them as a search term in the location data
 mu_feats <- rownames(featname[grep("muA|muB|gam", featname$symbol),])
 mu_feats_grep <- paste(mu_feats, collapse = "|")
-featlocs[grep(mu_feats_grep, featlocs$feat_ID),]
+featlocs[grep(mu_feats_grep, rownames(featlocs)),]
 
 # Yes - very close together
 # in the BLAST/PHASTER workshop we were trying to annotate the prophage region annotated by PHASTER - we can use the location data now to speed this up

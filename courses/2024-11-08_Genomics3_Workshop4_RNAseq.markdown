@@ -3,7 +3,7 @@ layout: page
 permalink: /courses/Genomics3_Workshop4_RNAseq_Nov2024
 ---
 
-![Genomics3 banner](/assets/images/genomics_banner.jpeg){:class="img-responsive"}
+![Genomics3 banner](/assets/coursefiles/2023_Genomics/genomics_banner.jpeg){:class="img-responsive"}
 
 <span style="font-size:1.6em;">**Genomics 3 - Workshop 4: RNAseq**</span><br/>
 
@@ -19,7 +19,7 @@ Bladder cancer is the 10th most common global cancer and is one of the most expe
 There is therefore an unmet need to understand how bladder cancers start, and what can be done to prevent them. The long-standing risk factor for bladder cancer is smoking, but mutational signatures (see lecture 7 if you're unsure what these are) showed that the classic mutational profile of smoking seen in lung cancer is <b>not</b> present in bladder cancer. Instead, there are signatures of APOBEC mutagenesis - a family of enzymes which defend against viruses. These signatures are very prevalent in HPV-driven cervical cancers. However, there is no obvious viral cause for bladder cancer, and viral genomes are not found within bladder cancer genomes (as they are with HPV positive cervical cancer).<br/>
 </p>
 <br/>
-![Bladder cancer mutational signature showing APOBEC mutations, but no smoking signature - SBS4](/assets/images/BLCA_SBS_mutational_signature.png){:class="img-responsive"}
+![Bladder cancer mutational signature showing APOBEC mutations, but no smoking signature - SBS4](/assets/coursefiles/2023_Genomics/BLCA_SBS_mutational_signature.png){:class="img-responsive"}
 <br/><span style="font-size:0.8em;">*Deconvolution of mutational signatures. Top left plot shows the original proportion of single base substitutions in the sample. The right hand side shows the deconvolution into separate SBS derivations and their relevant proportions, and as proof the bottom left plot shows the reconstruction of the signature using the deconvoluted plots.*</span><br/>
 
 <p align="justify">

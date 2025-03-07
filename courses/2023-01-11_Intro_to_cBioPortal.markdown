@@ -3,7 +3,7 @@ layout: page
 permalink: /courses/Intro_cBioPortal_Jan2023
 ---
 <span style="font-size:1.6em;">**Introduction to cBioPortal**</span><br/>
-![cBioPortal and Elixir logos](/assets/images/cBioPortal_Elixir.jpg){:class="img-responsive"}
+![cBioPortal and Elixir logos](/assets/coursefiles/2024-03-21_cBioPortal/cBioPortal_Elixir.jpg){:class="img-responsive"}
 <br/>
 <p align="justify"><a href="https://www.cbioportal.org/">cBioPortal</a> is a publicly available online resource for cancer genomics, with omics and clinical data available for many cancer types. In this 1 hour session we will introduce cBioPortal - what's there, how to use it, and what you can learn from it. We will then have some led problem solving activities to get to grips with the website, and finish with tips and advice for how you can use the data, and how student projects could make use of it.<br/></p>
 Full session slide deck available to download as either a <a href="/assets/files/2023-01-11_cBioPortal_slides.pdf" download>PDF</a> or <a href="/assets/files/2023-01-11_cBioPortal_slides.pptx" download> powerpoint presentation</a> here.

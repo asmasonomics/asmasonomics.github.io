@@ -3,7 +3,7 @@ layout: page
 permalink: /courses/BABS4_Biochem_DataWorkshop3_March2024
 ---
 
-![BABS4 banner](/assets/images/babs4_banner.jpg){:class="img-responsive"}
+![BABS4 banner](/assets/coursefiles/2024-03_66I/babs4_banner.jpg){:class="img-responsive"}
 
 <span style="font-size:1.6em;">**BABS4 - Data Workshop 3**</span><br/>
 
@@ -17,7 +17,7 @@ The material below will cover many of the R commands needed to fully analyse the
 In this workshop you will work on publicly available RNAseq data from wildtype <i>Haemophilus influenzae</i>. Remember, this bacterium is naturally competent. During stress, gene networks which regulate competence should be activated to help with survival in difficult conditions.<br/>
 In their <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0217255">2020 paper, Black <i>et al.,</i></a> aimed to measure this competence response by switching happily proliferating <i>Haemophilus influenzae</i> in BHI medium, to a "starvation" medium called MIV. They took RNA at multiple time points and had cultures in triplicate to assess the deviation in response and enable statistical testing. We will focus initially on the control (<i>t</i>=0 minutes in MIV; kw20-MIV0) compared with <i>t</i>=30 minutes (kw20-MIV2).<br/>
 </p>
-![Hi experimental setup](/assets/images/2024-03-11_66I-DW3_Hi_exp_setup.png){:class="img-responsive"} <br/>
+![Hi experimental setup](/assets/coursefiles/2024-03_66I/2024-03-11_66I-DW3_Hi_exp_setup.png){:class="img-responsive"} <br/>
 <p align="justify">
 Hopefully this all sounds quite familiar! If not, after this morning, make time to watch the videos we've generated to support these two workshops. These are embedded below and on the VLE.<br/><br/>
 You can also download the introductory slides <a href="/assets/coursefiles/2024-03_66I/66I-DW3_introductory_slides.pdf" download>here as a PDF</a>.<br/>

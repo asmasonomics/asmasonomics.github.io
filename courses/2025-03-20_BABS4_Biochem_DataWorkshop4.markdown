@@ -3,7 +3,7 @@ layout: page
 permalink: /courses/BABS4_Biochem_DataWorkshop4_March2025
 ---
 
-![BABS4 banner](/assets/images/babs4_banner.jpg){:class="img-responsive"}
+![BABS4 banner](/assets/coursefiles/2024-03_66I/babs4_banner.jpg){:class="img-responsive"}
 
 <span style="font-size:1.6em;">**BABS4 - Data Workshop 4**</span><br/>
 

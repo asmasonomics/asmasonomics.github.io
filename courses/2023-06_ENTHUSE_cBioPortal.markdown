@@ -40,7 +40,7 @@ Take your time and explore the website and data - you could spend days on this w
 <p align="justify">
 Open up any web browser and head to <a href="https://www.cbioportal.org/">www.cbioportal.org</a><br/><br/>
 The home screen (pictured below) gives immediate access to results from sequencing data generated from thousands of cancer samples from all over the world. Scroll down the list. Each study represents potentially years of work from doctors, surgeons and nurses in hospitals to recruit patients, work with families and collect samples, and then from biomedical researchers in universities to process the samples, then generate, analyse, interpret and publish the results.<br/></p>
-![cBioPortal homepage www.cbioportal.org](/assets/images/ENTHUSE-01_cBioPortal_home.jpg){:class="img-responsive"}
+![cBioPortal homepage www.cbioportal.org](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-01_cBioPortal_home.jpg){:class="img-responsive"}
 <br/>
 **EXPLAINER** [What is cBioPortal and where does the data come from?](#cbioportal-explained)<br/>
 **EXPLAINER** [What is sequencing?](#sequencing-explained)<br/>
@@ -59,7 +59,7 @@ Click the Quick select link for <b>TCGA PanCancer Atlas Studies</b>. You have ju
 <p align="justify">
 Lots of colours! Don't panic. An OncoPrint is a big summary of mutation data - is there a mutation in a particular sample, and what type of mutation is it? In an OncoPrint each column represents a single sample. You have loads of samples, so everything is very squished.<br/>
 You can largely ignore the three "Profiled for..." rows - these just indicate which sequencing technologies were used on those samples. For example, you'll see a large number of glioblastoma samples were only profiled for copy number changes, not mutations or structural changes.<br/></p>
-![TP53 OncoPrint from TCGA PanCancer Atlas](/assets/images/ENTHUSE-02_TP53_OncoPrint.jpg){:class="img-responsive"}
+![TP53 OncoPrint from TCGA PanCancer Atlas](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-02_TP53_OncoPrint.jpg){:class="img-responsive"}
 <br/>
 <p align="justify">
 Use the zoom slider to go to 1%, then you can see the whole cohort, and see that <i>TP53</i> is mutated in 36% of the queried samples. Some patients have multiple samples, hence the disparity in patient/sample numbers (top right).<br/>
@@ -75,14 +75,14 @@ With <i>TP53</i>, <b>nonsense</b> mutations are important (where cancers break t
 Click on the <b>Mutations</b> tab above the plot. This will take you to a "Lollipop plot" for all mutations in <i>TP53</i> across TCGA. Lollipop plots where in the protein mutations occur (x axis) and how common they are (y axis - tallest lollipop sticks are most common).<br/>
 You will see that mutations at R273 are the most common across the cohort. In green, red and blue blocks the plot shows the functional domains of P53 - the parts of the protein which perform its function. Just at a glance you'll see that there are more mutations towards the right hand side of the red domain and far fewer after the blue domain.<br/>
 </p>
-![TP53 Lollipop from TCGA PanCancer Atlas](/assets/images/ENTHUSE-03_TP53_Lollipop.jpg){:class="img-responsive"}
+![TP53 Lollipop from TCGA PanCancer Atlas](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-03_TP53_Lollipop.jpg){:class="img-responsive"}
 <br/>
 <p align="justify">
 Mutations happen all over <i>TP53</i>, but there are some patterns which allow us to understand the biology of what P53 is doing in tumours. Dark green points represent missense mutations, where the amino acid is changing. Black points are nonsense mutations, where the rest of the protein after the mutation is truncated (creates an early stop codon).<br/>
 Use the Missense, Trucating, Inframe <i>etc.</i> table to the right of the plot to select only Driver mutations (hover your mouse to the right of 4213 and the word 'ONLY' will appear), then select only truncating mutations. What is the distribution of these mutations? Why are truncating mutations much less common at the end of the protein (after the blue domain)?<br/>
 Remove that filter and do the same for Missense mutations - what are the major differences here?<br/>
 </p>
-![TP53 Lollipop from TCGA PanCancer Atlas](/assets/images/ENTHUSE-04_TP53_Lollipop_Missense.jpg){:class="img-responsive"}
+![TP53 Lollipop from TCGA PanCancer Atlas](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-04_TP53_Lollipop_Missense.jpg){:class="img-responsive"}
 <br/>
 <p align="justify">
 The red domain is where P53 binds to DNA. The blue domain is where P53 binds to other P53 proteins (working as a team). Missense mutations occur almost exclusively in these domains, impacting how P53 does its job. Nonsense/truncating mutations can happen pretty much anywhere, as long as they disrupt the function - that's why there are fewer after the blue domain, where a mutation is less likely to impact how the protein can function.<br/>
@@ -97,7 +97,7 @@ Click on the <b>Comparison/Survival</b> tab and then the small <b>Survival</b> t
 The x axis here goes to 30 years, but often cancer survival statistics are measured at 5 or 10 years. Try using the slider to see how survival rates change over time.<br/><br/>
 cBioPortal helpfully gives us some warnings (blue and yellow boxes). Any statistical test has assumptions and confounding variables - features which could explain differences in the data which we are not being shown here. Before scrolling past the screenshot below (where <i>some</i> answers are), write down 4 confounding variables which could influence how we interpret this graph. Think about how those variables could influence your conclusions.<br/>
 </p>
-![TP53 survival from TCGA PanCancer Atlas](/assets/images/ENTHUSE-05_TP53_Survival.jpg){:class="img-responsive"}
+![TP53 survival from TCGA PanCancer Atlas](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-05_TP53_Survival.jpg){:class="img-responsive"}
 <br/><br/>
 You could have come up with some of the following ideas for confounding factors:
 - Different responses in different cancers
@@ -120,7 +120,7 @@ Biology gives <b>noisy</b> data (unlike physics and chemistry) because there is 
 As we identified above, cancer type is a likely confounder in our understanding of <i>TP53</i> mutations. <i>TP53</i> is the most commonly mutated gene in cancer generally, but do you think it's mutated in all cancer types equally?<br/><br/>
 Click on the <b>Cancer Types Summary</b> tab. As you can see the proportion of tumours with <i>TP53</i> mutations does vary a lot. In the plot, green is any kind of single nucleotide mutation, and the other colours represent copy number changes changes such as deletions.<br/>Have a play with the y-axis value (does <b>Counts</b> change your interpretation? Is frequency or count more informative?), and changing from Cancer Study to Cancer Type to Cancer Type Detailed. What patterns can you see?<br/>
 </p>
-![TP53 cancer type split from TCGA PanCancer Atlas](/assets/images/ENTHUSE-06_TP53_CancerTypes.jpg){:class="img-responsive"}
+![TP53 cancer type split from TCGA PanCancer Atlas](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-06_TP53_CancerTypes.jpg){:class="img-responsive"}
 <br/><br/>
 <p align="justify">
 In general terms, <b>solid</b> cancers (rather than blood cancers) with a high mutational burden tend to have <i>TP53</i> mutations - see the lung, esophageal, colorectal and bladder datasets, compared to Acute Myeloid Leukaemia or B cell lymphoma. As this is biology, there are some that bend this observation - particularly the two types of kidney cancer found in TCGA. Often, general observations hide features which are cancer-specific (and even specific to subtypes within those cancers).<br/><br/>
@@ -161,7 +161,7 @@ We are now going to explore mutations in <i>TP53</i> and other genes in three ca
 Start to think about why that might be. P53 regulates cell proliferation and cell death. Tumours need to escape P53 activity. But is mutating P53 the only way for a tumour to do this? And is regulating proliferation and cell death the only way for a tumour to form? Clearly not, because not every tumour has a <i>TP53</i> mutation, and tumours have a large number of ways to evade detection and eradication in the body.<br/><br/>
 In his epic (third) review of the <i>Hallmarks of Cancer</i> published in 2022 (<a href="/assets/files/2023-06_ENTHUSE_Hallmarks_Hanahan2022.pdf" download>download the PDF here</a>), Professor Douglas Hanahan outlines the different physiological features a cancer must overcome (image below). These are all areas where cancers can effect change on the body in order to survive. Remember, a cancer is under the pressures of evolution in just the same way as an infectious virus, a herd of giraffes, or us - just on a different scale.<br/>
 </p>
-![Hanahan hallmarks 2022](/assets/images/ENTHUSE-12_2022_Hallmarks_of_Cancer.jpg){:class="img-responsive"}
+![Hanahan hallmarks 2022](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-12_2022_Hallmarks_of_Cancer.jpg){:class="img-responsive"}
 <br/><br/>
 <p align="justify">
 In the 3 case studies below we're not going to cover all of it! But we are going to touch on different cancer mechanisms, proteins working together in pathways and how that creates redundancy or co-dependence, and different routes for cancers to form.<br/>
@@ -176,18 +176,18 @@ Interestingly, eventhough <i>TP53</i> mutations are very common in Sarcoma, and 
 In biology, proteins rarely act on their own, instead forming <b>pathways</b> with other proteins and molecules to complete functions. Select the <b>Pathways</b> tab.<br/>
 The top pathway is the eponymous P53 pathway, with <i>TP53</i> at the centre promoting (arrow) senescence (ageing) and apoptosis (cell death), and inhibiting (flat arrowhead) growth and proliferation.<br/>
 </p>
-![TP53 pathway](/assets/images/ENTHUSE-07_TP53_Pathway.jpg){:class="img-responsive"}
+![TP53 pathway](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-07_TP53_Pathway.jpg){:class="img-responsive"}
 <br/>
 <p align="justify">
 The percentages show how frequently each gene in the pathway is mutated in Sarcoma. <i>TP53</i> mutations are common, but so are those in <i>CDKN2A</i> and <i>MDM2</i> - both of which negatively regulate P53. The question is, why mutate other genes in this pathway, particularly if they help to limit the regulatory role of P53? Is this what is actually happening? Let's find out.<br/><br/>
 At the top of the page, under Sarcoma (TCGA, PanCancer Atlas), click on the pencil symbol next to TP53. Add MDM2 and CDKN2A to the list and <b>Submit Query</b>.
 </p>
-![TP53 pathway](/assets/images/ENTHUSE-08_TP53_MDM2_CDKN2A.png){:class="img-responsive"}
+![TP53 pathway](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-08_TP53_MDM2_CDKN2A.png){:class="img-responsive"}
 <br/>
 <p align="justify">
 Remember that <i>TP53</i> was mutated in 47% of Sarcoma cases, but the percentage of tumours with a mutation in at least 1 of <i>TP53</i>, <i>CDKN2A</i> and <i>MDM2</i> is now 74%. What does this suggest? Head to the OncoPrint tab again - what does this show?<br/>
 </p>
-![TP53 MDM2 CDKN2A mutual exclusivity](/assets/images/ENTHUSE-09_TP53_MDM2_CDKN2A_mutexcl.jpg){:class="img-responsive"}
+![TP53 MDM2 CDKN2A mutual exclusivity](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-09_TP53_MDM2_CDKN2A_mutexcl.jpg){:class="img-responsive"}
 <br/>
 <p align="justify">
 <i>MDM2</i> is almost never mutated in tumours where <i>TP53</i> is mutated. This is called <b>mutual exclusivity</b> - simply put, if you have a mutation in one, you don't in the other. Remember in the pathway that <i>MDM2</i> was seen to inhibit <i>TP53</i>, and the mutations we get in <i>MDM2</i> are all amplifications - generating <b>more</b> MDM2 protein, and having a bigger inhibtory effect on P53 activity.<br/>
@@ -208,17 +208,17 @@ We're now going to explore the AML dataset. <i>TP53</i> is not mutated very comm
 AML is a blood cancer and actually exhibits a very low number of mutations in each patient compared to solid cancers such as lung, breast, prostate, colon or bladder. However, AML does exhibit a very striking hotspot mutation in the <i>NPM1</i> gene. Add <i>NPM1</i> to the query list using the pencil icon again, and submit.<br/>
 Straight away you can see that mutations in <i>NPM1</i> and <i>TP53</i> are mutually exclusive. Check out the Mutations tab, and see what the hotspot mutation is in <i>NPM1</i>.<br/>
 </p>
-![TP53 and NPM1 mutual exclusivity](/assets/images/ENTHUSE-10_TP53_NPM1_mutexcl.jpg){:class="img-responsive"}
+![TP53 and NPM1 mutual exclusivity](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-10_TP53_NPM1_mutexcl.jpg){:class="img-responsive"}
 <br/>
 <p align="justify">
 Eventhough this hotspot happens right at the end of the protein, it causes it to be expelled from the cell nucleus, so it is unable to perform its normal role. Explore the usual tabs - what feature of cancer biology can you find?<br/>
 </p>
-![AML survival stratified by NPM1 and TP53 mutation status](/assets/images/ENTHUSE-11_TP53_NPM1_AML_survival.jpg){:class="img-responsive"}
+![AML survival stratified by NPM1 and TP53 mutation status](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-11_TP53_NPM1_AML_survival.jpg){:class="img-responsive"}
 <br/>
 <p align="justify">
 The striking differences in survival are interesting, particularly as there is no obvious cooperative or antagonistic link between P53 and NPM1 function, as there was within the P53 pathway in the Sarcoma example above. The biological reason here is that mutations in <i>TP53</i> and <i>NPM1</i> send tumours in different directions. Early differences in mutation status govern the biology of the tumour. Different people may be predisposed to certain mutations, or may have had different exposures. In his 1957 book <i>The Strategy of Genes</i> the researcher C. H. Waddington used an image that has become famous in evolutionary, developmental and cancer biology, see below. As the ball runs down the slope, there are a series of choices. In our example, a <i>TP53</i> mutation sends the ball one way, an <i>NPM1</i> goes the other. Understanding the differences in the choices, and how they cause different tumours, is key for developing more personalised medicine. 
 </p>
-![Waddington 1957 cell fate choice](/assets/images/ENTHUSE-12_epi_landscape_Waddington_1957.png){:class="img-responsive"}
+![Waddington 1957 cell fate choice](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-12_epi_landscape_Waddington_1957.png){:class="img-responsive"}
 <br/><br/>
 The video below is a walkthrough and explainer for this case study.<br/>
 {% include youtube.html id="H7T86A9Nruk" %}
@@ -293,14 +293,14 @@ The human genome is over 3 billion base pairs in size, but only about 1% of the 
 Mutations within protein-coding genes are the easiest to understand. If a mutation doesn't result in an amino acid change, this is a silent ("synonymous") mutation. There is usually no (big) impact for these.<br/>
 When an amino acid does change, this is called a non-synonymous mutation. These include nonsense mutations (where a STOP codon is created, truncating the protein) and missense mutations (where the amino acid is changed). When and where these mutations happen determine how much on an impact there <i>could</i> be. Proteins are not just long strings (usually), but fold up, interact with other parts of the protein and create "functional domains" - regions of the protein that actually do things, like bind DNA, or catalyse a substrate <i>etc.</i><br/>
 </p>
-![Mutation types](/assets/images/ENTHUSE-13_mutation_fate.png){:class="img-responsive"}
+![Mutation types](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-13_mutation_fate.png){:class="img-responsive"}
 <br/>
 <p align="justify">
 If a truncating nonsense mutation happens towards the start of the protein, it is more likely to stop that protein from performing its function. It could be that a nonsense mutation right at the end is still problematic, if there is a domain right at the end which is important (such as an anchor for tethering a protein within a cell membrane).<br/>
 Missense mutations can be trickier to understand, as the impact often depends on how different the chemistry is of the new amino acid. Amino acids have the same backbone structure, but then have special side chains which make them different. These side chains are often important for protein function and/or protein shape. For example, the backbone of DNA is negatively charged. If you change a positively charged amino acid, such as Lysine, for a negatively charged one, such as Glutamic Acid, it's possible the protein will no longer interact with DNA properly. Similarly, if a small amino acid like Glycine changes for a huge one like Tryptophan, it's possible the shape of the entire protein will change. Other special cases exist, such as mutations which result in a cysteine. Cysteine residues form bridges with other cysteines, holding proteins together (these are the bonds being broken in curly hair when you apply heat using straighteners) - either different parts of the same protein, or between different proteins.<br/>
 Often we can <i>predict</i> the impact of a missense mutation, but it may need to be checked experimentally.<br/>
 </p>
-![Amino acid classes](/assets/images/ENTHUSE-14_amino_acid_classes.png){:class="img-responsive"}
+![Amino acid classes](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-14_amino_acid_classes.png){:class="img-responsive"}
 <br/>
 <p align="justify">
 Truncating mutations usually break a protein, stopping its function. Missense mutations can either break a protein or change its function (new interactions or activity <i>etc.</i>). In both cases it is possible that the change has little effect. This is really important in cancer as we want to find important "driver" mutations - the ones which lead to the cancer starting or becoming more aggressive - and ignore the "passenger" mutations which are just happening because cancers often have highly mutated genomes. There are many more passengers, so it is important to work out which is which. This can be done experimentally, or by using large datasets like those in cBioPortal to see which genes and amino acids are being mutated a lot, or in specific locations - like <i>TP53</i>.<br/><br/>

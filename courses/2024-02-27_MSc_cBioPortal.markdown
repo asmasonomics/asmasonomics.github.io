@@ -3,7 +3,7 @@ layout: page
 permalink: /courses/MSc_cBioPortal_Feb2024
 ---
 <span style="font-size:1.6em;">**Introduction to cBioPortal (59M/68M tutorial)**</span><br/>
-![cBioPortal and Elixir logos](/assets/images/cBioPortal_Elixir.jpg){:class="img-responsive"}
+![cBioPortal and Elixir logos](/assets/coursefiles/2024-03-21_cBioPortal/cBioPortal_Elixir.jpg){:class="img-responsive"}
 <br/>
 <p align="justify"><a href="https://www.cbioportal.org/">cBioPortal</a> is a publicly available online resource for cancer genomics, with omics and clinical data available for many cancer types. In this tutorial we will introduce cBioPortal - what's there, how to use it, and what you can learn from it.<br/></p>
 
@@ -43,7 +43,7 @@ The video below is an indicative recording of a cBioPortal demo.
 <p align="justify">
 Open up any web browser and head to <a href="https://www.cbioportal.org/">www.cbioportal.org</a><br/><br/>
 The home screen (pictured below) gives immediate access to results from sequencing data generated from thousands of cancer samples from all over the world. Scroll down the list. Each study represents potentially years of work from doctors, surgeons and nurses in hospitals to recruit patients, work with families and collect samples, and then from biomedical researchers in universities to process the samples, then generate, analyse, interpret and publish the results.<br/></p>
-![cBioPortal homepage www.cbioportal.org](/assets/images/ENTHUSE-01_cBioPortal_home.jpg){:class="img-responsive"}
+![cBioPortal homepage www.cbioportal.org](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-01_cBioPortal_home.jpg){:class="img-responsive"}
 <br/>
 <p align="justify">
 Return to the top of the cBioPortal homepage. We're going to work with The Cancer Genome Atlas (TCGA) pancancer study. "Pan" in this context just means "across lots of different cancers".<br/>
@@ -52,7 +52,7 @@ Click the Quick select link for <b>TCGA PanCancer Atlas Studies</b>. You have ju
 <p align="justify">
 Lots of colours! Don't panic. An OncoPrint is a big summary of mutation data - is there a mutation in a particular sample, and what type of mutation is it? In an OncoPrint each column represents a single sample. You have loads of samples, so everything is very squished.<br/>
 You can largely ignore the three "Profiled for..." rows - these just indicate which sequencing technologies were used on those samples. For example, you'll see a large number of glioblastoma samples were only profiled for copy number changes, not mutations or structural changes.<br/></p>
-![TP53 OncoPrint from TCGA PanCancer Atlas](/assets/images/ENTHUSE-02_TP53_OncoPrint.jpg){:class="img-responsive"}
+![TP53 OncoPrint from TCGA PanCancer Atlas](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-02_TP53_OncoPrint.jpg){:class="img-responsive"}
 <br/>
 <p align="justify">
 Use the zoom slider to go to 1%, then you can see the whole cohort, and see that <i>TP53</i> is mutated in 36% of the queried samples. Some patients have multiple samples, hence the disparity in patient/sample numbers (top right).<br/>
@@ -64,7 +64,7 @@ With <i>TP53</i>, <b>nonsense</b> mutations are important (where cancers break t
 Click on the <b>Mutations</b> tab above the plot. This will take you to a "Lollipop plot" for all mutations in <i>TP53</i> across TCGA. Lollipop plots where in the protein mutations occur (x axis) and how common they are (y axis - tallest lollipop sticks are most common).<br/>
 You will see that mutations at R273 are the most common across the cohort. In green, red and blue blocks the plot shows the functional domains of P53 - the parts of the protein which perform its function. Just at a glance you'll see that there are more mutations towards the right hand side of the red domain and far fewer after the blue domain.<br/>
 </p>
-![TP53 Lollipop from TCGA PanCancer Atlas](/assets/images/ENTHUSE-03_TP53_Lollipop.jpg){:class="img-responsive"}
+![TP53 Lollipop from TCGA PanCancer Atlas](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-03_TP53_Lollipop.jpg){:class="img-responsive"}
 <br/>
 <p align="justify">
 Mutations happen all over <i>TP53</i>, but there are some patterns which allow us to understand the biology of what P53 is doing in tumours. Dark green points represent missense mutations, where the amino acid is changing. Black points are nonsense mutations, where the rest of the protein after the mutation is truncated (creates an early stop codon).<br/>
@@ -74,7 +74,7 @@ Use the Missense, Trucating, Inframe <i>etc.</i> table to the right of the plot 
    <summary>Remove that filter and do the same for Missense mutations - what are the major differences here?</summary>
    Driver missense mutations are exclusively found in the functional domains, and not elsewhere in the protein.
 </details><br/>
-![TP53 Lollipop from TCGA PanCancer Atlas](/assets/images/ENTHUSE-04_TP53_Lollipop_Missense.jpg){:class="img-responsive"}
+![TP53 Lollipop from TCGA PanCancer Atlas](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-04_TP53_Lollipop_Missense.jpg){:class="img-responsive"}
 <br/>
 <p align="justify">
 The red domain is where P53 binds to DNA. The blue domain is where P53 binds to other P53 proteins (working as a team). Missense mutations occur almost exclusively in these domains, impacting how P53 does its job. Nonsense/truncating mutations can happen pretty much anywhere, as long as they disrupt the function - that's why there are fewer after the blue domain, where a mutation is less likely to impact how the protein can function.<br/>
@@ -97,7 +97,7 @@ cBioPortal helpfully gives us some warnings (blue and yellow boxes). Any statist
    Age at diagnosis (see how the plot shape changes with "Disease-specific" survival)<br/>
    Lifestyle factors such as weight, smoking status, economic status, employment history (think exposures)<br/>
 </details><br/>
-![TP53 survival from TCGA PanCancer Atlas](/assets/images/ENTHUSE-05_TP53_Survival.jpg){:class="img-responsive"}
+![TP53 survival from TCGA PanCancer Atlas](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-05_TP53_Survival.jpg){:class="img-responsive"}
 <br/><br/>
 
 <p align="justify">
@@ -105,7 +105,7 @@ Biology gives <b>noisy</b> data because there is natural variation between indiv
 As we identified above, cancer type is a likely confounder in our understanding of <i>TP53</i> mutations. <i>TP53</i> is the most commonly mutated gene in cancer generally, but do you think it's mutated in all cancer types equally?<br/><br/>
 Click on the <b>Cancer Types Summary</b> tab. As you can see the proportion of tumours with <i>TP53</i> mutations does vary a lot. In the plot, green is any kind of single nucleotide mutation, and the other colours represent copy number changes changes such as deletions.<br/>Have a play with the y-axis value (does <b>Counts</b> change your interpretation? Is frequency or count more informative?), and changing from Cancer Study to Cancer Type to Cancer Type Detailed. What patterns can you see?<br/>
 </p>
-![TP53 cancer type split from TCGA PanCancer Atlas](/assets/images/ENTHUSE-06_TP53_CancerTypes.jpg){:class="img-responsive"}
+![TP53 cancer type split from TCGA PanCancer Atlas](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-06_TP53_CancerTypes.jpg){:class="img-responsive"}
 <br/><br/>
 <p align="justify">
 In general terms, <b>solid</b> cancers (rather than blood cancers) with a high mutational burden tend to have <i>TP53</i> mutations - see the lung, esophageal, colorectal and bladder datasets, compared to Acute Myeloid Leukaemia or B cell lymphoma. As this is biology, there are some that bend this observation - particularly the two types of kidney cancer found in TCGA. Often, general observations hide features which are cancer-specific (and even specific to subtypes within those cancers).<br/><br/>
@@ -118,7 +118,7 @@ We are now going to explore mutations in <i>TP53</i> and other genes in a sarcom
 Start to think about why that might be. P53 (the protein name for the product from the <i>TP53</i> gene) regulates cell proliferation and cell death. Tumours need to escape P53 activity. But is mutating P53 the only way for a tumour to do this? And is regulating proliferation and cell death the only way for a tumour to form? Clearly not, because not every tumour has a <i>TP53</i> mutation, and tumours have a large number of ways to evade detection and eradication in the body.<br/><br/>
 In his epic (third) review of the <i>Hallmarks of Cancer</i> published in 2022 (<a href="/assets/files/2023-06_ENTHUSE_Hallmarks_Hanahan2022.pdf" download>download the PDF here</a>), Professor Douglas Hanahan outlines the different physiological features a cancer must overcome (image below). These are all areas where cancers can effect change on the body in order to survive. Remember, a cancer is under the pressures of evolution in just the same way as an infectious virus, a herd of giraffes, or us - just on a different scale.<br/>
 </p>
-![Hanahan hallmarks 2022](/assets/images/ENTHUSE-12_2022_Hallmarks_of_Cancer.jpg){:class="img-responsive"}
+![Hanahan hallmarks 2022](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-12_2022_Hallmarks_of_Cancer.jpg){:class="img-responsive"}
 <br/><br/>
 
 <p align="justify">
@@ -131,13 +131,13 @@ On the Cancer Types Summary graph, hover over the Sarcoma bar on the chart and c
 In biology, proteins rarely act on their own, instead forming <b>pathways</b> with other proteins and molecules to complete functions. Select the <b>Pathways</b> tab.<br/>
 The top pathway is the eponymous P53 pathway, with <i>TP53</i> at the centre promoting (arrow) senescence (ageing) and apoptosis (cell death), and inhibiting (flat arrowhead) growth and proliferation.<br/>
 </p>
-![TP53 pathway](/assets/images/ENTHUSE-07_TP53_Pathway.jpg){:class="img-responsive"}
+![TP53 pathway](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-07_TP53_Pathway.jpg){:class="img-responsive"}
 <br/>
 <p align="justify">
 The percentages show how frequently each gene in the pathway is mutated in Sarcoma. <i>TP53</i> mutations are common, but so are those in <i>CDKN2A</i> and <i>MDM2</i> - both of which negatively regulate P53. The question is, why mutate other genes in this pathway, particularly if they help to limit the regulatory role of P53? Is this what is actually happening? Let's find out.<br/><br/>
 At the top of the page, under Sarcoma (TCGA, PanCancer Atlas), click on the pencil symbol next to TP53. Add MDM2 and CDKN2A to the list and <b>Submit Query</b>.
 </p>
-![TP53 pathway](/assets/images/ENTHUSE-08_TP53_MDM2_CDKN2A.png){:class="img-responsive"}
+![TP53 pathway](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-08_TP53_MDM2_CDKN2A.png){:class="img-responsive"}
 <br/>
 <p align="justify">
 Remember that <i>TP53</i> was mutated in 47% of Sarcoma cases, but the percentage of tumours with a mutation in at least 1 of <i>TP53</i>, <i>CDKN2A</i> and <i>MDM2</i> is now 74%. 
@@ -150,7 +150,7 @@ Remember that <i>TP53</i> was mutated in 47% of Sarcoma cases, but the percentag
    As we thought - cases with a mutation in <i>TP53</i> very rarely have mutations in the other two genes.
    </details><br/>
 </p>
-![TP53 MDM2 CDKN2A mutual exclusivity](/assets/images/ENTHUSE-09_TP53_MDM2_CDKN2A_mutexcl.jpg){:class="img-responsive"}
+![TP53 MDM2 CDKN2A mutual exclusivity](/assets/coursefiles/2023_ENTHUSE/ENTHUSE-09_TP53_MDM2_CDKN2A_mutexcl.jpg){:class="img-responsive"}
 <br/>
 <p align="justify">
 <i>MDM2</i> is almost never mutated in tumours where <i>TP53</i> is mutated. This is called <b>mutual exclusivity</b> - simply put, if you have a mutation in one, you don't in the other. Remember in the pathway that <i>MDM2</i> was seen to inhibit <i>TP53</i>, and the mutations we get in <i>MDM2</i> are all amplifications - generating <b>more</b> MDM2 protein, and having a bigger inhibtory effect on P53 activity.<br/>

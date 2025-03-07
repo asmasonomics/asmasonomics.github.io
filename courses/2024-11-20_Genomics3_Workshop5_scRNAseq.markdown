@@ -3,7 +3,7 @@ layout: page
 permalink: /courses/Genomics3_Workshop5_scRNAseq_Nov2024
 ---
 
-![Genomics3 banner](/assets/images/genomics_banner.jpeg){:class="img-responsive"}
+![Genomics3 banner](/assets/coursefiles/2023_Genomics/genomics_banner.jpeg){:class="img-responsive"}
 
 <span style="font-size:1.6em;">**Genomics 3 - Workshop 5: scRNAseq**</span><br/>
 
@@ -37,7 +37,7 @@ If you choose to base your final report on <i>this</i> workshop, you will need t
 Cancer "T" stage is determined by how invasive the cancer has become. If a growth of cells is contained to its layer of origin (the urothelium in our case, including the bladder lumen as this is acellular space, not another tissue), it isn't <i>really</i> a cancer. These T<sub>a</sub> "tumours" are considered worth removing in bladder cancer because having a T<sub>a</sub> tumour is a major risk factor for developing subsequent invasive disease. T1 tumours invade through the basement membrane into the lamina propria (the stroma, where blood cells, fibroblasts, neurones <i>etc.</i> are). T2 and T3 tumours are different extents of muscle-invasive disease, and T4 tumours have escaped the bounds of the bladder, with metastasis highly likely if not evident at bladder cancer diagnosis.<br/><br/>
 This is summarised nicely in this <a href="https://doi.org/10.1038/nrc3817">2015 bladder cancer review</a> with Figure 1 included below. 
 </p><br/>
-![Stages of bladder cancer from Knowles & Hurst, 2015](/assets/images/Knowles2015_PMID25533674_Fig1_BLCA_stages.jpg){:class="img-responsive"}
+![Stages of bladder cancer from Knowles & Hurst, 2015](/assets/coursefiles/2024-11-20_GenomicsW5/Knowles2015_PMID25533674_Fig1_BLCA_stages.jpg){:class="img-responsive"}
 <br/>
 <p align="justify">
 Around 80% of people present at non-muscle-invasive stage (NMIBC) and 5-year survival is pretty good. However muscle-invasive (MIBC) disease has a 5-year survival lower than 50%, even with the standard-of-care radical treatment of removing the bladder. In this workshop you will work with scRNAseq data from a T1 tumour and a T3 tumour to identify whether there are differences between the malignant cells and tumour microenvironment between these tumour stages. These data were derived from Lai <i>et al.</i> (2021) published in the <a href="https://doi.org/10.1002/ijc.33794"><i>International Journal of Cancer</i></a>.

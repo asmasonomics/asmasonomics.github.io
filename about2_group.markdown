@@ -93,12 +93,6 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Vlad completed an MEng in Electronic and Computer Engineering at the University of York before working as a graduate software developer.<br/>In February 2020 he returned to York on a GCRF-funded RA position (predominantly within the Mason lab) which included transcriptomic clustering from low <i>n</i>, high feature datasets and development of an RNAseq visualisation tool. He started his inter-disciplinary PhD at York in October 2020, and passed his viva successfully in January 2025. Vlad has now returned to Romania where he is seeking to develop an academic career in bioinformatics."
 %}
 
-<span style="font-size:1.1em;">Charlotte Garton</span> *MSc by Research student*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/CharlotteGarton.jpg"
-	content = "Charlotte began her MSc project in the group in September 2024 investigating sec-specific dysregulation of the COMPASS complex in bladder cancer. She changed project in February 2025."
-%}
-
 <span style="font-size:1.1em;">**Technical staff**</span><br/>
 
 <span style="font-size:1.1em;">Katie Skinner</span> *Bioinformatician*<br/>

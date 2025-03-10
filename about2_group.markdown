@@ -96,7 +96,7 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 <span style="font-size:1.1em;">Charlotte Garton</span> *MSc by Research student*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/CharlotteGarton.jpg"
-	content = "Charlotte began her MSc project in the group in September 2024 investigating sec-specific dysregulation of the COMPASS complex in bladder cancer. Due to unsolvable personal incompatability with the second supervisor, she changed project in February 2025."
+	content = "Charlotte began her MSc project in the group in September 2024 investigating sec-specific dysregulation of the COMPASS complex in bladder cancer. She changed project in February 2025."
 %}
 
 <span style="font-size:1.1em;">**Technical staff**</span><br/>

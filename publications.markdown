@@ -8,7 +8,7 @@ permalink: /publications/
 Kealey D, Ellerington R, Bansal S, Zeng AGX, Medeiros JJF, West KA, Blacknell NM, Hawley CA, Lukaszonek J, **Gawne R**, Khoo HM, Caalim G, Drylie B, Chatzigerou J, Ferreira BRL, Wang G, Fielding AK, Kent D, Psaila B, Wilkinson AC, Holding AN, Hitchcock IS, **Mason AS**, Gupta V, Dick J & Bridge K, [Hypoxia-Inducible Factor-1 activated by PIM1 assembles a non-canonical transcription complex and resultant regulon that drives progression of JAK2V617F myeloproliferative neoplasms](https://www.biorxiv.org/content/10.1101/2024.07.02.601518v1), bioRxiv (2024). 
 
 ### 2025
-Turvey GL, de Alba EL, Stewart E, Cook H, Alati A, **Gawne RT**, Ainscough JFX, **Mason AS** & Coverley D, Epigenetic deprogramming driven by disruption of CIZ1-RNA nuclear assemblies in early-stage breast cancers, *Journal of Cell Biology* (in press).
+Turvey GL, de Alba EL, Stewart E, Cook H, Alati A, **Gawne RT**, Ainscough JFX, **Mason AS** & Coverley D (2025), [Epigenetic deprogramming driven by disruption of CIZ1-RNA nuclear assemblies in early-stage breast cancers](https://doi.org/10.1083/jcb.202409123), *Journal of Cell Biology*, 224(5):e202409123.
 
 ### 2024
 Chandler JC, Jafree DJ, Malik S, Pomeranz G, Ball M, Kolatsi-Joannou M, Piapi A, Mason WJ, Woolf AS, Winyard PJ, **Mason AS**, Waters AM & Long DA (2024), [Exploration of the single-cell transcriptomic landscape identifies aberrant glomerular cell crosstalk in a murine model of WT1 kidney disease](http://doi.org/10.1002/path.6339), *The Journal of Pathology*, 264(2):212-27.

@@ -401,6 +401,10 @@ BioCircos(tracklist, genome = list("L42023.1" = 1830138), genomeLabelTextSize = 
 # remember to save
 ggsave("plots/circos.pdf")
 
+# this save doesn't work for everyone - but leave the line here in your submitted code (it won't impact your mark)
+# you can export the plot within RStudio (the export button above the figure)
+# or you can use another figure renderer package to export the image programmatically 
+
 ```
 ![circos](/assets/coursefiles/2024-03_66I/plots/04_circos_001.png){:class="img-responsive"}
 <p align="justify">

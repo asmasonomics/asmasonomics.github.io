@@ -355,7 +355,7 @@ A big problem I've faced when designing this material is that many circos plotti
 
 # install and load the BioCircos library
 # the vignette and further information are here - https://cran.r-project.org/web/packages/BioCircos/vignettes/BioCircos.html
-#install.packages('BioCircos')
+install.packages('BioCircos')
 library(BioCircos)
 
 # we will now create a list of tracks, each time adding more information

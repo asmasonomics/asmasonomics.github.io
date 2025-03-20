@@ -48,7 +48,7 @@ I will highlight any libraries you need as we go along.<br/><br/>
 ```R 
 
 # load your session from last time
-load(BABS4_workshop3_complete.RData)
+load("BABS4_workshop3_complete.RData")
 
 # if you didn't save your last workshop as an .RData, but you did save the files, you can load each of the raw files again, and your processed data too
 # for example: tpms <- read.table("proc_data/full_dataset_TPMs.tsv", row.names = 1, header = TRUE)

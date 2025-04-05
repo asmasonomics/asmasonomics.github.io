@@ -184,6 +184,8 @@ rownames(MIV0BHI3_dds_results) <- MIV0BHI3_dds_results$Row.names
 MIV0BHI3_dds_results <- MIV0BHI3_dds_results[,-1]
 
 # subset TPMs, calculate log2FC, merge 
+### DO NOT RUN THIS LINE IF YOU DROPPED MIV2 SAMPLES FOR THE PCA ABOVE
+### If you did drop them, simply run: MIV0BHI3_tpms <- condcomp_tpms
 MIV0BHI3_tpms <- condcomp_tpms[, -grep("MIV2", colnames(condcomp_tpms))]
 
 # due to a dependency issue, explictly call dplyr in the select call

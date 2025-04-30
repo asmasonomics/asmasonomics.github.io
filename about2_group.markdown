@@ -13,12 +13,6 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 
 <span style="font-size:1.3em;">**Current lab members**</span><br/>
 
-<span style="font-size:1.1em;">Saleh Alsuhyami</span> *PhD Student*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/SalehAlsuhyami.jpg"
-	content = "Saleh achieved his bachelor from the University of Taif (Saudi Arabia) with second honors in Lab Sciences and Clinical Biotechnology in 2014. He then worked in Namerah General Hospital for 18 months before moving into academia supported by The University of Bisha (Saudi Arabia). This started with an MSc in Medical and Molecular Virology from The University of Manchester completed in 2020, and now with a PhD at York. Saleh started his PhD on Human Endogenous Retroviruses (HERVs) and their dysregulation in urothelial carcinoma in April 2024."
-%}
-
 <span style="font-size:1.1em;">Marcello Beltrami</span> *Bioinformatician*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/MarcelloBeltrami.png"
@@ -54,6 +48,13 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	file = "/assets/images/person.png"
 	content = "to follow"
 %}
+
+<span style="font-size:1.1em;">Annabelle Francois</span> *Bioinformatics MSc project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/person.png"
+	content = "to follow"
+%}
+
 
 <span style="font-size:1.1em;">George Hatton</span> *PhD Student (Co-supervisee)*<br/>
 {% include profile_page_cols.html 

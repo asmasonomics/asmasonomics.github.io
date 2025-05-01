@@ -39,8 +39,8 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 
 <span style="font-size:1.1em;">Ridhi Bhat</span> *Bioinformatics MSc project student*<br/>
 {% include profile_page_cols.html 
-	file = "/assets/images/person.png"
-	content = "to follow"
+	file = "/assets/images/RidhiBhat.jpg"
+	content = "Ridhi joined the University of York in September 2024 to pursue an MSc in Bioinformatics, following a BTech in Bio-Chemical Engineering. Her MSc thesis focuses on biology-led stratification of bladder cancers to identify clinically relevant subgroups. She is particularly interested in aligning AI and machine learning with personalized medicine to build more predictive, patient-specific models for cancer diagnostics and treatment."
 %}
 
 <span style="font-size:1.1em;">Precious Tonye</span> *Bioinformatics MSc project student*<br/>

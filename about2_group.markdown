@@ -45,8 +45,8 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 
 <span style="font-size:1.1em;">Precious Tonye</span> *Bioinformatics MSc project student*<br/>
 {% include profile_page_cols.html 
-	file = "/assets/images/person.png"
-	content = "to follow"
+	file = "/assets/images/PreciousTonye.jpg"
+	content = "Precious joined the University of York in September 2024 to pursue an MSc in Bioinformatics. Her project explores changes in chromatin and transcriptional states in urothelial carcinoma, where she aims to uncover molecular drivers of cancer progression. Precious is deeply passionate about the power of data to transform biology and medicine, and is especially interested in the intersection of machine learning and biological modelling."
 %}
 
 <span style="font-size:1.1em;">Annabelle Francois</span> *Bioinformatics MSc project student*<br/>

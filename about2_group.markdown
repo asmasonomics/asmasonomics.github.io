@@ -51,8 +51,8 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 
 <span style="font-size:1.1em;">Annabelle Francois</span> *Bioinformatics MSc project student*<br/>
 {% include profile_page_cols.html 
-	file = "/assets/images/person.png"
-	content = "to follow"
+	file = "/assets/images/AnnabelleFrancois.jpg"
+	content = "Annabelle began her studies at the University of York in September 2024. She completed her BSc (Hons) in Biomedical Sciences at the University of Sunderland, followed by a Master’s degree in Microbiology and Infection at the University of Birmingham. Her research interests are in host-pathogen interactions, with a particular focus on cancer-associated viruses. Her project will explore cancer-associated viruses in urothelial cancers.  Annabelle is keen to use computational tools to address different public health concerns."
 %}
 
 

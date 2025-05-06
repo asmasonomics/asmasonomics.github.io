@@ -33,8 +33,8 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 
 <span style="font-size:1.1em;">Gagan Vishaya</span> *Bioinformatics MSc project student*<br/>
 {% include profile_page_cols.html 
-	file = "/assets/images/person.png"
-	content = "to follow"
+	file = "/assets/images/GaganVishaya.png"
+	content = "Gagan graduated with a BS-MS dual degree in Biological Sciences from the Indian Institute of Science Education and Research (IISER), Thiruvananthapuram in 2022. After a two-year academic break, Gagan resumed his studies in 2024 by enrolling in the MSc Bioinformatics program at the University of York. For his final project, he joined the Mason Lab, where he is investigating the genomic landscape of muscle-invasive bladder cancer using whole genome sequencing data from The Cancer Genome Atlas cohort, to identify mutation hotspots and the mutational signature specific to non-coding regulatory regions."
 %}
 
 <span style="font-size:1.1em;">Ridhi Bhat</span> *Bioinformatics MSc project student*<br/>

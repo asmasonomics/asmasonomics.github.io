@@ -25,47 +25,10 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Hugo joined the Mason Lab in June 2024 for a summer studentship  after finishing his BSc Genetics degree from the University of York. His summer project investigated the impact of changing genome annotations on TPM stability from TCGA's BLCA cohort. Building on this interest in improving annotation specificity, Hugo began an MSc by Research in September 2024, co-supervised by Dr Katherine Bridge (CBR), using long and short read polyA sequencing to identify tissue- and cancer-specific splicing changes and the impact on expression quantification."
 %}
 
-<span style="font-size:1.1em;">Joy Njeru</span> *MBiomedSci project student*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/JoyNjeru.jpg"
-	content = "Joy joined the lab in September 2024 for her MBiomedSci, project. With a background in Accounting and Finance, Joy brings an interdisciplinary perspective to healthcare and research. Her passion for understanding biological systems has led her to explore bioinformatics, where data-driven insights can revolutionise medical science. She aims to develop her expertise in data analysis and contribute to cutting-edge research in genomics, disease mapping, and personalised medicine. With a strong interest in cancer biology and bioinformatics, she is excited to develop new skills that will enhance her understanding of bladder cancer and other diseases."
-%}
-
-<span style="font-size:1.1em;">Gagan Vishaya</span> *Bioinformatics MSc project student*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/GaganVishaya.png"
-	content = "Gagan graduated with a BS-MS dual degree in Biological Sciences from the Indian Institute of Science Education and Research (IISER), Thiruvananthapuram in 2022. After a two-year academic break, Gagan resumed his studies in 2024 by enrolling in the MSc Bioinformatics program at the University of York. For his final project, he joined the Mason Lab, where he is investigating the genomic landscape of muscle-invasive bladder cancer using whole genome sequencing data from The Cancer Genome Atlas cohort, to identify mutation hotspots and the mutational signature specific to non-coding regulatory regions."
-%}
-
-<span style="font-size:1.1em;">Ridhi Bhat</span> *Bioinformatics MSc project student*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/RidhiBhat.jpg"
-	content = "Ridhi joined the University of York in September 2024 to pursue an MSc in Bioinformatics, following a BTech in Bio-Chemical Engineering. Her MSc thesis focuses on biology-led stratification of bladder cancers to identify clinically relevant subgroups. She is particularly interested in aligning AI and machine learning with personalized medicine to build more predictive, patient-specific models for cancer diagnostics and treatment."
-%}
-
-<span style="font-size:1.1em;">Precious Tonye</span> *Bioinformatics MSc project student*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/PreciousTonye.jpg"
-	content = "Precious joined the University of York in September 2024 to pursue an MSc in Bioinformatics. Her project explores changes in chromatin and transcriptional states in urothelial carcinoma, where she aims to uncover molecular drivers of cancer progression. Precious is deeply passionate about the power of data to transform biology and medicine, and is especially interested in the intersection of machine learning and biological modelling."
-%}
-
-<span style="font-size:1.1em;">Annabelle Francois</span> *Bioinformatics MSc project student*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/AnnabelleFrancois.jpg"
-	content = "Annabelle began her studies at the University of York in September 2024. She completed her BSc (Hons) in Biomedical Sciences at the University of Sunderland, followed by a Master’s degree in Microbiology and Infection at the University of Birmingham. Her research interests are in host-pathogen interactions, with a particular focus on cancer-associated viruses. Her project will explore cancer-associated viruses in urothelial cancers.  Annabelle is keen to use computational tools to address different public health concerns."
-%}
-
-
 <span style="font-size:1.1em;">George Hatton</span> *PhD Student (Co-supervisee)*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/GeorgeHatton.jpg"
 	content = "George gained a 1st class MBiol in Biology from the University of York in 2023, completing his final year project in the Jack Birch Unit on the induction and localisation of anti-viral APOBEC3 proteins during BK Polyomavirus infection. George then successfully applied for a 3-year York Against Cancer-sponsored PhD studentship in Biomedical Science continuing the work of his Master’s. The PhD will expand on our knowledge of the role BK plays in bladder cancer oncogenesis, with George developing wet lab and bioinformatic skills supervised by Dr Simon Baker, Dr Andrew Mason and Prof Jenny Southgate."
-%}
-
-<span style="font-size:1.1em;">Anastasia Kaltsa</span> *MSc by Research Student (Co-supervisee)*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/AnastasiaKaltsa.jpeg"
-	content = "Anastasia obtained her medical degree from Aristotle University in Greece and moved to the UK for her specialty training in Obstetrics and Gynaecology. She is currently a year 4 trainee in the Yorkshire and the Humber Deanery. She developed a special interest in Urogynaecology and successfully applied for a part-time MSc by research project in the Jack Birch Unit, supervised by Prof Jenny Southgate and Dr Andrew Mason. The project focuses on benign urogynaecological conditions, providing knowledge and research experience to pursue her subspecialty training."
 %}
 
 
@@ -92,6 +55,12 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 {% include profile_page_cols.html 
 	file = "/assets/images/VladUngureanu.jpeg"
 	content = "Vlad completed an MEng in Electronic and Computer Engineering at the University of York before working as a graduate software developer.<br/>In February 2020 he returned to York on a GCRF-funded RA position (predominantly within the Mason lab) which included transcriptomic clustering from low <i>n</i>, high feature datasets and development of an RNAseq visualisation tool. He started his inter-disciplinary PhD at York in October 2020, and passed his viva successfully in January 2025. Vlad has now returned to Romania where he is seeking to develop an academic career in bioinformatics."
+%}
+
+<span style="font-size:1.1em;">Anastasia Kaltsa</span> *MSc by Research Student (Co-supervisee)*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/AnastasiaKaltsa.jpeg"
+	content = "Anastasia obtained her medical degree from Aristotle University in Greece and moved to the UK for her specialty training in Obstetrics and Gynaecology. She is currently a year 4 trainee in the Yorkshire and the Humber Deanery. She developed a special interest in Urogynaecology and successfully applied for a part-time MSc by research project in the Jack Birch Unit, supervised by Prof Jenny Southgate and Dr Andrew Mason. The project focuses on benign urogynaecological conditions, providing knowledge and research experience to pursue her subspecialty training."
 %}
 
 <span style="font-size:1.1em;">**Technical staff**</span><br/>
@@ -146,6 +115,35 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Ellie graduated in 2023 with a 1st class BSc in Biomedical Science from Liverpool John Moores University. Ellie joined the Mason lab in June 2024 to undertake the final project of her MSc in Bioinformatics at the University of York. Ellie’s project involves exploring the relevance of an *in vitro* urothelial hypoxia signature in benign and malignant bladder disease."
 %}
 
+<span style="font-size:1.1em;">Joy Njeru</span> *MBiomedSci project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/JoyNjeru.jpg"
+	content = "Joy joined the lab in September 2024 for her MBiomedSci, project. With a background in Accounting and Finance, Joy brings an interdisciplinary perspective to healthcare and research. Her passion for understanding biological systems has led her to explore bioinformatics, where data-driven insights can revolutionise medical science. She aims to develop her expertise in data analysis and contribute to cutting-edge research in genomics, disease mapping, and personalised medicine. With a strong interest in cancer biology and bioinformatics, she is excited to develop new skills that will enhance her understanding of bladder cancer and other diseases."
+%}
+
+<span style="font-size:1.1em;">Gagan Vishaya</span> *Bioinformatics MSc project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/GaganVishaya.png"
+	content = "Gagan graduated with a BS-MS dual degree in Biological Sciences from the Indian Institute of Science Education and Research (IISER), Thiruvananthapuram in 2022. After a two-year academic break, Gagan resumed his studies in 2024 by enrolling in the MSc Bioinformatics program at the University of York. For his final project, he joined the Mason Lab, where he is investigating the genomic landscape of muscle-invasive bladder cancer using whole genome sequencing data from The Cancer Genome Atlas cohort, to identify mutation hotspots and the mutational signature specific to non-coding regulatory regions."
+%}
+
+<span style="font-size:1.1em;">Ridhi Bhat</span> *Bioinformatics MSc project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/RidhiBhat.jpg"
+	content = "Ridhi joined the University of York in September 2024 to pursue an MSc in Bioinformatics, following a BTech in Bio-Chemical Engineering. Her MSc thesis focuses on biology-led stratification of bladder cancers to identify clinically relevant subgroups. She is particularly interested in aligning AI and machine learning with personalized medicine to build more predictive, patient-specific models for cancer diagnostics and treatment."
+%}
+
+<span style="font-size:1.1em;">Precious Tonye</span> *Bioinformatics MSc project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/PreciousTonye.jpg"
+	content = "Precious joined the University of York in September 2024 to pursue an MSc in Bioinformatics. Her project explores changes in chromatin and transcriptional states in urothelial carcinoma, where she aims to uncover molecular drivers of cancer progression. Precious is deeply passionate about the power of data to transform biology and medicine, and is especially interested in the intersection of machine learning and biological modelling."
+%}
+
+<span style="font-size:1.1em;">Annabelle Francois</span> *Bioinformatics MSc project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/AnnabelleFrancois.jpg"
+	content = "Annabelle began her studies at the University of York in September 2024. She completed her BSc (Hons) in Biomedical Sciences at the University of Sunderland, followed by a Master’s degree in Microbiology and Infection at the University of Birmingham. Her research interests are in host-pathogen interactions, with a particular focus on cancer-associated viruses. Her project will explore cancer-associated viruses in urothelial cancers.  Annabelle is keen to use computational tools to address different public health concerns."
+%}
 
 <span style="font-size:1.1em;">**Summer students**</span><br/>
 

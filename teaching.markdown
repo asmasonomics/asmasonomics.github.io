@@ -17,22 +17,29 @@ Andrew completed his University of York <a href="https://www.york.ac.uk/staff/te
 {% include experience_cols.html content1 = "11/2022 - present<br/>10/2018 - 11/2019<br/>10/2014 - 12/2016" content2 = "University of York Lecturer in Cancer Informatics<br/>University of York Biology tutor (20h)<br/>University of Edinburgh Biology demonstrator, marker and tutor (301h)" %}
 
 <span style="font-size:1.02em;">**BSc dissertation support material**</span><br/>
-2025/26 [Multiomic analysis of bladder cancer](https://asmasonomics.github.io/courses/BSc_dissertation_2025)<br/>
+
+[Multiomic analysis of bladder cancer](https://asmasonomics.github.io/courses/BSc_dissertation_2025)<br/>
 
 <span style="font-size:1.02em;">**Course material**</span><br/>
 
-2025-03-20  [BABS4 - Data Workshop 4](https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop4_March2025) <br/>
-2025-03-06  [BABS4 - Data Workshop 3](https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop3_March2025) <br/>
-2025-02-25  [Introduction to cBioPortal - 59M/68M tutorial](https://asmasonomics.github.io/courses/MSc_cBioPortal_Feb2025) <br/>
-2024-11-20  [Genomics 3 - Workshop 5: scRNAseq](https://asmasonomics.github.io/courses/Genomics3_Workshop5_scRNAseq_Nov2024) <br/>
-2024-11-08  [Genomics 3 - Workshop 4: RNAseq](https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2024) <br/>
-2024-03-22  [BABS4 - Data Workshop 4](https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop4_March2024) <br/>
-2024-03-21  [Introduction to cBioPortal](https://asmasonomics.github.io/courses/Intro_cBioPortal_Mar2024) <br/>
-2024-03-11  [BABS4 - Data Workshop 3](https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop3_March2024) <br/>
-2024-02-27  [Introduction to cBioPortal - 59M/68M tutorial](https://asmasonomics.github.io/courses/MSc_cBioPortal_Feb2024) <br/>
-2023-11-10  [Genomics 3 - Workshop 4: RNAseq](https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2023) <br/>
-2023-05-30  [BMS Bitesize: Introduction to Statistics](https://asmasonomics.github.io/courses/BMS_Bitesize_Statistics_May2023) <br/>
-2023-01-11  [Introduction to cBioPortal](https://asmasonomics.github.io/courses/Intro_cBioPortal_Jan2023) <br/>
+2025-11-06  [Genomics 3 - Workshop 4: RNAseq](https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2025) <br/>
+2025-11-13  [Genomics 3 - Workshop 5: scRNAseq](https://asmasonomics.github.io/courses/Genomics3_Workshop5_scRNAseq_Nov2025) <br/>
+
+<details>
+   <summary>**Previous course material**</summary>
+	2025-03-20  [BABS4 - Data Workshop 4](https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop4_March2025) <br/>
+	2025-03-06  [BABS4 - Data Workshop 3](https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop3_March2025) <br/>
+	2025-02-25  [Introduction to cBioPortal - 59M/68M tutorial](https://asmasonomics.github.io/courses/MSc_cBioPortal_Feb2025) <br/>
+	2024-11-20  [Genomics 3 - Workshop 5: scRNAseq](https://asmasonomics.github.io/courses/Genomics3_Workshop5_scRNAseq_Nov2024) <br/>
+	2024-11-08  [Genomics 3 - Workshop 4: RNAseq](https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2024) <br/>
+	2024-03-22  [BABS4 - Data Workshop 4](https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop4_March2024) <br/>
+	2024-03-21  [Introduction to cBioPortal](https://asmasonomics.github.io/courses/Intro_cBioPortal_Mar2024) <br/>
+	2024-03-11  [BABS4 - Data Workshop 3](https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop3_March2024) <br/>
+	2024-02-27  [Introduction to cBioPortal - 59M/68M tutorial](https://asmasonomics.github.io/courses/MSc_cBioPortal_Feb2024) <br/>
+	2023-11-10  [Genomics 3 - Workshop 4: RNAseq](https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2023) <br/>
+	2023-05-30  [BMS Bitesize: Introduction to Statistics](https://asmasonomics.github.io/courses/BMS_Bitesize_Statistics_May2023) <br/>
+	2023-01-11  [Introduction to cBioPortal](https://asmasonomics.github.io/courses/Intro_cBioPortal_Jan2023) <br/>
+</details><br/>
 
 <br/><span style="font-size:1.2em;">**Private tutoring**</span><br/>
 <p align="justify">Andrew has over 200 hours experience of private one-to-one tutoring in Biology, Chemistry and Maths at GCSE, Scottish National 5 and Scottish Higher levels, and has availability for new students.<br/>

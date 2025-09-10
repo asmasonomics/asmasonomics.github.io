@@ -16,7 +16,7 @@ Much of your work in the lab will involve using the University's high performanc
 <p align="justify">
 To access Viking2, please complete <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXkL10ypU6EQCBB2jS5oDwTpRMo77ppl7dvdbLnXm5zrKR7Q/viewform">the Viking2 application form</a>. For this you will need a <code>project code</code> - <a class="u-email" href="mailto:andrew.mason@york.ac.uk">ask Andrew for this.</a><br/><br/>
 As default, each user is allocated 2TB of storage space in the <code>/mnt/scratch/users/your-UUN/</code> directory. As soon as your user access is approved, <a class="u-email" href="mailto:itservices@york.ac.uk">please email IT services</a> to increase your quota. Use the subject heading "Viking - quota increase for [your-UUN]" and ask to increase your quota to 10TB unless Andrew has said you should ask for more.<br/><br/>
-You should also <a href="https://github.com/">set up a GitHub account</a> if you don't already have one. As academics often move around a lot, it is prudent to link this to a personal email address as well as your York one, and to make your username something you like. Once you have this, let Andrew know and he will add you to our <a href="https://github.com/Mason-Lab-Code">Mason Lab GitHub organisation</a>, where you can access code and link any project repositories. On here, Richard has put some very useful information about how we organise our projects, and also some links to software carpentry introductory courses - use these!<br/><br/>
+You should also <a href="https://github.com/">set up a GitHub account</a> if you don't already have one. As academics often move around a lot, it is prudent to link this to a personal email address as well as your York one, and to make your username something you like. Once you have this, let Andrew know and he will add you to our <a href="https://github.com/Mason-Lab-Code">Mason Lab GitHub organisation</a>, where you can access code and link any project repositories. On here, Richard put some very useful information about how we organise our projects, and also some links to software carpentry introductory courses - use these!<br/><br/>
 If you're using a managed Windows machine, and you're here longer than a Summer project, <a class="u-email" href="mailto:david.nelmes@york.ac.uk">please email David Nelmes</a>, cc'ing in Andrew, and ask if you can have elevated admin rights on your machine as you're a bioinformatician needing to install lots of new software outside the SoftwareCentre.
 <br/>
 </p>
@@ -52,14 +52,14 @@ If none of that is clear to you, don't worry (and don't mess with them until you
 
 ### Key messages
 1. Refer to the documentation
-2. Have good data management - refer to Richard's style guides
+2. Have good data management - refer to Richard and Marcello's style guides
 3. Work within scratch (personal or group)
 4. Remember, there is no recycle bin - if you delete stuff <b>it is gone forever</b>.
 
 ### Next steps
 <p align="justify">
 If you have worked on Linux before and are feeling good, read the Viking documentation (selectively) and get cracking! Pay particular attention to available modules and how the <code>slurm</code> scheduler works if you haven't used that before.<br/><br/>
-Always ask Andrew and Richard for help if you're unsure - this is not a problem. Far better to ask early and get the help you need rather than struggle for ages or worsen issues you might have.<br/><br/>
+Always ask Andrew and Marcello for help if you're unsure - this is not a problem. Far better to ask early and get the help you need rather than struggle for ages or worsen issues you might have.<br/><br/>
 If you've not worked with Linux before, don't worry - we have some training and guidance for you. As with any coding language it can take a bit of getting used to. But you'll get there.
 <br/>
 </p>
@@ -74,6 +74,6 @@ If you've not worked with Linux before, don't worry - we have some training and 
 
 ### Coding training
 <p align="justify">
-As mentioned, Richard has added some links on the <a href="https://github.com/Mason-Lab-Code">Mason Lab GitHub organisation</a>. We have also set up a DataCamp subscription for the group - ask Andrew for access - <i>2024-04-05 awaiting confirmation - more details to follow...</i><br/><br/>
+As mentioned, Richard and Marcello have added some links on the <a href="https://github.com/Mason-Lab-Code">Mason Lab GitHub organisation</a>. We have also set up a DataCamp subscription for the group - ask Andrew for access.<br/><br/>
 For broader training courses, check out <a href="https://training.galaxyproject.org/">the Galaxy Training Network (GTN)</a> and <a href="https://tess.elixir-europe.org/">Elixir's TeSS</a>.<br/>
 </p>

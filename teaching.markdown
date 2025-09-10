@@ -15,6 +15,10 @@ Andrew completed his University of York <a href="https://www.york.ac.uk/staff/te
 
 <span style="font-size:1.2em;">**University teaching experience**</span><br/>
 {% include experience_cols.html content1 = "11/2022 - present<br/>10/2018 - 11/2019<br/>10/2014 - 12/2016" content2 = "University of York Lecturer in Cancer Informatics<br/>University of York Biology tutor (20h)<br/>University of Edinburgh Biology demonstrator, marker and tutor (301h)" %}
+
+<span style="font-size:1.02em;">**BSc dissertation support material**</span><br/>
+2025/26 [Multiomic analysis of bladder cancer](https://asmasonomics.github.io/courses/BSc_dissertation_2025)<br/>
+
 <span style="font-size:1.02em;">**Course material**</span><br/>
 
 2025-03-20  [BABS4 - Data Workshop 4](https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop4_March2025) <br/>

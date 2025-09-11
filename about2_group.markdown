@@ -39,8 +39,8 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 
 <span style="font-size:1.1em;">Piper Lawrenson</span> *MBiol project student*<br/>
 {% include profile_page_cols.html 
-	file = "/assets/images/person.png"
-	content = "Coming soon"
+	file = "/assets/images/PiperLawrenson.jpg"
+	content = "Piper is an Integrated Masters student in Biology (Genetics) at the University of York, currently undertaking her final year research project in the Mason lab, investigating the role of endogenous retroviruses in bladder cancer through bioinformatics approaches. Piper is looking forward to further developing her bioinformatics skills during this project and plans to apply for PhD programmes in cancer genomics and genetics."
 %}
 
 <span style="font-size:1.1em;">Jessie Irvine</span> *MBiol project student*<br/>

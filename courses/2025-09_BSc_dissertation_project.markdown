@@ -57,17 +57,18 @@ Coming up with your own study might feel daunting just now, but don't worry - th
 <p align="justify">
 To get you started I've recorded a mini lecture on muscle invasive bladder cancer. This is enough to get you going, but you'll want to dig deeper in areas relevant to your project (including looking at studies from other cancer types). Remember - what I've said is my scientific assessment based on the literature and my own research experience - your critique is welcome and expected!<br/>
 </p>
-*PLACEHOLDER*
+**PLACEHOLDER**
 {% include youtube.html id="1z03uo_kpQI" %}
+<br/><br/>
 
 #### Relevant (big) starting papers
 <p align="justify">
 <a href="https://doi.org/10.1016/j.cell.2017.09.007">Robertson <i>et al</i>, 2017, Cell</a> - the paper which describes the full TCGA MIBC cohort<br/>
 <a href="https://doi.org/10.1016/j.eururo.2019.09.006">Kamoun <i>et al</i>, 2020, European Urology</a> - the paper which introduces the MIBC "consensus classifier"<br/>
 <a href="https://doi.org/10.1186/s13073-020-00781-y">Shi <i>et al</i>, 2020, Genome Medicine</a> - the paper which describes bladder cancer hotspot mutations, particularly those created by APOBEC mutagenesis<br/>
-<a href="10.1038/s41388-022-02235-8">Baker <i>et al</i>, 2022, Oncogene</a> - paper from our unit which attempts to link viral infection to bladder cancer<br/>
+<a href="https://doi.org/10.1038/s41388-022-02235-8">Baker <i>et al</i>, 2022, Oncogene</a> - paper from our unit which attempts to link viral infection to bladder cancer<br/>
 <a href="https://doi.org/10.1016/j.cell.2017.09.042">Martincorena <i>et al</i>, 2017, Cell</a> - paper identifies recurrent driver genes across all cancers in TCGA - see Figure 2<br/>
-<a href="https://doi.org/10.1016/j.jmoldx.2024.08.005">Cotillas <i>et al</i>, 2024, The Journal of Molecular Diagnostics</a> - an alternative view to bladder cancer classification (all disease stages)<br/>
+<a href="https://doi.org/10.1016/j.jmoldx.2024.08.005">Cotillas <i>et al</i>, 2024, The Journal of Molecular Diagnostics</a> - an alternative view to bladder cancer classification (all disease stages)
 <br/><br/>
 </p>
 

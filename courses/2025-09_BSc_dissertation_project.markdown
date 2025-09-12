@@ -32,7 +32,8 @@ During semester 1, we will have our group supervision meetings on <b>Wednesdays 
 As your project develops I will set aside an open office hour where I will be available in case you want to drop in to discuss your project. This will be on a first come, first served basis.<br/><br/>
 
 The <b>main assessment is your 4000 word scientific report</b>. Deadline: Tuesday 5th May at 12 noon (S2 W11).<br/><br/>
-There is also the formative oral presentation in semester 1 (S1 W8). There are multiple opportunities for feedback on your writing (S2 W0, S2 W8) - these are for you to make the most of, and are not compulsory.<br/><br/>
+There is also the formative oral presentation in semester 1 (S1 W8). There are multiple opportunities for feedback on your writing (S2 W0, S2 W8) - these are for you to make the most of, and are not compulsory.
+<br/><br/>
 </p>
 
 ### Scope and aims of your project
@@ -52,8 +53,25 @@ Coming up with your own study might feel daunting just now, but don't worry - th
 <br/><br/>
 </p>
 
+### Introduction to bladder cancer
+<p align="justify">
+To get you started I've recorded a mini lecture on muscle invasive bladder cancer. This is enough to get you going, but you'll want to dig deeper in areas relevant to your project (including looking at studies from other cancer types). Remember - what I've said is my scientific assessment based on the literature and my own research experience - your critique is welcome and expected!<br/>
+</p>
+*PLACEHOLDER*
+{% include youtube.html id="1z03uo_kpQI" %}
 
+#### Relevant (big) starting papers
+<p align="justify">
+<a href="https://doi.org/10.1016/j.cell.2017.09.007">Robertson <i>et al</i>, 2017, Cell</a> - the paper which describes the full TCGA MIBC cohort<br/>
+<a href="https://doi.org/10.1016/j.eururo.2019.09.006">Kamoun <i>et al</i>, 2020, European Urology</a> - the paper which introduces the MIBC "consensus classifier"<br/>
+<a href="https://doi.org/10.1186/s13073-020-00781-y">Shi <i>et al</i>, 2020, Genome Medicine</a> - the paper which describes bladder cancer hotspot mutations, particularly those created by APOBEC mutagenesis<br/>
+<a href="10.1038/s41388-022-02235-8">Baker <i>et al</i>, 2022, Oncogene</a> - paper from our unit which attempts to link viral infection to bladder cancer<br/>
+<a href="https://doi.org/10.1016/j.cell.2017.09.042">Martincorena <i>et al</i>, 2017, Cell</a> - paper identifies recurrent driver genes across all cancers in TCGA - see Figure 2<br/>
+<a href="https://doi.org/10.1016/j.jmoldx.2024.08.005">Cotillas <i>et al</i>, 2024, The Journal of Molecular Diagnostics</a> - an alternative view to bladder cancer classification (all disease stages)<br/>
+<br/><br/>
+</p>
 
-
-
-
+### The data
+<p align="justify">
+<br/><br/>
+</p>

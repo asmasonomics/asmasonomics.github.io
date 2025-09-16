@@ -34,7 +34,7 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 <span style="font-size:1.1em;">Charlie Barker</span> *MBiol project student*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/CharlieBarker.jpg"
-	content = "Update coming soon"
+	content = "Charlie has returned to the Mason Lab to complete his final year integrated masters project, following a 1-year placement in the GSK Genomics R&D team. Charlie previously completed a summer project in the lab working with TCGA's WGS data. His masters project will use biologically-informed machine learning approaches to try to find further clinically-relevant subgroups in muscle invasive bladder cancer."
 %}
 
 <span style="font-size:1.1em;">Piper Lawrenson</span> *MBiol project student*<br/>
@@ -45,8 +45,8 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 
 <span style="font-size:1.1em;">Jessie Irvine</span> *MBiol project student*<br/>
 {% include profile_page_cols.html 
-	file = "/assets/images/person.png"
-	content = "Coming soon"
+	file = "/assets/images/JessieIrvine.jpeg"
+	content = "Jessie is a Biology integrated masters student at the University of York, with her final year project in the Mason lab investigating machine learning approaches to subgroup urothelial carcinomas into clinical subgroups. With previous experience in neuroscience and Parkinson’s disease, she is looking forward to a newer venture into cancer biology. She hopes to take her refined experience and skills in the Mason lab forward to a PhD in either cancer or neuroscience genomics."
 %}
 
 <br/><br/>
@@ -180,10 +180,4 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 {% include profile_page_cols.html 
 	file = "/assets/images/FernandoVazquezLopez.jpeg"
 	content = "Fernando joined the lab for summer 2022 to study avian oncogenic endogenous retroviruses using whole genome sequencing data; hoping to gain direct research experience to help him pursue a career in applied bioinformatics. He has since commenced a PhD (2023 start) at The University of Southampton, applying AI to improve diagnosis of IBD with Dr James Ashton."
-%}
-
-<span style="font-size:1.1em;">Charlie Barker</span> *Undergraduate project student*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/CharlieBarker.jpg"
-	content = "Charlie joined the Mason Lab in June 2024, after completing the 3rd year of his integrated masters degree in biology at York. His summer project involves using TCGA WGS data to determine the transcriptomic impact of non-coding mutations in muscle invasive bladder cancer. Charlie hopes to develop both his bioinformatic skills and understanding of cancer biology prior to starting a 1 year placement with the GSK Genomics R&D team."
 %}

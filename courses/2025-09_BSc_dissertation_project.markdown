@@ -57,8 +57,8 @@ Coming up with your own study might feel daunting just now, but don't worry - th
 <p align="justify">
 To get you started I've recorded a mini lecture on muscle invasive bladder cancer. This is enough to get you going, but you'll want to dig deeper in areas relevant to your project (including looking at studies from other cancer types). Remember - what I've said is my scientific assessment based on the literature and my own research experience - your critique is welcome and expected!<br/>
 </p>
-**PLACEHOLDER**
-{% include youtube.html id="1z03uo_kpQI" %}
+{% include youtube.html id="e3pWczidol0" %}
+Download slides in <a href="/assets/coursefiles/2025_BSc_dissertation_project/2025_BSc_Intro-to-BLCA.pptx" download>pptx</a> or <a href="/assets/coursefiles/2025_BSc_dissertation_project/2025_BSc_Intro-to-BLCA.pdf" download>PDF</a> formats.
 <br/><br/>
 
 #### Relevant (big) starting papers

@@ -79,23 +79,31 @@ Download slides in <a href="/assets/coursefiles/2025_BSc_dissertation_project/20
 Most of the data files are tab spaced value (tsv) files which means you can open and process them easily (even in Excel if you want a quick look). The .maf and .bed format files are tsv format files as well, but they are organised in a partciular way with particular columns in a particular order. A description of each file is given in the table below:<br/><br/>
 </p>
 
-| Week | Technology | Description |
+| Filename | Technology | Description |
 | --- | --- | --- |
-| CNA_gene-level-CN.tsv |   |   |
-| gc47_gene_locations.bed |  |   | 
-| methylation_CpG-array.tsv |   |   | 
-| miRNA_counts.tsv |   |   |
-| miRNA_CPMs.tsv |   |   | 
-| mRNA_gc47-counts.tsv |   |   |
-| mRNA_gc47-TPMs.tsv |   |   |
-| mRNA_gc47-TPMs_ConsensusClassifier.tsv |   |   |
-| mRNA_gc47-TPMs_LundTax2023Classifier.tsv |   |   |
-| TCGA-BLCA-clinical-metadata.tsv |   |   |
-| WGS_coding-regions-only.maf |   |   |
-| WGS_mutation-in-at-least-4-patients.maf |   |   |
-| WXS.maf |   |   |
+| CNA_gene-level-CN.tsv | copy number array  |  number of copies of each gene in each tumour (could represent segmental or casette alterations) |
+| gc47_gene_locations.bed | annotation file | GRCh38 gene locations across the genome | 
+| methylation_CpG-array.tsv |  5mC methylation array | methylation intensity beta values between 0 (low) and 1 (high) | 
+| miRNA_counts.tsv | miRNA sequencing (short RNAseq) | raw read counts per miRNA gene |
+| miRNA_CPMs.tsv | miRNA sequencing (short RNAseq) | counts per million to control for differences in sequencing depth | 
+| mRNA_gc47-counts.tsv | mRNA sequencing (polyA RNAseq) | raw read counts per gene feature |
+| mRNA_gc47-TPMs.tsv | mRNA sequencing (polyA RNAseq) | transcripts per million to control for depth and feature length |
+| mRNA_gc47-TPMs_ConsensusClassifier.tsv | sample annotation | Consensus classification of each tumour according to Kamoun et al (2020) |
+| mRNA_gc47-TPMs_LundTax2023Classifier.tsv | sample annotation | Lund classification of each tumour according to Cotillas et al (2024) |
+| TCGA-BLCA-clinical-metadata.tsv | patient metadata | relevant metadata for patients and their cancer |
+| WGS_coding-regions-only.maf | whole genome sequencing | mutations in tumours filtered to just include mutations in coding regions |
+| WGS_mutation-in-at-least-4-patients.maf | whole genome sequencing | mutations in tumours filtered to only include mutations found in 4 or more patients |
+| WXS.maf | whole exome sequencing | mutations in tumours identified by only profiling coding regions |
 
 <p align="justify">
-###
+I've provided these datafiles so you can do your own specific analysis, including making your own versions of figures. There are places to get data summaries for this cohort, even some top-level analysis and figures. But these alone will not be enough for a good project mark. By coding it yourself you can ask good questions and get to grips with the data - allowing you to critique how and when it can (or should) be used (and when it really shouldn't).<br/><br/>
+Before jumping into the data analysis, do some reading to get a better feel for the cancer biology and the technologies I've talked about. Then you should use <a href="https://www.cbioportal.org/">cBioPortal</a> to do some initial playing with the data (in a browser). I've written a course (~2hours) on how to use cBioPortal, including with demos, problem solving tasks to get used to using the website, and then a worked coding example in R to demonstrate how to download and work with this type of data. This will be very (very) useful for your project - mix up your reading by <a href="https://asmasonomics.github.io/courses/Intro_cBioPortal_Mar2024">completing my Intro to cBioPortal course in your own time.</a>
 <br/><br/>
 </p>
+
+### Getting started with your analysis
+<p align="justify">
+
+<br/><br/>
+</p>
+

@@ -24,6 +24,8 @@ Andrew completed his University of York <a href="https://www.york.ac.uk/staff/te
 
 2025-11-06  [Genomics 3 - Workshop 4: RNAseq](https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2025) <br/>
 2025-11-13  [Genomics 3 - Workshop 5: scRNAseq](https://asmasonomics.github.io/courses/Genomics3_Workshop5_scRNAseq_Nov2025) <br/>
+2024-03-21  [Introduction to cBioPortal](https://asmasonomics.github.io/courses/Intro_cBioPortal_Mar2024) <br/>
+2023-05-30  [BMS Bitesize: Introduction to Statistics](https://asmasonomics.github.io/courses/BMS_Bitesize_Statistics_May2023) <br/>
 
 <details>
    <summary><b>Previous course material</b></summary>
@@ -33,11 +35,9 @@ Andrew completed his University of York <a href="https://www.york.ac.uk/staff/te
 	2024-11-20  <a href="https://asmasonomics.github.io/courses/Genomics3_Workshop5_scRNAseq_Nov2024">Genomics 3 - Workshop 5: scRNAseq</a><br/>
 	2024-11-08  <a href="https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2024">Genomics 3 - Workshop 4: RNAseq</a><br/>
 	2024-03-22  <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop4_March2024">BABS4 - Data Workshop 4</a><br/>
-	2024-03-21  <a href="https://asmasonomics.github.io/courses/Intro_cBioPortal_Mar2024">Introduction to cBioPortal</a><br/>
 	2024-03-11  <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop3_March2024">BABS4 - Data Workshop 3</a><br/>
 	2024-02-27  <a href="https://asmasonomics.github.io/courses/MSc_cBioPortal_Feb2024">Introduction to cBioPortal - 59M/68M tutorial</a><br/>
 	2023-11-10  <a href="https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2023">Genomics 3 - Workshop 4: RNAseq</a><br/>
-	2023-05-30  <a href="https://asmasonomics.github.io/courses/BMS_Bitesize_Statistics_May2023">BMS Bitesize: Introduction to Statistics</a><br/>
 	2023-01-11  <a href="https://asmasonomics.github.io/courses/Intro_cBioPortal_Jan2023">Introduction to cBioPortal</a><br/>
 </details>
 

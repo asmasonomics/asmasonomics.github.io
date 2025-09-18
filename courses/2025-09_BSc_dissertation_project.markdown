@@ -81,7 +81,6 @@ Most of the data files are tab spaced value (tsv) files which means you can open
 
 | Week | Technology | Description |
 | --- | --- | --- |
-| 01_TCGA-BLCA-clinical-metadata.tsv|   |   |
 | CNA_gene-level-CN.tsv |   |   |
 | gc47_gene_locations.bed |  |   | 
 | methylation_CpG-array.tsv |   |   | 
@@ -91,6 +90,7 @@ Most of the data files are tab spaced value (tsv) files which means you can open
 | mRNA_gc47-TPMs.tsv |   |   |
 | mRNA_gc47-TPMs_ConsensusClassifier.tsv |   |   |
 | mRNA_gc47-TPMs_LundTax2023Classifier.tsv |   |   |
+| TCGA-BLCA-clinical-metadata.tsv |   |   |
 | WGS_coding-regions-only.maf |   |   |
 | WGS_mutation-in-at-least-4-patients.maf |   |   |
 | WXS.maf |   |   |

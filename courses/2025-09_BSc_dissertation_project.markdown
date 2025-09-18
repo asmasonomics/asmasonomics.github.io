@@ -49,7 +49,8 @@ So, how about <i>your</i> project? You will do the following:
 <li>Consider and plan the future work you would propose to further understand your results and their relevance (incl. wet lab work, further data analysis, clinical follow up <i>etc.</i>)</li>
 </ol>
 We would expect you to complete all your analysis using the skills you have developed in R. This means you can use RStudio on a personal laptop, or using university-managed machines - whatever works best for you. Just make sure you keep saving and backing up your data and scripts.<br/><br/>
-Coming up with your own study might feel daunting just now, but don't worry - there are some useful starting points below including some key papers. If you are doing the Cancer cell & molecular biology module, or the Genomics module, you should get some useful context and help from lectures and workshops - don't worry if you don't take either of these. A minimal project would be to identify tumours with/without a mutation in a relevant cancer gene, and then to use RNA sequencing data to compare the gene expression profiles of these cancers, and to try and work out what that means. We have lots of different data (and there are >400 cancers in the dataset) so the project can grow, develop, extend in lots of different ways - the best approach is to try and find a question where you'd be interested in finding out the answer. 
+Coming up with your own study might feel daunting just now, but don't worry - there are some useful starting points below including some key papers. If you are doing the Cancer cell & molecular biology module, or the Genomics module, you should get some useful context and help from lectures and workshops - don't worry if you don't take either of these. A minimal project would be to identify tumours with/without a mutation in a relevant cancer gene, and then to use RNA sequencing data to compare the gene expression profiles of these cancers, and to try and work out what that means. We have lots of different data (and there are >400 cancers in the dataset) so the project can grow, develop, extend in lots of different ways - the best approach is to try and find a question where you'd be interested in finding out the answer.<br/><br/>
+Something you won't have maybe thought about too much before is the ethics of working with human genomic data. We'll speak about this during our sessions, but your project work is covered under <a href="/assets/coursefiles/2025_BSc_dissertation_project/MoA_AM202410.pdf" download>an existing ethics approval from the Biology Ethics Committee.</a>
 <br/><br/>
 </p>
 
@@ -74,5 +75,27 @@ Download slides in <a href="/assets/coursefiles/2025_BSc_dissertation_project/20
 
 ### The data
 <p align="justify">
+<a href="https://drive.google.com/drive/folders/1NW0C4x3VF04U5HYUrsQrNHocIMPWQJ_q?usp=sharing">This google drive </a>contains major data files from The Cancer Genome Atlas muscle invasive bladder cancer cohort. We have pre-processed some of these to make them less difficult to work with, but some of them are still very large! You can and should work with these in R. You can also open these in notepad (but use notepad++ because this has some actual functionality).<br/>
+Most of the data files are tab spaced value (tsv) files which means you can open and process them easily (even in Excel if you want a quick look). The .maf and .bed format files are tsv format files as well, but they are organised in a partciular way with particular columns in a particular order. A description of each file is given in the table below:<br/><br/>
+</p>
+
+| Week | Technology | Description |
+| --- | --- | --- |
+| 01_TCGA-BLCA-clinical-metadata.tsv|   |   |
+| CNA_gene-level-CN.tsv |   |   |
+| gc47_gene_locations.bed |  |   | 
+| methylation_CpG-array.tsv |   |   | 
+| miRNA_counts.tsv |   |   |
+| miRNA_CPMs.tsv |   |   | 
+| mRNA_gc47-counts.tsv |   |   |
+| mRNA_gc47-TPMs.tsv |   |   |
+| mRNA_gc47-TPMs_ConsensusClassifier.tsv |   |   |
+| mRNA_gc47-TPMs_LundTax2023Classifier.tsv |   |   |
+| WGS_coding-regions-only.maf |   |   |
+| WGS_mutation-in-at-least-4-patients.maf |   |   |
+| WXS.maf |   |   |
+
+<p align="justify">
+###
 <br/><br/>
 </p>

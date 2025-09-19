@@ -76,13 +76,15 @@ Download slides in <a href="/assets/coursefiles/2025_BSc_dissertation_project/20
 ### The data
 <p align="justify">
 <a href="https://drive.google.com/drive/folders/1NW0C4x3VF04U5HYUrsQrNHocIMPWQJ_q?usp=sharing">This google drive </a>contains major data files from The Cancer Genome Atlas muscle invasive bladder cancer cohort. We have pre-processed some of these to make them less difficult to work with, but some of them are still very large! You can and should work with these in R. You can also open these in notepad (but use notepad++ because this has some actual functionality).<br/>
-Most of the data files are tab spaced value (tsv) files which means you can open and process them easily (even in Excel if you want a quick look). The .maf and .bed format files are tsv format files as well, but they are organised in a partciular way with particular columns in a particular order. A description of each file is given in the table below:<br/><br/>
+Most of the data files are tab spaced value (tsv) files which means you can open and process them easily (even in Excel if you want a quick look). The .maf, .gmt and .bed format files are tsv format files as well, but they are organised in a partciular way with particular columns in a particular order. A description of each file is given in the table below:<br/><br/>
 </p>
 
 | Filename | Technology | Description |
 | --- | --- | --- |
+| c2.all.v2023.2.Hs.symbols.gmt | annotation file | curated lists of genes involved in different pathways |
 | CNA_gene-level-CN.tsv | copy number array  |  number of copies of each gene in each tumour (could represent segmental or casette alterations) |
 | gc47_gene_locations.bed | annotation file | GRCh38 gene locations across the genome | 
+| h.all.v2023.2.Hs.symbols.gmt | annotation file | curated lists of genes involved in different "hallmark" pathways |
 | methylation_CpG-array.tsv |  5mC methylation array | methylation intensity beta values between 0 (low) and 1 (high) | 
 | miRNA_counts.tsv | miRNA sequencing (short RNAseq) | raw read counts per miRNA gene |
 | miRNA_CPMs.tsv | miRNA sequencing (short RNAseq) | counts per million to control for differences in sequencing depth | 
@@ -90,6 +92,7 @@ Most of the data files are tab spaced value (tsv) files which means you can open
 | mRNA_gc47-TPMs.tsv | mRNA sequencing (polyA RNAseq) | transcripts per million to control for depth and feature length |
 | mRNA_gc47-TPMs_ConsensusClassifier.tsv | sample annotation | Consensus classification of each tumour according to Kamoun et al (2020) |
 | mRNA_gc47-TPMs_LundTax2023Classifier.tsv | sample annotation | Lund classification of each tumour according to Cotillas et al (2024) |
+| oncoKB_2024-02-08.tsv | annotation file | list of human "cancer genes" curated by the oncoKB website |
 | TCGA-BLCA-clinical-metadata.tsv | patient metadata | relevant metadata for patients and their cancer |
 | WGS_coding-regions-only.maf | whole genome sequencing | mutations in tumours filtered to just include mutations in coding regions |
 | WGS_mutation-in-at-least-4-patients.maf | whole genome sequencing | mutations in tumours filtered to only include mutations found in 4 or more patients |
@@ -103,7 +106,194 @@ Before jumping into the data analysis, do some reading to get a better feel for 
 
 ### Getting started with your analysis
 <p align="justify">
-
+So where to begin? Well, first, don't worry. You need to get some better understanding of bladder cancer, then you can start to work with the data more. I'm going to give a brief demo idea below which follows this experimental strategy:
+<ol>
+<li>Find tumours which have a mutation in <i>FGFR3</i></li>
+<li>Run differential expression analysis between tumours with or without an <i>FGFR3</i> mutation, but only in tumours within the LumP consensus classification</li>
+<li>Plot a labelled volcano plot</li>
+<li>Run gene set enrichment analysis to start to interpret the biology of the results</li>
+</ol>
+This demo code assumes a lot of knowledge. First, that you remember how to set up an RStudio project, install packages and download files from the google drive link above. Second, that you know <i>FGFR3</i> is an important bladder cancer gene and that it is enriched in LumP tumours. This is where your reading will really help - I really want you to think of something you would like to investigate. You may not find something in the literature, but playing with the data may reveal genes or data types you want to work with - we will obviosuly discuss this in our weekly meetings too. Third, that you know which columns are important, which have NA values which need to be handled etc. This is where you will need to use all your data skills you have developed through BABS - don't make assumptions, do lots of graphs and <b>look at the data</b> - it is so important you sanity check what you are doing. Commands like head, tail, summary, view are your friends!<br/><br/>
+Remember, this is only an indicative starting point - your analysis would need to go deeper and to consider, graph, discuss and (where necessary) control for any confounding variables I have skipped over. 
 <br/><br/>
 </p>
 
+```R
+
+# load libraries
+library(dplyr)
+library(maftools)
+library(ggplot2)
+library(ggrepel)
+library(DESeq2)
+library(fgsea)
+library(BiocParallel)
+
+# enable parallel computing
+register(SerialParam())
+
+
+## Section 1 - identify tumours with FGFR3 mutation
+
+# read whole exome sequencing MAF
+wxs_maf <- read.maf("WXS.maf")
+
+# get summaries of all mutated genes, get number of patients with FGFR3 muts
+gene_tots <- getGeneSummary(wxs_maf)
+gene_tots[grep("FGFR3", gene_tots$Hugo_Symbol),]$MutatedSamples
+
+# produce a lollipop plot showing where the mutations in FGFR3 are
+lollipopPlot(maf = wxs_maf, gene = "FGFR3", AACol = "Protein_Change", cBioPortal = TRUE, 
+             pointSize = 4, labelPos = c("249", "373"), labPosSize = 2, 
+             titleSize = c(2, 1), showMutationRate = FALSE,
+             domainLabelSize = 2, showDomainLabel = FALSE,
+             axisTextSize = c(2,2), legendTxtSize = 1.5, )
+
+# extract FGFR3 mutant patient IDs
+fgfr3_muts <- unique(wxs_maf@data[Hugo_Symbol == "FGFR3", Patient_Id])
+
+```
+
+![FGFR3 lollipop](/assets/coursefiles/2025_BSc_dissertation_project/demo_FGFR3_lollipop.png){:class="img-responsive"}
+
+```R
+
+## Section 2 - Load RNAseq data and subset to keep only LumP tumours, with FGFR3 genotype info
+
+# load consensus classifiers for each tumour and keep only LumP tumours
+# patient ID is in form TCGA-##-####, but individual samples (tumour, blood etc) have a label like -01A at the end
+# the substr command is used to remove this to return to patient ID
+con_class <- read.table("mRNA_gc47-TPMs_ConsensusClassifier.tsv", 
+                        header = TRUE, sep = "\t")
+con_class$Patient_ID <- substr(con_class$ID, 1, 12)
+lump_patients <- con_class$Patient_ID[con_class$consensusClass == "LumP"]
+
+# keep only LumP tumours, with information on FGFR3 wildtype vs mutant
+lump_fgfr3 <- intersect(fgfr3_muts, lump_patients)
+lump_fgfr3_wt <- setdiff(lump_patients, lump_fgfr3)
+
+# create a sample info dataframe for differential expression
+sample_ids <- c(lump_fgfr3, lump_fgfr3_wt)
+
+genotype <- c(rep("MUT", length(lump_fgfr3)),
+              rep("WT", length(lump_fgfr3_wt)))
+			  
+sample_info <- data.frame(row.names = sample_ids, genotype = genotype)
+
+# load RNAseq count data, adapt column names and subset to only keep LumP tumours
+counts <- read.table("mRNA_gc47-counts.tsv", check.names = FALSE,
+                    header = TRUE, row.names = 1, sep = "\t")					
+colnames(counts) <- substr(colnames(counts), 1, nchar(colnames(counts)) - 4)
+
+lump_counts <- counts[ , sample_ids]
+lump_counts <- round(lump_counts[complete.cases(lump_counts), ])
+
+
+## Section 3 - Differential expression
+# how is gene expression different in (LumP) tumours with mutant or wildtype FGFR3?
+
+# create the DESeq2 object
+dds <- DESeqDataSetFromMatrix(countData = lump_counts, 
+                              colData = sample_info, 
+                              design = ~ genotype)
+
+dds$genotype <- relevel(dds$genotype, ref = "WT")
+
+# run DESeq2 - this will take a few minutes
+dds <- DESeq(dds)
+
+# store results
+dds_results <- results(dds)
+
+# in relevant columns, process NA values and apply a max adjusted p value
+dds_results$log2FoldChange[is.na(dds_results$log2FoldChange)] <- 0
+dds_results$padj[is.na(dds_results$padj) | dds_results$padj > 0.99] <- 0.99
+
+# add labels for colouring the volcano plot
+dds_results$DEA <- "NO"
+dds_results$DEA[dds_results$log2FoldChange > 1 & dds_results$padj < 0.05] <- "UP"
+dds_results$DEA[dds_results$log2FoldChange < -1 & dds_results$padj < 0.05] <- "DOWN"
+
+# add gene symbols as column for easy plot labelling
+dds_results$symbol <- rownames(dds_results)
+
+# create pi values (fold change multiplied by stat significance) for later gene ranking
+dds_results$pi <- dds_results$log2FoldChange * -log10(dds_results$padj)
+dds_results_pi_sorted <- dds_results[order(dds_results$pi),]
+
+# create reduced dataframe of most significantly different genes, for labelling
+# using pi values means you prioritise most biologically significant
+top_genes <- c(head(dds_results_pi_sorted$symbol, 20), tail(dds_results_pi_sorted$symbol, 20))
+genes_to_label <- dds_results[dds_results$symbol %in% top_genes, ]
+
+# create a labelled, coloured and annotated volcano plot
+ggplot(dds_results, aes(x=log2FoldChange, y=-log10(padj))) + 
+  geom_point(aes(colour = DEA), show.legend = FALSE) + 
+  scale_colour_manual(values = c("blue", "gray", "red")) +
+  geom_hline(yintercept = -log10(0.05), linetype = "dotted") + geom_vline(xintercept = c(-1,1), linetype = "dotted") + 
+  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
+  geom_text_repel(size=2, data=genes_to_label, aes(x=log2FoldChange, y=-log10(padj), label=symbol), max.overlaps = Inf)
+  
+# save plot and data
+ggsave("LumP_FGFR3_MUTvsWT_volcano.pdf")
+
+write.table(dds_results, file="LumP_FGFR3_MUTvsWT_DEA_results.tsv", 
+            sep = "\t", row.names = FALSE, col.names = TRUE)
+
+```
+
+![LumP FGFR3 mut vs WT volcano](/assets/coursefiles/2025_BSc_dissertation_project/demo_LumP_FGFR3_MUTvsWT_volcano.png){:class="img-responsive"}
+
+```R
+
+## Section 4 - gene set enrichment analysis (GSEA)
+# this allows you to look for pathway-level changes, rather than having to google genes individually
+
+# load MSigDB gene set
+genesets = gmtPathways("c2.all.v2023.2.Hs.symbols.gmt")
+
+# use pi values to rank genes from "most up" to "most down" in the comparison
+prerank <- dds_results[c("symbol", "pi")]
+prerank <- setNames(prerank$pi, prerank$symbol)
+str(prerank)
+
+# run fgsea
+fgseaRes <- fgsea(pathways = genesets, stats = prerank, minSize=15, maxSize = 500)
+
+# store top10 most enriched
+# positive enrichment is "(relatively) up in the FGFR3 mutant tumours"
+# negative enrichment is "(relatively) up in the FGFR3 wildtype tumours"
+top10_fgseaRes <- head(fgseaRes[order(pval), ], 10)
+top10_fgseaRes
+
+# create bar chart of normalised enrichment scores (NES) for top10 hits
+ggplot(top10_fgseaRes, aes(x = NES, y=reorder(pathway, -pval), fill = factor(sign(NES)))) + 
+              geom_bar(stat = "identity", width = 0.8) +
+              labs(title = "GSEA", x = "Normalised Enrichment Score (NES)", y = "Pathway") +
+              theme_minimal(base_size = 16) +
+              scale_fill_manual(values = c("#0754A2", "#B10029"), guide = "none") +
+              scale_y_discrete(labels = function(x) gsub("^HALLMARK_", "", x)) +
+              theme(axis.text = element_text(color = "black"),
+                       axis.title = element_text(color = "black"),
+                       panel.grid.major = element_blank(),
+                       panel.grid.minor = element_blank())
+
+ggsave("LumP_FGFR3_MUTvsWT_top10_c2-GSEA.pdf", width=16, height=12)				   
+
+# Done! Well. This is where the "so what does it mean?" begins
+
+```
+
+![LumP FGFR3 mut vs WT top GSEA hits](/assets/coursefiles/2025_BSc_dissertation_project/demo_LumP_FGFR3_MUTvsWT_top10_c2-GSEA.png){:class="img-responsive"}
+
+<p align="justify">
+A quick note on where these gene sets come from. These are submitted by the academic community as "signatures" of particular experimental set ups. This means a gene set name may make absolutely no sense in the context of your work - such as "therapeutics for SARS" as the top hit in a bladder cancer comparison. But, think what this actually means - this is (likely) a set of genes involved in immune response. The interpretation here is that FGFR3 wildtype tumours have a better immune response. This matches the literature as active FGF signalling (most mutations in FGFR3 are activating) causes immune cell exclusion.<br/><br/>
+To explore these results, you can look at the leadingEdge column (these are the most significant hits from each gene set) and google the exact name of the pathway followed by "MSigDB" and you will find a webpage giving information on the paper/experiment used to create the gene list.
+<br/><br/>
+</p>
+
+### What now?
+<p align="justify">
+Excellent! Well done for getting to the end! This should be a page you keep coming back to during your project. Don't worry if you haven't understood it all - you'll be amazed how far you come this year. I'm looking forward to working with you and seeing what you find!
+<br/><br/>
+</p>

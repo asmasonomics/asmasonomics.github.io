@@ -54,6 +54,15 @@ Something you won't have maybe thought about too much before is the ethics of wo
 <br/><br/>
 </p>
 
+### Getting help with your project
+<p align="justify">
+First thing to remember is that you are doing new research. This means we don't necessarily know the "right" answer when it comes to checking your results. Make sure you are checking your scripting and that you are really critical of your results - do they actually make sense?<br/>
+We expect you to have a good go at solving problems and troubleshooting, but don't get stuck for too long without asking for help. Work with the rest of the group (they're working with the same data too). If you still need help you can use the google form embedded below to (anonymously, if you like) ask for help, but do <a href="https://docs.google.com/spreadsheets/d/1Wf2jWKhMtfVwaOckzsndKR8KyEPlbkpzm3F-HDVVhB4/edit?usp=sharing">check the existing questions and responses first on this google sheet</a>. Marcello (bioinformatician in my lab) or I will pick these up, typically within a working day, so check back regularly.
+<br/><br/>
+</p>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe1_rI9hUGIm3hWeT_AuaXoajzHxHCziB-mZBD86OeZ9WqhpA/viewform?embedded=true" width="640" height="921" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+<br/>
+
 ### Introduction to bladder cancer
 <p align="justify">
 To get you started I've recorded a mini lecture on muscle invasive bladder cancer. This is enough to get you going, but you'll want to dig deeper in areas relevant to your project (including looking at studies from other cancer types). Remember - what I've said is my scientific assessment based on the literature and my own research experience - your critique is welcome and expected!<br/>

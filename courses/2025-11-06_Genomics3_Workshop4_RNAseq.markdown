@@ -3,8 +3,6 @@ layout: page
 permalink: /courses/Genomics3_Workshop4_RNAseq_Nov2025
 ---
 
-<span style="font-size:3em;">**IN DEVELOPMENT**</span><br/>
-
 ![Genomics3 banner](/assets/coursefiles/2023_Genomics/genomics_banner.jpeg){:class="img-responsive"}
 
 <span style="font-size:1.6em;">**Genomics 3 - Workshop 4: RNAseq**</span><br/>
@@ -202,7 +200,7 @@ We will now use an R package called tximport to combine the different datasets t
 
 ```sh
 # enter R by typing R in the terminal
-# make a note of which version you're using
+# make a note of which version you're using - it should be v4.3.3
 R
 ```
 
@@ -276,6 +274,9 @@ grpd_gene_list_data <- prepare_data_for_plot(txiDF, gene_list)
 
 # check you've only got the data you want
 print(grpd_gene_list_data)
+
+# Note - currently the SD column says NA because you only have one sample per group
+# The function is built for future you, when you will have more samples...
 
 # plot
 ggplot(grpd_gene_list_data, aes(x = genes, y = Mean, fill = GroupPrefix)) +

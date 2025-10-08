@@ -94,9 +94,10 @@ Let's get set up:<br/>
      <li>Open a New Project</li>
 	 <li>Choose an Existing Directory</li>
 	 <li>Browse</li>
-	 <li>Click the left arrow next to your username at the top, click the one which looks like a disk (first icon, to left of <code>home</code>)</li>
-	 <li>Navigate through shared > biology > bioldata1 > bl-00087h > students > your username > workshop5 </li>
-	 <li>Then select Open (top right), then Create Project</li>
+	 <li>Click the three dots <code>...</code> at the top right of the Choose Directory window</li>
+	 <li>Add the following path to the box, then hit Enter <code>/shared/biology/bioldata1/bl-00087h/students/</code></li>
+	 <li>Find the directory matching your username, and then select the <code>workshop5</code> directory</li>
+	 <li>Hit Choose, then Create Project</li>
 	 <li>Ignore any updates <i>etc.</i></li>
    </ol>
 Finally, open a new script file called <code>workshop5.R</code> or similar, and add the following lines to the top:<br/>

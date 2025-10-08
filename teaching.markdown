@@ -22,10 +22,10 @@ Andrew completed his University of York <a href="https://www.york.ac.uk/staff/te
 
 <span style="font-size:1.02em;">**Course material**</span><br/>
 
+2023-05-30  [BMS Bitesize: Introduction to Statistics](https://asmasonomics.github.io/courses/BMS_Bitesize_Statistics_May2023) <br/>
+2024-03-21  [Introduction to cBioPortal](https://asmasonomics.github.io/courses/Intro_cBioPortal_Mar2024) <br/>
 2025-11-06  [Genomics 3 - Workshop 4: RNAseq](https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2025) <br/>
 2025-11-13  [Genomics 3 - Workshop 5: scRNAseq](https://asmasonomics.github.io/courses/Genomics3_Workshop5_scRNAseq_Nov2025) <br/>
-2024-03-21  [Introduction to cBioPortal](https://asmasonomics.github.io/courses/Intro_cBioPortal_Mar2024) <br/>
-2023-05-30  [BMS Bitesize: Introduction to Statistics](https://asmasonomics.github.io/courses/BMS_Bitesize_Statistics_May2023) <br/>
 
 <details>
    <summary><b>Previous course material</b></summary>

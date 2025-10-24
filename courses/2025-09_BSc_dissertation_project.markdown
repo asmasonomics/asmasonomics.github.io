@@ -22,14 +22,14 @@ During semester 1, we will have our group supervision meetings on <b>Wednesdays 
 | --- | --- | --- |
 | S1 W2 | W 01/10/25 | First group supervision meeting |
 | S1 Consolidation Week | W 29/10/25 | No supervision meeting |
-| S1 Week 6 | T 04/11/25 | Meeting is on Tuesday at 1pm (not Wednesday) in B/M/049 | 
-| S1 Week 8 | W 19/11/25 | Extended session to include formative presentations | 
-| S1 Week 11 | W 10/12/25 | Last meeting of semester |
+| S1 Week 6 | T 04/11/25 | Bookable one to one slots with Andrew - emailed on 24/10 | 
+| S1 Week 8 | W 19/11/25 | Formative presentations - emailed on 24/10 | 
+| S1 Week 11 | W 10/12/25 | Last meeting of semester - bookable one to one slots with Andrew - email coming on 24/11 |
 | S2 Week 1 | w/c 09/02/26 | First supervision meeting of semester 2 (day/time TBC) | 
 | S2 Week 6 | w/c 16/03/26 | Final supervision meeting of project (day/time TBC) | 
 
 <p align="justify">
-As your project develops I will set aside an open office hour where I will be available in case you want to drop in to discuss your project. This will be on a first come, first served basis.<br/><br/>
+As your project develops I will set aside an open office hour where I will be available in case you want to drop in to discuss your project. This will be on a first come, first served basis or via bookable slots.<br/><br/>
 
 The <b>main assessment is your 4000 word scientific report</b>. Deadline: Tuesday 5th May at 12 noon (S2 W11).<br/><br/>
 There is also the formative oral presentation in semester 1 (S1 W8). There are multiple opportunities for feedback on your writing (S2 W0, S2 W8) - these are for you to make the most of, and are not compulsory.

@@ -3,8 +3,6 @@ layout: page
 permalink: /courses/Genomics3_Workshop5_scRNAseq_Nov2025
 ---
 
-<span style="font-size:3em;">**IN DEVELOPMENT**</span><br/>
-
 ![Genomics3 banner](/assets/coursefiles/2023_Genomics/genomics_banner.jpeg){:class="img-responsive"}
 
 <span style="font-size:1.6em;">**Genomics 3 - Workshop 5: scRNAseq**</span><br/>
@@ -149,7 +147,7 @@ So, you have been provided with a directory with the aligned and sample-normalis
 ## have some kind of obvious section header (you could use the workshop section header...)
 ## remember to use commands like head to explore the data objects as you make them
 
-# load the data - this will take ~5 mins (so read ahead)
+# load the data - this could take ~5 mins (so read ahead)
 counts <- Read10X("data/")
 
 # check dimensions (number of genes, number of cells)

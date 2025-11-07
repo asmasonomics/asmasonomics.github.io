@@ -28,8 +28,7 @@ These are important points to consider as you do your analysis (and when you're 
 <p align="justify">
 Raw scRNAseq data can be massive (>200M reads per file is standard), so we're starting with data which has already been mapped and quantified to the gene level. In this workshop you will work exclusively in <code>R</code>, but using RStudio (nice and familiar), but still on the Linux system. The workshop is aimed towards the dual-boot Linux machines in G/N/169, but in theory you <i>could</i> do this analysis on a Windows machine. We <b>do not</b> recommend this however, as working on the managed machines means you have access to all the data, any workshop-required R libraries have been installed for you already, and you have increased computational power working on Linux rather than Windows.<br/><br/>
 In the workshop you will start with genome-mapped data. You will perform QC and filtering to keep only high quality and informative cells. You will perform dimension reduction, clustering, community annotation, differential expression, gene set enrichment analysis and functional annotation - lots of graphs.<br/><br/>
-If you choose to base your final report on <i>this</i> workshop, you will need to expand/adapt the analysis in the workshop to some related, but different data we have provided. The bioinformatic approach will be very similar, but you will need to address an appropriate question for your chosen dataset, and bring in the relevant biology. More details on these options are at the end of the workshop material.<br/>
-You can download the introductory slide deck for the workshop here as a <a href="/assets/coursefiles/2024-11-20_GenomicsW5/BIO00087H-W5-intro.pdf" download>PDF</a> or <a href="/assets/coursefiles/2024-11-20_GenomicsW5/BIO00087H-W5-intro.pptx" download>Powerpoint (pptx)</a>.<br/><br/>
+If you choose to base your final report on <i>this</i> workshop, you will need to expand/adapt the analysis in the workshop to some related, but different data we have provided. The bioinformatic approach will be very similar, but you will need to address an appropriate question for your chosen dataset, and bring in the relevant biology. More details on these options are at the end of the workshop material.<br/><br/>
 </p>
 
 ### The workshop
@@ -42,7 +41,8 @@ This is summarised nicely in this <a href="https://doi.org/10.1038/nrc3817">2015
 <br/>
 <p align="justify">
 Around 80% of people present at non-muscle-invasive stage (NMIBC) and 5-year survival is pretty good. However muscle-invasive (MIBC) disease has a 5-year survival lower than 50%, even with the standard-of-care radical treatment of removing the bladder. In this workshop you will work with scRNAseq data from a T1 tumour and a T3 tumour to identify whether there are differences between the malignant cells and tumour microenvironment between these tumour stages. These data were derived from Lai <i>et al.</i> (2021) published in the <a href="https://doi.org/10.1002/ijc.33794"><i>International Journal of Cancer</i></a>.
-<br/>
+<br/><br/>
+You can download the introductory slide deck for the workshop here as a <a href="/assets/coursefiles/2024-11-20_GenomicsW5/BIO00087H-W5-intro.pdf" download>PDF</a> or <a href="/assets/coursefiles/2024-11-20_GenomicsW5/BIO00087H-W5-intro.pptx" download>Powerpoint (pptx)</a>.<br/>
 </p>
 
 | Sample | Age | Sex | T stage | Grade | Cell number (preQC) |

@@ -7,10 +7,10 @@ permalink: /publications/
 ### Preprints
 **Ungureanu VV**, **Gawne RT**, Baker SC, Eriksson P, Halliday DM, Smith SL, Southgate J & **Mason AS**, [Biologically-informed machine learning identifies a new clinically-actionable bladder cancer subgroup characterised by NRF2 overactivity](https://www.biorxiv.org/content/10.1101/2025.06.03.657659v1), bioRxiv (2025).
 
-Kealey D, Ellerington R, Bansal S, Zeng AGX, Medeiros JJF, West KA, Blacknell NM, Hawley CA, Lukaszonek J, **Gawne R**, Khoo HM, Caalim G, Drylie B, Chatzigerou J, Ferreira BRL, Wang G, Fielding AK, Kent D, Psaila B, Wilkinson AC, Holding AN, Hitchcock IS, **Mason AS**, Gupta V, Dick J & Bridge K, [Hypoxia-Inducible Factor-1 activated by PIM1 assembles a non-canonical transcription complex and resultant regulon that drives progression of JAK2V617F myeloproliferative neoplasms](https://www.biorxiv.org/content/10.1101/2024.07.02.601518v3), bioRxiv (2024). 
-
 ### In press
 Hatton GH<sup>+</sup>, James SR<sup>+</sup>, **Mason AS**<sup>+</sup>, **Gawne RT**, Vogel H, Hogg K, Boukani P, Swinscoe G, Khan A, Welberry Smith M, Carpenter MA, Masood O, Martincorena I, Macdonald A, Harris RS, Starrett GJ, Southgate J & Baker SC, Virus-indued APOBEC3 transmutagenesis in bladder cancer initiation, *Science Advances*, *in press*. 
+
+Kealey D, Ellerington R, Bansal S, Zeng AGX, Hawley CA, Medeiros JJF, West KA, Blacknell NM, Lukaszonek J, **Gawne R**, Khoo HM, Caalim G, Drylie B, Chatzigerou J, Ferreira BRL, Wang G, Fielding AK, Kent D, Psaila B, Wilkinson AC, Holding AN, Hitchcock IS, **Mason AS**, Gupta V, Dick J & Bridge K, JAK2V617F reprograms Hypoxia Inducible Factor-1 to induce a non-canonical hypoxia regulon in myeloproliferative neoplasms, *Leukemia*, *in press*. [previous preprint](https://www.biorxiv.org/content/10.1101/2024.07.02.601518v3).
 
 ### 2025
 Magarotto M, **Gawne RT**, Vilkaite G, **Beltrami M**, **Mason AS** & Chen HJ (2025), [Familial ALS/FTD-associated RNA-Binding deficient TDP-43 mutants cause neuronal and synaptic transcript dysregulation in vitro](https://doi.org/10.1093/hmg/ddaf111), *Human Molecular Genetics*, 10.1093/hmg/ddaf111.

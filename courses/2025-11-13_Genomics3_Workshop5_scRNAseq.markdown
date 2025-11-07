@@ -40,9 +40,7 @@ This is summarised nicely in this <a href="https://doi.org/10.1038/nrc3817">2015
 ![Stages of bladder cancer from Knowles & Hurst, 2015](/assets/coursefiles/2024-11-20_GenomicsW5/Knowles2015_PMID25533674_Fig1_BLCA_stages.jpg){:class="img-responsive"}
 <br/>
 <p align="justify">
-Around 80% of people present at non-muscle-invasive stage (NMIBC) and 5-year survival is pretty good. However muscle-invasive (MIBC) disease has a 5-year survival lower than 50%, even with the standard-of-care radical treatment of removing the bladder. In this workshop you will work with scRNAseq data from a T1 tumour and a T3 tumour to identify whether there are differences between the malignant cells and tumour microenvironment between these tumour stages. These data were derived from Lai <i>et al.</i> (2021) published in the <a href="https://doi.org/10.1002/ijc.33794"><i>International Journal of Cancer</i></a>.
-<br/><br/>
-You can download the introductory slide deck for the workshop here as a <a href="/assets/coursefiles/2024-11-20_GenomicsW5/BIO00087H-W5-intro.pdf" download>PDF</a> or <a href="/assets/coursefiles/2024-11-20_GenomicsW5/BIO00087H-W5-intro.pptx" download>Powerpoint (pptx)</a>.<br/>
+Around 80% of people present at non-muscle-invasive stage (NMIBC) and 5-year survival is pretty good. However muscle-invasive (MIBC) disease has a 5-year survival lower than 50%, even with the standard-of-care radical treatment of removing the bladder. In this workshop you will work with scRNAseq data from a T1 tumour and a T3 tumour to identify whether there are differences between the malignant cells and tumour microenvironment between these tumour stages. These data were derived from Lai <i>et al.</i> (2021) published in the <a href="https://doi.org/10.1002/ijc.33794"><i>International Journal of Cancer</i></a>.<br/>
 </p>
 
 | Sample | Age | Sex | T stage | Grade | Cell number (preQC) |
@@ -50,14 +48,16 @@ You can download the introductory slide deck for the workshop here as a <a href=
 | BC2 | 67 | M | T1 | High | 11428 |
 | BC5 | 81 | M | T3 | High | 10592 |
 
-<br/>
-
 #### Workshop Aims
 1. Quality check your scRNAseq data, removing uninformative or low quality cells
 2. Apply appropriate techniques for identifying distinct clusters of similar cells
 3. Explore the biology of these communities through annotation, differential expression and functional characterisation
 4. Compare alike cells between two different samples
+
+<p align="justify">
+You can download the introductory slide deck for the workshop here as a <a href="/assets/coursefiles/2024-11-20_GenomicsW5/BIO00087H-W5-intro.pdf" download>PDF</a> or <a href="/assets/coursefiles/2024-11-20_GenomicsW5/BIO00087H-W5-intro.pptx" download>Powerpoint (pptx)</a>.
 <br/><br/>
+</p>
 
 #### 0 Set up your directories, paths and RStudio project
 <p align="justify">

@@ -594,7 +594,8 @@ kallisto quant --index ../rnaseq_data/gencode.v44.pc_transcripts.processed-kalli
 
 <p align="justify">
 If you are working off campus using teaching0, remember that you are using a (large) computer but shared with multiple other people. This means if you ask for loads of threads you make it slower for everyone (and you might get an email about it, because your session is linked to your UUN... You could go up to 4 threads to make it a little faster and still be nice to others. You could check how busy the server is by running the <code>htop</code> command - just watch the bars for 30 seconds or so - if it is busy it will look "full". If it isn't busy, feel free to up your thread use.<br/>
-Another option on teaching0 is to use loops, and set the commands running in the background, or using <code>screen</code> - google this it will be incredibly helpful.<br/><br/>
+Another option on teaching0 is to use loops, and set the commands running in the background, or using <code>screen</code> - google this it will be incredibly helpful. You can use these background-running tools on teaching0 because the server is always on (excluding power cuts...). This means you can log off your terminal session and your background jobs will keep going. On the dual-boot machines, the act of logging out or restarting ends your running processes - otherwise you would be impacting what the computer could do for the next user.<br/> 
+One of the benefits of informatics sometimes is you can set something big going at 5pm, log off and everything should be done and ready for you by morning.<br/><br/>
 </p>
 
 ```sh 

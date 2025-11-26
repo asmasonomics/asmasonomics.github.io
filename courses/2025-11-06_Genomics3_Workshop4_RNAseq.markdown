@@ -575,12 +575,30 @@ Good luck, remember to support each other using the discussion boards, and do as
 #### Some extra commands to help
 <p align="justify">
 Remember, you should run FastQC on each read file (all 16). You don't need to put any of the graphs into your report, but it is always good practice to check the quality of your data, and putting information on average read number is often good practice.<br/>
-You then need to run kallisto on each sample (all 8) using both read 1 and read 2. You will also include bootstrapping here (which you didn't do in the workshop) to make your DEA more robust. The command for that is below. Then your Sleuth, plotting and GSEA commands should be very similar, just changing the read names and any relevant paths to data.<br/>
-fastQC on these full files will take 10-20 minutes per file. kallisto will take 40-60 minutes per sample. Use loops, and set the commands running in the background, or using <code>screen</code> - google this it will be incredibly helpful. <br/><br/>
-Remember, you can set jobs running, and then go off and do something else while they run. Setting something running at 5pm often means it is ready for you in the morning.<br/>
+You then need to run kallisto on each sample (all 8) using both read 1 and read 2. You will also include bootstrapping here (which you didn't do in the workshop) to make your DEA more robust. The command for that is below. Then your Sleuth, plotting and GSEA commands should be very similar, just changing the read names and any relevant paths to data.<br/><br/>
+As these files are much larger than the ones you used in the workshop, the processing will take longer. fastQC would take take 10-20 minutes per file, and kallisto up to an hour.<br/>
+If you are working on campus, you can make the processes go faster by adding the parameter <code> -t 12 </code> to your fastqc and kallisto runs. The <code>-t</code> here means "threads" and takes advantage of parallel computing - I won't get into it here, but it means you can take one command and split it up into smaller pieces that then run in parallel so that the overall jobs runs faster. On the dual-boot Linux machines you can run up to 12 threads and it makes those fastqc and kallisto runs finish in 5 minutes, rather than an hour... I've shown you the command below.<br/>
+Just a quick note - you cannot keep increasing the number of threads to make it go faster and faster, for 2 reasons. 1) Sometimes a job can't be split up that much, or the most memory-intensive bit is only part of the process, and 2) your machine only has a certain number of processors available (and some of those are being used to make the PC work...) - so don't overdo it. 12 is plenty - I tested with 24 and it saved an extra 7 seconds...<br/><br/>
+</p>
+
+```sh
+
+# running fastqc with 12 threads to speed it up
+fastqc -o ./ -t 12 ../rnaseq_data/01_workshop4_BKPyV-infection/01_test_files_for_fastqc/SAMPLENAME_read1.fq.gz
+
+# running kallisto with 12 threads and 20 bootstraps
+# the bootstraps make the differential expression analysis more accurate
+kallisto quant --index ../rnaseq_data/gencode.v44.pc_transcripts.processed-kallisto --output-dir=SAMPLENAME -t 12 --bootstrap-samples=20 ./SAMPLENAME_read1.fq.gz ./SAMPLENAME_read2.fq.gz 
+
+```
+
+<p align="justify">
+If you are working off campus using teaching0, remember that you are using a (large) computer but shared with multiple other people. This means if you ask for loads of threads you make it slower for everyone (and you might get an email about it, because your session is linked to your UUN... You could go up to 4 threads to make it a little faster and still be nice to others. You could check how busy the server is by running the <code>htop</code> command - just watch the bars for 30 seconds or so - if it is busy it will look "full". If it isn't busy, feel free to up your thread use.<br/>
+Another option on teaching0 is to use loops, and set the commands running in the background, or using <code>screen</code> - google this it will be incredibly helpful.<br/><br/>
 </p>
 
 ```sh 
+
 # a fastqc loop
 # this would loop through any file ending in gz in the current directory and run fastqc one after the other
 for readfile in *gz
@@ -594,10 +612,8 @@ for readfile in *gz
     fastqc -o ./ $readfile &
 done
 
-# this is the command for kallisto with the bootstraps
-# you could run each of the 8 samples with an '&' at the end to run in the background
-# you could put this in a loop too, if you're careful about how you define each file 
+# you can make loops for kallisto too, it's just more complicated
 # remember, sometimes it is quicker (if you're doing something once) to type it out vs spending an hour getting a loop right...
-kallisto quant --index ../rnaseq_data/gencode.v44.pc_transcripts.processed-kallisto --output-dir=SAMPLENAME --bootstrap-samples=20 ./SAMPLENAME_read1.fq.gz ./SAMPLENAME_read2.fq.gz 
+
 ```
 

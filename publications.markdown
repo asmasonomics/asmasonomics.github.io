@@ -8,11 +8,11 @@ permalink: /publications/
 **Ungureanu VV**, **Gawne RT**, Baker SC, Eriksson P, Halliday DM, Smith SL, Southgate J & **Mason AS**, [Biologically-informed machine learning identifies a new clinically-actionable bladder cancer subgroup characterised by NRF2 overactivity](https://www.biorxiv.org/content/10.1101/2025.06.03.657659v1), bioRxiv (2025).
 
 ### In press
-Hatton GH<sup>+</sup>, James SR<sup>+</sup>, **Mason AS**<sup>+</sup>, **Gawne RT**, Vogel H, Hogg K, Boukani P, Swinscoe G, Khan A, Welberry Smith M, Carpenter MA, Masood O, Martincorena I, Macdonald A, Harris RS, Starrett GJ, Southgate J & Baker SC, Virus-indued APOBEC3 transmutagenesis in bladder cancer initiation, *Science Advances*, *in press*. 
-
 Kealey D, Ellerington R, Bansal S, Zeng AGX, Hawley CA, Medeiros JJF, West KA, Blacknell NM, Lukaszonek J, **Gawne R**, Khoo HM, Caalim G, Drylie B, Chatzigerou J, Ferreira BRL, Wang G, Fielding AK, Kent D, Psaila B, Wilkinson AC, Holding AN, Hitchcock IS, **Mason AS**, Gupta V, Dick J & Bridge K, JAK2V617F reprograms Hypoxia Inducible Factor-1 to induce a non-canonical hypoxia regulon in myeloproliferative neoplasms, *Leukemia*, *in press*. [previous preprint](https://www.biorxiv.org/content/10.1101/2024.07.02.601518v3).
 
 ### 2025
+Hatton GH<sup>+</sup>, James SR<sup>+</sup>, **Mason AS**<sup>+</sup>, **Gawne RT**, Vogel H, Hogg K, Boukani P, Swinscoe G, Khan A, Welberry Smith M, Carpenter MA, Masood O, Martincorena I, Macdonald A, Harris RS, Starrett GJ, Southgate J & Baker SC, [Virus-indued APOBEC3 transmutagenesis in bladder cancer initiation](https://doi.org/10.1126/sciadv.aea6124), *Science Advances*, 11(49):eaea6124. 
+
 Magarotto M, **Gawne RT**, Vilkaite G, **Beltrami M**, **Mason AS** & Chen HJ (2025), [Familial ALS/FTD-associated RNA-Binding deficient TDP-43 mutants cause neuronal and synaptic transcript dysregulation in vitro](https://doi.org/10.1093/hmg/ddaf111), *Human Molecular Genetics*, 10.1093/hmg/ddaf111.
 
 Turvey GL, de Alba EL, Stewart E, Cook H, Alati A, **Gawne RT**, Ainscough JFX, **Mason AS** & Coverley D (2025), [Epigenetic deprogramming driven by disruption of CIZ1-RNA nuclear assemblies in early-stage breast cancers](https://doi.org/10.1083/jcb.202409123), *Journal of Cell Biology*, 224(5):e202409123.

@@ -19,16 +19,16 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Marcello graduated with a first class Microbiology BSc from the University of Reading. During his second year he realized that there was a possibility of merging two of his biggest passions: computer science and biology. As a result, he pursued a Masters in Bioinformatics at the University of Birmingham, where his research project involved analysing RNA-seq data of glioblastoma multiforme cell lines to determine the effect of drug resistance mutations on pathway regulation. Marcello joined the Mason lab as a Bioinformatics Technician in September 2024."
 %}
 
-<span style="font-size:1.1em;">Hugo Aguado</span> *MSc by Research student*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/HugoAguado.jpg"
-	content = "Hugo joined the Mason Lab in June 2024 for a summer studentship  after finishing his BSc Genetics degree from the University of York. His summer project investigated the impact of changing genome annotations on TPM stability from TCGA's BLCA cohort. Building on this interest in improving annotation specificity, Hugo began an MSc by Research in September 2024, co-supervised by Dr Katherine Bridge (CBR), using long and short read polyA sequencing to identify tissue- and cancer-specific splicing changes and the impact on expression quantification."
-%}
-
 <span style="font-size:1.1em;">George Hatton</span> *PhD Student (Co-supervisee)*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/GeorgeHatton.jpg"
 	content = "George gained a 1st class MBiol in Biology from the University of York in 2023, completing his final year project in the Jack Birch Unit on the induction and localisation of anti-viral APOBEC3 proteins during BK Polyomavirus infection. George then successfully applied for a 3-year York Against Cancer-sponsored PhD studentship in Biomedical Science continuing the work of his Master’s. The PhD will expand on our knowledge of the role BK plays in bladder cancer oncogenesis, with George developing wet lab and bioinformatic skills supervised by Dr Simon Baker, Dr Andrew Mason and Prof Jenny Southgate."
+%}
+
+<span style="font-size:1.1em;">Adenike Adekeye</span> *PhD Student (Co-supervisee)*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/person.png"
+	content = "Adenike is a clinical PhD student based at the Hull York Medical School (University of Hull campus) under the primary clinical supervision of Professor Anthony Maraveyas and Dr Leonid Nikitenko. Adenike's project focuses on genomic profiling of pancreatic cystic fluid to determine genetic risk signatures to predict malignant potential following preliminary data collected during her NIHR Academic Clinical Fellowship (2020-23). Adenike joined the Mason lab during the second year of her PhD to develop skills in cancer bioinformatics."
 %}
 
 <span style="font-size:1.1em;">Charlie Barker</span> *MBiol project student*<br/>
@@ -78,6 +78,12 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 {% include profile_page_cols.html 
 	file = "/assets/images/AnastasiaKaltsa.jpeg"
 	content = "Anastasia obtained her medical degree from Aristotle University in Greece and moved to the UK for her specialty training in Obstetrics and Gynaecology. She is currently a year 4 trainee in the Yorkshire and the Humber Deanery. She developed a special interest in Urogynaecology and successfully applied for a part-time MSc by research project in the Jack Birch Unit, supervised by Prof Jenny Southgate and Dr Andrew Mason. The project focuses on benign urogynaecological conditions, providing knowledge and research experience to pursue her subspecialty training."
+%}
+
+<span style="font-size:1.1em;">Hugo Aguado</span> *MSc by Research student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/HugoAguado.jpg"
+	content = "Hugo joined the Mason Lab in June 2024 for a summer studentship  after finishing his BSc Genetics degree from the University of York. His summer project investigated the impact of changing genome annotations on TPM stability from TCGA's BLCA cohort. Building on this interest in improving annotation specificity, Hugo began an MSc by Research in September 2024, co-supervised by Dr Katherine Bridge (CBR), using long and short read polyA sequencing to identify tissue- and cancer-specific splicing changes and the impact on expression quantification."
 %}
 
 <span style="font-size:1.1em;">**Technical staff**</span><br/>

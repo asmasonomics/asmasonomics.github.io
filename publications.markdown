@@ -10,7 +10,8 @@ permalink: /publications/
 ### In press
 Hinley J, Baker SC, **Mason AS**, Kyriazis G, Masood O & Southgate J, Connexin 32 constrains a mesenchymal-like switch in differentiated urothelium and luminal cancers, *Life Science Alliance*, *in press*.
 
-Kealey D, Ellerington R, Bansal S, Zeng AGX, Hawley CA, Medeiros JJF, West KA, Blacknell NM, Lukaszonek J, **Gawne R**, Khoo HM, Caalim G, Drylie B, Chatzigerou J, Ferreira BRL, Wang G, Fielding AK, Kent D, Psaila B, Wilkinson AC, Holding AN, Hitchcock IS, **Mason AS**, Gupta V, Dick J & Bridge K, JAK2V617F reprograms Hypoxia Inducible Factor-1 to induce a non-canonical hypoxia regulon in myeloproliferative neoplasms, *Leukemia*, *in press*. [previous preprint](https://www.biorxiv.org/content/10.1101/2024.07.02.601518v3).
+### 2026
+Kealey D, Ellerington R, Bansal S, Zeng AGX, Hawley CA, Medeiros JJF, West KA, Blacknell NM, Lukaszonek J, **Gawne R**, Khoo HM, Caalim G, Drylie B, Chatzigerou J, Ferreira BRL, Wang G, Fielding AK, Kent D, Psaila B, Wilkinson AC, Holding AN, Hitchcock IS, **Mason AS**, Gupta V, Dick J & Bridge K (2026), [JAK2V617F reprograms Hypoxia Inducible Factor-1 to induce a non-canonical hypoxia regulon in myeloproliferative neoplasms](https://doi.org/10.1038/s41375-025-02843-9), *Leukemia*, 10.1038/s41375-025-02843-9.
 
 ### 2025
 Hatton GH<sup>+</sup>, James SR<sup>+</sup>, **Mason AS**<sup>+</sup>, **Gawne RT**, Vogel H, Hogg K, Boukani P, Swinscoe G, Khan A, Welberry Smith M, Carpenter MA, Masood O, Martincorena I, Macdonald A, Harris RS, Starrett GJ, Southgate J & Baker SC (2025), [Virus-indued APOBEC3 transmutagenesis in bladder cancer initiation](https://doi.org/10.1126/sciadv.aea6124), *Science Advances*, 11(49):eaea6124. 

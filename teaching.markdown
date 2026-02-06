@@ -30,7 +30,7 @@ Andrew completed his University of York <a href="https://www.york.ac.uk/staff/te
 
 <details>
    <summary><b>Previous course material</b></summary>
-	2025-11-13  <a href="https://asmasonomics.github.io/courses/Genomics3_Workshop4_scRNAseq_Nov2025">Genomics 3 - Workshop 5: scRNAseq</a><br/>
+	2025-11-13  <a href="https://asmasonomics.github.io/courses/Genomics3_Workshop5_scRNAseq_Nov2025">Genomics 3 - Workshop 5: scRNAseq</a><br/>
 	2025-11-06  <a href="https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2025">Genomics 3 - Workshop 4: RNAseq</a><br/>
 	2025-03-20  <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop4_March2025">BABS4 - Data Workshop 4</a><br/>
 	2025-03-06  <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop3_March2025">BABS4 - Data Workshop 3</a><br/>

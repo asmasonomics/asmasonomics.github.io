@@ -54,8 +54,10 @@ load("BABS4_workshop3_complete.RData")
 # for example: tpms <- read.table("proc_data/full_dataset_TPMs.tsv", row.names = 1, header = TRUE)
 
 # download and load new raw data for this session (for the circos plot)
-download.file("https://asmasonomics.github.io/assets/coursefiles/2024-03_66I/Hi_GC_1kb.bed", destfile = paste(getwd(),"raw_data","Hi_GC_1kb.bed", sep="/"))
-gc <- read.table("raw_data/Hi_GC_1kb.bed", header=FALSE, col.names = c("chr", "start", "end", "GC"))
+download.file("https://asmasonomics.github.io/assets/coursefiles/2024-03_66I/Hi_GC_1kb.bed", 
+		destfile = paste(getwd(),"raw_data","Hi_GC_1kb.bed", sep="/"))
+gc <- read.table("raw_data/Hi_GC_1kb.bed", header=FALSE, 
+		col.names = c("chr", "start", "end", "GC"))
 
 ```
 <br/>
@@ -77,9 +79,13 @@ library(ggrepel)
 ggplot(dds_tpm, aes(x=log2FC, y=-log10(padj))) + 
   geom_point(aes(colour = DEA), show.legend = FALSE) + 
   scale_colour_manual(values = c("blue", "gray", "red")) +
-  geom_hline(yintercept = -log10(0.05), linetype = "dotted") + geom_vline(xintercept = c(-1,1), linetype = "dotted") + 
-  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
-  geom_text_repel(size=3, data=subset(withsymbols, abs(log2FC) > 3), aes(x=log2FC, y=-log10(padj), label=symbol), max.overlaps = Inf)
+  geom_hline(yintercept = -log10(0.05), linetype = "dotted") + 
+  geom_vline(xintercept = c(-1,1), linetype = "dotted") + 
+  theme_bw() + 
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(), 
+	panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
+  geom_text_repel(size=3, data=subset(withsymbols, abs(log2FC) > 3), 
+	aes(x=log2FC, y=-log10(padj), label=symbol), max.overlaps = Inf)
 
 ```
 ![MIV0 MIV2 volcano](/assets/coursefiles/2025-03_66I_replacement_plots/03_dea_002.png){:class="img-responsive"}
@@ -173,7 +179,8 @@ sample_info <- sample_info |> separate(sample, c("genotype", "condition", "repli
 # sample_info <- read.table(text=gsub("[.]", ",", colnames(MIV0BHI3_counts)), sep=",", col.names=c("genotype", "condition", "replicate"), row.names = colnames(MIV0BHI3_counts))
 
 # generate DESeq2 object
-MIV0BHI3_dds <- DESeqDataSetFromMatrix(countData = MIV0BHI3_counts, colData = sample_info, design = ~ condition)
+MIV0BHI3_dds <- DESeqDataSetFromMatrix(countData = MIV0BHI3_counts, 
+		colData = sample_info, design = ~ condition)
 MIV0BHI3_dds$condition <- relevel(MIV0BHI3_dds$condition, ref = "MIV0")
 MIV0BHI3_dds <- DESeq(MIV0BHI3_dds)
 MIV0BHI3_dds_results <- results(MIV0BHI3_dds)
@@ -209,9 +216,13 @@ MIV0BHI3_dds_results$DEA[MIV0BHI3_dds_results$log2FC < -1 & MIV0BHI3_dds_results
 ggplot(MIV0BHI3_dds_results, aes(x=log2FC, y=-log10(padj))) +
     geom_point(aes(colour = DEA), show.legend = FALSE) +
     scale_colour_manual(values = c("blue", "gray", "red")) +
-    geom_hline(yintercept = -log10(0.05), linetype = "dotted") + geom_vline(xintercept = c(-1,1), linetype = "dotted") +
-    theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
-    geom_text_repel(size = 3, data=subset(MIV0BHI3_withsymbols, abs(log2FC) > 1), aes(x=log2FC, y=-log10(padj), label=symbol), max.overlaps = Inf)
+    geom_hline(yintercept = -log10(0.05), linetype = "dotted") + 
+	geom_vline(xintercept = c(-1,1), linetype = "dotted") +
+    theme_bw() + 
+	theme(panel.border = element_blank(), panel.grid.major = element_blank(), 
+		panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
+    geom_text_repel(size = 3, data=subset(MIV0BHI3_withsymbols, abs(log2FC) > 1), 
+		aes(x=log2FC, y=-log10(padj), label=symbol), max.overlaps = Inf)
 
 ```
 ![MIV0 vs BHI3 volcano](/assets/coursefiles/2025-03_66I_replacement_plots/04_dea_002.png){:class="img-responsive"}
@@ -266,9 +277,14 @@ cor(dea_comp$MIV0BHI3_log2FC, dea_comp$MIV0MIV2_log2FC, method = c("pearson"))
 # plot two DEAs against each other using log2FC values
 ggplot(dea_comp, aes(x=MIV0BHI3_log2FC, y=MIV0MIV2_log2FC)) + 
   geom_point() + 
-  geom_text_repel(size=3, data=subset(dea_comp_symbols, abs(MIV0MIV2_log2FC) > 3 & abs(MIV0BHI3_log2FC) < 1), aes(x=MIV0BHI3_log2FC, y=MIV0MIV2_log2FC, label=symbol), max.overlaps = Inf, colour="red") +
-  geom_abline() + geom_hline(yintercept = 0) + geom_vline(xintercept = 0) +
-  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+  geom_text_repel(size=3, 
+	data=subset(dea_comp_symbols, abs(MIV0MIV2_log2FC) > 3 & abs(MIV0BHI3_log2FC) < 1), aes(x=MIV0BHI3_log2FC, y=MIV0MIV2_log2FC, label=symbol), 
+		max.overlaps = Inf, colour="red") +
+  geom_abline() + 
+  geom_hline(yintercept = 0) + geom_vline(xintercept = 0) +
+  theme_bw() + 
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(), 
+	panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
 
 ```
 ![multi DEA comparison](/assets/coursefiles/2024-03_66I/plots/04_dea_003.png){:class="img-responsive"}
@@ -316,16 +332,22 @@ gam_cors <- gam_cors[,-1]
 
 # create column with distance between gam st/end, accounting for circular genome
 # gam is found at coordinates 1565297-1565806
-# genome is 1830138 bp - features at coordinate 10 are closer if you measure across the 'top' of the circle
-gam_cors <- mutate(gam_cors, gam_circ_dist = ((start+1830138)-1565806), gam_noncirc_dist = abs(1565297-start))
-gam_cors <- transform(gam_cors, min_gam_dist = pmin(gam_circ_dist, gam_noncirc_dist))
+# genome is 1830138 bp
+# features at coordinate 10 are closer if you measure across the 'top' of the circle
+gam_cors <- mutate(gam_cors, 
+	gam_circ_dist = ((start+1830138)-1565806), gam_noncirc_dist = abs(1565297-start))
+gam_cors <- transform(gam_cors, 
+	min_gam_dist = pmin(gam_circ_dist, gam_noncirc_dist))
 
 # sort and subset columns before plotting
 gam_cors_top <- (gam_cors[order(-gam_cors$gam_cor),])[,c("gam_cor", "symbol", "min_gam_dist")]
 ggplot(gam_cors_top, aes(x=log10(min_gam_dist+1), y=gam_cor)) + 
   geom_point() + 
-  geom_text_repel(size=3, data = gam_cors_top |> mutate(label = ifelse(gam_cor > 0.87, rownames(gam_cors_top), "")), aes(label = label), max.overlaps = Inf) +
-  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
+  geom_text_repel(size=3, data = gam_cors_top |> mutate(label = ifelse(gam_cor > 0.87, rownames(gam_cors_top), "")), 
+	aes(label = label), max.overlaps = Inf) +
+  theme_bw() + 
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(), 
+	panel.grid.minor = element_blank(), axis.line = element_line(colour = "black"))
 
 ```
 ![mu correlation by distance](/assets/coursefiles/2024-03_66I/plots/04_mu_001.png){:class="img-responsive"}
@@ -356,30 +378,37 @@ A big problem I've faced when designing this material is that many circos plotti
 ```R 
 
 # install and load the BioCircos library
-# the vignette and further information are here - https://cran.r-project.org/web/packages/BioCircos/vignettes/BioCircos.html
+# the vignette and further information are here:
+# https://cran.r-project.org/web/packages/BioCircos/vignettes/BioCircos.html
 install.packages('BioCircos')
 library(BioCircos)
 
 # we will now create a list of tracks, each time adding more information
 # then we visualise it all in one go
 
-# set the plot title in the middle of the circle (you may want to mess with x and y until you are happy)
+# set the plot title in the middle of the circle (you may want to mess with 
+# x and y until you are happy)
 tracklist <- BioCircosTextTrack("titletrack", "Hi kw20", opacity = 0.5, x = -0.2, y = 0)
 
 # define an arc region to indicate where the mu prophage region lies
-tracklist <- tracklist + BioCircosArcTrack("prophage region", "L42023.1", 1558774, 1597183, 
-                                           opacities = c(1), minRadius = 1.25, maxRadius = 1.4,
-                                           labels = c("mu prophage"))
+tracklist <- tracklist + 
+		BioCircosArcTrack("prophage region", "L42023.1", 1558774, 1597183, 
+			opacities = c(1), minRadius = 1.25, maxRadius = 1.4,
+			labels = c("mu prophage"))
 
-# use the Hi GC content file (new raw data for this workshop) to create a GC content plot
-tracklist <- tracklist + BioCircosLineTrack("GC", "L42023.1", gc$start, gc$GC, 
-                                            minRadius = 0.4, maxRadius = 0.68, color = "black",
-                                            labels = c("GC content"))
+# use the Hi GC content file (new raw data for this workshop) to create a 
+# GC content plot
+tracklist <- tracklist + 
+		BioCircosLineTrack("GC", "L42023.1", gc$start, gc$GC, 
+			minRadius = 0.4, maxRadius = 0.68, color = "black",
+			labels = c("GC content"))
 											
-# line tracks can be a good way to add other trend values - the gam correlations, for example
+# line tracks can be a good way to add other trend values - the gam 
+# correlations, for example
 
-# we will now merge our MIV0 vs MIV2 (data workshop 3) DEA results with the feature locations, retaining useful columns
-# this means we will be able to view our log2FC values as a genome-distributed heatmaps
+# we will now merge our MIV0 vs MIV2 (data workshop 3) DEA results with 
+# the feature locations, retaining useful columns - this means we will 
+# be able to view our log2FC values as a genome-distributed heatmaps
 dea <- merge(dds_tpm, featlocs, by=0)
 rownames(dea) <- dea$Row.names
 dea <- dea[,c("symbol", "log2FC", "chr", "start", "end", "strand")]
@@ -387,14 +416,16 @@ dea <- dea[,c("symbol", "log2FC", "chr", "start", "end", "strand")]
 # use this to create a new heatmap track
 # the colors form a red to blue gradient (from high pos to low neg log2FC)
 # pick colours you like!
-tracklist <- tracklist + BioCircosHeatmapTrack("DEA", "L42023.1", 
-                                               dea$start, dea$end, dea$log2FC,
-                                               minRadius = 0.8, maxRadius = 0.95,
-                                               color = c("#FF0000", "#0000FF"),
-                                               labels = c("MIV0vsMIV2 DEA"))
+tracklist <- tracklist + 
+		BioCircosHeatmapTrack("DEA", "L42023.1", 
+			dea$start, dea$end, dea$log2FC,
+			minRadius = 0.8, maxRadius = 0.95,
+			color = c("#FF0000", "#0000FF"),
+			labels = c("MIV0vsMIV2 DEA"))
 
-# I'm only showing one heatmap track here - this could be another good way to highlight regions of the genome 
-# which are up or down in different condition comparisons...
+# I'm only showing one heatmap track here - this could be another good 
+# way to highlight regions of the genome which are up or down in different 
+# condition comparisons...
 
 # finally, render the circos plot
 BioCircos(tracklist, genome = list("L42023.1" = 1830138), genomeLabelTextSize = 0,

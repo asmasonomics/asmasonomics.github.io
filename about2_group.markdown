@@ -27,8 +27,8 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 
 <span style="font-size:1.1em;">Adenike Adekeye</span> *PhD Student (Co-supervisee)*<br/>
 {% include profile_page_cols.html 
-	file = "/assets/images/person.png"
-	content = "Adenike is a clinical PhD student based at the Hull York Medical School (University of Hull campus) under the primary clinical supervision of Professor Anthony Maraveyas and Dr Leonid Nikitenko. Adenike's project focuses on genomic profiling of pancreatic cystic fluid to determine genetic risk signatures to predict malignant potential following preliminary data collected during her NIHR Academic Clinical Fellowship (2020-23). Adenike joined the Mason lab during the second year of her PhD to develop skills in cancer bioinformatics."
+	file = "/assets/images/AdenikeAdekeye.jpg"
+	content = "Adenike is an oncology specialty registrar and clinical PhD student based at the Hull York Medical School (University of Hull campus) under the primary clinical supervision of Professor Anthony Maraveyas and Dr Leonid Nikitenko. Adenike's project focuses on genomic profiling of pancreatic cyst fluid to determine genetic risk signatures to predict malignant potential following preliminary data collected during her NIHR Academic Clinical Fellowship (2020-23). Adenike joined the Mason lab during the second year of her PhD to develop skills in cancer bioinformatics."
 %}
 
 <span style="font-size:1.1em;">Charlie Barker</span> *MBiol project student*<br/>

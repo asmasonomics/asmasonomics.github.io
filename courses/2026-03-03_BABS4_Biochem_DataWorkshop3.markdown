@@ -8,7 +8,7 @@ permalink: /courses/BABS4_Biochem_DataWorkshop3_March2026
 <span style="font-size:1.6em;">**BABS4 - Data Workshop 3**</span><br/>
 
 <p align="justify">
-Welcome to Data Workshop 3! This is the first of two RNAseq workshops as part of the BABS4 (66I) "Gene expression and biochemical interactions strand". If you're from the future and are completing Workshop 4,  <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop4_March2025">please follow this link to the correct material</a>.<br/>
+Welcome to Data Workshop 3! This is the first of two RNAseq workshops as part of the BABS4 (66I) "Gene expression and biochemical interactions strand". If you're from the future and are completing Workshop 4,  <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop4_March2026">please follow this link to the correct material</a>.<br/>
 The material below will cover many of the R commands needed to fully analyse these data. If you're feeling a bit rusty, <a href="https://3mmarand.github.io/R4BABS/r4babs4/week-1/workshop.html">please consult Emma's material from the BABS4 core data workshop in week 1</a>.<br/>
 </p>
 
@@ -86,8 +86,11 @@ library(ggplot2)
 library(ggrepel)
 library(DESeq2)
 
-### if you need to install any of tidyverse, ggplot2 or ggrepel, use install.packages()
-### if you need to install DESeq2 first load library(BiocManager) then do BiocManager::install("DESeq2")
+# if you need to install any of tidyverse, ggplot2 or ggrepel: 
+# use install.packages()
+
+## if you need to install DESeq2:
+## load library(BiocManager) then do BiocManager::install("DESeq2")
 
 ```
 <br/>
@@ -125,16 +128,23 @@ You can click on the links to download the files (presumably to a Downloads fold
 ```R
 
 # counts data
-download.file("https://asmasonomics.github.io/assets/coursefiles/2024-03_66I/Hi_PRJNA293882_counts.tsv", destfile = paste(getwd(),"raw_data","Hi_PRJNA293882_counts.tsv", sep="/"))
-counts <- read.table("raw_data/Hi_PRJNA293882_counts.tsv", row.names = 1, header = TRUE)
+download.file("https://asmasonomics.github.io/assets/coursefiles/2024-03_66I/Hi_PRJNA293882_counts.tsv", 
+				destfile = paste(getwd(),"raw_data","Hi_PRJNA293882_counts.tsv", sep="/"))
+counts <- read.table("raw_data/Hi_PRJNA293882_counts.tsv", 
+				row.names = 1, header = TRUE)
 
 # feature IDs and symbols where possible
-download.file("https://asmasonomics.github.io/assets/coursefiles/2024-03_66I/Hi_feature_names.tsv", destfile = paste(getwd(),"raw_data","Hi_feature_names.tsv", sep="/"))
-featname <- read.table("raw_data/Hi_feature_names.tsv", row.names = 1, header = TRUE)
+download.file("https://asmasonomics.github.io/assets/coursefiles/2024-03_66I/Hi_feature_names.tsv", 
+				destfile = paste(getwd(),"raw_data","Hi_feature_names.tsv", sep="/"))
+featname <- read.table("raw_data/Hi_feature_names.tsv", 
+				row.names = 1, header = TRUE)
 
 # feature locations, setting the column names for BED format
-download.file("https://asmasonomics.github.io/assets/coursefiles/2024-03_66I/Hi_feature_locations.bed", destfile = paste(getwd(),"raw_data","Hi_feature_locations.bed", sep="/"))
-featlocs <- read.table("raw_data/Hi_feature_locations.bed", row.names = 4, header = FALSE, col.names = c("chr","start","end","feat_ID","biotype","strand"))
+download.file("https://asmasonomics.github.io/assets/coursefiles/2024-03_66I/Hi_feature_locations.bed", 
+				destfile = paste(getwd(),"raw_data","Hi_feature_locations.bed", sep="/"))
+featlocs <- read.table("raw_data/Hi_feature_locations.bed", 
+				row.names = 4, header = FALSE, 
+				col.names = c("chr","start","end","feat_ID","biotype","strand"))
 
 ```
 <br/>
@@ -167,8 +177,9 @@ counts |> ggplot(aes(x = kw20.BHI1.F)) + geom_histogram()
 counts |> ggplot(aes(x = log10(kw20.BHI1.F + 1))) + geom_histogram()
 
 # we do +1 inside the transform because log10(1) is 0 
-# this means the graph is not impacted by 0s and small decimals (missing and negatives respectively)
-# less of a problem here because read counts are integers, but it may be relevant later on.
+# this means the graph is not impacted by 0s and small decimals 
+# (missing and negatives respectively) - less of a problem here 
+# because read counts are integers, but it may be relevant later on.
 
 ```
 ![kw20.BHI1.F log10 histogram](/assets/coursefiles/2024-03_66I/plots/03_explore_002.png){:class="img-responsive"}
@@ -184,27 +195,33 @@ Now let's explore the other two datasets we loaded in.<br/>
 # take a look at the top of the feature ID file with symbols and gene descriptions
 head(featname)
 
-# OK, so we get some symbols - maybe we can look for the muA, muB and gam genes we have been working on?
+# OK, so we get some symbols - maybe we can look for the muA, muB and gam genes 
+# we have been working on?
 # use grep (pattern matcher) to check the symbol column for the three genes
 rownames(featname[grep("muA|muB|gam", featname$symbol),])
 
 # Success!
-# those IDs suggest the features are quite close together. Let's use the location data to check.
-# use the same pattern match as before, but extract the IDs and use them as a search term in the location data
+# those IDs suggest the features are quite close together. Let's use the location 
+# data to check. Use the same pattern match as before, but extract the IDs and use 
+# them as a search term in the location data
 mu_feats <- rownames(featname[grep("muA|muB|gam", featname$symbol),])
 mu_feats_grep <- paste(mu_feats, collapse = "|")
 featlocs[grep(mu_feats_grep, rownames(featlocs)),]
 
 # Yes - very close together
-# in the BLAST/PHASTER workshop we were trying to annotate the prophage region annotated by PHASTER - we can use the location data now to speed this up
+# in the BLAST/PHASTER workshop we were trying to annotate the prophage region 
+# annotated by PHASTER - we can use the location data now to speed this up
 # use the coordinates from PHASTER (data workshop 2) to extract all IDs in the region
 hi_prophage_region <- featlocs |> filter(between(start, 1558774, 1597183))
 
-# think how you can use the code above to take these IDs from the prophage region to extract the gene symbols
-# this will help your annotation of the prophage region from last session
+# think how you can use the code above to take these IDs from the prophage region to 
+# extract the gene symbols - this will help your annotation of the prophage region 
+# from last session
 
-# so now we have counts and feature IDs for genes we care about - what does gam look like?
-# filter the counts data for the gam feature ID, transpose to turn the row into a column, and then convert back to a dataframe
+# so now we have counts and feature IDs for genes we care about - what does gam 
+# look like?
+# filter the counts data for the gam feature ID, transpose to turn the row into 
+# a column, and then convert back to a dataframe
 gam_counts <- counts |> filter(row.names(counts) %in% c("gene-HI_1483")) |> 
   t() |> 
   as.data.frame()
@@ -242,7 +259,8 @@ max_reads <- max(count_tots$sum)
 min_reads <- min(count_tots$sum)
 max_reads / min_reads
 
-# the highest has almost 4x as many reads as the lowest - no wonder there were differences in our last bar chart
+# the highest has almost 4x as many reads as the lowest 
+# no wonder there were differences in our last bar chart
 
 # plot all the read totals to look for variance
 ggplot(count_tots, aes(x = rownames(count_tots), y = sum)) + 
@@ -282,29 +300,36 @@ So let's get on with it.
 
 ```R
 
-# we have the position information on all features in featlocs, so we can create a new column for the feature lengths
+# we have the position information on all features in featlocs, 
+# so we can create a new column for the feature lengths
 featlens <- data.frame(mutate(featlocs, feat_len = (featlocs$end+1)-featlocs$start))
 
-# we now need to combine our datasets so we can divide the feature counts by feature lengths for each sample
+# we now need to combine our datasets so we can divide the feature 
+# counts by feature lengths for each sample
 # to join two datasets you need a key to link associated data together
-# that's why we've made the rownames the feature IDs (feat_ID) in both dataframes (hence column 0 in the merge)
+# that's why we've made the rownames the feature IDs (feat_ID) in both 
+# dataframes (hence column 0 in the merge)
 withlens <- merge(counts, featlens, by=0)
 rownames(withlens) <- withlens$Row.names
 
 # create a new dataframe with the sample counts divided by the lengths
 counts_per_base <- subset(withlens, select = colnames(counts)) / withlens$feat_len
 
-# now we use apply() to divide each value by the sum of its column, then multiply by a million to make it TPM
-# the 2 indicates the function is applied on columns, rather than rows (where it would be 1)
+# now we use apply() to divide each value by the sum of its column, then 
+# multiply by a million to make it TPM
+# the 2 indicates the function is applied on columns, rather than 
+# rows (where it would be 1)
 tpms <- data.frame(apply(counts_per_base, 2, function(x){(x/sum(x))*1000000}))
 
 # check each column now totals 1 million 
 colSums(tpms)
 
-# round the data to 2 decimal places to make it more human readable (does each column still total 1 million?)
+# round the data to 2 decimal places to make it more human readable 
+# does each column still total 1 million?
 tpms <- round(tpms, 2)
 
-# now, let's make a quick assessment as to how consistent TPMs and counts are with each other, using gam
+# now, let's make a quick assessment as to how consistent TPMs and counts 
+# are with each other, using gam
 # extract just the gam TPMs, as we did with counts above
 gam_tpms <- tpms |> filter(row.names(tpms) %in% c("gene-HI_1483")) |> t() |> as.data.frame()
 colnames(gam_tpms) <- "gamtpms"
@@ -344,12 +369,14 @@ Hopefully this becomes clearer with a plot.<br/>
 # perform PCA on the tpm dataframe
 res_pca <- princomp(tpms)
 
-# extract the variance accounted for by each principal component (squared standard deviation as proportion of total)
+# extract the variance accounted for by each principal component 
+# (squared standard deviation as proportion of total)
 pca_var <- round((data.frame(res_pca$sdev^2/sum(res_pca$sdev^2)))*100,2)
 colnames(pca_var) <- "var_perc"
 pca_var
 
-# most of the variance is accounted for by PCs 1 and 2. You can now plot a scatter of these samples to see if they group based on these components
+# most of the variance is accounted for by PCs 1 and 2. You can now plot 
+# a scatter of these samples to see if they group based on these components
 # extract PCs 1 and 2
 pca_comps <- data.frame(res_pca$loadings[, c("Comp.1", "Comp.2")])
 
@@ -360,10 +387,12 @@ pca_y <- paste(c("PC2 ("), pca_var["Comp.2",], c("%)"))
 # scatter
 ggplot(pca_comps, aes(x=Comp.1, y=Comp.2)) + 
   geom_point() + 
-  geom_text_repel(size=3, label=rownames(data.frame(res_pca$loadings[, 1:2])), max.overlaps = Inf) +
+  geom_text_repel(size=3, label=rownames(data.frame(res_pca$loadings[, 1:2])), 
+					max.overlaps = Inf) +
   labs(x = pca_x, y = pca_y)
 
-# you could plot PC1 vs PC3 or PC2 vs PC3 to further interogate the data and the relationships
+# you could plot PC1 vs PC3 or PC2 vs PC3 to further interogate the data 
+# and the relationships
 
 ```
 ![PCA](/assets/coursefiles/2025-03_66I_replacement_plots/03_normalise_002.png){:class="img-responsive"}
@@ -397,7 +426,8 @@ You can use the Export function on the Plots pane of RStudio, or code it. See be
 
 ggplot(pca_comps, aes(x=Comp.1, y=Comp.2)) + 
   geom_point() + 
-  geom_text_repel(size=3, label=rownames(data.frame(res_pca$loadings[, 1:2])), max.overlaps = Inf) +
+  geom_text_repel(size=3, label=rownames(data.frame(res_pca$loadings[, 1:2])), 
+					max.overlaps = Inf) +
   labs(x = pca_x, y = pca_y)
 ggsave("plots/tpm_pca.pdf")
 
@@ -422,26 +452,35 @@ colnames(sample_info) <- c("sample")
 rownames(sample_info) <- sample_info$sample
 sample_info
 
-# currently sample_info looks very sparse, but we actually have all the information we need because of our consistent sample naming
-# we can split the sample name and this gives us the genotype (kw20), condition (MIV0, MIV2) and replicates (A,B,C) 
-sample_info <- sample_info |> separate(sample, c("genotype", "condition", "replicate"))
+# currently sample_info looks very sparse, but we actually have all the 
+# information we need because of our consistent sample naming
+# we can split the sample name and this gives us the genotype (kw20), 
+# condition (MIV0, MIV2) and replicates (A,B,C) 
+sample_info <- sample_info |> separate(sample, 
+										c("genotype", "condition", "replicate"))
 
-### during the workshop, some people working on personal machines had issues with the separate() command
-### this is part of tidyverse, so make sure that is loaded and updated, and try again
-### if that still doesn't work, see the base R (i.e. no libraries needed) one-liner solution which replaces the 5 code lines above
+### during the workshop, some people working on personal machines had 
+### issues with the separate() command
+### this is part of tidyverse, so make sure that is loaded and try again
+### if that still doesn't work, see the base R (i.e. no libraries needed) 
+### one-liner solution which replaces the 5 code lines above
 ### sample_info <- read.table(text=gsub("[.]", ",", colnames(comp_counts)), sep=",", col.names=c("genotype", "condition", "replicate"), row.names = colnames(comp_counts))
 
-# crucial check needed now - are the columns in the counts data all found in the rownames of the sample_info (and in the same order)
+# crucial check needed now - are the columns in the counts data all found in 
+# the rownames of the sample_info (and in the same order)
 all(rownames(sample_info) %in% colnames(comp_counts))
 all(rownames(sample_info) == colnames(comp_counts))
 
-# these are both TRUE, which is good. If these are FALSE, you need to reorder your columns/rows to make them match
+# these are both TRUE, which is good. If these are FALSE, you need to reorder 
+# your columns/rows to make them match
 
 # now we can run the differential expression
 # the design parameter tells DESeq2 what comparison you want to make
-dds <- DESeqDataSetFromMatrix(countData = comp_counts, colData = sample_info, design = ~ condition)
+dds <- DESeqDataSetFromMatrix(countData = comp_counts, 
+								colData = sample_info, design = ~ condition)
 
-# explicitly set the control condition so fold changes are in the direction you want/makes biological sense
+# explicitly set the control condition so fold changes are in the direction 
+# you want/makes biological sense
 dds$condition <- relevel(dds$condition, ref = "MIV0")
 
 # run DESeq2
@@ -474,7 +513,8 @@ That's the maths explainer over. Let's get back to interrogating the results of 
 
 ```R 
 
-# currently our results all have the feature ID, so let's add in the gene symbol and TPMs
+# currently our results all have the feature ID, so let's add in the 
+# gene symbol and TPMs
 # first merge with the featnames to get symbols
 dds_results <- merge(as.data.frame(dds_results), featname, by=0)
 rownames(dds_results) <- dds_results$Row.names
@@ -491,11 +531,12 @@ dds_tpm <- merge(dds_results, comp_red_tpms, by=0)
 rownames(dds_tpm) <- dds_tpm$Row.names
 dds_tpm <- dds_tpm[,-1]
 
-# we now have log2FC values calculated from the DESeq2-normalised counts and our TPMs
-# are they well correlated?
+# we now have log2FC values calculated from the DESeq2-normalised counts 
+# and our TPMs - are they well correlated?
 cor(dds_tpm$log2FoldChange, dds_tpm$log2FC, method = c("pearson"))
 
-# now you have some context (particularly gene names), order by most significant and take a look at the top 20
+# now you have some context (particularly gene names), order by most significant 
+# and take a look at the top 20
 head(dds_tpm[order(dds_tpm$padj),], 20)
 
 ```
@@ -530,12 +571,17 @@ dds_tpm$DEA[dds_tpm$log2FC < -1 & dds_tpm$padj < 0.05] <- "DOWN"
 ggplot(dds_tpm, aes(x=log2FC, y=-log10(padj))) + 
   geom_point(aes(colour = DEA), show.legend = FALSE) + 
   scale_colour_manual(values = c("blue", "gray", "red")) +
-  geom_hline(yintercept = -log10(0.05), linetype = "dotted") + geom_vline(xintercept = c(-1,1), linetype = "dotted") + 
-  theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
-  geom_text_repel(size=3, data=subset(withsymbols, abs(log2FC) > 3), aes(x=log2FC, y=-log10(padj), label=symbol), max.overlaps = Inf)
+  geom_hline(yintercept = -log10(0.05), linetype = "dotted") + 
+  geom_vline(xintercept = c(-1,1), linetype = "dotted") + 
+  theme_bw() + 
+  theme(panel.border = element_blank(), panel.grid.major = element_blank(), 
+			panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
+  geom_text_repel(size=3, data=subset(withsymbols, abs(log2FC) > 3), 
+					aes(x=log2FC, y=-log10(padj), label=symbol), max.overlaps = Inf)
 
 # there are a lot of big, significant changes in this dataset
-# play with the fold change threshold in the geom_text_repel line to alter how many/which genes are labelled
+# play with the fold change threshold in the geom_text_repel line to 
+# alter how many/which genes are labelled
 
 ```
 ![MIV0 MIV2 volcano](/assets/coursefiles/2025-03_66I_replacement_plots/03_dea_002.png){:class="img-responsive"}

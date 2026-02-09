@@ -129,22 +129,22 @@ You can click on the links to download the files (presumably to a Downloads fold
 
 # counts data
 download.file("https://asmasonomics.github.io/assets/coursefiles/2024-03_66I/Hi_PRJNA293882_counts.tsv", 
-				destfile = paste(getwd(),"raw_data","Hi_PRJNA293882_counts.tsv", sep="/"))
+		destfile = paste(getwd(),"raw_data","Hi_PRJNA293882_counts.tsv", sep="/"))
 counts <- read.table("raw_data/Hi_PRJNA293882_counts.tsv", 
-				row.names = 1, header = TRUE)
+			row.names = 1, header = TRUE)
 
 # feature IDs and symbols where possible
 download.file("https://asmasonomics.github.io/assets/coursefiles/2024-03_66I/Hi_feature_names.tsv", 
-				destfile = paste(getwd(),"raw_data","Hi_feature_names.tsv", sep="/"))
+		destfile = paste(getwd(),"raw_data","Hi_feature_names.tsv", sep="/"))
 featname <- read.table("raw_data/Hi_feature_names.tsv", 
-				row.names = 1, header = TRUE)
+			row.names = 1, header = TRUE)
 
 # feature locations, setting the column names for BED format
 download.file("https://asmasonomics.github.io/assets/coursefiles/2024-03_66I/Hi_feature_locations.bed", 
 				destfile = paste(getwd(),"raw_data","Hi_feature_locations.bed", sep="/"))
 featlocs <- read.table("raw_data/Hi_feature_locations.bed", 
-				row.names = 4, header = FALSE, 
-				col.names = c("chr","start","end","feat_ID","biotype","strand"))
+			row.names = 4, header = FALSE, 
+			col.names = c("chr","start","end","feat_ID","biotype","strand"))
 
 ```
 <br/>
@@ -331,7 +331,9 @@ tpms <- round(tpms, 2)
 # now, let's make a quick assessment as to how consistent TPMs and counts 
 # are with each other, using gam
 # extract just the gam TPMs, as we did with counts above
-gam_tpms <- tpms |> filter(row.names(tpms) %in% c("gene-HI_1483")) |> t() |> as.data.frame()
+gam_tpms <- tpms |> filter(row.names(tpms) %in% c("gene-HI_1483")) |> 
+	t() |> 
+	as.data.frame()
 colnames(gam_tpms) <- "gamtpms"
 
 # merge the TPM and count gam subset dataframes and plot as a scatter
@@ -388,7 +390,7 @@ pca_y <- paste(c("PC2 ("), pca_var["Comp.2",], c("%)"))
 ggplot(pca_comps, aes(x=Comp.1, y=Comp.2)) + 
   geom_point() + 
   geom_text_repel(size=3, label=rownames(data.frame(res_pca$loadings[, 1:2])), 
-					max.overlaps = Inf) +
+		max.overlaps = Inf) +
   labs(x = pca_x, y = pca_y)
 
 # you could plot PC1 vs PC3 or PC2 vs PC3 to further interogate the data 
@@ -427,7 +429,7 @@ You can use the Export function on the Plots pane of RStudio, or code it. See be
 ggplot(pca_comps, aes(x=Comp.1, y=Comp.2)) + 
   geom_point() + 
   geom_text_repel(size=3, label=rownames(data.frame(res_pca$loadings[, 1:2])), 
-					max.overlaps = Inf) +
+		max.overlaps = Inf) +
   labs(x = pca_x, y = pca_y)
 ggsave("plots/tpm_pca.pdf")
 
@@ -456,8 +458,8 @@ sample_info
 # information we need because of our consistent sample naming
 # we can split the sample name and this gives us the genotype (kw20), 
 # condition (MIV0, MIV2) and replicates (A,B,C) 
-sample_info <- sample_info |> separate(sample, 
-										c("genotype", "condition", "replicate"))
+sample_info <- sample_info |> 
+	separate(sample, c("genotype", "condition", "replicate"))
 
 ### during the workshop, some people working on personal machines had 
 ### issues with the separate() command
@@ -477,7 +479,7 @@ all(rownames(sample_info) == colnames(comp_counts))
 # now we can run the differential expression
 # the design parameter tells DESeq2 what comparison you want to make
 dds <- DESeqDataSetFromMatrix(countData = comp_counts, 
-								colData = sample_info, design = ~ condition)
+				colData = sample_info, design = ~ condition)
 
 # explicitly set the control condition so fold changes are in the direction 
 # you want/makes biological sense
@@ -575,9 +577,9 @@ ggplot(dds_tpm, aes(x=log2FC, y=-log10(padj))) +
   geom_vline(xintercept = c(-1,1), linetype = "dotted") + 
   theme_bw() + 
   theme(panel.border = element_blank(), panel.grid.major = element_blank(), 
-			panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
+	panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
   geom_text_repel(size=3, data=subset(withsymbols, abs(log2FC) > 3), 
-					aes(x=log2FC, y=-log10(padj), label=symbol), max.overlaps = Inf)
+			aes(x=log2FC, y=-log10(padj), label=symbol), max.overlaps = Inf)
 
 # there are a lot of big, significant changes in this dataset
 # play with the fold change threshold in the geom_text_repel line to 

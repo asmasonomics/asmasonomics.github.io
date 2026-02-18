@@ -8,7 +8,7 @@ permalink: /publications/
 **Ungureanu VV**, **Gawne RT**, Baker SC, Eriksson P, Halliday DM, Smith SL, Southgate J & **Mason AS**, [Biologically-informed machine learning identifies a new clinically-actionable bladder cancer subgroup characterised by NRF2 overactivity](https://www.biorxiv.org/content/10.1101/2025.06.03.657659v1), bioRxiv (2025).
 
 ### 2026
-Hinley J, Baker SC, **Mason AS**, Kyriazis G, Masood O & Southgate J (2026), [Connexin 32 constrains a mesenchymal-like switch in differentiated urothelium and luminal cancers](https://doi.org/10.26508/lsa.202503427), *Life Science Alliance*, 9(5):10.26508/lsa.202503427.
+Hinley J, Baker SC, **Mason AS**, Kyriazis G, Masood O & Southgate J (2026), [Connexin 32 constrains a mesenchymal-like switch in differentiated urothelium and luminal cancers](https://doi.org/10.26508/lsa.202503427), *Life Science Alliance*, 9(5):10.26508/lsa.202503427.
 
 Kealey D, Ellerington R, Bansal S, Zeng AGX, Hawley CA, Medeiros JJF, West KA, Blacknell NM, Lukaszonek J, **Gawne R**, Khoo HM, Caalim G, Drylie B, Chatzigerou J, Ferreira BRL, Wang G, Fielding AK, Kent D, Psaila B, Wilkinson AC, Holding AN, Hitchcock IS, **Mason AS**, Gupta V, Dick J & Bridge K (2026), [JAK2V617F reprograms Hypoxia Inducible Factor-1 to induce a non-canonical hypoxia regulon in myeloproliferative neoplasms](https://doi.org/10.1038/s41375-025-02843-9), *Leukemia*, 10.1038/s41375-025-02843-9.
 

@@ -94,7 +94,10 @@ ggplot(dds_tpm, aes(x=log2FC, y=-log10(padj))) +
 As we explored last time, there are genes upregulated here related to competence (<i>e.g. comA</i>) and DNA binding and recognition (<i>e.g. dprA</i>), but there are also genes involved in tryptophan metabolism, purine metabolism and carbohydrate metabolism, among others. Are these genes simply a starvation response?<br/><br/>
 We could test this (slowly) by looking up genes individually. Another (faster) way to do this is gene set enrichment analysis (GSEA). This is very similar to gene ontology (GO) analysis, but standard GO typically only considers unordered gene lists, rather than lists ranked by fold change as you could provide after RNAseq.<br/><br/>
 GSEA is not part of today's workshop, but you could include it as an optional extra in your report - there are some pointers at the end of the workshop material. Today we will instead use some of the other tested conditions from the Black <i>et al</i> paper to further explore what is really happening in canonical competence. 
-<br/><br/>
+<br/><br/><br/>
+Before we jump into today's session, a quick couple of pieces of code after people struggled last year. The genes we choose to label comes from the <code> data=subset(withsymbols, abs(log2FC) > 3) </code> bit within the <code> ggrepel() </code> function at the end of the volcano plot section of code. Here we use <code> subset() </code> to plot the names of genes if they have a symbol (rather than just an ID) <b>and</b> their log<sub>2</sub>FoldChange value is bigger than 3 or smaller than -3 (hence use of <code> abs() </code>, meaning absolute).<br/><br/>
+This is great, but often not what we need. We may want to choose a family of genes, which may all have the same start to their names: <code> data=subset(withsymbols, grepl("^com", symbol)) </code><br/><br/>
+Or, we may want to specify a list of names... <code> data=subset(withsymbols, symbol %in% c("muA", "muB", "gam")) </code>. Remember, your report is all about <i>narrative</i>.<br/><br/>
 </p>
 
 #### Nutrient deficiency response without the competence response?

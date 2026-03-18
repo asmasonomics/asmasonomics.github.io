@@ -3,15 +3,11 @@ layout: page
 title: Teaching
 permalink: /teaching/
 ---
-<p align="justify">Andrew started his lectureship position in November 2022. Teaching responsibilities now include supervising final year MBiol integrated masters students and delivering course material in bioinformatics, genomics, data science and cancer to University of York undergraduates. <br/>
-York brought in semesters in September 2023, bringing an opportunity to revisit all teaching delivered in the department. Andrew is helping to bring more omics and informatics into BSc Biology at York through a revised skills in bioinformatics 2nd year course strand, and a brand new 3rd year Genomics module. Andrew is also teaching on the new upskilling MSc in Bioinformatics, including as module organiser for the Advanced Research Topics in Bioinformatics module, providing a research seminar and project supervision. <br/> 
-We are also supporting omics and statistics teaching for PhD students and continuing to develop Elixir material at York. <br/><br/>
-Andrew completed his University of York <a href="https://www.york.ac.uk/staff/teaching/develop/pgcap/">Postgraduate Certificate of Academic Practice (PGCAP)</a> in Summer 2024, gaining Fellowship status from <a href="https://www.advance-he.ac.uk/">AdvanceHE</a>. This followed on from Andrew's Associate Fellowship gained in 2016 whilst at The University of Edinburgh. <br/>
-<a href="https://asmasonomics.github.io/courses/2024-07_PGCAP">Read more about this process here</a>.
-<br/>
+<p align="justify">Andrew started his lectureship position in November 2022 and completed his University of York <a href="https://www.york.ac.uk/staff/teaching/develop/pgcap/">Postgraduate Certificate of Academic Practice (PGCAP)</a> in Summer 2024, gaining Fellowship status from <a href="https://www.advance-he.ac.uk/">AdvanceHE</a>. This followed on from Andrew's Associate Fellowship gained in 2016 whilst at The University of Edinburgh. <a href="https://asmasonomics.github.io/courses/2024-07_PGCAP">Read more about Andrew's teaching accreditations here</a>.<br/><br/>
+Andrew delivers teaching to stage 2, 3 and 4 undergraduate students within Biology programmes at York, teaches on York's upskilling MSc in Bioinformatics, and supervises capstone projects for BSc, MBiol and PGT Bioinformatics MSc students. We are also supporting omics and statistics teaching as part of continuing professional development and developing further ELIXIR-UK materials.<br/><br/>
 </p>
+
 <blockquote class="badgr-badge" style="font-family: Helvetica, Roboto, &quot;Segoe UI&quot;, Calibri, sans-serif;"><a href="https://api.badgr.io/public/assertions/YHQiCm1FQO2tA1hv-UfaUA"><img width="130px" height="130px" src="https://api.badgr.io/public/assertions/YHQiCm1FQO2tA1hv-UfaUA/image"></a><p class="badgr-badge-name" style="hyphens: auto; overflow-wrap: break-word; word-wrap: break-word; margin: 0; font-size: 16px; font-weight: 600; font-style: normal; font-stretch: normal; line-height: 1.25; letter-spacing: normal; text-align: left; color: #05012c;">2021 ELIXIR-UK Data Stewardship Training Fellow</p><p class="badgr-badge-date" style="margin: 0; font-size: 12px; font-style: normal; font-stretch: normal; line-height: 1.67; letter-spacing: normal; text-align: left; color: #555555;"><strong style="font-size: 12px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.67; letter-spacing: normal; text-align: left; color: #000;">Awarded: </strong>May 22, 2024</p><p class="badgr-badge-recipient" style="margin: 0; font-size: 12px; font-style: normal; font-stretch: normal; line-height: 1.67; letter-spacing: normal; text-align: left; color: #555555;"><strong style="font-size: 12px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: 1.67; letter-spacing: normal; text-align: left; color: #000;">Awarded To: </strong><span style="display: block;"> Andrew Mason</span></p><script async="async" src="https://badgr.com/assets/widgets.bundle.js"></script></blockquote>
-<br/>
 
 <span style="font-size:1.2em;">**University teaching experience**</span><br/>
 {% include experience_cols.html content1 = "11/2022 - present<br/>10/2018 - 11/2019<br/>10/2014 - 12/2016" content2 = "University of York Lecturer in Cancer Informatics<br/>University of York Biology tutor (20h)<br/>University of Edinburgh Biology demonstrator, marker and tutor (301h)" %}
@@ -19,8 +15,10 @@ Andrew completed his University of York <a href="https://www.york.ac.uk/staff/te
 <span style="font-size:1.02em;">**BSc dissertation support material**</span><br/>
 [Multiomic analysis of bladder cancer](https://asmasonomics.github.io/courses/BSc_dissertation_2025)<br/>
 
-<span style="font-size:1.2em;">**Current taught material**</span><br/>
+<span style="font-size:1.2em;">**Current taught material**</span><br/><br/>
 <span style="font-size:1.02em;">**Genomics (Stage 3 BSc/MBiol Biology programmes and PGT MSc Bioinformatics)**</span><br/>
+<i>under review</i>
+<br/>
 
 <details>
    <summary><b>Archived</b></summary>
@@ -29,19 +27,22 @@ Andrew completed his University of York <a href="https://www.york.ac.uk/staff/te
 	2024-11-20  <a href="https://asmasonomics.github.io/courses/Genomics3_Workshop5_scRNAseq_Nov2024">Genomics 3 - Workshop 5: scRNAseq</a><br/>
 	2024-11-08  <a href="https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2024">Genomics 3 - Workshop 4: RNAseq</a><br/>
 	2023-11-10  <a href="https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2023">Genomics 3 - Workshop 4: RNAseq</a><br/>
-</details>
+</details><br/>
 
 <span style="font-size:1.02em;">**BABS4 Cancer Informatics strand (Stage 2 BSc/MBiol Biology programmes)**</span><br/>
 <i>in development</i>
+<br/>
 
 <span style="font-size:1.02em;">**Research Seminars (PGT MSc Bioinformatics)**</span><br/>
+<i>under review</i>
+<br/>
 
 <details>
    <summary><b>Archived</b></summary>
 	2026-02-24  <a href="https://asmasonomics.github.io/courses/MSc_cBioPortal_Feb2026">Introduction to cBioPortal - 73M tutorial</a><br/>
 	2025-02-25  <a href="https://asmasonomics.github.io/courses/MSc_cBioPortal_Feb2025">Introduction to cBioPortal - 59M/68M tutorial</a><br/>
 	2024-02-27  <a href="https://asmasonomics.github.io/courses/MSc_cBioPortal_Feb2024">Introduction to cBioPortal - 59M/68M tutorial</a><br/>
-</details>
+</details><br/>
 
 <span style="font-size:1.02em;">**Continuing Professional Development**</span><br/>
 2023-05-30  <a href="https://asmasonomics.github.io/courses/BMS_Bitesize_Statistics_May2023">BMS Bitesize: Introduction to Statistics</a><br/>

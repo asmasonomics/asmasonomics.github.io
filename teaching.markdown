@@ -19,7 +19,7 @@ Andrew delivers teaching to stage 2, 3 and 4 undergraduate students within Biolo
 <span style="font-size:1.02em;">**Genomics (Stage 3 BSc/MBiol Biology programmes and PGT MSc Bioinformatics)**</span><br/>
 <i>under annual review for 26/27 academic year (semester 1)</i>
 <details>
-   <summary><b>Archived</b></summary>
+   <summary>Archived</summary>
 	2023-11-10  <a href="https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2023">Genomics 3 - Workshop 4: RNAseq</a><br/>   
 	2024-11-08  <a href="https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2024">Genomics 3 - Workshop 4: RNAseq</a><br/>
 	2024-11-20  <a href="https://asmasonomics.github.io/courses/Genomics3_Workshop5_scRNAseq_Nov2024">Genomics 3 - Workshop 5: scRNAseq</a><br/>
@@ -34,7 +34,7 @@ Andrew delivers teaching to stage 2, 3 and 4 undergraduate students within Biolo
 <span style="font-size:1.02em;">**Research Seminars (PGT MSc Bioinformatics)**</span><br/>
 <i>under annual review for 26/27 academic year (semester 2)</i>
 <details>
-   <summary><b>Archived</b></summary>
+   <summary>Archived</summary>
 	2024-02-27  <a href="https://asmasonomics.github.io/courses/MSc_cBioPortal_Feb2024">Introduction to cBioPortal - 59M/68M tutorial</a><br/>
 	2025-02-25  <a href="https://asmasonomics.github.io/courses/MSc_cBioPortal_Feb2025">Introduction to cBioPortal - 59M/68M tutorial</a><br/>
 	2026-02-24  <a href="https://asmasonomics.github.io/courses/MSc_cBioPortal_Feb2026">Introduction to cBioPortal - 73M tutorial</a><br/>
@@ -44,7 +44,7 @@ Andrew delivers teaching to stage 2, 3 and 4 undergraduate students within Biolo
 2023-05-30  <a href="https://asmasonomics.github.io/courses/BMS_Bitesize_Statistics_May2023">BMS Bitesize: Introduction to Statistics</a><br/>
 2024-03-21  <a href="https://asmasonomics.github.io/courses/Intro_cBioPortal_Mar2024">Introduction to cBioPortal</a><br/>
 <details>
-   <summary><b>Archived</b></summary>
+   <summary>Archived</summary>
 	2023-01-11  <a href="https://asmasonomics.github.io/courses/Intro_cBioPortal_Jan2023">Introduction to cBioPortal</a><br/>
 </details>
 <br/>

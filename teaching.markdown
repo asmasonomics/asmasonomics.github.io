@@ -25,7 +25,7 @@ Andrew delivers teaching to stage 2, 3 and 4 undergraduate students within Biolo
 	2024-11-20  <a href="https://asmasonomics.github.io/courses/Genomics3_Workshop5_scRNAseq_Nov2024">Genomics 3 - Workshop 5: scRNAseq</a><br/>
 	2024-11-08  <a href="https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2024">Genomics 3 - Workshop 4: RNAseq</a><br/>
 	2023-11-10  <a href="https://asmasonomics.github.io/courses/Genomics3_Workshop4_RNAseq_Nov2023">Genomics 3 - Workshop 4: RNAseq</a><br/>
-</details><br/>
+</details>
 
 <span style="font-size:1.02em;">**BABS4 Cancer Informatics strand (Stage 2 BSc/MBiol Biology programmes)**</span><br/>
 <i>in development for first delivery in 26/27 academic year (semester 2)</i>
@@ -38,7 +38,7 @@ Andrew delivers teaching to stage 2, 3 and 4 undergraduate students within Biolo
 	2026-02-24  <a href="https://asmasonomics.github.io/courses/MSc_cBioPortal_Feb2026">Introduction to cBioPortal - 73M tutorial</a><br/>
 	2025-02-25  <a href="https://asmasonomics.github.io/courses/MSc_cBioPortal_Feb2025">Introduction to cBioPortal - 59M/68M tutorial</a><br/>
 	2024-02-27  <a href="https://asmasonomics.github.io/courses/MSc_cBioPortal_Feb2024">Introduction to cBioPortal - 59M/68M tutorial</a><br/>
-</details><br/>
+</details>
 
 <span style="font-size:1.02em;">**Continuing Professional Development**</span><br/>
 2023-05-30  <a href="https://asmasonomics.github.io/courses/BMS_Bitesize_Statistics_May2023">BMS Bitesize: Introduction to Statistics</a><br/>
@@ -46,7 +46,7 @@ Andrew delivers teaching to stage 2, 3 and 4 undergraduate students within Biolo
 <details>
    <summary><b>Archived</b></summary>
 	2023-01-11  <a href="https://asmasonomics.github.io/courses/Intro_cBioPortal_Jan2023">Introduction to cBioPortal</a><br/>
-</details><br/>
+</details>
 
 <span style="font-size:1.2em;">**Material archive from previous modules**</span>
 <details>
@@ -59,7 +59,8 @@ Andrew delivers teaching to stage 2, 3 and 4 undergraduate students within Biolo
 	2024-03-11  <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop3_March2024">BABS4 GEBI - Data Workshop 3</a><br/>
 </details>
 
-<br/><span style="font-size:1.2em;">**Private tutoring**</span><br/>
+<br/>
+<span style="font-size:1.2em;">**Private tutoring**</span><br/>
 <p align="justify">Andrew has over 200 hours experience of private one-to-one tutoring in Biology, Chemistry and Maths at GCSE, Scottish National 5 and Scottish Higher levels, and has availability for new students.<br/>
 Please <a class="u-email" href="mailto:asmasonomics@gmail.com">contact Andrew</a> for more information, rates and availability.</p>
 

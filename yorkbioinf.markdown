@@ -1,6 +1,6 @@
 ---
 layout: page
-title: | Data@York
+title: Data@York
 permalink: /yorkbioinformatics/
 ---
 <p align="justify">

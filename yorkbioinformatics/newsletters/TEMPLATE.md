@@ -13,7 +13,7 @@ sections:
     items:
       - title: Time-resolved macromolecular crystallography
         link: https://example.com
-        image: /yorkbioinformatics/assets/images/example1.jpg
+        image: /assets/images/elixir_uk.png
         description: >
           This hands-on course will cover all aspects of time-resolved crystallography.
         date: 6–10 July 2026

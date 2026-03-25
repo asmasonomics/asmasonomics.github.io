@@ -1,6 +1,7 @@
 ---
 layout: newsletter
 permalink: /yorkbioinformatics/newsletters/newsletter-template.html
+---
 
 intro: |
   Hello everyone,
@@ -37,4 +38,3 @@ sections:
       - title: New ELIXIR Resources
         description: >
           Updates from ELIXIR UK.
----

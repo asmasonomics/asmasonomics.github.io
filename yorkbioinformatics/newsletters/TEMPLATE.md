@@ -1,7 +1,6 @@
 ---
 layout: newsletter
-title: April 2026 Newsletter
-permalink: /yorkbioinformatics/newsletters/april-2026.html
+permalink: /yorkbioinformatics/newsletters/newsletter-template.html
 
 intro: |
   Hello everyone,

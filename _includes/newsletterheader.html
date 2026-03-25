@@ -1,23 +1,31 @@
 <tr>
-  <td>
+  <td style="position:relative;">
 
-    <!-- TOP BAR -->
-    <table width="100%" style="background:#0b3d5c; color:white;">
-      <tr>
-        <td style="padding:10px 20px; font-size:14px;">
-          York Bioinformatics Newsletter
-        </td>
+    <!-- Banner container -->
+    <div style="position:relative;">
 
-        <td align="right" style="padding:10px 20px;">
-          <a href="{{ page.url | absolute_url }}" style="color:#aad4ff; text-decoration:none;">
-            View this email in your browser
-          </a>
-        </td>
-      </tr>
-    </table>
+      <!-- Banner image -->
+      <img src="/yorkbioinformatics/assets/images/banner.png" width="700" style="display:block; border-radius:4px;">
 
-    <!-- BANNER IMAGE -->
-    <img src="/assets/images/yorkbioinformaticsnewsletter.png" width="700" style="display:block; border-radius:4px;">
+      <!-- Overlay link -->
+      <div style="
+        position:absolute;
+        top:10px;
+        right:20px;
+        font-size:14px;
+      ">
+        <a href="{{ page.url | absolute_url }}" style="
+          color:white;
+          text-decoration:none;
+          background:rgba(0,0,0,0.4);
+          padding:6px 10px;
+          border-radius:4px;
+        ">
+          View this email in your browser
+        </a>
+      </div>
+
+    </div>
 
   </td>
 </tr>

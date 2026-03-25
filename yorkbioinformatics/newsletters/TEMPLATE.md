@@ -1,6 +1,6 @@
 ---
-layout: newsletter
-permalink: /yorkbioinformatics/newsletters/newsletter-template.html
+layout: newsletter_email
+permalink: /yorkbioinformatics/newsletters/YYYY-MM.html
 
 intro: |
   Hello everyone,

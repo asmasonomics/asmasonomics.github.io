@@ -8,4 +8,4 @@ Landing page - work in progress!<br/>
 </p>
 
 ### Newsletter testing
-[test april 20206](https://asmasonomics.github.io/yorkbioinformatics/newsletters/april-2026.html)
+[test april 20206](https://asmasonomics.github.io/yorkbioinformatics/newsletters/april-2026_email.html)

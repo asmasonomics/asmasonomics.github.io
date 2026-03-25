@@ -7,5 +7,5 @@ permalink: /yorkbioinformatics/
 Landing page - work in progress!<br/>
 </p>
 
-### Newsletter testing
+### Archive
 [test april 20206](https://asmasonomics.github.io/yorkbioinformatics/newsletters/april-2026_email.html)

@@ -49,7 +49,7 @@
       </h2>
 	  
 	  {% if section.description %}
-      <p style="margin:6px 20px 0 20px; font-size:16px;">
+      <p style="margin:0 20px 0 20px; font-size:16px;">
         {{ section.description | newline_to_br }}
       </p>
     {% endif %}
@@ -111,12 +111,34 @@
 
   <!-- OUTRO -->
   <tr>
-    <td style="padding:5px 20px 5px 20px; font-size:16px;">
+    <td style="padding:10px 20px 10px 20px; font-size:16px;">
       {{ page.outro | newline_to_br }}
     </td>
   </tr>
   
-  
+  {% for profile in page.outro %}
+  <tr>
+    <td style="padding:6px 20px;">
+      <table width="100%">
+        <tr>
+
+          {% if profile.image %}
+          <td width="80" valign="top">
+            <img src="{{ item.image | absolute_url }}" width="70" style="display:block; border-radius:4px;">
+          </td>
+          {% endif %}
+
+          <td valign="top">
+            <p style="margin:6px 0;">{{ profile.name }}</p>
+            <p style="margin:6px 0;">{{ profile.description }}</p>
+
+          </td>
+
+        </tr>
+      </table>
+    </td>
+  </tr>
+  {% endfor %}
 
 </table>
 

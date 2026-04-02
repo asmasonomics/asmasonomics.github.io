@@ -123,11 +123,7 @@
         {% for profile in page.profiles %}
           <tr>
             <td>
-              {% include profile-card.html
-                image=profile.image
-                name=profile.name
-                line1=profile.description
-              %}
+              {% include profile-card.html image=profile.image name=profile.name line1=profile.description %}
             </td>
           </tr>
         {% endfor %}

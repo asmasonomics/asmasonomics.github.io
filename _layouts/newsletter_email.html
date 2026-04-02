@@ -116,30 +116,6 @@
     </td>
   </tr>
   
-  {% for profile in page.outro %}
-  <tr>
-    <td style="padding:6px 20px;">
-      <table width="100%">
-        <tr>
-
-          {% if profile.image %}
-          <td width="80" valign="top">
-            <img src="{{ item.image | absolute_url }}" width="70" style="display:block; border-radius:4px;">
-          </td>
-          {% endif %}
-
-          <td valign="top">
-            <p style="margin:6px 0;">{{ profile.name }}</p>
-            <p style="margin:6px 0;">{{ profile.description }}</p>
-
-          </td>
-
-        </tr>
-      </table>
-    </td>
-  </tr>
-  {% endfor %}
-
 </table>
 
 </td>

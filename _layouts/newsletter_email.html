@@ -47,13 +47,27 @@
       <h2 style="border-bottom:2px solid #0b3d5c; margin-bottom:10px; padding-bottom:6px; font-size:20px;">
         {{ section.title }}
       </h2>
-	  
-	  {% if section.description %}
-      <p style="margin:0 0 0 0; font-size:16px;">
-        {{ section.description | newline_to_br }}
-      </p>
-    {% endif %}
-	  
+      
+      <table width="100%">
+        <tr>
+        
+        {% if section.image %}
+          <td width="180" valign="top">
+            <img src="{{ section.image | absolute_url }}" width="160" style="display:block; border-radius:4px;">
+          </td>
+          {% endif %}
+
+          <td valign="top">
+
+            {% if section.description %}
+              <p style="margin:0 0 0 0; font-size:16px;">{{ section.description | newline_to_br }}
+              </p>
+            {% endif %}
+
+          </td>
+
+        </tr>
+      </table>
     </td>
   </tr>
 

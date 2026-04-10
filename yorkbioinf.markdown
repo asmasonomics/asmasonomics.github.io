@@ -20,7 +20,6 @@ Andrew, Emma and Alastair decided to combine their efforts, bringing together th
 	file = "/yorkbioinformatics/assets/profiles/Alastair-Droop.png"
 	content = "<b>Dr Alastair Droop</b> is the Data Science Lab Head within the York Bioscience Technology Facility, returning to York after his MSc, PhD and first postdoc here, followed by CRUK and MRC Bioinformatics Fellowships in Leeds, and 4 years as Principal Bioinformatician at the Sanger. Alastair has diverse experience in research and training across biological disciplines, in computational architecture and research computing."
 %}
-<br/>
 
 #### Aims of Data@York
 1. Release a monthly newsletter highlighting data and bioinformatics meetings, training and opportunities at York and beyond.

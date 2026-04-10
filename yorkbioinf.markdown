@@ -6,7 +6,7 @@ permalink: /yorkbioinformatics/
 <p align="justify">
 Landing page - work in progress!<br/>
 </p>
-
+<br/>
 #### Coordinating team
 <span style="font-size:1.1em;">Dr Andrew Mason</span><br/>
 {% include profile_page_cols.html 
@@ -21,8 +21,8 @@ Landing page - work in progress!<br/>
 <span style="font-size:1.1em;">Dr Alastair Droop</span> *BTF Data Science Lab Head*<br/>
 {% include profile_page_cols.html 
 	file = "/yorkbioinformatics/assets/profiles/Alastair-Droop.png"
-	content = "Alastair is the Data Science Lab Head within the York Bioscience Technology Facility, returning to York after his MSc, PhD and first postdoc here, followed by CRUK and MRC Bioinformatics Fellowships in Leeds, and 4 years as Principal Bioinformatician at the Sanger. Alastair has extensive experience in high impact research and training across biological disciplines, in computational architecture and research computing."
+	content = "Alastair is the Data Science Lab Head within the York Bioscience Technology Facility, returning to York after his MSc, PhD and first postdoc here, followed by CRUK and MRC Bioinformatics Fellowships in Leeds, and 4 years as Principal Bioinformatician at the Sanger. Alastair has diverse experience in research and training across biological disciplines, in computational architecture and research computing."
 %}
-
-#### Archive
+<br/>
+#### Newsletter archive
 [April 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-04.html)

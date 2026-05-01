@@ -29,5 +29,16 @@ Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinfor
 4. Improve the York community's awareness of (and involvement in) national programmes such as ELIXIR-UK and BioFAIR.
 <br/>
 
+#### York Bioinformatics Meeting
+{% include profile_page_cols.html 
+	file = "/yorkbioinformatics/assets/logos/yorkbioinf.png"
+	content = "These meetings are designed to create a community of researchers who apply bioinformatics methods, with the chance to present and discuss new ideas, interesting papers and work in progress.<br/><br/>
+	We plan to meet on the last or penultimate Wednesday of every month at 1pm. Every month we'll have a different speaker. They will introduce what they do and give a quick career summary, and then present for ~25 mins with lots of chance for discussion and constructive critique."
+%}
+<br/>
+<span style="font-size:1.1em;">Previous speakers</span><br/>
+2026-04-29  [Dr Andrew Mason](https://www.york.ac.uk/biology/people/masonandrew/) - Biologically-informed and data-driven research to personalise bladder cancer treatment<br/>
+<br/>
+
 #### Newsletter archive
 [April 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-04.html)

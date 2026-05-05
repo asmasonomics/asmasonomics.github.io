@@ -36,7 +36,7 @@ Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinfor
 	We meet on an available Wednesday towards the end of every month at 1pm. Speakers will introduce what they do, give a quick career summary, and then present for ~25 mins. Questions and critique very encouraged!"
 %}
 <span style="font-size:1.1em;">Upcoming speakers</span><br/>
-2026-05-27 - [Dr Hollie Wilnkinson](https://www.york.ac.uk/biology/itsupport/cfm/post_doc/profile.cfm?ID=3401) (postdoc, Lagos group): <i>Title TBC</i><br/>
+2026-05-27 - [Dr Hollie Wilkinson](https://www.york.ac.uk/biology/itsupport/cfm/post_doc/profile.cfm?ID=3401) (postdoc, Lagos group): <i>Title TBC</i><br/>
 2026-06-24 - TBC<br/>
 2026-07-29 - [Dr Cobus Smit](https://www.york.ac.uk/biology/itsupport/cfm/post_doc/profile.cfm?ID=2400) (postdoc, Lichman group): <i>Title TBC</i><br/>
 2026-08-19 - TBC<br/>

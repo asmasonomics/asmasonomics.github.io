@@ -46,5 +46,5 @@ Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinfor
 <br/>
 
 #### Newsletter archive
-[May 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-05.html)
+[May 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-05.html)<br/>
 [April 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-04.html)

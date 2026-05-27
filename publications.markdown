@@ -5,7 +5,9 @@ permalink: /publications/
 ---
 
 ### Preprints
-**Ungureanu VV**, **Gawne RT**, Baker SC, Eriksson P, Halliday DM, Smith SL, Southgate J & **Mason AS**, [Biologically-informed machine learning identifies a new clinically-actionable bladder cancer subgroup characterised by NRF2 overactivity](https://www.biorxiv.org/content/10.1101/2025.06.03.657659v1), bioRxiv (2025).
+Issitt T, Harmens A, **Mason AS**, Turvill J, Piper J, Sweeney ST, Brackenbury WJ & Redeker KR, [Breast cancer cohort study identifies an effective, non-invasive, breath-based diagnostic linked to cellular environment-dependent, novel methylation metabolisms](https://doi.org/10.64898/2026.05.21.726956), bioRxiv (2026).
+
+**Ungureanu VV**, **Gawne RT**, Baker SC, Eriksson P, Halliday DM, Smith SL, Southgate J & **Mason AS**, [Biologically-informed machine learning identifies a new clinically-actionable bladder cancer subgroup characterised by NRF2 overactivity](https://doi.org/10.1101/2025.06.03.657659), bioRxiv (2025).
 
 ### 2026
 Hinley J, Baker SC, **Mason AS**, Kyriazis G, Masood O & Southgate J (2026), [Connexin 32 constrains a mesenchymal-like switch in differentiated urothelium and luminal cancers](https://doi.org/10.26508/lsa.202503427), *Life Science Alliance*, 9(5):10.26508/lsa.202503427.

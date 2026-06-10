@@ -57,6 +57,7 @@ Andrew delivers teaching to stage 2, 3 and 4 undergraduate students within Biolo
 	2025-03-20  <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop4_March2025">BABS4 GEBI - Data Workshop 4</a><br/>
 	2026-03-03  <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop3_March2026">BABS4 GEBI - Data Workshop 3</a><br/>
 	2026-03-17  <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop4_March2026">BABS4 GEBI - Data Workshop 4</a><br/>
+	2026-06-09  <a href="https://asmasonomics.github.io/courses/BABS4_Biochem_DataWorkshop4_March2026_JuneUpdate">BABS4 GEBI - Data Workshop 4 - June update of circos plot</a><br/>
 </details>
 
 <br/>

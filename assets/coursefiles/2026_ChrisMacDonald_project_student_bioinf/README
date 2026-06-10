@@ -1,3 +1,13 @@
 salmon.merged.gene_counts.tsv	merged dataset owned by Chris MacDonald analysed by the Data Science team in the BTF at York (Dr Alastair Droop), shared with AM on 2026-04-15
 
 GCF_000146045.2_R64_feature_table.txt	https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/146/045/GCF_000146045.2_R64/GCF_000146045.2_R64_feature_table.txt.gz accessed 2026-04-15
+
+From Chris:
+I would say the raffinose_vs_wt would be a good exemplar.
+Raffinose = wild type cells starved for glucose but supplemented with raffinose for 6 hours.
+wt = wild type cells grown in glucose
+There will be massive shifts in expression, with pathways truly turned on/off, stress response triggered, etc etc.
+
+
+polyA library prep
+Add explainers

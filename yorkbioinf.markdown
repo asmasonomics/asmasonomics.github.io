@@ -36,13 +36,13 @@ Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinfor
 	We meet on an available Wednesday towards the end of every month at 1pm. Speakers will introduce what they do, give a quick career summary, and then present for ~25 mins. Questions and critique very encouraged!"
 %}
 <span style="font-size:1.1em;">Upcoming speakers</span><br/>
-2026-06-24 - [Charlotte Booth](https://uk.linkedin.com/in/charlotte-booth-6228131a4) (PhD student, Lagos/Fielding groups): <i>Utilising a variety of RNA sequencing methods to study transcriptomic hallmarks of B cell acute lymphoblastic leukaemia subtypes</i><br/>
-2026-07-29 - [Dr Cobus Smit](https://www.york.ac.uk/biology/itsupport/cfm/post_doc/profile.cfm?ID=2400) (postdoc, Lichman group): <i>Title TBC</i><br/>
+2026-07-29 - [Dr Cobus Smit](https://www.york.ac.uk/biology/itsupport/cfm/post_doc/profile.cfm?ID=2400) (postdoc, Lichman group): <i>Developing a Network-Based Comparative Genomics Framework to Explore Plant Specialised Metabolism</i><br/>
 2026-08-19 - TBC<br/>
 
 <span style="font-size:1.1em;">Previous speakers</span><br/>
 2026-04-29 - [Dr Andrew Mason](https://www.york.ac.uk/biology/people/masonandrew/) (PI): <i>Biologically-informed and data-driven research to personalise bladder cancer treatment</i><br/>
 2026-05-27 - [Dr Hollie Wilkinson](https://www.york.ac.uk/biology/itsupport/cfm/post_doc/profile.cfm?ID=3401) (postdoc, Lagos group): <i>Long read sequencing of blood samples to investigate response to immunotherapy in melanoma patients</i><br/>
+2026-06-24 - [Charlotte Booth](https://uk.linkedin.com/in/charlotte-booth-6228131a4) (PhD student, Lagos/Fielding groups): <i>Utilising a variety of RNA sequencing methods to study transcriptomic hallmarks of B cell acute lymphoblastic leukaemia subtypes</i><br/>
 
 #### Newsletter archive
 [June 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-06.html)<br/>

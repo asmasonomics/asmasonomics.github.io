@@ -6,7 +6,6 @@ permalink: /andrewmason/
 <span style="font-size:1.5em;">**Andrew Stephen Mason**</span> &nbsp;&nbsp; <span style="font-size:1.1em;">**BSc(Hons) PhD FHEA**</span><br/>
 <span style="font-size:1em;">[York Against Cancer](https://www.yorkagainstcancer.org.uk/) 30<sup>th</sup> Anniversary Lecturer in Cancer Informatics</span>
 
-
 {% include profile_page_cols.html 
 	file = "/assets/images/AndrewMason.jpg"
 	content = "Andrew achieved a 1st class BSc Biological Sciences (Hons. Evolutionary Biology) degree from The University of Edinburgh in 2013. He gained his PhD from The Roslin Institute in 2017, supervised by Professor David Burt and Dr Paul Hocking in a BBSRC CaSE studentship supported by Hy-Line International. Andrew's PhD project involved the identification and characterisation of endogenous retroviruses in avian genomes, focusing on endogenous Avian Leukosis Virus (ALVE) integrations in chicken and their ongoing commercial and evolutionary relevance. Andrew continued his interest in ALVEs through a 5-month Bill and Melinda Gates Foundation and BBSRC-funded postdoctoral position based at The Roslin Institute, but working remotely as he made the move to the University of York.<br/><br/>
@@ -15,3 +14,10 @@ permalink: /andrewmason/
 	In September 2021 Andrew successfully gained an Elixir-UK FAIR Data Stewardship Training Fellowship to improve research data acumen within the Department of Biology and YBRI.<br/><br/>
 	Beyond research, Andrew has a fantastic wife and three children with limited sleep requirements, plays violin and sings tenor, loves all things outdoors (maps, walking, Munro bagging, cycling, growing veg), and can't resist a single malt round the fire."
 %}
+
+#### February 2026 - podcast recording
+<p align="justify">
+Andrew featured on the University of York podcast project - <a href="https://podcasts.apple.com/gb/podcast/phil-lang-is-not-a-scientist/id1839981548">Phil Lang is Not a Scientist</a> - recorded in February 2026, released in July.<br/>
+This project covers the life, goals and realities of being a scientist at York, and the conversation had a recurring theme of Andrew not necessarily having a particular plan for developing a reserach career (until  now!). Take a listen, and subscribe to support more recordings across career stages.<br/>
+</p>
+<iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="175" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.podcasts.apple.com/gb/podcast/andrew-mason/id1839981548?i=1000775280014"></iframe>

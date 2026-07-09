@@ -6,7 +6,7 @@ permalink: /yorkbioinformatics/
 <p align="justify">
 The data skills space in the UK is increasingly noisy with entities like <a href="https://elixiruknode.org/">ELIXIR-UK</a> and <a href="https://biofair.uk/">BioFAIR</a> trying to create coordinated national infrastructure and communities of practice. Data skills are essential to the modern biologist, and we need to make sure that York researchers, technical staff and students at all stages have the information and opportunities available to them - there is certainly a lot going on! <br/><br/>
 Andrew, Emma and Alastair decided to combine their efforts, bringing together their experience and views from research, teaching, training, consultancy and core provision. They are very fortunate to be within a Department and University which really acknowledges and appreciates the importance of these skills, and to represent <a href="https://www.york.ac.uk/biology/research/bioinformatics-biosystems/">the broader bioinformatics and data research community at York</a>.<br/><br/>
-Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-06.html">here</a>.
+Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-07.html">here</a>.
 </p>
 #### Coordinating team
 {% include profile_page_cols.html 
@@ -45,6 +45,7 @@ Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinfor
 2026-06-24 - [Charlotte Booth](https://uk.linkedin.com/in/charlotte-booth-6228131a4) (PhD student, Lagos/Fielding groups): <i>Utilising a variety of RNA sequencing methods to study transcriptomic hallmarks of B cell acute lymphoblastic leukaemia subtypes</i><br/>
 
 #### Newsletter archive
+[July 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-07.html)<br/>
 [June 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-06.html)<br/>
 [May 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-05.html)<br/>
 [April 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-04.html)

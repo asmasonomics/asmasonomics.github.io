@@ -37,11 +37,11 @@ Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinfor
 %}
 <span style="font-size:1.1em;">Upcoming speakers</span><br/>
 2026-08-19 - [Dr Pasky Miranda](https://www.linkedin.com/in/pascal-miranda-89566635/) (Digital Skills Specialist, BTF): <i>Introducing the UKRI Digital Research Skills Catalyst</i><br/>
-2026-09-16 - TBC
-2026-10-21 - TBC
-2026-11-25 - TBC
-<i>No meeting in December</i>
-2027-01-27 - TBC
+2026-09-16 - TBC<br/>
+2026-10-21 - TBC<br/>
+2026-11-25 - TBC<br/>
+<i>No meeting in December</i><br/>
+2027-01-27 - TBC<br/>
 
 <span style="font-size:1.1em;">Previous speakers</span><br/>
 2026-04-29 - [Dr Andrew Mason](https://www.york.ac.uk/biology/people/masonandrew/) (PI): <i>Biologically-informed and data-driven research to personalise bladder cancer treatment</i><br/>

@@ -57,7 +57,7 @@ Around 80% of people present at non-muscle-invasive stage (NMIBC) and 5-year sur
 <p align="justify">
 You can download the introductory slide deck for the workshop here as a <a href="/assets/coursefiles/2024-11-20_GenomicsW5/BIO00087H-W5-intro_2026update.pdf" download>PDF</a> or <a href="/assets/coursefiles/2024-11-20_GenomicsW5/BIO00087H-W5-intro_2026update.pptx" download>Powerpoint (pptx)</a>, and listen to a previous recording below.<br/>
 </p>
-<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=ff92dbc6-c7a3-47c1-96ac-b1260104d15f&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="405" width="100%" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe><br/>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=9d2ade00-1be5-4296-830d-b4ab00eebe3b&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="100%" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe><br/>
 
 #### 0 Set up your directories, paths and RStudio project
 <p align="justify">

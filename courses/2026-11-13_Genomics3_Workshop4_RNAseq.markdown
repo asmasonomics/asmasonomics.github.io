@@ -10,7 +10,7 @@ permalink: /courses/Genomics3_Workshop4_RNAseq_Nov2026
 <p align="justify">
 Welcome to Workshop 4! This workshop will build on some of the skills you developed in previous courses using gene expression data. In previous courses you have worked with <b>count</b> data to look at gene expression, and to explore genes which are differentially expressed between conditions (such as in health and disease). This data has already been processed from raw reads: performing quality control, aligning to a reference genome or transcriptome, and then summarising to gene level. In this workshop you will do the whole process, from raw reads to differential expression analysis.<br/>
 If you choose to base your final report on <i>this</i> workshop, you will need to use the hypoxia exposed urothelium dataset and  <b>not the BKPyV dataset used in this workshop </b>. The bioinformatic approach will be very similar, but you will need to bring in relevant biology. More details on this dataset are at the end of the workshop material.<br/><br/>
-As ever, the workshop is aimed towards the dual-boot Linux machines in G/N/169. You will work at the Linux command line, including working in <code>R</code> from the command line.<br/><br/>
+As ever, the workshop is aimed towards the dual-boot Linux machines. You will work at the Linux command line, including working in <code>R</code> from the command line.<br/><br/>
 </p>
 
 ### Introduction to the material and research question in this workshop

@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /courses/Genomics3_Workshop4_RNAseq_Nov2025
+permalink: /courses/Genomics3_Workshop4_RNAseq_Nov2026
 ---
 
 ![Genomics3 banner](/assets/coursefiles/2023_Genomics/genomics_banner.jpeg){:class="img-responsive"}
@@ -16,16 +16,17 @@ As ever, the workshop is aimed towards the dual-boot Linux machines in G/N/169. 
 ### Introduction to the material and research question in this workshop
 <p align="justify">
 Bladder cancer is the 10th most common global cancer and is one of the most expensive to treat as most cancers recur and when the disease progresses, standard practice is to remove the bladder. Despite such radical surgery, 5-year survival is <50% in muscle-invasive disease.<br/>
-There is therefore an unmet need to understand how bladder cancers start, and what can be done to prevent them. The long-standing risk factor for bladder cancer is smoking, but mutational signatures (see lecture 7 if you're unsure what these are) showed that the classic mutational profile of smoking seen in lung cancer is <b>not</b> present in bladder cancer. Instead, there are signatures of APOBEC mutagenesis - a family of enzymes which defend against viruses. These signatures are very prevalent in HPV-driven cervical cancers. However, there is no obvious viral cause for bladder cancer, and viral genomes are not found within bladder cancer genomes (as they are with HPV positive cervical cancer).<br/>
+There is therefore an unmet need to understand how bladder cancers start, and what can be done to prevent them. The long-standing risk factor for bladder cancer is smoking, but mutational signatures (see lecture 8 if you're unsure what these are) showed that the classic mutational profile of smoking seen in lung cancer is <b>not</b> present in bladder cancer. Instead, there are signatures of APOBEC mutagenesis - a family of enzymes which defend against viruses. These signatures are very prevalent in HPV-driven cervical cancers. However, there is no obvious viral cause for bladder cancer, and viral genomes are not found within bladder cancer genomes (as they are with HPV positive cervical cancer).<br/>
 </p>
 <br/>
 ![Bladder cancer mutational signature showing APOBEC mutations, but no smoking signature - SBS4](/assets/coursefiles/2023_Genomics/BLCA_SBS_mutational_signature.png){:class="img-responsive"}
 <br/><span style="font-size:0.8em;">*Deconvolution of mutational signatures. Top left plot shows the original proportion of single base substitutions in the sample. The right hand side shows the deconvolution into separate SBS derivations and their relevant proportions, and as proof the bottom left plot shows the reconstruction of the signature using the deconvoluted plots.*</span><br/>
 
 <p align="justify">
-Based on epidemiolgical data, and high incidence of bladder cancer in kidney transplant patients, researchers at York hypothesised that BK Polyomavirus (BKPyV) may be the cause. The RNAseq data in this workshop was our first effort to explore this association and formed part of a <a href="https://doi.org/10.1038/s41388-022-02235-8">publication in <i>Oncogene</i></a> in 2022. This data is paired end RNA sequencing data. This means each sample has both a <b>read1.fq.gz</b> and a <b>read2.fq.gz</b> file. Data were derived from cell cultures of biomimetic human urothelium (the epithelial lining of the bladder) which were either infected with BKPyV or not. Cells originated from three different people. Cells were expanded in the lab, split into two dishes where one was infected and the other wasn't. This experimental design allows us to control for the different anti-viral response seen among different people.<br/>
-You can download the introductory slide deck for the workshop here as a <a href="/assets/coursefiles/2023_Genomics/BIO00087H-W4-intro.pdf" download>PDF</a> or <a href="/assets/coursefiles/2023_Genomics/BIO00087H-W4-intro.pptx" download>Powerpoint (pptx)</a>.<br/><br/>
+Based on epidemiolgical data, and high incidence of bladder cancer in kidney transplant patients, researchers at York hypothesised that BK Polyomavirus (BKPyV) may be the cause. The RNAseq data in this workshop was our first effort to explore this association and formed part of a <a href="https://doi.org/10.1038/s41388-022-02235-8">publication in <i>Oncogene</i></a> in 2022. This data is paired end RNA sequencing data. This means each sample has both a <b>read1.fq.gz</b> and a <b>read2.fq.gz</b> file. Data were derived from cell cultures of biomimetic human urothelium (the epithelial lining of the bladder) which were either infected with BKPyV or not. Cells originated from three different people. Cells were expanded in the lab, split into two dishes where one was infected and the other wasn't. This experimental design allows us to control for the different anti-viral response seen among different people.<br/><br/>
+You can download the introductory slide deck for the workshop here as a <a href="/assets/coursefiles/2023_Genomics/BIO00087H-W4-intro_2026update.pdf" download>PDF</a> or <a href="/assets/coursefiles/2023_Genomics/BIO00087H-W4-intro_2026update.pptx" download>Powerpoint (pptx)</a>, and listen to a previous recording below.<br/>
 </p>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=ff92dbc6-c7a3-47c1-96ac-b1260104d15f&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="405" width="100%" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe><br/>
 
 ### The workshop
 #### Workshop Aims
@@ -37,7 +38,7 @@ You can download the introductory slide deck for the workshop here as a <a href=
 
 #### 0 Set up your directories
 <p align="justify">
-<b>Remember, you should be working on a Linux machine in G/N/169 for this workshop.</b><br/>
+<b>Remember, you should be working on a dual-boot Linux machine for this workshop.</b><br/>
 Assuming that you are, open up a terminal window, change into your student directory, and set up the directories for this workshop:<br/>
 </p>
 
@@ -60,9 +61,9 @@ ln -s /shared/biology/bioldata1/bl-00087h/data/rnaseq_data rnaseq_data
 <br/>
 <p align="justify">
 <details>
-   <summary>What to do if you want to use teaching0 rather than work in G/N/169.</summary>
+   <summary>What to do if you want to use teaching0 rather than work on a dual-boot Linux machine.</summary>
    <br/>
-   The <b>best</b> option is to work in G/N/169. But if this isn't possible you <i>can</i> complete the work using teaching0. I have put some things in place to help, but I can't support this workshop over multiple platforms. I say again - use G/N/169.<br/><br/>
+   The <b>best</b> option is to work on a dual boot machine. But if this isn't possible you <i>can</i> complete the work using teaching0. I have put some things in place to help, but I can't support this workshop over multiple platforms. I say again - use the computer labs! <a href="https://www.york.ac.uk/it-services/tools/computers-printing-equipment/computer-labs/#bookings">There are multiple options across campus, and you can check availability</a>.<br/><br/>
    1) You will need to use the following FastQC and kallisto versions:
    <pre><code class="language-bash">
    module load bio/FastQC/0.11.9-Java-11
@@ -177,6 +178,14 @@ for dir in *
   do
     cp ${dir}/abundance.tsv ${dir}_abundance.tsv
 done
+
+# Only run this once - think about what the command is doing:
+# the * is a wildcard meaning "match any character", so the 
+# loop is saying for the items in a list made of any file in
+# the location you are running the command, do the rest of the
+# code block. This is fine, but after you've run the code, the 
+# files you have in that location has changed...
+# This is also relevant later!
 
 ```
 
@@ -547,7 +556,7 @@ Excellent work! You have now taken a dataset from raw reads, to gene expression 
 <p align="justify">
 In terms of the biology of this dataset, you have seen that infection with BKPyV causes the urothelium to alter its transcriptome (significant gene changes). These changes are to do with the antiviral response (interferon gamma and alpha responses in GSEA) and changes to the cell cycle. Normally urothelium is arrested in G0, with only about 1% of the cells in cycle at any time. The virus causes the cells to re-enter but not complete the cell cycle, instead sitting at the G2M checkpoint where BKPyV is best placed to replicate.<br/>
 The APOBEC response is there, but this is very donor-dependent (resting APOBEC3A levels vary a lot between donors) and therefore does not come up with a significant q value. But, we did see that the urothelium does actually become infected and that it can induce changes to the cell cycle and DNA replication. APOBEC responds to the presence of viral DNA/RNA. We have continued with the work to see if BKPyV infections led to the damage in DNA you would associate with the APOBEC damage in tumours - very much work still in development.<br/><br/>
-If you're interested in reading more, check out our <a href="https://doi.org/10.1038/s41388-022-02235-8">publication in <i>Oncogene</i></a>, and our new <i>Science Advances</i> paper - coming soon (it was accepted for publication at the end of October!). Also, look out for MBiol projects in this area next year.
+If you're interested in reading more, check out our <a href="https://doi.org/10.1038/s41388-022-02235-8">publication in <i>Oncogene</i></a>, and our follow up work in <a href="https://doi.org/10.1126/sciadv.aea6124"><i>Sciences Advances</i></a>. Also, look out for MBiol projects in this area next year.
 <br/><br/>
 </p>
 

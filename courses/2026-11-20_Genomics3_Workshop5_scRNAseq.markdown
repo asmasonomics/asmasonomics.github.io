@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /courses/Genomics3_Workshop5_scRNAseq_Nov2025
+permalink: /courses/Genomics3_Workshop5_scRNAseq_Nov2026
 ---
 
 ![Genomics3 banner](/assets/coursefiles/2023_Genomics/genomics_banner.jpeg){:class="img-responsive"}
@@ -26,7 +26,7 @@ These are important points to consider as you do your analysis (and when you're 
 
 ### Introduction to the material
 <p align="justify">
-Raw scRNAseq data can be massive (>200M reads per file is standard), so we're starting with data which has already been mapped and quantified to the gene level. In this workshop you will work exclusively in <code>R</code>, but using RStudio (nice and familiar), but still on the Linux system. The workshop is aimed towards the dual-boot Linux machines in G/N/169, but in theory you <i>could</i> do this analysis on a Windows machine. We <b>do not</b> recommend this however, as working on the managed machines means you have access to all the data, any workshop-required R libraries have been installed for you already, and you have increased computational power working on Linux rather than Windows.<br/><br/>
+Raw scRNAseq data can be massive (>200M reads per file is standard), so we're starting with data which has already been mapped and quantified to the gene level. In this workshop you will work exclusively in <code>R</code>, but using RStudio (nice and familiar), but still on the Linux system. The workshop is aimed towards the dual-boot Linux machines, but in theory you <i>could</i> do this analysis on a Windows machine. We <b>do not</b> recommend this however, as working on the managed machines means you have access to all the data, any workshop-required R libraries have been installed for you already, and you have increased computational power working on Linux rather than Windows.<br/><br/>
 In the workshop you will start with genome-mapped data. You will perform QC and filtering to keep only high quality and informative cells. You will perform dimension reduction, clustering, community annotation, differential expression, gene set enrichment analysis and functional annotation - lots of graphs.<br/><br/>
 If you choose to base your final report on <i>this</i> workshop, you will need to expand/adapt the analysis in the workshop to some related, but different data we have provided. The bioinformatic approach will be very similar, but you will need to address an appropriate question for your chosen dataset, and bring in the relevant biology. More details on these options are at the end of the workshop material.<br/><br/>
 </p>
@@ -55,13 +55,13 @@ Around 80% of people present at non-muscle-invasive stage (NMIBC) and 5-year sur
 4. Compare alike cells between two different samples
 
 <p align="justify">
-You can download the introductory slide deck for the workshop here as a <a href="/assets/coursefiles/2024-11-20_GenomicsW5/BIO00087H-W5-intro.pdf" download>PDF</a> or <a href="/assets/coursefiles/2024-11-20_GenomicsW5/BIO00087H-W5-intro.pptx" download>Powerpoint (pptx)</a>.
-<br/><br/>
+You can download the introductory slide deck for the workshop here as a <a href="/assets/coursefiles/2024-11-20_GenomicsW5/BIO00087H-W5-intro_2026update.pdf" download>PDF</a> or <a href="/assets/coursefiles/2024-11-20_GenomicsW5/BIO00087H-W5-intro_2026update.pptx" download>Powerpoint (pptx)</a>, and listen to a previous recording below.<br/>
 </p>
+<iframe src="https://york.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=ff92dbc6-c7a3-47c1-96ac-b1260104d15f&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=true&interactivity=all" height="405" width="100%" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player"></iframe><br/>
 
 #### 0 Set up your directories, paths and RStudio project
 <p align="justify">
-<b>Remember, you should be working on a Linux machine in G/N/169 for this workshop.</b><br/>
+<b>Remember, you should be working on a dual-boot Linux machine for this workshop.</b><br/>
 Assuming that you are, first open the terminal and set up your directories:<br/>
 </p>
 
@@ -123,15 +123,15 @@ Just like in previous courses, your RStudio script file <code>workshop5.R</code>
 OK. You should now be set for the workshop. Let's get started!
 <br/><br/>
 <details>
-   <summary>What to do if you don't or can't work in G/N/169.</summary>
+   <summary>What to do if you don't or can't work on campus.</summary>
    <br/>
-   The <b>best</b> option is to work in G/N/169. But if this isn't possible you <i>can</i> complete the work using RStudio on your own machine (or a University Windows one). You would need to install all R libraries and their dependencies yourself, dealing with any R version issues or differences yourself. I have provided <b>zero</b> support for this option beyond the tips below.<br/>
+   The <b>best</b> option is to work on a University-managed dual boot machine. But if this isn't possible you <i>can</i> complete the work using RStudio on your own machine (or a University Windows one). You would need to install all R libraries and their dependencies yourself, dealing with any R version issues or differences yourself. I have provided <b>zero</b> support for this option beyond the tips below.<br/>
    Check if the library is already on your machine (<i>e.g.</i> tidyverse may be there already), but if not, use: <code>install.packages("tidyverse", dependencies=TRUE)</code><br/>
-   <code>fgsea</code> may not work on Windows (the line of code should run in about 10 seconds - longer than a minute and it isn't working). You could try <code>enrichplot</code> and <code>clusterProfiler</code> instead. For this you need to install <code>BiocManager</code> in the normal way, and then use:<br/>
-   <code>BiocManager::install(c("clusterProfiler", "enrichplot", "org.Hs.eg.db"), dependencies=TRUE)</code>. <a href="https://learn.gencore.bio.nyu.edu/rna-seq-analysis/gene-set-enrichment-analysis/">This is quite a good tutorial for how to use these packages.</a> Complicated? Definitely more than using G/N/169...<br/><br/>
+   To use <code>fgsea</code> on Windows you need to install/load the <code>BiocParallel</code> library or you could try <code>enrichplot</code> and <code>clusterProfiler</code> instead. For this you need to install <code>BiocManager</code> in the normal way, and then use:<br/>
+   <code>BiocManager::install(c("clusterProfiler", "enrichplot", "org.Hs.eg.db"), dependencies=TRUE)</code>. <a href="https://learn.gencore.bio.nyu.edu/rna-seq-analysis/gene-set-enrichment-analysis/">This is quite a good tutorial for how to use these packages.</a> Complicated? Definitely more than using the uni machines...<br/><br/>
    <a href="https://drive.google.com/drive/folders/1Dfx0B49xX_sQfXrrYGLkaTkMNdGzCLS8?usp=drive_link">The workshop material can be downloaded here.</a><br/><br/>
-   I have now managed to get this working on teaching0 - but you would need to do all the R work at the command line. There is no RStudio functionality on teaching0. For the libraries you should use <code>.libPaths("/shared/biology/bioldata1/bl-00087h/data/singlecell_rnaseq_data/R_4.3.3_teaching0")</code><br/>
-   You would need to follow the workshop, but all at the command line. You would need to save each plot using a command line <code>ggsave("res005_UMAP.png")</code>ad then use WinSCP/FileZilla/<code>ftp</code> to download and look at it. Again, more complicated than completing the material in G/N/169 if you can get there.<br/>
+   I also have this working on teaching0 - but you would need to do all the R work at the command line. There is no RStudio functionality on teaching0. For the libraries you should use <code>.libPaths("/shared/biology/bioldata1/bl-00087h/data/singlecell_rnaseq_data/R_4.3.3_teaching0")</code><br/>
+   You would need to follow the workshop, but all at the command line. You would need to save each plot using a command line <code>ggsave("res005_UMAP.png")</code>ad then use WinSCP/FileZilla/<code>ftp</code> to download and look at it. Again, more complicated than completing the material on a dual boot. Remember, <a href="https://www.york.ac.uk/it-services/tools/computers-printing-equipment/computer-labs/#bookings">there are multiple options across campus, and you can check availability</a>.<br/>
 </details>
 </p>
 <br/>

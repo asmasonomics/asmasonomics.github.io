@@ -37,8 +37,8 @@ Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinfor
 %}
 <span style="font-size:1.1em;">Upcoming speakers</span><br/>
 2026-08-19 - [Dr Pasky Miranda](https://www.linkedin.com/in/pascal-miranda-89566635/) (Digital Skills Specialist, BTF): <i>Introducing the UKRI Digital Research Skills Catalyst</i><br/>
-2026-09-16 - TBC<br/>
-2026-10-21 - TBC<br/>
+2026-09-16 - [Prof Seth Davis](https://www.york.ac.uk/biology/people/seth-davis/): <i>Bioinformatics for the coding illiterate using vibe coding</i><br/>
+2026-10-21 - <b>EXTERNAL</b> - [Prof Mark Blaxter](https://www.sanger.ac.uk/person/blaxter-mark/), Programme Lead for the Sanger Tree of Life Programme: <i>Busy about the genomic tree of life</i> - this will be delivered by Zoom in B/K018 and also advertised to Genomics3 and PGT Bioinformatics students<br/>
 2026-11-25 - TBC<br/>
 <i>No meeting in December</i><br/>
 2027-01-27 - TBC<br/>

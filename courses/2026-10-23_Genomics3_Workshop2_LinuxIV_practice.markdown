@@ -8,7 +8,7 @@ permalink: /courses/Genomics3_Workshop2_LinuxIV_practice_Oct2026
 <span style="font-size:1.6em;">**Genomics 3 - Workshop 2: LinuxIV -- Practice Exercise**</span><br/>
 
 <p align="justify">
-Well done for completing the taught material from Workshop 2. We've written some exercises here so you can revise and check your understanding. At the end, you can run a little script which will check your answers.<br/><br/>
+Well done for completing the taught material from <a href="https://djeffares.github.io/BIO87H/workshop2.html">Workshop 2</a>. We've written some exercises here so you can revise and check your understanding. At the end, you can run a little script which will check your answers.<br/><br/>
 Ask us if you're not sure. Take some time to explore and get used to working in Linux - you will use it in each data workshop and for your assessment. Students regularly come unstuck with typos and by getting confused about which diretory they are in (or their data is in). Practice will increase your confidence!<br/>
 </p>
 
@@ -16,7 +16,8 @@ Ask us if you're not sure. Take some time to explore and get used to working in 
 <p align="justify">
 Work in your own terminal and keep a lab book record as you go.<br/><br/>
 You will be using skills from the earlier workshop material: navigating directories, <code>pwd</code>, symbolic links, wildcards, <code>grep</code>, redirection into files with <code>></code> and pipes <code>|</code>.<br/><br/>
-You'll also meet one new command, <code>zcat</code>, and learn how to do basic maths at the command line.
+You'll also meet one new command, <code>zcat</code>, and learn how to do basic maths at the command line.<br/><br/>
+Use the following link to <a target="_blank" rel="noopener noreferrer" href="https://djeffares.github.io/BIO87H/workshop2.html">reopen the Workshop 2 material in a new tab</a>, if you want to refer back.
 </p>
 
 ### Setup 

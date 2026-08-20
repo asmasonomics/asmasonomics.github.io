@@ -22,10 +22,11 @@ You'll also meet one new command, <code>zcat</code>, and learn how to do basic m
 ### Setup 
 
 1\. Make sure you're in your own directory
-    ```sh
-    cd /shared/biology/bioldata1/bl-00087h/students/$USER
-    pwd
-    ```
+
+```sh
+cd /shared/biology/bioldata1/bl-00087h/students/$USER
+pwd
+```
 
 2\. Make a new directory called <code>practice_w2</code> and move into it.
 
@@ -47,39 +48,48 @@ You did something very similar to this earlier.
 FASTQ files are usually gzip-compressed (`.gz`), so you can't just `less` or `head` them directly and expect to read them. There's a command called `zcat` that decompresses a `.gz` file "on the fly" and streams its contents straight to the screen (or into a pipe) — without ever writing an unzipped copy to disk.
 
 8\. Look at the first few lines of one of your linked `.fastq.gz` files, using `zcat` piped into a command you already know:
-    ```sh
-    zcat Lbraz-subset.fastq.gz | head
-    ```
-    Look carefully at the structure. Every read in a FASTQ file is written as **4 lines**: a header line (starting with `@`), the sequence, a `+` line (sometimes a repeat of the read name), and a quality score line.<br/>
-    This is easier to see using the `less` command followed by the `-S` flag. This allows lines to run off the screen rather than wrapping onto the next line. Press `q` to escape.
-    ```sh
-    zcat Lbraz-subset.fastq.gz | less -S
-    ```
+
+```sh
+zcat Lbraz-subset.fastq.gz | head
+```
+
+Look carefully at the structure. Every read in a FASTQ file is written as **4 lines**: a header line (starting with `@`), the sequence, a `+` line (sometimes a repeat of the read name), and a quality score line.<br/>
+This is easier to see using the `less` command followed by the `-S` flag. This allows lines to run off the screen rather than wrapping onto the next line. Press `q` to escape.
+
+```sh
+zcat Lbraz-subset.fastq.gz | less -S
+```
 
 9\. Now, work out how many **reads** are in this fastq file (not how many lines!). Save that number to a file called `read_count.txt`. Hint - how does number of lines relate to number of reads in a FASTQ file?
 
 10\. Check your answer! Is this number correct? Assuming you use `Lbraz-subset.fastq.gz`, do the following:
-    ```sh
-    zcat Lbraz-subset.fastq.gz | wc -l
-    ```
-    This should give an answer of `113740`. <br/>
-    Now, let's do some basic command line maths. It looks a bit weird, but it follows `$(( ))` nomenclature, where the maths goes in the middle of the double brackets.
-    ```sh
-    echo $(( 113740 / 4 ))
-    ```
-    Is this the same answer as in `read_count.txt`? No.<br/><br/>
-    As we'll cover in later workshops, the "quality" of a base (i.e. confidence the sequencer got it right) is encoded as an ASCII character, including the `@`. By chance, the first base may have the quality `@` meaning you count lines which are not just headers. The `grep` approach only works if you can be certain your pattern matching is unique.<br/><br/>
-    But now we have the maths, and we can also use <code>` `</code>. In coding the different quotes have different meanings - <code>' " `</code> are different. In linux <code>` `</code> is used to say "do everything inside these back ticks first", so we can do the following:
-    ```sh
-    echo $(( `zcat Lbraz-subset.fastq.gz | wc -l` / 4 )) > read_count.txt
-    ```
-    This should now match up! Even when we are confident with a command, or we've done something before it is **so so so** important to double check. We can't necessarily always imagine every scenario, every edge case, every weird thing that someone else has done to our dataset. Always check. It will save you lots of time in the future.
+
+```sh
+zcat Lbraz-subset.fastq.gz | wc -l
+```
+
+This should give an answer of `113740`. <br/>
+Now, let's do some basic command line maths. It looks a bit weird, but it follows `$(( ))` nomenclature, where the maths goes in the middle of the double brackets.
+
+```sh
+echo $(( 113740 / 4 ))
+```
+
+Is this the same answer as in `read_count.txt`? No.<br/><br/>
+As we'll cover in later workshops, the "quality" of a base (i.e. confidence the sequencer got it right) is encoded as an ASCII character, including the `@`. By chance, the first base may have the quality `@` meaning you count lines which are not just headers. The `grep` approach only works if you can be certain your pattern matching is unique.<br/><br/>
+But now we have the maths, and we can also use <code>` `</code>. In coding the different quotes have different meanings - <code>' " `</code> are different. In linux <code>` `</code> is used to say "do everything inside these back ticks first", so we can do the following:
+
+```sh
+echo $(( `zcat Lbraz-subset.fastq.gz | wc -l` / 4 )) > read_count.txt
+```
+
+This should now match up! Even when we are confident with a command, or we've done something before it is **so so so** important to double check. We can't necessarily always imagine every scenario, every edge case, every weird thing that someone else has done to our dataset. Always check. It will save you lots of time in the future.
 
 11\. Create a new file called `first10reads.fastq` that contains **only** the first 10 reads of the fastq file.
-    Also see that now the file is `fastq` not `fastq.gz`, so we're back into plain text so you can use cat rather than `zcat`.
+Also see that now the file is `fastq` not `fastq.gz`, so we're back into plain text so you can use cat rather than `zcat`.
 
 12\. Check your work: count how many lines in `first10reads.fastq` start with the `@` symbol (the way you'd check for `>` in a FASTA file), and save that count to a file called `header_count.txt`.<br/>
-    Is the number what you expected? If not — have a look at the contents of `first10reads.fastq` with `less -S` and think about the maths we did above.
+Is the number what you expected? If not — have a look at the contents of `first10reads.fastq` with `less -S` and think about the maths we did above.
 
 ### Check your answers
 Once you've done all of the above, run the checking script from inside your `practice_w2` directory:

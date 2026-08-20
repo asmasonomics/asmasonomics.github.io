@@ -69,7 +69,7 @@ zcat Lbraz-subset.fastq.gz | wc -l
 ```
 
 This should give an answer of `113740`. <br/>
-Now, let's do some basic command line maths. It looks a bit weird, but it follows `$(( ))` nomenclature, where the maths goes in the middle of the double brackets.
+Now, let's do some basic command line maths. It looks a bit weird, but it follows `$(( ))` nomenclature, where the maths goes in the middle of the double brackets. This is called **arithmetic expansion** in linux.
 
 ```sh
 echo $(( 113740 / 4 ))

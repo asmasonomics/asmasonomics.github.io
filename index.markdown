@@ -15,7 +15,8 @@ Our broad aim is to use sequencing data to understand carcinogenesis and to stra
 [<img src="/assets/images/funders/houghtontrust.png" height="80">](https://www.houghtontrust.org.uk/)&nbsp;&nbsp;&nbsp;&nbsp;
 [<img src="/assets/images/funders/elixir_uk.png" height="80">](https://elixiruknode.org/)&nbsp;&nbsp;&nbsp;&nbsp;
 [<img src="/assets/images/funders/ABCUK.png" height="80">](https://actionbladdercanceruk.org/)<br/>
-[<img src="/assets/images/funders/Rosetrees.png" height="80">](https://rosetrees.org.uk/)
+[<img src="/assets/images/funders/Rosetrees.png" height="80">](https://rosetrees.org.uk/)&nbsp;&nbsp;&nbsp;&nbsp;
+[<img src="/assets/images/funders/HNYCA.jpg" height="80">](https://hnycanceralliance.org.uk/)
 <br/><br/>
 
 

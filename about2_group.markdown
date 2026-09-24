@@ -13,12 +13,6 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 
 <span style="font-size:1.3em;">**Current lab members**</span><br/>
 
-<span style="font-size:1.1em;">Marcello Beltrami</span> *Bioinformatician*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/people/MarcelloBeltrami.png"
-	content = "Marcello graduated with a first class Microbiology BSc from the University of Reading. During his second year he realized that there was a possibility of merging two of his biggest passions: computer science and biology. As a result, he pursued a Masters in Bioinformatics at the University of Birmingham, where his research project involved analysing RNA-seq data of glioblastoma multiforme cell lines to determine the effect of drug resistance mutations on pathway regulation. Marcello joined the Mason lab as a Bioinformatics Technician in September 2024."
-%}
-
 <span style="font-size:1.1em;">George Hatton</span> *PhD Student (Co-supervisee)*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/people/GeorgeHatton.jpg"
@@ -31,22 +25,16 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Adenike is an oncology specialty registrar and clinical PhD student based at the Hull York Medical School (University of Hull campus) under the primary clinical supervision of Professor Anthony Maraveyas and Dr Leonid Nikitenko. Adenike's project focuses on genomic profiling of pancreatic cyst fluid to determine genetic risk signatures to predict malignant potential following preliminary data collected during her NIHR Academic Clinical Fellowship (2020-23). Adenike joined the Mason lab during the second year of her PhD to develop skills in cancer bioinformatics."
 %}
 
-<span style="font-size:1.1em;">Charlie Barker</span> *MBiol project student*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/people/CharlieBarker.jpg"
-	content = "Charlie has returned to the Mason Lab to complete his final year integrated masters project, following a 1-year placement in the GSK Genomics R&D team. Charlie previously completed a summer project in the lab working with TCGA's WGS data. His masters project will use biologically-informed machine learning approaches to try to find further clinically-relevant subgroups in muscle invasive bladder cancer."
-%}
-
-<span style="font-size:1.1em;">Piper Lawrenson</span> *MBiol project student*<br/>
-{% include profile_page_cols.html 
-	file = "/assets/images/people/PiperLawrenson.jpg"
-	content = "Piper is an Integrated Masters student in Biology (Genetics) at the University of York, currently undertaking her final year research project in the Mason lab, investigating the role of endogenous retroviruses in bladder cancer through bioinformatics approaches. Piper is looking forward to further developing her bioinformatics skills during this project and plans to apply for PhD programmes in cancer genomics and genetics."
-%}
-
-<span style="font-size:1.1em;">Jessie Irvine</span> *MBiol project student*<br/>
+<span style="font-size:1.1em;">Jessie Irvine</span> *PhD student (Co-supervisee)*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/people/JessieIrvine.jpeg"
-	content = "Jessie is a Biology integrated masters student at the University of York, with her final year project in the Mason lab investigating machine learning approaches to subgroup urothelial carcinomas into clinical subgroups. With previous experience in neuroscience and Parkinson’s disease, she is looking forward to a newer venture into cancer biology. She hopes to take her refined experience and skills in the Mason lab forward to a PhD in either cancer or neuroscience genomics."
+	content = "Jessie completed her MBiol integrated masters project in the Mason lab, investigating the clinical utility of a urothelial-specific signature of hypoxia, and gaining a first class classification in her degree. She successfully applied for the York Against Cancer core-funded PhD studentship within the JBU and started in September 2026. Jessie's project is under the primary supervision of Prof Will Brackenbury and co-supervised by Andrew and Dr Vicki Jennings. Her project will unite the broader aims of the expanded JBU, incorporating sodium signalling, transcriptomics and characterisation of the immune microenvironment."
+%}
+
+<span style="font-size:1.1em;">Luca Turville</span> *MBiol project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/person.png"
+	content = "Luca joined the Mason Lab to complete their Integrated Masters final year research project in October 2026. More details to follow."
 %}
 
 <br/><br/>
@@ -104,6 +92,12 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 {% include profile_page_cols.html 
 	file = "/assets/images/people/RichardGawne.jpg"
 	content = "Richard gained a 1st class BSc Molecular Cell Biology degree at the University of York, followed by a distinction in the Bioinformatics MSc at the University of Birmingham. His MSc research project involved analysing RNA-seq data to investigate the genetic basis of a corneal disorder known as keratoconus. Richard returned to York to join the Mason Lab in October 2021 and provided broad bioinformatic support and expertise on multiple projects. Richard left the group in September 2024 to begin a prestigious NHS STP position on the Genomics and Bioinformatics track."
+%}
+
+<span style="font-size:1.1em;">Marcello Beltrami</span> *Bioinformatician*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/people/MarcelloBeltrami.png"
+	content = "Marcello joined the Mason Lab in September 2024 following a first class Microbiology BSc from the University of Reading and a distinction from his Masters in Bioinformatics at the University of Birmingham. Marcello completed diverse projects at York, supported students and brought a passion for workflows to the group. He finished in August 2026 before commencing a PhD at The University of Strathclyde."
 %}
 
 <span style="font-size:1.1em;">**Project students**</span><br/>
@@ -166,6 +160,18 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 {% include profile_page_cols.html 
 	file = "/assets/images/people/AnnabelleFrancois.jpg"
 	content = "Annabelle began her studies at the University of York in September 2024. She completed her BSc (Hons) in Biomedical Sciences at the University of Sunderland, followed by a Master’s degree in Microbiology and Infection at the University of Birmingham. Her research interests are in host-pathogen interactions, with a particular focus on cancer-associated viruses. Her project will explore cancer-associated viruses in urothelial cancers.  Annabelle is keen to use computational tools to address different public health concerns."
+%}
+
+<span style="font-size:1.1em;">Charlie Barker</span> *MBiol project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/people/CharlieBarker.jpg"
+	content = "Charlie returned to the Mason Lab to complete his final year integrated masters project, following a 1-year placement in the GSK Genomics R&D team. Charlie previously completed a summer project in the lab working with TCGA's WGS data. His masters project involved a reanalysis of miRNAs relevant in muscle-invasive bladder cancer and his network-driven approaches to identify novel subgroups. Charlie completed with a first class degree classification and started a new career in the Police."
+%}
+
+<span style="font-size:1.1em;">Piper Lawrenson</span> *MBiol project student*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/people/PiperLawrenson.jpg"
+	content = "Piper completed her Integrated Masters final year research project in the Mason lab, investigating the role of endogenous retroviruses in bladder cancer through bioinformatics approaches, focused on a HERV-K element which could have biomarker applications. Piper completed her project and degree with a first class classification adn is now seeking to complete a PhD."
 %}
 
 <span style="font-size:1.1em;">**Summer students**</span><br/>

@@ -14,7 +14,11 @@ Andrew delivers teaching to stage 2, 3 and 4 undergraduate students within Biolo
 
 <span style="font-size:1.2em;">**Current taught material**</span><br/>
 <span style="font-size:1.02em;">**BSc dissertation support material**</span><br/>
-<a href="https://asmasonomics.github.io/courses/BSc_dissertation_2025">Multiomic analysis of bladder cancer</a><br/>
+<a href="https://asmasonomics.github.io/courses/BSc_dissertation_2026">Multiomic analysis of bladder cancer</a><br/>
+<details>
+   <summary>Archived</summary>
+	2025-26  <a href="https://asmasonomics.github.io/courses/BSc_dissertation_2025">Multiomic analysis of bladder cancer</a><br/>
+</details>
 
 <span style="font-size:1.02em;">**Genomics (Stage 3 BSc/MBiol Biology programmes and PGT MSc Bioinformatics)**</span><br/>
 2026-10-23  <a href="https://asmasonomics.github.io/courses/Genomics3_Workshop2_LinuxIV_practice_Oct2026">Genomics 3 - Workshop 2: Linux IV -- practice exercise</a><br/>

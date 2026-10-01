@@ -181,7 +181,7 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Piper completed her Integrated Masters final year research project in the Mason lab, investigating the role of endogenous retroviruses in bladder cancer through bioinformatics approaches, focused on a HERV-K element which could have biomarker applications. Piper completed her project and degree with a first class classification adn is now seeking to complete a PhD."
 %}
 
-<span style="font-size:1.1em;">**Summer students**</span><br/>
+<span style="font-size:1.1em;">**Student interns**</span><br/>
 
 <span style="font-size:1.1em;">Sarah Becker</span> *Undergraduate project student*<br/>
 {% include profile_page_cols.html 

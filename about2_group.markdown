@@ -37,6 +37,13 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Luca joined the Mason Lab to complete their Integrated Masters final year research project in October 2026. More details to follow."
 %}
 
+<span style="font-size:1.1em;">Dewan Mumdood Ahmed</span> *Intern*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/people/DewanMumdoodAhmed.png"
+	content = "Dewan holds an MSc in Statistics from the University of Rajshahi, Bangladesh where he now works as a Bioinformatics research assistant. He is most interested in research focused on single cell RNA sequencing, spatial transcriptomics, machine learning and drug discovery. Whilst identifying PhD opportunities, he has associated with the Mason lab to develop skills in cancer informatics."
+%}
+
+
 <br/><br/>
 <span style="font-size:1.3em;">**Past lab members**</span><br/>
 

@@ -19,21 +19,27 @@ During btoh semesters, we will have a mixture of group and individual supervisio
 Some particular dates to note are tabled below:<br/><br/>
 </p>
 
-| Week | Date | |
-| --- | --- | --- |
-| S1 Week 2 | WD DD/10/26 | First group supervision meeting |
-| S1 Week 3 | WD DD/10/26 | TCGA MIBC journal club - Robertson 2017 Cell |
-| S1 Week 4 | WD DD/10/26 | MIBC Subtyping journal club - Kamoun 2020 European Urology, Cotillas 2024 Journal of Molecular Diagnostics, Ungureanu 2025 bioRxiv |
-| S1 Week 5 | WD DD/10/26 | Group supervision |
-| S1 Week 5 | F 30/10/26 | Submit safety and ethical responsibility forms | 
-| S1 Consolidation Week | w/c 02/11/26 | No supervision meeting |
-| S1 Week 8 | WD DD/11/26 | Formative presentations | 
-| S1 Week 11 | WD DD/12/26 | Last meeting of semester - individual slots |
-| S2 Week 0 | M 01/02/27 | Submit draft introduction for feedback |
-| S2 Week 1 | WD DD/02/27 | First supervision meeting of semester 2 | 
-| S2 Week 6 | WD DD/03/27 | Final supervision meeting of project - individual slots | 
-| S2 Week 8 | M 12/04/27 | Submit draft report for feedback |
-| S2 Week 11 | T 04/05/27 | Assessment deadline |
+| Week | Date & Time | Location | |
+| --- | --- | --- | --- |
+| Semester 1 | | | |
+| Week 2 | F 09/10/26 11-12 | SLB/103 | First group supervision meeting |
+| Week 3 | Th 15/10/26 10-11 | B/M/049 | TCGA MIBC journal club - Robertson 2017 Cell |
+| Week 4 | Th 22/10/26 10-11 | B/M/049 | MIBC Subtyping journal club - Kamoun 2020 European Urology, Cotillas 2024 Journal of Molecular Diagnostics, Ungureanu 2025 bioRxiv |
+| Week 5 | Th 29/10/26 10-11 | B/M/049 | Group supervision |
+| Week 5 | F 30/10/26 | | Submit safety and ethical responsibility forms | 
+| Consolidation Week | w/c 02/11/26 | | No supervision meeting |
+| Week 6 | Th 12/11/26 11-12 | B/M/049 | Group supervision |
+| Week 7 | Th 19/10/26 9-11 | B/M/021 | Book an individual 15 min slot (booking link by email) |
+| Week 8 | F 27/11/26 11-2 | B/M/049 | Formative presentations | 
+| Week 9 | Th 3/12/26 2-3,4-5 | B/M/021 | Book an individual 15 min slot (booking link by email) |
+| Week 10 | Th 10/11/26 11-12 | B/M/023 | Group supervision |
+| Week 11 | Th 17/10/26 2.30-4.30 | B/M/021 | Book an individual 15 min slot (booking link by email) |
+| Semester 2 | | | |
+| Week 0 | M 01/02/27 | | Submit draft introduction for feedback |
+| Week 1 | WD DD/02/27 | | First supervision meeting of semester 2 | 
+| Week 6 | WD DD/03/27 | | Final supervision meeting of project - individual slots | 
+| Week 8 | M 12/04/27 | | Submit draft report for feedback |
+| Week 11 | T 04/05/27 | | Assessment deadline |
 
 <p align="justify">
 The <b>main assessment is your 4000 word scientific report</b>. Deadline: Tuesday 4th May at 12 noon (S2 W11).<br/><br/>

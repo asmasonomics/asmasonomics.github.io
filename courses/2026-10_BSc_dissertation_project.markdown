@@ -29,11 +29,11 @@ Some particular dates to note are tabled below:<br/><br/>
 | Week 5 | F 30/10/26 | | Submit safety and ethical responsibility forms | 
 | Consolidation Week | w/c 02/11/26 | | No supervision meeting |
 | Week 6 | Th 12/11/26 11-12 | B/M/049 | Group supervision |
-| Week 7 | Th 19/10/26 9-11 | B/M/021 | Book an individual 15 min slot (booking link by email) |
+| Week 7 | Th 19/11/26 9-11 | B/M/021 | Book an individual 15 min slot (booking link by email) |
 | Week 8 | F 27/11/26 11-2 | B/M/049 | Formative presentations | 
 | Week 9 | Th 3/12/26 2-3,4-5 | B/M/021 | Book an individual 15 min slot (booking link by email) |
-| Week 10 | Th 10/11/26 11-12 | B/M/023 | Group supervision |
-| Week 11 | Th 17/10/26 2.30-4.30 | B/M/021 | Book an individual 15 min slot (booking link by email) |
+| Week 10 | Th 10/12/26 11-12 | B/M/023 | Group supervision |
+| Week 11 | Th 17/12/26 2.30-4.30 | B/M/021 | Book an individual 15 min slot (booking link by email) |
 | Semester 2 | | | |
 | Week 0 | M 01/02/27 | | Submit draft introduction for feedback |
 | Week 1 | WD DD/02/27 | | First supervision meeting of semester 2 | 

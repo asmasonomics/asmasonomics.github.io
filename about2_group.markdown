@@ -31,10 +31,16 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	content = "Jessie completed her MBiol integrated masters project in the Mason lab, investigating the clinical utility of a urothelial-specific signature of hypoxia, and gaining a first class classification in her degree. She successfully applied for the York Against Cancer core-funded PhD studentship within the JBU and started in September 2026. Jessie's project is under the primary supervision of Prof Will Brackenbury and co-supervised by Andrew and Dr Vicki Jennings. Her project will unite the broader aims of the expanded JBU, incorporating sodium signalling, transcriptomics and characterisation of the immune microenvironment."
 %}
 
+<span style="font-size:1.1em;">Caleb Sumsion</span> *MSc by Research (Co-supervisee)*<br/>
+{% include profile_page_cols.html 
+	file = "/assets/images/people/CalebSumsion.jpg"
+	content = "Caleb graduated from the University of York in 2026 with a 1st class BSc in Biology. He completed his final-year research project in the Mason lab exploring the effects of KANSL1 mutations in the bladder cancer TCGA cohort. He is now studying for an MSc by research in Biomedical Science, supervised by Dr Andrew Holding. His MSc project will use bioinformatics and wet lab skills to investigate glucocorticoid receptor signalling in the development of endometriosis."
+%}
+
 <span style="font-size:1.1em;">Luca Turville</span> *MBiol project student*<br/>
 {% include profile_page_cols.html 
 	file = "/assets/images/person.png"
-	content = "Luca joined the Mason Lab to complete their Integrated Masters final year research project in October 2026. More details to follow."
+	content = "Luca joined the Mason Lab to complete their Integrated Masters final year research project in October 2026."
 %}
 
 <span style="font-size:1.1em;">Dewan Mumdood Ahmed</span> *Intern*<br/>
@@ -42,7 +48,6 @@ The Mason Lab started in November 2019 when Andrew started a 3-year Independent 
 	file = "/assets/images/people/DewanMumdoodAhmed.png"
 	content = "Dewan holds an MSc in Statistics from the University of Rajshahi, Bangladesh where he now works as a Bioinformatics research assistant. He is most interested in research focused on single cell RNA sequencing, spatial transcriptomics, machine learning and drug discovery. Whilst identifying PhD opportunities, he has associated with the Mason lab to develop skills in cancer informatics."
 %}
-
 
 <br/><br/>
 <span style="font-size:1.3em;">**Past lab members**</span><br/>

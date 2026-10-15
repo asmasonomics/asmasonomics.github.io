@@ -23,7 +23,7 @@ Some particular dates to note are tabled below:<br/><br/>
 | --- | --- | --- | --- |
 | Semester 1 | | | |
 | Week 2 | F 09/10/26 11-12 | SLB/103 | First group supervision meeting |
-| Week 3 | Th 15/10/26 10-11 | B/M/049 | TCGA MIBC journal club - Robertson 2017 Cell |
+| Week 3 | Th 15/10/26 10-11 | B/M/049 | TCGA MIBC journal club (<a href="/assets/coursefiles/2025_BSc_dissertation_project/2026-10-15_28H_Robertson2017Cell_TCGA-MIBC_JournalClub.pptx" download>pptx slides</a>) - Robertson 2017 Cell |
 | Week 4 | Th 22/10/26 10-11 | B/M/049 | MIBC Subtyping journal club - Kamoun 2020 European Urology, Cotillas 2024 Journal of Molecular Diagnostics, Ungureanu 2025 bioRxiv |
 | Week 5 | Th 29/10/26 10-11 | B/M/049 | Group supervision |
 | Week 5 | F 30/10/26 | | Submit safety and ethical responsibility forms | 

@@ -6,7 +6,7 @@ permalink: /yorkbioinformatics/
 <p align="justify">
 The data skills space in the UK is increasingly noisy with entities like <a href="https://elixiruknode.org/">ELIXIR-UK</a> and <a href="https://biofair.uk/">BioFAIR</a> trying to create coordinated national infrastructure and communities of practice. Data skills are essential to the modern biologist, and we need to make sure that York researchers, technical staff and students at all stages have the information and opportunities available to them - there is certainly a lot going on! <br/><br/>
 Andrew, Emma and Alastair decided to combine their efforts, bringing together their experience and views from research, teaching, training, consultancy and core provision. They are very fortunate to be within a Department and University which really acknowledges and appreciates the importance of these skills, and to represent <a href="https://www.york.ac.uk/biology/research/bioinformatics-biosystems/">the broader bioinformatics and data research community at York</a>.<br/><br/>
-Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-09.html">here</a>.
+Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-10.html">here</a>.
 </p>
 #### Coordinating team
 {% include profile_page_cols.html 
@@ -36,7 +36,6 @@ Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinfor
 	We meet on an available Wednesday towards the end of every month at 1pm. Speakers will introduce what they do, give a quick career summary, and then present for ~25 mins. Questions and critique very encouraged!"
 %}
 <span style="font-size:1.1em;">Upcoming speakers</span><br/>
-2026-09-16 - [Prof Seth Davis](https://www.york.ac.uk/biology/people/seth-davis/): <i>Bioinformatics for the coding illiterate using vibe coding</i><br/>
 2026-10-21 - <b>EXTERNAL</b> - [Prof Mark Blaxter](https://www.sanger.ac.uk/person/blaxter-mark/), Programme Lead for the Sanger Tree of Life Programme: <i>Busy about the genomic tree of life</i> - this will be delivered by Zoom in B/K018 and also advertised to Genomics3 and PGT Bioinformatics students<br/>
 2026-11-25 - TBC<br/>
 <i>No meeting in December</i><br/>
@@ -48,8 +47,10 @@ Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinfor
 2026-06-24 - [Charlotte Booth](https://uk.linkedin.com/in/charlotte-booth-6228131a4) (PhD student, Lagos/Fielding groups): <i>Utilising a variety of RNA sequencing methods to study transcriptomic hallmarks of B cell acute lymphoblastic leukaemia subtypes</i><br/>
 2026-07-29 - [Dr Cobus Smit](https://www.york.ac.uk/biology/itsupport/cfm/post_doc/profile.cfm?ID=2400) (postdoc, Lichman group): <i>Developing a Network-Based Comparative Genomics Framework to Explore Plant Specialised Metabolism</i><br/>
 2026-08-19 - [Dr Pasky Miranda](https://www.linkedin.com/in/pascal-miranda-89566635/) (Digital Skills Specialist, BTF): <i>Introducing the UKRI Digital Research Skills Catalyst</i><br/>
+2026-09-16 - [Prof Seth Davis](https://www.york.ac.uk/biology/people/seth-davis/): <i>Bioinformatics for the coding illiterate using vibe coding</i><br/>
 
 #### Newsletter archive
+[October 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-10.html)<br/>
 [September 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-09.html)<br/>
 [August 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-08.html)<br/>
 [July 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-07.html)<br/>

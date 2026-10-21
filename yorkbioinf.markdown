@@ -36,7 +36,6 @@ Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinfor
 	We meet on an available Wednesday towards the end of every month at 1pm. Speakers will introduce what they do, give a quick career summary, and then present for ~25 mins. Questions and critique very encouraged!"
 %}
 <span style="font-size:1.1em;">Upcoming speakers</span><br/>
-2026-10-21 - <b>EXTERNAL</b> - [Prof Mark Blaxter](https://www.sanger.ac.uk/person/blaxter-mark/), Programme Lead for the Sanger Tree of Life Programme: <i>Busy about the genomic tree of life</i> - this will be delivered by Zoom in B/K018 and also advertised to Genomics3 and PGT Bioinformatics students<br/>
 2026-11-25 - TBC<br/>
 <i>No meeting in December</i><br/>
 2027-01-27 - TBC<br/>
@@ -48,6 +47,7 @@ Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinfor
 2026-07-29 - [Dr Cobus Smit](https://www.york.ac.uk/biology/itsupport/cfm/post_doc/profile.cfm?ID=2400) (postdoc, Lichman group): <i>Developing a Network-Based Comparative Genomics Framework to Explore Plant Specialised Metabolism</i><br/>
 2026-08-19 - [Dr Pasky Miranda](https://www.linkedin.com/in/pascal-miranda-89566635/) (Digital Skills Specialist, BTF): <i>Introducing the UKRI Digital Research Skills Catalyst</i><br/>
 2026-09-16 - [Prof Seth Davis](https://www.york.ac.uk/biology/people/seth-davis/): <i>Bioinformatics for the coding illiterate using vibe coding</i><br/>
+2026-10-21 - <b>EXTERNAL</b> - [Prof Mark Blaxter](https://www.sanger.ac.uk/person/blaxter-mark/), Programme Lead for the Sanger Tree of Life Programme: <i>Busy about the genomic tree of life</i> - download: <a href="https://drive.google.com/file/d/1nn3gF_eWVcBOfvIGLn_eJjMMhJD0wMfk/view?usp=sharing" download>[slides]</a><a href="https://drive.google.com/file/d/1LkgAmJFCW3dsBrX33JXmsLJXGzSgO-ts/view?usp=sharing" download>[recording]</a><a href="https://drive.google.com/file/d/1RrRWKmZXebgN2lqkUZHDr1976Et1vnaw/view?usp=sharing" download>[auto subtitles]</a> <br/>
 
 #### Newsletter archive
 [October 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-10.html)<br/>

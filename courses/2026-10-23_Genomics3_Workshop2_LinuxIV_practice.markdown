@@ -96,7 +96,8 @@ Is the number what you expected? If not — have a look at the contents of `firs
 Once you've done all of the above, run the checking script from inside your `practice_w2` directory:
 
 ```sh
-sh /shared/biology/bioldata1/bl-00087h/data/check_workshop2_practice.sh
+cp /shared/biology/bioldata1/bl-00087h/data/check_workshop2_practice.sh .
+./check_workshop2_practice.sh
 ```
 
 It will tell you `[PASS]` or `[FAIL]` for each part, and give you a hint if something's wrong. You don't need to get everything right first time. The key thing is that you understand if you have gone wrong and know how to fix it.

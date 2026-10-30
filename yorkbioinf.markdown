@@ -36,7 +36,7 @@ Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinfor
 	We meet on an available Wednesday towards the end of every month at 1pm. Speakers will introduce what they do, give a quick career summary, and then present for ~25 mins. Questions and critique very encouraged!"
 %}
 <span style="font-size:1.1em;">Upcoming speakers</span><br/>
-2026-11-25 - TBC<br/>
+2026-11-25 - [Dr Sean Meaden](https://www.york.ac.uk/biology/people/sean-meaden/) (PI): <i>Bioinformatics for microbial ecology: a hypothesis free zone?</i><br/>
 <i>No meeting in December</i><br/>
 2027-01-27 - TBC<br/>
 

@@ -10,7 +10,7 @@ Issitt T, Harmens A, **Mason AS**, Turvill J, Piper J, Sweeney ST, Brackenbury W
 **Ungureanu VV**, **Gawne RT**, Baker SC, Eriksson P, Halliday DM, Smith SL, Southgate J & **Mason AS**, [Biologically-informed machine learning identifies a new clinically-actionable bladder cancer subgroup characterised by NRF2 overactivity](https://doi.org/10.1101/2025.06.03.657659), bioRxiv (2025).
 
 ### 2026
-Humayun-Zakaria N, Yu M, Goel A, Gordon NS, Savill S, **Mason AS**, Zeegers MP, Cheng KK, James N, Bryan RT, Ward DG & Arnold R, Transcriptomic Profiling of Tropomyosin Isoforms in Bladder Cancer: multi-platform sequencing and experimental validation, *Scientific Reports*, *in press*.
+Humayun-Zakaria N, Yu M, Goel A, Gordon NS, Savill S, **Mason AS**, Zeegers MP, Cheng KK, James N, Bryan RT, Ward DG & Arnold R (2026), [Transcriptomic Profiling of Tropomyosin Isoforms in Bladder Cancer: multi-platform sequencing and experimental validation](https://doi.org/10.1038/s41598-026-66033-y), *Scientific Reports*, 10.1038/s41598-026-66033-y.
 
 Hinley J, Baker SC, **Mason AS**, Kyriazis G, Masood O & Southgate J (2026), [Connexin 32 constrains a mesenchymal-like switch in differentiated urothelium and luminal cancers](https://doi.org/10.26508/lsa.202503427), *Life Science Alliance*, 9(5):10.26508/lsa.202503427.
 

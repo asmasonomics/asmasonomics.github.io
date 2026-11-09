@@ -288,7 +288,7 @@ prepare_data_for_plot <- function(data, gene_names) {
 gene_list <- c("APOBEC3A", "APOBEC3B", "MKI67", "KRT13")
 
 # run the function for those genes
-grpd_gene_list_data <- prepare_data_for_plot(txiDF, gene_list)
+grpd_gene_list_data <- prepare_data_for_plot(txiTPM, gene_list)
 
 # check you've only got the data you want
 print(grpd_gene_list_data)
@@ -554,7 +554,10 @@ ggplot(top10_fgseaRes, aes(x = NES, y=reorder(pathway, -pval), fill = factor(sig
 ggsave("GSEA-hallmarks_best_hits_bar.pdf")
 
 # save your results
-write.table(fgseaRes, file="GSEA-hallmarks_results_file.tsv", sep="\t", row.names=FALSE, col.names=TRUE)
+fgsea_df <- as.data.frame(fgseaRes) %>%
+			mutate(leadingEdge = vapply(leadingEdge = vapply(leadingEdge, paste, collapse = ";", character(1)))) %>%
+			arrange(padj)
+write.table(fgsea_df, file="GSEA-hallmarks_results_file.tsv", sep="\t", row.names=FALSE, col.names=TRUE)
 
 # what's your interpretation?
 

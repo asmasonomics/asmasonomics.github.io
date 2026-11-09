@@ -73,7 +73,7 @@ ln -s /shared/biology/bioldata1/bl-00087h/data/rnaseq_data rnaseq_data
    2) You will need to use this index for kallisto:<br/>
    <code>../rnaseq_data/kallist0.48.0_gencode.v44.pc_transcripts.processed-kallisto</code>
    <br/><br/>
-   3) When you use <code>R</code> it will be version 4.1.2 (not v4.3.3). You will need to change the <code>.libPaths()</code> commands across the workshop:
+   3) When you use <code>R</code> it will be version 4.1.2 (not v4.5.2). You will need to change the <code>.libPaths()</code> commands across the workshop:
    <pre><code class="language-r">
    .libPaths("../rnaseq_data/R_4.1.2")
    </code></pre>
@@ -240,6 +240,7 @@ txiTPM <- cbind(genes = rownames(txiTPM), txiTPM)
 rownames(txiTPM) <- NULL
 write.table(txiTPM, file="allTPMs.tsv",sep="\t", quote=FALSE, row.names=FALSE)
 
+# we will use the counts for differential expression analysis
 txiCounts <- as.data.frame(txi$counts)
 txiCounts <- cbind(genes = rownames(txiCounts), txiCounts)
 rownames(txiCounts) <- NULL
@@ -321,10 +322,10 @@ Whilst this code is useful here to just check your dataset makes sense, it could
 Now that you've exited R, you can view your saved graph by running: <code>firefox indicator_genes.pdf</code>
 </p><br/>
 
-#### 3 Differential Expression Analysis (DEA) with Sleuth
+#### 3 Differential Expression Analysis (DEA) with DESeq2
 <p align="justify">
 Taking a quick look at TPMs is one thing, but we want to be unbiased and use the full statistical power of the dataset. For that we need DEA (done in R) using the full kallisto directories similar to those you made in part 2 (<i>not</i> the abundance.tsv files) and an input file showing our experimental design, which we will make now. This is another <code>for</code> loop, with each line doing text manipulation of the experiment metadata stored in our read names - this is why consistent and informative naming is so useful.<br/><br/>
-A quick confession. You will now use some kallisto output which I created from the full dataset (not just the first 2 million reads as you did). This is because it would take more like 20-25 minutes per sample to run (rather than 2 minutes). If you do the RNAseq data for your report, you should run kallisto in full for all samples (I will give the full command at the end of the workshop material below). Part of this is we use a statistical method called bootstrapping to give us confidence in our expression values. Bootstrapping is where we re-run the data alignment multiple times to get consistent answers (like you would when building phylogenetic trees). In the full run you will do 20 bootstraps compared to the 0 you did in part 2. This explains why you <i>might</i> see (very) slight differences between your TPMs from part 3 and those of your classmates around you.<br/>
+A quick confession. You will now use some kallisto output which I created from the full dataset (not just the first 2 million reads as you did). This is because it would take more like 15 minutes per sample to run (rather than 2 minutes). If you do the RNAseq data for your report, you should run kallisto in full for all samples (I will give the full command at the end of the workshop material below). Part of this is we use a statistical method called bootstrapping to give us confidence in our expression values. Bootstrapping is where we re-run the data alignment multiple times to get consistent answers (like you would when building phylogenetic trees). In the full run you will do 20 bootstraps compared to the 0 you did in part 2. This explains why you <i>might</i> see (very) slight differences between your TPMs from part 3 and those of your classmates around you.<br/>
 </p>
 
 ```sh
@@ -345,7 +346,7 @@ for sampledir in ../rnaseq_data/01_workshop4_BKPyV-infection/03_full_kallisto_ou
     sample=`echo $sampledir | rev | cut -d'/' -f2 | rev`
     rep=`echo $sample | cut -d'-' -f2`
     condition=`echo $sample | awk -v sample=$sample '{if (sample~/^BKPyV/) {print "infected"} else {print "uninfected"}}'`
-    echo -e $sample'\t'$rep'\t'$condition >> infectionDEA.info
+    echo -e $sample'\t'$rep'\t'$condition >> DEA.info
 done
 
 ```
@@ -354,7 +355,7 @@ done
 The <code>for</code> loop looks very complicated. But look at each part to see what it is doing. We are looping ("iterating") through the abundance.h5 files in each sample directory (the variable <code>sampledir</code> here is out "iterable" - the variable we're using at each stage of the loop). The abundance.h5 files are made by kallisto. We then use the name of this directory to create the rest of the information we need. Some useful linux commands are used:<br/><br/>
 <code>rev</code> - reverses the characters in your output. This is useful if you know you want the end of something, but the start may by of inconsistent length or format<br/>
 <code>cut</code> - splits strings or data into lists based on a delimiter, this is the <code>-d</code> bit. We're splitting our string into a list on <code>/</code> or <code>-</code> in this loop, and then capturing the second (<code>-f2</code>) item in that list.<br/>
-<code>awk</code> is a whole language in itself, like R, and is fantastic for manipulating files in columns. Here we're using it to check our sample names to put our samples into groups (either 0 or 1).<br/>
+<code>awk</code> is a whole language in itself, like R, and is fantastic for manipulating files in columns. Here we're using it to check our sample names to put our samples into groups.<br/>
 Then we use <code>echo</code> to print everything we want.<br/><br/>
 Easy, really... The key thing is that this loop looks complex, but whenever you write your own loop you do it in stages: you don't just write that in one go. You check that you're looping through the right thing, that you're getting the information from each variable, then that your output looks right <i>before</i> you commit it to file. <br/><br/>
 No we can use the output of the loop and jump back into R.
@@ -391,8 +392,7 @@ all(rownames(exp) == colnames(counts))
 
 # create the DESeq2 object, using rep as a blocking term
 dds <- DESeqDataSetFromMatrix(countData = round(counts),
-								colData = exp,
-								design = ~ rep + condition)
+		colData = exp, design = ~ rep + condition)
 
 # explicitly set the condition which is the reference/control/baseline
 # technically unnecessary, but good to be confident here
@@ -414,16 +414,16 @@ dds_results$pvalue[is.na(dds_results$pvalue)] <- 1
 dds_results$padj[is.na(dds_results$padj)] <- 1
 
 # set gene names as a column and keep only the significance test values
-dea <- data.frame(genes = rownames(dds_results), dds_results[,c("pvalue","padj")], 
-							check.names = FALSE, row.names = NULL)
+dea <- data.frame(genes = rownames(dds_results), 
+		dds_results[,c("pvalue","padj")], check.names = FALSE, row.names = NULL)
 
 # don't close R!
 
 ```
 
 <p align="justify">
-As we are running statistical tests for so many genes, we need to have a p value correction. Sleuth uses Benjamini-Hochberg, a ranking system to reduce false positives. We then use these 'q' values, again with a stringent threshold such as <0.05. Use <code>head</code>, <code>less</code>, <code>grep</code> or other tools you know to look at the significant genes - do any come up that you recognise? Do any of our "quick check" genes come up? If not, why do you think this is?<br/><br/>
-The other thing to consider here is that q<0.05 genes are <i>statistically</i> different, but that doesn't necessarily equal biologically significant - the fold change in expression could be very small, but appear very significant just due to the power of the test (i.e. the ability of the test to see changes). This is particularly common when you have replicates from cell lines (as these are more like technical repeats than biological ones).<br/><br/>
+As we are running statistical tests for so many genes, we need to have a p value correction. DESeq2 uses Benjamini-Hochberg, a ranking system to reduce false positives. We then use these 'adjusted' p values, again with a stringent threshold such as <0.05. Use <code>head</code>, <code>less</code>, <code>grep</code> or other tools you know to look at the significant genes - do any come up that you recognise? Do any of our "quick check" genes come up? If not, why do you think this is?<br/><br/>
+The other thing to consider here is that adjp<0.05 genes are <i>statistically</i> different, but that doesn't necessarily equal biologically significant - the fold change in expression could be very small, but appear very significant just due to the power of the test (i.e. the ability of the test to see changes). This is particularly common when you have replicates from cell lines (as these are more like technical repeats than biological ones).<br/><br/>
 Now we're going to combine our TPMs and our DEA results and make a volcano plot.<br/>
 </p>
 
@@ -460,13 +460,14 @@ write.table(res, file="DEA_results_file.tsv", sep="\t", row.names=FALSE, col.nam
 
 <p align="justify">
 OK! That was a great block of R coding, and you're almost (almost) at the plotting stage.<br/><br/>
-As a recap, you took the full kallisto output which allowed you to get TPMs for each gene - a metric for gene expression. You then used the kallisto output to run sleuth - allowing you to use proper statistics to see which genes have significantly changing expression due to infection with BKPyV. Then you took the output from these two steps and merged them using an inner join. This means you have expression values and significance values in the same place.<br/><br/>
+As a recap, you took the full kallisto output which allowed you to get TPMs for each gene - a metric for gene expression. You then used the kallisto output to run DESeq2 - allowing you to use proper statistics to see which genes have significantly changing expression due to infection with BKPyV. Then you took the output from these two steps and merged them using an inner join. This means you have expression values and significance values in the same place.<br/><br/>
+You may have noticed that DESeq2 creates a log2FoldChange column which we removed, before creating a log2FC column using the TPMs. Why did we do this? Some DEA tools don't create a useful log2FC value, so it's a good skill to have, but also this is about plotting consistently. When we plot individual genes (with the bar charts we did above) we plot TPM because this is an interpretable metric. It makes sense then to use that in your volcano, otherwise something may look significant in the bar chart, but not the volcano, or vice versa. Most of the time the values are very similar, but there will be differences. In this dataset, more genes are "lifted" above the abs(log2FC)>1 threshold. Does that impact interpretation/confidence/anything? Have another think about where these thresholds come from.<br/><br/>
 Now you can plot!
 <br/>
 </p>
 
 ```R 
-# carrying on with our R session - if you accidentally closed it, just reload TPMs_and_DEA_results_file.tsv using read.table()
+# carrying on with our R session - if you accidentally closed it, just reload DEA_results_file.tsv using read.table()
 library(ggrepel)
 library(ggplot2)
 
@@ -481,7 +482,7 @@ res$DEA[res$log2FC < -1 & res$padj < 0.05] <- "DOWN"
 
 # let's create our volcano plot - it should open as a separate window once rendered
 # first line is the plot, second gives the colours and no legend, third defines the colours
-# fourth line gives the threshold lines, fifth gives a clean white background, sixth sets the labels 
+# fourth line gives the threshold lines, fifth gives a clean white background, sixth and seventh set the labels 
 ggplot(res, aes(x=log2FC, y=-log10(padj))) + 
   geom_point(aes(colour = DEA), show.legend = FALSE) + 
   scale_colour_manual(values = c("blue", "gray", "red")) +
@@ -489,6 +490,8 @@ ggplot(res, aes(x=log2FC, y=-log10(padj))) +
   theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
   geom_text_repel(data=subset(res, (log2FC > 3 & padj < 0.05)), aes(x=log2FC, y=-log10(padj), label=genes), max.overlaps = Inf, size=2.5) +
   geom_text_repel(data=subset(res, (log2FC < -1.5 & padj < 0.05)), aes(x=log2FC, y=-log10(padj), label=genes), max.overlaps = Inf, size=2.5)
+
+# I have played a bit with the subset() thresholds here to not have a ridiculous number of genes - you may want/need to alter these
 
 # save it
 ggsave("volcano.pdf")
@@ -531,6 +534,9 @@ top10_fgseaRes
 # google the terms, or check the MSigDB website - do the results make sense?
 plotEnrichment(genesets[["HALLMARK_G2M_CHECKPOINT"]], prerank) + labs(title="G2M Checkpoint")
 ggsave("GSEA_G2M-Checkpoint.pdf")
+
+# if this isn't your top, don't worry. The top few are very very close (look at top10_fgseaRes again), 
+# and the exact ranking may depend on stochastic differences during kallisto.
 
 # create a bar chart of the best hits
 ggplot(top10_fgseaRes, aes(x = NES, y=reorder(pathway, -pval), fill = factor(sign(NES)))) +

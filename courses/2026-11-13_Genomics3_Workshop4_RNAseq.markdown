@@ -210,7 +210,7 @@ We will now use an R package called tximport to combine the different datasets t
 
 ```sh
 # enter R by typing R in the terminal
-# make a note of which version you're using - it should be v4.3.3
+# make a note of which version you're using - it should be v4.5.2
 R
 ```
 
@@ -218,7 +218,7 @@ R
 # you are now using R!
 
 # access the Genomics shared libraries with this command
-.libPaths("../rnaseq_data/R_4.3.3")
+.libPaths("../rnaseq_data/R_4.5.2")
 
 # load tximport
 library(tximport)
@@ -232,12 +232,19 @@ files <- list.files(".","abundance.tsv$")
 # remove the abundance.tsv from the name to get the sample ID
 names(files) <- gsub("_abundance.tsv", "", files)
 
-# use tximport to combine the data and write gene-level TPMs to file
+# use tximport to combine the data and write gene-level TPMs and counts to file
 txi <- tximport(files, type = "kallisto", tx2gene = t2g, ignoreTxVersion = TRUE, ignoreAfterBar = TRUE)
-txiDF <- as.data.frame(txi$abundance)
-txiDF <- cbind(genes = rownames(txiDF), txiDF)
-rownames(txiDF) <- NULL
-write.table(txiDF,file="allTPMs.tsv",sep="\t", quote=FALSE, row.names=FALSE)
+
+txiTPM <- as.data.frame(txi$abundance)
+txiTPM <- cbind(genes = rownames(txiTPM), txiTPM)
+rownames(txiTPM) <- NULL
+write.table(txiTPM, file="allTPMs.tsv",sep="\t", quote=FALSE, row.names=FALSE)
+
+txiCounts <- as.data.frame(txi$counts)
+txiCounts <- cbind(genes = rownames(txiCounts), txiCounts)
+rownames(txiCounts) <- NULL
+write.table(txiCounts, file="allCounts.tsv",sep="\t", quote=FALSE, row.names=FALSE)
+
 
 ```
 
@@ -324,17 +331,21 @@ A quick confession. You will now use some kallisto output which I created from t
 # enter the results directory for this section
 cd ../3_DEA
 
-# create the experimental design file for sleuth (the DEA tool)
+# create symbolic links for the TPMs and counts files we will need later
+ln -s ../rnaseq_data/01_workshop4_BKPyV-infection/03_full_kallisto_output_for_workshop_DEA/allTPMs.tsv TPMs.tsv
+ln -s ../rnaseq_data/01_workshop4_BKPyV-infection/03_full_kallisto_output_for_workshop_DEA/allCounts.tsv counts.tsv
+
+# create the experimental design file for DESeq2 (the DEA tool)
 # first write the headers
-echo -e "sample\texpress\tbiorep\tpath" > infectionDEA.info
+echo -e "sample\trep\tcondition" > DEA.info
 
 # now loop through the kallisto output directory filenames to get the information needed
 for sampledir in ../rnaseq_data/01_workshop4_BKPyV-infection/03_full_kallisto_output_for_workshop_DEA/*/abundance.h5
   do
     sample=`echo $sampledir | rev | cut -d'/' -f2 | rev`
-    donor=`echo $sample | cut -d'-' -f2`
-    exp=`echo $sample | awk -v sample=$sample '{if (sample~/^BKPyV/) {print "0"} else {print "1"}}'`
-    echo -e $sample'\t'$exp'\t'$donor'\t'$sampledir >> infectionDEA.info
+    rep=`echo $sample | cut -d'-' -f2`
+    condition=`echo $sample | awk -v sample=$sample '{if (sample~/^BKPyV/) {print "infected"} else {print "uninfected"}}'`
+    echo -e $sample'\t'$rep'\t'$condition >> infectionDEA.info
 done
 
 ```
@@ -356,60 +367,69 @@ R
 ```
 ```R
 # access the Genomics shared libraries with this command
-.libPaths("../rnaseq_data/R_4.3.3")
+.libPaths("../rnaseq_data/R_4.5.2")
 
 # load libraries we need
 library(tidyverse)
+library(dplyr)
 library(readr)
-library(sleuth)
+library(DESeq2)
 
-# create an object for the experimental design and t2g
-s2c <- read.table("infectionDEA.info", header=TRUE, stringsAsFactors=FALSE)
-t2g <- dplyr::select(read.table("../rnaseq_data/gencode.v44.pc_transcripts.t2g", header=TRUE, stringsAsFactors=FALSE), target_id = ensembl_transcript_id, ext_gene = external_gene_name)
+# load counts data and design file
+counts <- read.table("counts.tsv", row.names=1, header=TRUE, check.names = FALSE)
+exp <- read.table("DEA.info", row.names=1, header=TRUE)
 
-# build a sleuth object, aggregating to gene level
-# the "summarizing bootstraps" step can take a few minutes
-so <- sleuth_prep(s2c, ~express + biorep, extra_bootstrap_summary=TRUE, num_cores=1, target_mapping=t2g, transformation_function = function(x) log2(x+1.5), gene_mode=TRUE, aggregation_column = 'ext_gene')
+# set factors in design table, including the "reference" control condition
+exp$rep <- factor(exp$rep)
+exp$condition <- factor(exp$condition, levels = c("uninfected", "infected"))
 
-# fit the statistical models
-# start with the 'full' model accounting for variation due to experimental condition AND donor background
-# then account for variance just due to difference between donors
-# perform a likelihood ratio test (LRT) to identify significant changes just associated with the experimental condition
-so <- sleuth_fit(so, ~express + biorep, 'full')
-so <- sleuth_fit(so, ~biorep, 'reduced')
-so <- sleuth_lrt(so, 'reduced', 'full')
-sleuth_table <- sleuth_results(so, 'reduced:full', test_type='lrt', show_all = FALSE)
+# check the rows in the design match the columns in counts, and in the same order
+all(rownames(exp) %in% colnames(counts))
+all(rownames(exp) == colnames(counts))
 
-# write results to file
-write.table(distinct(as.data.frame(sleuth_table)[,c("target_id","pval","qval")]),file="infectionDEA_results.tsv",sep="\t",row.names=FALSE,col.names=TRUE)
+# these should both say "TRUE", if not, check your tables! 
 
-q()
+# create the DESeq2 object, using rep as a blocking term
+dds <- DESeqDataSetFromMatrix(countData = round(counts),
+								colData = exp,
+								design = ~ rep + condition)
+
+# explicitly set the condition which is the reference/control/baseline
+# technically unnecessary, but good to be confident here
+dds$condition <- relevel(dds$condition, ref = "uninfected")
+
+# run DESeq2
+dds <- DESeq(dds)
+dds_results <- results(dds)
+
+# get a quick sense of how many significant changes there are
+summary(results(dds, alpha=0.05, lfcThreshold = 1))
+
+# change NAs to sensible values
+# log2FC of 0 (i.e. no change)
+dds_results$log2FoldChange[is.na(dds_results$log2FoldChange)] <- 0
+
+# pvalue or adjusted p value of 1 (i.e. no stat diff)
+dds_results$pvalue[is.na(dds_results$pvalue)] <- 1
+dds_results$padj[is.na(dds_results$padj)] <- 1
+
+# set gene names as a column and keep only the significance test values
+dea <- data.frame(genes = rownames(dds_results), dds_results[,c("pvalue","padj")], 
+							check.names = FALSE, row.names = NULL)
+
+# don't close R!
+
 ```
 
 <p align="justify">
 As we are running statistical tests for so many genes, we need to have a p value correction. Sleuth uses Benjamini-Hochberg, a ranking system to reduce false positives. We then use these 'q' values, again with a stringent threshold such as <0.05. Use <code>head</code>, <code>less</code>, <code>grep</code> or other tools you know to look at the significant genes - do any come up that you recognise? Do any of our "quick check" genes come up? If not, why do you think this is?<br/><br/>
 The other thing to consider here is that q<0.05 genes are <i>statistically</i> different, but that doesn't necessarily equal biologically significant - the fold change in expression could be very small, but appear very significant just due to the power of the test (i.e. the ability of the test to see changes). This is particularly common when you have replicates from cell lines (as these are more like technical repeats than biological ones).<br/><br/>
-Now we're going to combine our TPMs and our sleuth results and make a volcano plot.<br/>
+Now we're going to combine our TPMs and our DEA results and make a volcano plot.<br/>
 </p>
 
-```sh 
-# create symbolic link for TPMs
-ln -s ../rnaseq_data/01_workshop4_BKPyV-infection/03_full_kallisto_output_for_workshop_DEA/allTPMs.tsv allTPMs.tsv
-
-# now get back into R
-R
-
-```
-
 ```R
-# access the Genomics shared libraries with this command
-.libPaths("../rnaseq_data/R_4.3.3")
-
-library(tidyverse)
-library(dplyr)
-
 # load TPMs and look at it
-tpms <- read.table("allTPMs.tsv", header=TRUE)
+tpms <- read.table("TPMs.tsv", header=TRUE)
 head(tpms)
 
 # add columns for the average condition TPMs for each gene
@@ -424,25 +444,15 @@ tpms <- mutate(tpms, log2FC = log2((BKPyVinfected_avg+1)/(uninfected_avg+1)))
 tpms <- mutate(tpms, across(2:ncol(tpms), round, 2))
 head(tpms)
 
-# now load the differential expression analysis results and take a look
-dea <- read.table("infectionDEA_results.tsv", header=TRUE)
-head(dea)
-
 # now we combine our TPMs and our DEA results using a left join on the gene names
-# in our TPMs dataframe our gene names are in a column called "genes"
-# in our DEA dataframe gene names are in a column called "target_id"
-res <- tpms %>% left_join(dea, by=c("genes"="target_id"))
+res <- tpms %>% left_join(dea, by=c("genes"="genes"))
 head(res)
 
-# if sleuth cannot do a stat comparison, it doesn't produce a test value so the p and q values are NA after the join
-# let's replace NA values with 1 (i.e. not significant)
-res[is.na(res)] <- 1
-
 # we can create a combined metric of fold change and significance called a pi value
-res <- mutate(res, pi = (log2FC * (-1 * log10(qval))))
+res <- mutate(res, pi = (log2FC * (-1 * log10(padj))))
 
 # now we have all our data in once table, let's save it
-write.table(res, file="TPMs_and_DEA_results_file.tsv", sep="\t", row.names=FALSE, col.names=TRUE)
+write.table(res, file="DEA_results_file.tsv", sep="\t", row.names=FALSE, col.names=TRUE)
 
 # don't close R!
 
@@ -461,23 +471,24 @@ library(ggrepel)
 library(ggplot2)
 
 # check how many significantly different genes we have, using log2FC threshold of >=1 (100% increase) or <=-1 (100% decrease) and qvalue of <0.05
-sum(res$log2FC>=1 & res$qval<0.05)
-sum(res$log2FC<=-1 & res$qval<0.05)
+sum(res$log2FC>=1 & res$padj<0.05)
+sum(res$log2FC<=-1 & res$padj<0.05)
 
 # create new column stating whether a gene is sig up or down, or not
 res$DEA <- "NO"
-res$DEA[res$log2FC > 1 & res$qval < 0.05] <- "UP"
-res$DEA[res$log2FC < -1 & res$qval < 0.05] <- "DOWN"
+res$DEA[res$log2FC > 1 & res$padj < 0.05] <- "UP"
+res$DEA[res$log2FC < -1 & res$padj < 0.05] <- "DOWN"
 
 # let's create our volcano plot - it should open as a separate window once rendered
 # first line is the plot, second gives the colours and no legend, third defines the colours
 # fourth line gives the threshold lines, fifth gives a clean white background, sixth sets the labels 
-ggplot(res, aes(x=log2FC, y=-log10(qval))) + 
+ggplot(res, aes(x=log2FC, y=-log10(padj))) + 
   geom_point(aes(colour = DEA), show.legend = FALSE) + 
   scale_colour_manual(values = c("blue", "gray", "red")) +
   geom_hline(yintercept = -log10(0.05), linetype = "dotted") + geom_vline(xintercept = c(-1,1), linetype = "dotted") + 
   theme_bw() + theme(panel.border = element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), axis.line = element_line(colour = "black")) +
-  geom_text_repel(data=subset(res, (abs(log2FC) > 1 & qval < 0.05)), aes(x=log2FC, y=-log10(qval), label=genes), max.overlaps = 1000, size=2.5)
+  geom_text_repel(data=subset(res, (log2FC > 3 & padj < 0.05)), aes(x=log2FC, y=-log10(padj), label=genes), max.overlaps = Inf, size=2.5) +
+  geom_text_repel(data=subset(res, (log2FC < -1.5 & padj < 0.05)), aes(x=log2FC, y=-log10(padj), label=genes), max.overlaps = Inf, size=2.5)
 
 # save it
 ggsave("volcano.pdf")
@@ -518,8 +529,8 @@ top10_fgseaRes
 
 # plot an enrichment plot for the top hit, and explore some of the others
 # google the terms, or check the MSigDB website - do the results make sense?
-plotEnrichment(genesets[["HALLMARK_E2F_TARGETS"]], prerank) + labs(title="E2F targets")
-ggsave("E2Ftargets.pdf")
+plotEnrichment(genesets[["HALLMARK_G2M_CHECKPOINT"]], prerank) + labs(title="G2M Checkpoint")
+ggsave("GSEA_G2M-Checkpoint.pdf")
 
 # create a bar chart of the best hits
 ggplot(top10_fgseaRes, aes(x = NES, y=reorder(pathway, -pval), fill = factor(sign(NES)))) +
@@ -537,7 +548,7 @@ ggplot(top10_fgseaRes, aes(x = NES, y=reorder(pathway, -pval), fill = factor(sig
 ggsave("GSEA-hallmarks_best_hits_bar.pdf")
 
 # save your results
-write.table(res, file="GSEA-hallmarks_results_file.tsv", sep="\t", row.names=FALSE, col.names=TRUE)
+write.table(fgseaRes, file="GSEA-hallmarks_results_file.tsv", sep="\t", row.names=FALSE, col.names=TRUE)
 
 # what's your interpretation?
 

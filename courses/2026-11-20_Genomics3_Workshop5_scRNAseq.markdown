@@ -79,7 +79,7 @@ cd workshop5/data
 ln -s /shared/biology/bioldata1/bl-00087h/data/singlecell_rnaseq_data/01_workshop/* .
 
 cd ../libs
-ln -s /shared/biology/bioldata1/bl-00087h/data/singlecell_rnaseq_data/R_4.3.3 .
+ln -s /shared/biology/bioldata1/bl-00087h/data/singlecell_rnaseq_data/R_4.5.2 .
 
 ## you can now exit the terminal
 
@@ -105,7 +105,7 @@ Finally, open a new script file called <code>workshop5.R</code> or similar, and 
 ```R
 
 # access the Genomics shared libraries with this command
-.libPaths("libs/R_4.3.3")
+.libPaths("libs/R_4.5.2")
 
 # load relevant libraries
 library(tidyverse)

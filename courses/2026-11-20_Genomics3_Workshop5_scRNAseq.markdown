@@ -111,6 +111,7 @@ Finally, open a new script file called <code>workshop5.R</code> or similar, and 
 library(tidyverse)
 library(Seurat)
 library(clustree)
+library(presto)
 library(ggplot2)
 library(ggrepel)
 library(fgsea)

@@ -555,7 +555,7 @@ ggsave("GSEA-hallmarks_best_hits_bar.pdf")
 
 # save your results
 fgsea_df <- as.data.frame(fgseaRes) %>%
-			mutate(leadingEdge = vapply(leadingEdge = vapply(leadingEdge, paste, collapse = ";", character(1)))) %>%
+			mutate(leadingEdge = vapply(leadingEdge, paste, collapse = ";", character(1))) %>%
 			arrange(padj)
 write.table(fgsea_df, file="GSEA-hallmarks_results_file.tsv", sep="\t", row.names=FALSE, col.names=TRUE)
 

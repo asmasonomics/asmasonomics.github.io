@@ -38,7 +38,7 @@ Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinfor
 <span style="font-size:1.1em;">Upcoming speakers</span><br/>
 2026-11-25 - [Dr Sean Meaden](https://www.york.ac.uk/biology/people/sean-meaden/) (PI): <i>Bioinformatics for microbiology - what's still in the toolbox in the age of AI?</i><br/>
 <i>No meeting in December</i><br/>
-2027-01-27 - TBC<br/>
+2027-01-27 - [Dan Davies](https://uk.linkedin.com/in/daniel-m-davies) (PhD student, Grey group): <i>Multi-omic analysis of human blood cancer stem cells</i><br/>
 
 <span style="font-size:1.1em;">Previous speakers</span><br/>
 2026-04-29 - [Dr Andrew Mason](https://www.york.ac.uk/biology/people/masonandrew/) (PI): <i>Biologically-informed and data-driven research to personalise bladder cancer treatment</i><br/>

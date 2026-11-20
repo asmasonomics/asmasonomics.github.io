@@ -394,7 +394,7 @@ ElbowPlot(so_donorint)
 pct <- so_donorint[["pca"]]@stdev / sum(so_donorint[["pca"]]@stdev) * 100
 cumu <- cumsum(pct)
 
-# point where 50% variance covered and next PC gives less than 5% contribution
+# point where 90% variance covered and next PC gives less than 5% contribution
 co1 <- which(cumu > 90 & pct < 5)[1]
 co1
 

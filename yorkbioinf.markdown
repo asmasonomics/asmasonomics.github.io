@@ -6,7 +6,7 @@ permalink: /yorkbioinformatics/
 <p align="justify">
 The data skills space in the UK is increasingly noisy with entities like <a href="https://elixiruknode.org/">ELIXIR-UK</a> and <a href="https://biofair.uk/">BioFAIR</a> trying to create coordinated national infrastructure and communities of practice. Data skills are essential to the modern biologist, and we need to make sure that York researchers, technical staff and students at all stages have the information and opportunities available to them - there is certainly a lot going on! <br/><br/>
 Andrew, Emma and Alastair decided to combine their efforts, bringing together their experience and views from research, teaching, training, consultancy and core provision. They are very fortunate to be within a Department and University which really acknowledges and appreciates the importance of these skills, and to represent <a href="https://www.york.ac.uk/biology/research/bioinformatics-biosystems/">the broader bioinformatics and data research community at York</a>.<br/><br/>
-Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-10.html">here</a>.
+Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-11.html">here</a>.
 </p>
 #### Coordinating team
 {% include profile_page_cols.html 
@@ -50,6 +50,7 @@ Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinfor
 2026-10-21 - <b>EXTERNAL</b> - [Prof Mark Blaxter](https://www.sanger.ac.uk/person/blaxter-mark/), Programme Lead for the Sanger Tree of Life Programme: <i>Busy about the genomic tree of life</i> - download: <a href="https://drive.google.com/file/d/1nn3gF_eWVcBOfvIGLn_eJjMMhJD0wMfk/view?usp=sharing" download>[slides]</a><a href="https://drive.google.com/file/d/1LkgAmJFCW3dsBrX33JXmsLJXGzSgO-ts/view?usp=sharing" download>[recording]</a><a href="https://drive.google.com/file/d/1RrRWKmZXebgN2lqkUZHDr1976Et1vnaw/view?usp=sharing" download>[auto subtitles]</a> <br/>
 
 #### Newsletter archive
+[November 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-11.html)<br/>
 [October 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-10.html)<br/>
 [September 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-09.html)<br/>
 [August 2026](https://asmasonomics.github.io/yorkbioinformatics/newsletters/2026-08.html)<br/>

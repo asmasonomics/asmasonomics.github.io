@@ -39,7 +39,9 @@ Find the current newsletter <a href="https://asmasonomics.github.io/yorkbioinfor
 2026-11-25 - [Dr Sean Meaden](https://www.york.ac.uk/biology/people/sean-meaden/) (PI): <i>Bioinformatics for microbiology - what's still in the toolbox in the age of AI?</i><br/>
 <i>No meeting in December</i><br/>
 2027-01-27 - [Dan Davies](https://uk.linkedin.com/in/daniel-m-davies) (PhD student, Grey group): <i>Multi-omic analysis of human blood cancer stem cells</i><br/>
-
+<br/>
+![ELIXIR-UK 2026 support](/yorkbioinformatics/assets/images/2026bursary-elixir-support.png){:class="img-responsive"}
+<br/>
 <span style="font-size:1.1em;">Previous speakers</span><br/>
 2026-04-29 - [Dr Andrew Mason](https://www.york.ac.uk/biology/people/masonandrew/) (PI): <i>Biologically-informed and data-driven research to personalise bladder cancer treatment</i><br/>
 2026-05-27 - [Dr Hollie Wilkinson](https://www.york.ac.uk/biology/itsupport/cfm/post_doc/profile.cfm?ID=3401) (postdoc, Lagos group): <i>Long read sequencing of blood samples to investigate response to immunotherapy in melanoma patients</i><br/>

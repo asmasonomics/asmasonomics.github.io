@@ -6,7 +6,7 @@ permalink: /group/
 The Mason Lab started in November 2019 when Andrew started a 3-year Independent Research Fellowship in Cancer Informatics funded by [York Against Cancer](https://www.yorkagainstcancer.org.uk/) to commemorate the charity's 30<sup>th</sup> anniversary. Andrew gained his permanent academic post in November 2022 with his appointment as a Lecturer in Cancer Informatics as part of The University of York's [Department of Biology](https://www.york.ac.uk/biology/) and [York Biomedical Research Institute](https://www.york.ac.uk/biomedical-research-institute/).
 
 <span style="font-size:1.3em;">**Lab members over time**</span>
-![Mason Lab over time](/assets/images/lab_gantt.jpg){:class="img-responsive"}
+![Mason Lab over time](/assets/images/lab_gantt.png){:class="img-responsive"}
 <br/><br/>
 [Linux onboarding information for group members](https://asmasonomics.github.io/courses/MasonLab_Linux_onboarding)
 <br/><br/>

@@ -731,7 +731,7 @@ Datasets:<br/> <code>/shared/biology/bioldata1/bl-00087h/data/singlecell_rnaseq_
 <code>assessment02_BC1-BC6</code> - Urothelial heterogeneity within non-malignant NMIBC "papilloma" (BC1 vs BC6)<br/>
 <code>assessment03_BC4-BCN</code> - Urothelial transcriptomes between malignant MIBC and paracancerous "normal" from one patient (BC4 vs BCN)<br/>
 <code>assessment04_BC2-BC6</code> - Urothelial transcriptomes between non-malignant papilloma and malignant NMIBC (BC6 vs BC2)<br/><br/>
-If you are doing this workshop on RStudio on Windows (don't!), <a href="https://drive.google.com/drive/folders/1z010tOSzME7J6RSN0aw5HTdAcrSKXaZp?usp=drive_link">the assessment material can be downloaded here.</a><br/>
+If you are doing this workshop on RStudio on Windows (don't!), <a href="https://drive.google.com/drive/folders/1HvUig0H8-nZLmyJjyHsHs67Th7fBNVOa?usp=sharing">the assessment material can be downloaded here.</a><br/>
 </p>
 #### Sample metadata
 
